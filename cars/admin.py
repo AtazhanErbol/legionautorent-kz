@@ -3,6 +3,8 @@ from django.forms.models import BaseInlineFormSet
 from django.core.exceptions import ValidationError
 from core.admin import SEOAdmin, SEO_FIELDSET, TranslationInline
 from .models import Car, CarImage, CarPrice, CarDiscount, CarBrand, CarCategory, CarFeature
+from .models import CarSpecification
+from django.utils.html import format_html
 
 class ImageFormSet(BaseInlineFormSet):
     def clean(self):
@@ -22,8 +24,11 @@ class ImageInline(admin.TabularInline):
     model = CarImage
     formset=ImageFormSet
     extra = 0
-    fields = ['original', 'image', 'small', 'alt', 'caption', 'is_main', 'sort_order', 'legacy_url']
-    readonly_fields = ['legacy_url', 'image', 'small']
+    fields = ['preview','original','alt','caption','is_main','sort_order','legacy_url']
+    readonly_fields = ['legacy_url','preview']
+    classes=['sortable-inline']
+    @admin.display(description='Фото')
+    def preview(self,obj):return format_html('<img class="admin-photo" src="{}" width="80" height="56" alt="">',obj.card_url) if obj.pk and obj.original else '—'
 class PriceInline(admin.TabularInline):
     model = CarPrice
     formset=PriceFormSet
@@ -31,16 +36,29 @@ class PriceInline(admin.TabularInline):
 class DiscountInline(admin.TabularInline):
     model = CarDiscount
     extra = 0
+class SpecificationInline(admin.TabularInline):
+    model=CarSpecification
+    extra=0
 
 @admin.register(Car)
 class CarAdmin(SEOAdmin):
-    list_display = ['name', 'brand', 'category', 'base_price', 'active', 'featured', 'sort_order', 'seo_warning']
+    actions=['show_cars','hide_cars','feature_cars']
+    @admin.action(description='Показать выбранные автомобили')
+    def show_cars(self,request,queryset):
+        for car in queryset:car.active=True;car.save(update_fields=['active','updated_at'])
+    @admin.action(description='Скрыть выбранные автомобили')
+    def hide_cars(self,request,queryset):
+        for car in queryset:car.active=False;car.save(update_fields=['active','updated_at'])
+    @admin.action(description='Добавить в избранное')
+    def feature_cars(self,request,queryset):
+        for car in queryset:car.featured=True;car.save(update_fields=['featured','updated_at'])
+    list_display = ['name', 'brand', 'category', 'base_price', 'active', 'featured', 'sort_order', 'seo_warning','translation_status']
     list_editable = ['base_price', 'active', 'featured', 'sort_order']
     list_filter = ['active', 'featured', 'brand', 'category', 'cities', 'transmission']
     search_fields = ['name', 'slug', 'legacy_id']
     filter_horizontal = ['cities', 'features']
-    inlines = [ImageInline, PriceInline, DiscountInline, TranslationInline]
-    fieldsets = [('Автомобиль', {'fields': ('name', 'slug', 'legacy_path', 'legacy_id', 'brand', 'model_name', 'category', 'cities', 'base_price', 'active', 'featured', 'accepts_requests', 'sort_order')}), ('Характеристики', {'fields': ('year', 'engine', 'transmission', 'drive', 'seats', 'color', 'features', 'description')}), SEO_FIELDSET]
+    inlines = [ImageInline, PriceInline, DiscountInline, SpecificationInline,TranslationInline]
+    fieldsets = [('Автомобиль — RU', {'fields': ('name', 'slug', 'legacy_path', 'legacy_id', 'brand', 'model_name', 'category', 'cities', 'base_price','deposit','mileage_limit', 'active', 'featured', 'accepts_requests', 'sort_order')}), ('Характеристики', {'fields': ('year', 'engine', 'transmission', 'drive','fuel', 'seats','doors', 'color', 'features', 'description')}), SEO_FIELDSET]
     list_select_related = ['brand', 'category']
 
 @admin.register(CarCategory)
@@ -50,3 +68,23 @@ class CategoryAdmin(SEOAdmin):
     fieldsets = [(None, {'fields': ('name', 'slug', 'description', 'active', 'sort_order')}), SEO_FIELDSET]
 admin.site.register(CarBrand)
 admin.site.register(CarFeature)
+@admin.register(CarSpecification)
+class SpecificationAdmin(admin.ModelAdmin):
+    list_display=['car','name','value','sort_order']
+    search_fields=['car__name','name','value']
+    inlines=[TranslationInline]
+@admin.register(CarPrice)
+class TariffAdmin(admin.ModelAdmin):
+    list_display=['car','label','min_days','max_days','daily_price']
+    inlines=[TranslationInline]
+
+@admin.register(CarImage)
+class PhotoAdmin(admin.ModelAdmin):
+    list_display=['car','alt','sort_order','is_main']
+    list_filter=['car__cities','is_main']
+    search_fields=['car__name','alt']
+    inlines=[TranslationInline]
+    fields=['car','original','alt','caption','sort_order','is_main']
+    class Media:
+        js=['admin/editor.js']
+        css={'all':['admin/editor.css']}

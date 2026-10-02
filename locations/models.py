@@ -7,6 +7,8 @@ class City(SEOFields):
     slug = models.SlugField(unique=True)
     legacy_path = models.CharField(max_length=250, unique=True, blank=True, validators=[validate_local_path], help_text='Пустое поле: автоматически /slug/. Существующий путь не меняется.')
     description = models.TextField(blank=True)
+    hero_text = models.TextField(blank=True)
+    hours = models.CharField(max_length=120,blank=True)
     body = models.TextField('SEO-текст (HTML)', blank=True)
     address = models.CharField(max_length=250, blank=True)
     phone = models.CharField(max_length=40, blank=True)

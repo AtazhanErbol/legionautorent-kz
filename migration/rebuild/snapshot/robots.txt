@@ -1,0 +1,3 @@
+User-agent: *
+Host: https://legionautorent.kz/
+Sitemap: https://legionautorent.kz/sitemap.xml

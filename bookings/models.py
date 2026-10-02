@@ -27,6 +27,7 @@ class BookingRequest(Lead):
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
     status = models.CharField(max_length=20, choices=STATUS, default='NEW', db_index=True)
+    kind = models.CharField(max_length=20,choices=[('booking','Аренда'),('callback','Обратный звонок')],default='booking',db_index=True)
     class Meta:
         ordering = ['-created_at']
         verbose_name = 'Заявка на аренду'

@@ -1,0 +1,7 @@
+{
+  "source": "https://legionautorent.kz/video/video-2.mp4?v=1.1",
+  "file": "media\\legacy\\video-2.mp4",
+  "bytes": 6466592,
+  "sha256": "d5754e2f7d5b82981425208bf83ffc0a846378fa27e99a98a1d9f477c0bcf0ca",
+  "purpose": "Preserve original Open Graph video URL; not autoplayed by the rebuilt hero."
+}

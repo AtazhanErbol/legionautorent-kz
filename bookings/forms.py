@@ -21,12 +21,13 @@ class BookingForm(forms.ModelForm):
         widgets = {'name': forms.TextInput(attrs={'autocomplete': 'name'}), 'phone': forms.TextInput(attrs={'type': 'tel', 'autocomplete': 'tel', 'placeholder': '+7 700 000 00 00'}), 'start_date': forms.DateInput(attrs={'type': 'date'}), 'end_date': forms.DateInput(attrs={'type': 'date'}), 'comment': forms.Textarea(attrs={'rows': 3, 'maxlength': 2000})}
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['car'].queryset = Car.objects.public().filter(accepts_requests=True).prefetch_related('translations')
-        self.fields['car'].empty_label = _('Помогите выбрать автомобиль')
+        if 'car' in self.fields:
+            self.fields['car'].queryset = Car.objects.public().filter(accepts_requests=True).prefetch_related('translations')
+            self.fields['car'].empty_label = _('Помогите выбрать автомобиль')
         self.fields['city'].queryset = City.objects.filter(active=True).prefetch_related('translations')
         self.fields['comment'].max_length = 2000
-        self.fields['start_date'].widget.attrs['min'] = timezone.localdate().isoformat()
-        self.fields['end_date'].widget.attrs['min'] = timezone.localdate().isoformat()
+        for name in ('start_date','end_date'):
+            if name in self.fields:self.fields[name].widget.attrs['min']=timezone.localdate().isoformat()
     def clean_phone(self):
         value = self.cleaned_data['phone'].strip()
         if not re.fullmatch(r'[+()\d\s-]+', value): raise forms.ValidationError(_('Укажите корректный номер телефона.'))
@@ -43,3 +44,7 @@ class BookingForm(forms.ModelForm):
         car, city = data.get('car'), data.get('city')
         if car and city and not car.cities.filter(pk=city.pk).exists(): self.add_error('car', _('Этот автомобиль не представлен в выбранном городе.'))
         return data
+
+class CallbackForm(BookingForm):
+    class Meta(BookingForm.Meta):
+        fields=['city','name','phone','comment','consent']

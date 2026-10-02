@@ -7,3 +7,4 @@ beautifulsoup4>=4.13,<5
 requests>=2.32,<3
 python-dotenv>=1.1,<2
 nh3>=0.3,<0.4
+django-axes>=8.3,<9

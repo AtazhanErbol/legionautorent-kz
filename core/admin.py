@@ -6,19 +6,27 @@ from django.contrib.contenttypes.admin import GenericStackedInline
 from seo.models import Translation
 from .models import SiteSettings, ContentBlock
 
-SEO_FIELDSET = ('SEO', {'classes': ['collapse'], 'fields': ('seo_title', 'seo_description', 'seo_h1', 'canonical_url', 'robots', 'og_title', 'og_description', 'og_image')})
+SEO_FIELDSET = ('SEO', {'classes': ['collapse'], 'fields': ('seo_title', 'seo_description', 'seo_h1', 'canonical_url', 'robots', 'og_title', 'og_description', 'og_image','legacy_meta')})
 
 class TranslationInline(GenericStackedInline):
     model = Translation
-    extra = 0
+    extra = 2
     max_num = 2
-    fields = ['language', 'published', 'name', 'title', 'description', 'h1', 'intro', 'content', 'og_title', 'og_description']
-    classes = ['collapse']
+    fields = ['language', 'published', 'name', 'title', 'description', 'h1', 'intro', 'content','hero_text', 'address','hours','fuel','color','caption','og_title', 'og_description']
+    classes = ['translation-inline']
+    class Media:
+        js=['admin/editor.js']
+        css={'all':['admin/editor.css']}
 class SiteTranslationInline(TranslationInline):
-    fields = ['language', 'published', 'hero_title', 'hero_text', 'partner_title', 'partner_description', 'partner_whatsapp_message', 'footer_text']
+    fields = ['language', 'published', 'hero_title', 'hero_text', 'address','hours','whatsapp_message','partner_title', 'partner_description', 'partner_whatsapp_message', 'footer_text']
 
 class SEOAdmin(admin.ModelAdmin):
     inlines = [TranslationInline]
+    def get_queryset(self,request):return super().get_queryset(request).prefetch_related('translations')
+    @admin.display(description='Переводы')
+    def translation_status(self,obj):
+        complete={t.language for t in obj.translations.all() if t.published}
+        return ' · '.join(f'{lang.upper()}: '+('✓' if lang in complete else 'черновик / нет') for lang in ('kk','en'))
     @admin.display(description='SEO: проверить')
     def seo_warning(self, obj):
         warnings = []
@@ -31,7 +39,7 @@ class SEOAdmin(admin.ModelAdmin):
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(admin.ModelAdmin):
     inlines = [SiteTranslationInline]
-    fieldsets = [('Бренд и контакты — RU', {'fields': ('name', 'phone', 'whatsapp', 'email', 'address', 'hours', 'logo', 'favicon', 'instagram', 'map_url', 'footer_text')}), ('Первый экран — RU', {'fields': ('hero_title', 'hero_text', 'hero_image', 'hero_car', 'hero_model', 'hero_model_license')}), ('Аналитика и верификация', {'fields': ('gtm_id', 'ga4_id', 'metrika_id', 'google_verification', 'yandex_verification')}), ('Партнёры — RU', {'fields': ('show_partner_section', 'partner_title', 'partner_description', 'partner_phone', 'partner_whatsapp', 'partner_whatsapp_message')})]
+    fieldsets = [('Бренд и контакты — RU', {'fields': ('name', 'phone', 'whatsapp','whatsapp_message', 'email', 'address', 'hours', 'logo', 'favicon', 'instagram', 'map_url', 'footer_text')}), ('Первый экран — RU', {'fields': ('hero_title', 'hero_text', 'hero_image', 'hero_car', 'enable_hero_3d','hero_model_path','hero_model', 'hero_model_license','hero_names','hero_poster_path','hero_placeholder','enable_hero_video','hero_video_path')}), ('SEO, аналитика и верификация', {'fields': ('default_seo_title','default_seo_description','robots_text','gtm_id', 'ga4_id', 'metrika_id', 'google_verification', 'yandex_verification','notifications_enabled')}), ('Партнёры — RU', {'fields': ('show_partner_section', 'partner_title', 'partner_description', 'partner_phone', 'partner_whatsapp', 'partner_whatsapp_message')})]
     def has_add_permission(self, request): return not SiteSettings.objects.exists() and super().has_add_permission(request)
     def has_delete_permission(self, request, obj=None): return False
 

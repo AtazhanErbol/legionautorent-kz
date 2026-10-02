@@ -14,6 +14,7 @@ class SEOFields(models.Model):
     og_title = models.CharField(max_length=250, blank=True)
     og_description = models.TextField(blank=True)
     og_image = models.URLField(blank=True)
+    legacy_meta = models.JSONField(default=dict,blank=True,help_text='Исходные Open Graph/Twitter поля сохранены для точной миграции.')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     translations = GenericRelation('seo.Translation')
@@ -49,6 +50,12 @@ class Translation(models.Model):
     h1 = models.CharField('H1', max_length=250, blank=True)
     content = models.TextField('Контент / ответ / HTML', blank=True)
     intro = models.TextField('Вводный текст', blank=True)
+    address = models.CharField(max_length=250,blank=True)
+    hours = models.CharField(max_length=120,blank=True)
+    fuel = models.CharField(max_length=100,blank=True)
+    color = models.CharField(max_length=100,blank=True)
+    caption = models.CharField(max_length=250,blank=True)
+    whatsapp_message = models.TextField(blank=True)
     og_title = models.CharField(max_length=250, blank=True)
     og_description = models.TextField(blank=True)
     hero_title = models.CharField('Hero заголовок', max_length=250, blank=True)
@@ -72,6 +79,10 @@ class Translation(models.Model):
                 raise ValidationError('Для публикации заполните название на выбранном языке.')
             if obj and obj._meta.model_name in ('faq', 'contentblock') and not all([self.title, self.content]):
                 raise ValidationError('Для публикации заполните заголовок и текст.')
+            if obj and obj._meta.model_name == 'carimage' and not self.name:
+                raise ValidationError('Для публикации заполните alt изображения в поле «Название».')
+            if obj and obj._meta.model_name == 'carspecification' and not all([self.name,self.content]):
+                raise ValidationError('Для публикации заполните название характеристики и значение.')
             if obj and obj._meta.model_name == 'sitesettings' and not all([self.hero_title, self.hero_text, self.partner_title, self.partner_description, self.partner_whatsapp_message, self.footer_text]):
                 raise ValidationError('Заполните перевод Hero, footer и партнёрского блока.')
     def __str__(self): return f'{self.language}: {self.content_object}'

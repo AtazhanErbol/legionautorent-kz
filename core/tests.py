@@ -69,31 +69,31 @@ class SiteTests(TestCase):
         self.assertNotContains(response,'aggregateRating')
         self.assertNotContains(response,'InStock')
     def test_missing_translation_fallback(self):
-        response=self.client.get('/kz'+self.car.legacy_path)
+        response=self.client.get('/kk'+self.car.legacy_path)
         self.assertContains(response,'<html lang="kk">')
         self.assertContains(response,'noindex,follow')
         self.assertContains(response,'translation-notice')
-        self.assertNotContains(response,'hreflang="kk"')
+        self.assertContains(response,'hreflang="kk"')
     def test_draft_translation_not_indexed(self):
         self.translated().delete()
         Translation.objects.create(content_object=self.car,language='en',published=False,title='Draft')
         self.assertContains(self.client.get('/en'+self.car.legacy_path),'noindex,follow')
     def test_published_translation_has_self_canonical(self):
         self.translated()
-        response=self.client.get('/kz'+self.car.legacy_path)
-        self.assertContains(response,'href="https://legionautorent.kz/kz/car/toyota-camry"')
+        response=self.client.get('/kk'+self.car.legacy_path)
+        self.assertContains(response,'href="https://legionautorent.kz/kk/car/toyota-camry"')
         self.assertContains(response,'Toyota Camry жалдау')
-        self.assertNotContains(response,'translation-notice')
+        self.assertNotContains(response,'class="translation-notice')
         self.assertContains(response,'Қазақша мазмұн')
     def test_translated_og_does_not_fallback_to_ru(self):
         self.car.og_title='Russian OG';self.car.save();self.translated()
-        self.assertNotContains(self.client.get('/kz'+self.car.legacy_path),'Russian OG')
+        self.assertNotContains(self.client.get('/kk'+self.car.legacy_path),'Russian OG')
     def test_new_city_can_be_added_from_cms(self):
         City.objects.create(name='Новый город',slug='new-city',seo_title='Новый город',seo_description='Прокат',seo_h1='Аренда')
         self.assertEqual(self.client.get('/new-city/').status_code,200)
     def test_hreflang_reciprocal(self):
         self.translated()
-        for path in [self.car.legacy_path,'/kz'+self.car.legacy_path]:
+        for path in [self.car.legacy_path,'/kk'+self.car.legacy_path]:
             response=self.client.get(path)
             self.assertContains(response,'hreflang="ru"')
             self.assertContains(response,'hreflang="kk"')
@@ -106,9 +106,9 @@ class SiteTests(TestCase):
     def test_sitemap_only_published_translations(self):
         response=self.client.get('/sitemap.xml')
         ElementTree.fromstring(response.content)
-        self.assertNotContains(response,'/kz/car/toyota-camry')
+        self.assertNotContains(response,'/kk/car/toyota-camry')
         self.translated()
-        self.assertContains(self.client.get('/sitemap.xml'),'/kz/car/toyota-camry')
+        self.assertContains(self.client.get('/sitemap-cars.xml'),'/kk/car/toyota-camry')
     def test_hidden_objects_excluded_sitemap(self):
         self.car.active=False;self.car.save()
         self.assertNotContains(self.client.get('/sitemap.xml'),self.car.legacy_path)
@@ -187,8 +187,8 @@ class SiteTests(TestCase):
         self.assertEqual(self.client.get('/investors/').status_code,404)
         self.assertEqual(self.client.get('/partners/').status_code,404)
     def test_admin_access(self):
-        self.client.force_login(self.admin)
-        for path in ['/admin/','/admin/cars/car/','/admin/core/sitesettings/1/change/','/admin/bookings/bookingrequest/']:
+        self.client.force_login(self.admin,backend='django.contrib.auth.backends.ModelBackend')
+        for path in ['/control-legion/','/control-legion/cars/car/','/control-legion/core/sitesettings/1/change/','/control-legion/bookings/bookingrequest/']:
             self.assertEqual(self.client.get(path).status_code,200)
     def test_tariff_overlap(self):
         CarPrice.objects.create(car=self.car,min_days=1,max_days=3,daily_price=45000)

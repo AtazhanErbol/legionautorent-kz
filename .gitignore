@@ -10,3 +10,6 @@ output/playwright/
 .pytest_cache/
 .local/
 node_modules/
+static/build/
+.env.production
+.env.staging

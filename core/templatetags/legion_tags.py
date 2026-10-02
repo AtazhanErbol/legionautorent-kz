@@ -5,8 +5,33 @@ import nh3
 from django import template
 from django.utils.safestring import mark_safe
 from core.i18n import localized, language_url
+from django.conf import settings
+from pathlib import Path
 
 register = template.Library()
+@register.simple_tag
+def asset(entry):
+    manifest=Path(settings.BASE_DIR)/'static/build/.vite/manifest.json'
+    if manifest.exists():
+        data=json.loads(manifest.read_text(encoding='utf8'))
+        return settings.STATIC_URL+'build/'+data[entry]['file']
+    return settings.STATIC_URL+'build/missing-build.js'
+@register.simple_tag
+def asset_css(entry):
+    manifest=Path(settings.BASE_DIR)/'static/build/.vite/manifest.json'
+    if manifest.exists():
+        data=json.loads(manifest.read_text(encoding='utf8'))
+        return [settings.STATIC_URL+'build/'+item for item in data[entry].get('css',[])]
+    return []
+@register.simple_tag
+def critical_css(entry):
+    """The complete 6 KB gzip stylesheet avoids an extra blocking mobile round trip."""
+    folder=Path(settings.BASE_DIR)/'static/build'
+    manifest=folder/'.vite/manifest.json'
+    if not manifest.exists():return ''
+    data=json.loads(manifest.read_text(encoding='utf8'))
+    content='\n'.join((folder/file).read_text(encoding='utf8') for file in data[entry].get('css',[]))
+    return mark_safe(content.replace('</style','<\\/style'))
 @register.filter
 def tr(obj, field): return localized(obj, field)
 @register.filter

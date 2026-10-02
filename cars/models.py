@@ -6,6 +6,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from seo.models import SEOFields, validate_local_path
 from core.validators import validate_image
 from django.utils.translation import gettext_lazy as _
+from django.contrib.contenttypes.fields import GenericRelation
 
 class CarBrand(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -33,7 +34,7 @@ class CarQuerySet(models.QuerySet):
     def public(self):
         return self.filter(active=True, category__active=True, cities__active=True).distinct()
     def with_content(self):
-        return self.select_related('brand', 'category').prefetch_related('cities__translations', 'translations', 'category__translations', 'features', Prefetch('images', queryset=CarImage.objects.order_by('-is_main', 'sort_order', 'pk')))
+        return self.select_related('brand', 'category').prefetch_related('cities__translations', 'translations', 'category__translations', 'features', Prefetch('images', queryset=CarImage.objects.prefetch_related('translations').order_by('-is_main', 'sort_order', 'pk')))
 
 class Car(SEOFields):
     name = models.CharField('Название', max_length=200)
@@ -52,6 +53,10 @@ class Car(SEOFields):
     drive = models.CharField(max_length=20, blank=True, choices=[('front', _('Передний')), ('rear', _('Задний')), ('all', _('Полный'))])
     seats = models.PositiveSmallIntegerField(null=True, blank=True, validators=[MinValueValidator(1), MaxValueValidator(20)])
     color = models.CharField(max_length=100, blank=True)
+    fuel = models.CharField(max_length=100,blank=True)
+    doors = models.PositiveSmallIntegerField(null=True,blank=True,validators=[MinValueValidator(1),MaxValueValidator(10)])
+    deposit = models.DecimalField(max_digits=12,decimal_places=0,null=True,blank=True,validators=[MinValueValidator(0)])
+    mileage_limit = models.PositiveIntegerField(null=True,blank=True)
     description = models.TextField(blank=True)
     active = models.BooleanField(default=True)
     featured = models.BooleanField(default=False)
@@ -95,6 +100,8 @@ class CarImage(models.Model):
     sort_order = models.PositiveIntegerField(default=0)
     width = models.PositiveIntegerField(default=1200)
     height = models.PositiveIntegerField(default=800)
+    variants = models.JSONField(default=dict,blank=True)
+    translations = GenericRelation('seo.Translation')
     class Meta:
         ordering = ['-is_main', 'sort_order', 'pk']
         constraints = [models.UniqueConstraint(fields=['car', 'legacy_url'], condition=~models.Q(legacy_url=''), name='unique_legacy_car_image'), models.UniqueConstraint(fields=['car'], condition=models.Q(is_main=True), name='one_main_image_per_car')]
@@ -110,6 +117,12 @@ class CarImage(models.Model):
     def card_display_width(self):return self.card_width if self.card_image else self.width
     @property
     def card_display_height(self):return self.card_height if self.card_image else self.height
+    @property
+    def avif_srcset(self):
+        return ', '.join(f'/media/{path} {size}w' for size,path in self.variants.get('avif',{}).items())
+    @property
+    def card_avif_srcset(self):
+        return ', '.join(f'/media/{path} {size}w' for size,path in self.variants.get('card_avif',{}).items())
     def __str__(self): return self.alt or self.car.name
     def save(self,*args,**kwargs):
         if self.original and not self.original._committed:
@@ -131,14 +144,19 @@ class CarImage(models.Model):
                 getattr(self,field).save(f'{token}-card-{size}.webp',ContentFile(output.getvalue()),save=False)
                 if size==960:self.card_width,self.card_height=image.size
             self.original.seek(0)
+            from cars.images import generate_variants
+            self.variants=generate_variants(source,token)
         return super().save(*args,**kwargs)
 
 class CarPrice(models.Model):
+    translations=GenericRelation('seo.Translation')
     car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='prices')
     min_days = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)])
     max_days = models.PositiveIntegerField(null=True, blank=True, validators=[MinValueValidator(1)])
     daily_price = models.DecimalField(max_digits=12, decimal_places=0, validators=[MinValueValidator(1)])
     label = models.CharField(max_length=100, blank=True)
+    deposit = models.DecimalField(max_digits=12,decimal_places=0,null=True,blank=True,validators=[MinValueValidator(0)])
+    mileage_limit = models.PositiveIntegerField(null=True,blank=True)
     class Meta: ordering = ['min_days']
     def clean(self):
         super().clean()
@@ -149,6 +167,7 @@ class CarPrice(models.Model):
     def __str__(self): return self.label or f'{self.min_days}–{self.max_days or "∞"} дней'
 
 class CarDiscount(models.Model):
+    translations=GenericRelation('seo.Translation')
     car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='discounts')
     label = models.CharField(max_length=100)
     min_days = models.PositiveIntegerField()
@@ -156,3 +175,12 @@ class CarDiscount(models.Model):
     percent = models.PositiveSmallIntegerField(validators=[MaxValueValidator(100)])
     class Meta: ordering = ['min_days']
     def __str__(self): return f'{self.label}: {self.percent}%'
+
+class CarSpecification(models.Model):
+    car=models.ForeignKey(Car,on_delete=models.CASCADE,related_name='extra_specs')
+    name=models.CharField(max_length=100)
+    value=models.CharField(max_length=250)
+    sort_order=models.PositiveIntegerField(default=0)
+    translations=GenericRelation('seo.Translation')
+    class Meta:ordering=['sort_order','pk']
+    def __str__(self):return f'{self.name}: {self.value}'

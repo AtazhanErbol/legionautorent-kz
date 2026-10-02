@@ -1,11 +1,11 @@
 from django.middleware.locale import LocaleMiddleware
 from django.utils import translation
 
-PREFIXES = {'ru': '', 'kk': '/kz', 'en': '/en'}
+PREFIXES = {'ru': '', 'kk': '/kk', 'en': '/en'}
 
 class LegionLocaleMiddleware(LocaleMiddleware):
     def process_request(self, request):
-        language = 'kk' if request.path == '/kz' or request.path.startswith('/kz/') else 'en' if request.path == '/en' or request.path.startswith('/en/') else 'ru'
+        language = 'kk' if request.path == '/kk' or request.path.startswith('/kk/') else 'en' if request.path == '/en' or request.path.startswith('/en/') else 'ru'
         translation.activate(language)
         request.LANGUAGE_CODE = language
         request.base_path = request.path[len(PREFIXES[language]):] or '/'
@@ -21,7 +21,7 @@ def get_translation(obj, language=None):
     if language == 'ru' or not obj or not obj.pk: return None
     return next((t for t in obj.translations.all() if t.language == language and t.published), None)
 
-FIELD_MAP = {'seo_title': 'title', 'seo_description': 'description', 'seo_h1': 'h1', 'body': 'content', 'text': 'content', 'answer': 'content', 'question': 'title'}
+FIELD_MAP = {'seo_title': 'title', 'seo_description': 'description', 'seo_h1': 'h1', 'body': 'content', 'text': 'content', 'answer': 'content', 'question': 'title','alt':'name','value':'content','label':'title'}
 def localized(obj, field, language=None):
     t = get_translation(obj, language)
     if t:
