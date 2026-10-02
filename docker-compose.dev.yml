@@ -1,0 +1,53 @@
+name: legion-dev
+services:
+  db:
+    image: postgres:18-bookworm
+    environment:
+      POSTGRES_DB: legion
+      POSTGRES_PASSWORD: development-admin-only
+      APP_DB_PASSWORD: development-app-only
+      APP_DB_TESTING: '1'
+    volumes:
+      - dev_pgdata:/var/lib/postgresql
+      - ./deploy/init-db.sh:/docker-entrypoint-initdb.d/10-legion.sh:ro
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U postgres -d legion']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  web:
+    build: .
+    environment:
+      ENVIRONMENT: development
+      DEBUG: 'false'
+      DATABASE_URL: postgresql://legion:development-app-only@db:5432/legion
+      SECRET_KEY: local-docker-development-secret-with-no-production-access
+      ALLOWED_HOSTS: localhost,127.0.0.1,web
+      SECURE_SSL_REDIRECT: 'false'
+      ANALYTICS_ENABLED: 'false'
+      BOOTSTRAP_LEGACY: 'true'
+      DOWNLOAD_LEGACY_IMAGES: 'true'
+      TRUST_PROXY_HEADERS: 'false'
+    volumes:
+      - dev_media:/app/media
+      - dev_static:/app/staticfiles
+    depends_on:
+      db:
+        condition: service_healthy
+  nginx:
+    image: nginx:1.30.5-alpine
+    ports:
+      - '127.0.0.1:8080:80'
+    volumes:
+      - ./deploy/nginx-dev.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./deploy/nginx-compression.conf:/etc/nginx/conf.d/10-compression.conf:ro
+      - ./deploy/nginx-shared.conf:/etc/nginx/legion/shared.conf:ro
+      - dev_media:/srv/media:ro
+      - dev_static:/srv/static:ro
+    depends_on:
+      web:
+        condition: service_healthy
+volumes:
+  dev_pgdata:
+  dev_media:
+  dev_static:

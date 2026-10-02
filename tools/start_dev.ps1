@@ -20,10 +20,10 @@ if ($OptimizedPreview) {
         finally { $env:DEBUG=$taskPreviousDebug }
         Start-Process -FilePath $taskPython -ArgumentList @('-u','tools/preview_server.py') -WindowStyle Hidden -WorkingDirectory $taskRoot -RedirectStandardOutput (Join-Path $taskRoot '.local\preview-output.log') -RedirectStandardError (Join-Path $taskRoot '.local\preview-errors.log') | Out-Null
     }
-    Write-Output 'Optimized local site: http://127.0.0.1:8002/; Admin: http://127.0.0.1:8002/admin/'
+    Write-Output 'Optimized local site: http://127.0.0.1:8002/; Admin: http://127.0.0.1:8002/control-legion/'
 } else {
     if (-not (Test-LegionPort 8000)) {
         Start-Process -FilePath $taskPython -ArgumentList @('manage.py', 'runserver', '127.0.0.1:8000') -WindowStyle Hidden -WorkingDirectory $taskRoot -RedirectStandardOutput (Join-Path $taskRoot '.local\django-output.log') -RedirectStandardError (Join-Path $taskRoot '.local\django-errors.log') | Out-Null
     }
-    Write-Output 'Local site: http://127.0.0.1:8000/; Admin: http://127.0.0.1:8000/admin/'
+    Write-Output 'Local site: http://127.0.0.1:8000/; Admin: http://127.0.0.1:8000/control-legion/'
 }

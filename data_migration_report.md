@@ -1,3 +1,5 @@
+> Исторический документ предыдущей реализации. Актуальные решения от 03.10.2026: README.md, DEPLOY.md и reports/SEO_MIGRATION_REPORT.md.
+
 # Data migration report
 
 Источник: публичный HTTP snapshot от 2026-10-02, исходная БД не предоставлена.

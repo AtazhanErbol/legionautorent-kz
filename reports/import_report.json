@@ -1,0 +1,488 @@
+{
+  "cars": 91,
+  "cities": 4,
+  "images": 302,
+  "updated_records": 0,
+  "price_changes": 0,
+  "availability_changes": 0,
+  "authority": "live/raw snapshots for slug and SEO; live public prices and presence",
+  "improvements": [
+    {
+      "path": "/",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/",
+      "field": "title",
+      "reason": "Empty legacy Title filled."
+    },
+    {
+      "path": "/kostanay/",
+      "field": "title",
+      "reason": "Empty legacy Title filled."
+    },
+    {
+      "path": "/ustkamenogorsk/",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/pavlodar/",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/lexus-lx-570-superior",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/mercedes-s-500",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/mercedes-w-222-s-400",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-lc-200-luxe",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-lc-200-excalibur",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/range-rover",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200-new",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200_20240429104403",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200_20211104112631",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/mercedes-g-500",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/lexus-gs-350-f-sport",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/mercedes-benz-s221",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-sonata-n-line",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-lc-200",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/mercedes-w-212-e-class",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-70-luxe-safety",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-70-prestige-plus",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-70-prestige-plus_20230127093610",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-sonata",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-70-usa-komplektacia-se",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-55-n5",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/kia-k-5",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-70",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/kia-spotage-2023",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-tucson",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-55-n4-navi-15-31",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/kia-sportage-2020-god",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-55_20231013120702",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/kia-seltos",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-55",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-55_20230127093040",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-55_20230201112348",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-55_20230306085552",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-tucson_20240515094333",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/lexus-gs-350-awd-restajling",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-elantra",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-elantra_20230815091736",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-accent",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-accent-2015-god-1-6-avtomat",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/chevrolet-cobalt-2022-1-5-avtomat",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-accent_20231115121923",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/bmw-530i-x-drive",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/bmw-x6",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/bmw-x6_20241001102848",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/bmw-x6_20260622070809",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/changan-x5-plus",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/chevrolet-cobalt",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/chevrolet-tahoe",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-accent_20241125134834",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-elantra_20240819123613",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-elantra_20260403070232",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-santa-fe",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-santa-fe-high-tech",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-santa-fe_20241218064857",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-tucson_20240914134010",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/kia-cerato-gt-line",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/kia-k-5_20240701073837",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/kia-sportage",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/lixiang-l7-pro",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/mercedes-w222-s-63-amg",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-75",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-75_20260408104311",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-80",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-80_20251115074721",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-highlander",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200_20240926132114",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200_20250604084050",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-lc-200-excalibur_20250827073659",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-lc-200_20240626072039",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/chery-tiggo-4",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-accent_20240611104858",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/kia-ceed",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/kia-seltos_20240920104836",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/kia-sportage_20260729090852",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv70",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-xv50",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/changan-x5-plus_20260810090844",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/changan-x5-plus_20260901073633",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/chevrolet-cobalt_20241220111045",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/chevrolet-cobalt_20251111103617",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-creta",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/hyundai-tucson_20260604100103",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/jac-j7",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/kia-soul",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/lexus-es-250",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-55_20250605065343",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-camry-xv-55_20260731072807",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-lc-200-excalibur_20260615123651",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    },
+    {
+      "path": "/car/toyota-rav4_20241007122739",
+      "field": "description",
+      "reason": "Empty legacy meta description filled with factual page-specific copy."
+    }
+  ],
+  "slugs_regenerated": false,
+  "source_data_deleted": false
+}

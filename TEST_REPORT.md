@@ -1,16 +1,23 @@
-# Test report
+# Итоговые проверки — 03.10.2026
 
-Дата: 2026-10-02. Проверки локальной реализации, PostgreSQL, Chrome headless.
+Полный набор Django: **57 тестов успешно**, PostgreSQL, DEBUG=False, отдельная сохранённая test DB. После уточнения сравнения JSON-полей повторно успешно выполнены 6 тестов импортера. Повторный импорт рабочей БД изменяет 0 автомобилей, сохраняет их ID/slug/updated_at, не создаёт дубли. `makemigrations --check --dry-run` не нашёл изменений схемы; `check --deploy` в production-конфигурации — без замечаний.
 
-- Django test: **46 passed**, 0 failures. URL/trailing slash, активность контента, SEO/JSON-LD, RU/KZ/EN и опубликованные переводы, взаимный hreflang, sitemap/robots, 301 без циклов и цепочек, настоящая 404, CMS/Admin, idempotent import, безопасный rich text, формы/реальный CSRF/consent/даты/телефон/honeypot/rate limit/UTM/source, партнёрский WhatsApp, отсутствие InvestorApplication routes, SQL growth, прозрачность palette PNG и производные WebP.
-- `manage.py makemigrations --check --dry-run`: нет рассинхронизации моделей и миграций.
-- `manage.py check --deploy` с production environment, DEBUG=False и SSL redirect: 0 замечаний. Это проверка Django settings, не проверка установленного Nginx/SSL на удалённом сервере.
-- UI translations: 144 Django PO/MO strings, missing 0. Это новый интерфейс; старые бизнес-тексты автоматически не переводились.
-- SEO crawl: 131 путей, 95/95 доступных старых URL сохранены; 0 broken internal links, 0 metadata/image/JSON syntax errors.
-- Chrome: ширины 320, 375, 390, 430, 768, 1024, 1440, 1920 px. Нет overflow, пропавших загруженных изображений, JS/console errors; 1 H1 на главной. Каталог, автомобиль, город, форма, KZ/EN fallback: HTTP 200. Переключение языка сохраняет страницу, меню работает с Escape, галерея меняет фото.
-- Three.js loader: собственный тестовый off-origin GLB загружен и виден (17616 painted pixels), фото скрывается после успеха, page errors 0. Коммерческий автомобиль/его лицензия и реальная Draco-модель этим тестом не подтверждаются.
-- Финальный backup: 1500 media files; pg_restore в отдельную временную DB успешен, восстановлены 91 car / 4 city / 302 gallery associations. SHA256 в backup_report.json и manifests.
+Покрытие: точные 95 старых рабочих URL, canonical/hreflang, опубликованные/неполные переводы, sitemap, JSON-LD, формы и реальный CSRF, подпись источника, UTM, даты/телефоны/город, honeypot/лимит запросов, Admin и блокировка Axes после пяти неверных паролей, очистка CMS HTML, валидация изображений/GLB, свежий CSP nonce при кешировании, инвалидация кеша, одношаговые redirects без петель, 500 без зависимости от БД, старые URL изображений.
 
-Синтаксическая JSON-LD проверка не заменяет Google Rich Results Test. Lighthouse Accessibility 100 не заменяет полный ручной WCAG audit. Production analytics/SSL/Nginx/Docker/доставка заявок во внешние системы и field INP не проверены локально. Production не переключался.
+`reports/verification.json`: **122/122 PASS** — 95 сохранённых 200 и 27 ожидаемых временных 404 вместо старых 500. Это не восстановление данных недоступных автомобилей. `reports/price_availability_diff.csv`: 91 строка, цена/публичность совпадают с проверенным live.
 
-Артефакты: output/playwright/browser_report.json, hero3d_report.json, screenshots; seo_audit_new_site.json; backup_report.json; PERFORMANCE_REPORT.md.
+Chrome/Playwright: 320, 375, 768, 1440, 1920 px, без горизонтального переполнения, все 59 автомобилей Астаны присутствуют в SSR. Проверены AJAX-поиск, галерея, даты в WhatsApp, KK и EN/404. На desktop загружается реальный meshopt GLB, работают drag/scroll/переключатель света. На мобильном, reduced-motion, Save-Data и deviceMemory=2 тяжёлая сцена не запрашивается. Ошибок JavaScript — 0. Скриншоты: `output/playwright/rebuild/`.
+
+Отдельно открыты две защищённые страницы CMS (Site Settings и автомобиль): вкладки RU/KK/EN работают; реального сохранения контента при этой проверке не было. Доступ не публиковался. `reports/admin_browser_check.json` и `reports/browser_check.json` содержат результаты.
+
+220 UI-строк переведены и собраны в PO/MO; отсутствующих ключей нет. Наличие всех русских и казахских букв проверено в итоговых self-hosted шрифтах. Переводы контента каталога/SEO не выдуманы и остаются RU fallback/noindex до заполнения.
+
+Compose production/dev и alias проверены по официальной JSON Schema. Все три Nginx-конфига проходят `nginx -t` в нативном Nginx 1.30.5 с адаптированными локальными путями/портами. Shell entrypoint/init/backup проходят `bash -n`. Проверены три стадии Dockerfile, non-root UID, healthcheck и PG18 volume layout.
+
+Реальный локальный Nginx: Brotli, gzip, identity и q=0 возвращают корректные декодируемые байты без двойного сжатия, верные MIME/cache headers, health 200, исходные SVG/video 200, изображение через ровно один 301 → 200 (`reports/nginx_http.json`).
+
+Сборка Vite и лимит Three/scene/decoder успешны. Показатели Lighthouse вынесены в `PERFORMANCE_REPORT.md`; отчёты JSON сохранены. Первоначальная DB/media копия восстановлена и проверена до редизайна; финальная копия 20261002T221404Z также восстановлена: 91/4/302, 3893 медиафайла; проверочная БД оставлена, прежние копии сохранены (`backup_report.json`).
+
+**Не проверено:** Docker image build / compose up на Linux (Docker отсутствует), реальный DNS/TLS/сертификаты, провайдер уведомлений (не подключён), доставка событий в production GTM/GA4/Метрику, полевые INP/CWV, внешний Rich Results, финальная лицензированная модель и окончательные KK/EN/юридические тексты. Нативный Nginx и статическая проверка не заменяют контейнерный запуск.
+
+Воспроизведение команд — README.md и DEPLOY.md. Старые root-отчёты, относящиеся к предыдущей версии, сохранены как история и не заменяют текущие результаты.

@@ -9,3 +9,6 @@ output
 __pycache__
 *.pyc
 .git
+static/build
+design_refs
+tools/write_rebuild_*.py

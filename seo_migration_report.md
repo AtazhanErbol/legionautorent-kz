@@ -1,3 +1,5 @@
+> Исторический документ предыдущей реализации. Актуальные решения от 03.10.2026: README.md, DEPLOY.md и reports/SEO_MIGRATION_REPORT.md.
+
 # SEO migration report
 
 Проверено 122 старых URL: 95 успешных и 27 HTTP 500.

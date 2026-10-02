@@ -1,47 +1,88 @@
-# Legion Auto Rent
+# Legion Auto Rent — новая реализация
 
-Новая серверная версия сайта на Django 5.2 LTS и PostgreSQL, созданная отдельно от действующего production. Старые русские URL сохранены. KZ — `/kz/` с кодом `kk`, EN — `/en/`. Формы сохраняют заявки менеджеру, без онлайн-оплаты и realtime availability.
+Django 5.2 LTS, PostgreSQL 18, серверные шаблоны, небольшой Vite/Three.js frontend. Сохранены 91 автомобиль, 4 города, 302 связи фотографий и все 95 работавших URL старого сайта. Старые снимки и исходные медиа сохранены. Предыдущий интерфейс доступен в Git checkpoint `d5e7e0a`.
 
-## Локальный просмотр
+## Локальный запуск на этом компьютере
 
 ```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+& 'C:\Program Files\nodejs\npm.cmd' ci --ignore-scripts
+& 'C:\Program Files\nodejs\npm.cmd' run build
+.\.venv\Scripts\python.exe tools/precompress_assets.py
 .\tools\start_dev.ps1
 ```
 
-Сайт: http://127.0.0.1:8000/ · Admin: http://127.0.0.1:8000/admin/.
+Сайт: http://127.0.0.1:8000/ ; админка: http://127.0.0.1:8000/control-legion/. Изолированная существующая PostgreSQL запускается на 127.0.0.1:55432, её каталог — `.local/postgres/`. Скрипт ничего не удаляет. Локальный доступ администратора хранится в игнорируемом `.local/admin-access.txt`, пароль в документацию не переносится.
 
-Для просмотра с компрессией и manifest static: `.\tools\start_dev.ps1 -OptimizedPreview`. Сайт и admin будут на http://127.0.0.1:8002/. Оба режима используют изолированную PostgreSQL на порту 55432 и запрещают индексацию. OptimizedPreview служит для локальной проверки, production запускается через Gunicorn/Nginx по DEPLOYMENT.md.
+Для новой установки: `.env.example` → `.env`, настроить PostgreSQL `DATABASE_URL`, выполнить `migrate`, `createcachetable`, `bootstrap_legacy`, `createsuperuser`. `DOWNLOAD_LEGACY_IMAGES=true` разрешает скачивание недостающих оригиналов. Для текущей установки повторно создавать БД не нужно. Python 3.12 — целевой runtime контейнера; зависимости закреплены в `requirements.lock` и `package-lock.json`.
 
-Созданный локальный admin доступ находится в `.local/admin-access.txt` (игнорируется Git). Для нового окружения: `python manage.py createsuperuser`.
+`tools/start_dev.ps1 -OptimizedPreview` открывает сборку с WhiteNoise на 8002 (также noindex). После изменения frontend сначала build; после collectstatic выполнить `python tools/precompress_assets.py --root staticfiles/build`. Локальные 8003/8004 используются только для аудита через Django/Nginx с production robots, поэтому слушают исключительно loopback. Внешний staging всегда остаётся noindex.
 
-## Архитектура
+## Данные и SEO
 
-core — настройки, контент, локализация, шаблоны; cars — каталог/изображения/тарифы/скидки; locations — города; pages — CMS/FAQ; bookings — заявки и антиспам; seo — переводы, canonical, redirects и sitemap; analytics — attribution. Партнёрский блок управляется SiteSettings и переводами, без формы и отдельной страницы.
-
-Admin позволяет редактировать машины, города, классы, фото/порядок/alt, цены, тарифы, SEO, страницы, FAQ, преимущества/условия, настройки партнёрства и заявки. KZ/EN inline sections содержат отдельные поля и публикацию. Для новых автомобилей URL/legacy ID создаются автоматически; импортированные пути при редактировании не меняются.
-
-## Импорт и проверки
+- `migration/normalized.json`: основной извлечённый каталог; `migration/media_manifest.json`: источник → оригинал/варианты, SHA256.
+- `migration/snapshot/`, `seo_audit_old_site.csv/json`, `old-home.html`: первоначальные HTML и аудит.
+- `migration/rebuild/snapshot/`, `live_audit.json`, `kazakh_audit.json`, `brand/`: повторная проверка действующего сайта и палитры.
+- `media/`: оригиналы и добавленные AVIF/WebP. `backups/`: DB/media архивы; `.local/rebuild-content-export.json`: дополнительный приватный экспорт. Всё это вне Git.
+- `static/models/hero.glb`, `hero_model_names.md`, `design_refs/3d/`: предоставленные ассеты сохранены. Сжатая копия — `hero-compressed.glb`.
 
 ```powershell
-.\.venv\Scripts\python.exe manage.py migrate_legion_data --dry-run
-.\.venv\Scripts\python.exe manage.py migrate_legion_data
-.\.venv\Scripts\python.exe manage.py test --noinput
-.\.venv\Scripts\python.exe tools\audit_new.py
-.\.venv\Scripts\python.exe tools\browser_smoke.py
+.\.venv\Scripts\python.exe manage.py import_legacy --dry-run
+.\.venv\Scripts\python.exe manage.py import_legacy
+.\.venv\Scripts\python.exe manage.py optimize_images
+.\.venv\Scripts\python.exe manage.py restore_legacy_assets
+.\.venv\Scripts\python.exe manage.py verify_migration
 ```
 
-Повторный импорт не создаёт дубли и не перезаписывает редакторские правки. `--refresh` — только осознанное обновление после backup. `tools/crawl_legacy.py` обновляет HTTP snapshot, `tools/normalize_legacy.py` готовит map, `--download-images` переносит originals/WebP. Старый production читается, формы туда не отправляются.
+`import_legacy` идемпотентен, сохраняет точные slug/ID, но **по требованию владельца возвращает SEO и цены к live/raw источнику даже поверх правок CMS**. Перед применением смотрите dry-run и `reports/price_availability_diff.csv`; он не меняет БД. Текущих расхождений цен и публичной доступности нет. Автоматическая синхронизация с live не запускается. Снимок фиксирует момент аудита, а не постоянно обновляющийся прайс. Публичная карточка означает приём заявки, а не свободные даты.
 
-Assets уже сохранены. Для обновления vendor: `npm ci` → `npm run vendor`. Для сборки интерфейсных PO/MO: requirements-dev.txt и `python tools/build_messages.py`.
+RU остаётся без префикса; KK — `/kk/`, EN — `/en/`. Все 122 проверенных `/kz/` URL на старом сервере вернули 404, казахских страниц и ссылок не найдено. `/kz/` не перенаправляется. Hreflang использует `kk`; переключение языка сохраняет текущий автомобиль/город. Переводы с неполными SEO/текстами показывают RU fallback, предупреждение и noindex, не попадают в sitemap до публикации. Публичный поиск не заменяет закрытый отчёт Search Console о покрытии.
 
-## Документы
+27 старых 500 всё ещё возвращают 500 на live; в новой версии это временные 404 без перенаправлений на главную. Для каждого адреса есть строка в `reports/legacy_500_recheck.csv`; рекомендуется восстановление из БД владельца, поскольку эквивалентная страница не доказана. Полное решение — `reports/SEO_MIGRATION_REPORT.md`.
 
-- SEO_MIGRATION_PLAN.md, seo_audit_old_site.csv/json, seo_url_migration.csv.
-- DATA_MIGRATION_MAP.md, data_migration_report.md/json и media manifest.
-- TRANSLATION_ARCHITECTURE.md, translation_migration_report.md.
-- seo_migration_report.md, seo_audit_new_site.json, seo_content_differences.csv.
-- DEPLOYMENT.md, deploy/ и backup_report.json.
-- RELEASE_STATUS.md — фактический статус и оставшиеся release gates.
-- TEST_REPORT.md и PERFORMANCE_REPORT.md — результаты проверок и ограничения локальных измерений.
+Старые `/img/legionautorent.svg` и `/video/video-2.mp4?v=1.1` обслуживаются локально; 300 известных старых URL фотографий перенаправляются одним 301 на сохранённый оригинал. Никаких запросов к самому себе после переноса домена.
 
-Не объявлять production выпущенным по одному локальному preview: старые 500, переводы, юридические drafts, реальные характеристики/условия, лицензированная GLB и analytics configuration требуют отдельного закрытия. Автоматический перевод старых текстов не выполняется; fallback понятен пользователю и не индексируется.
+## Работа в админке
+
+Автомобили: фильтры города/класса/статуса, поиск, массовое включение/скрытие/избранное, галерея с порядком drag-and-drop, характеристики, дополнительные пары параметр–значение, тарифы/скидки и SEO. Не меняйте импортированный slug при изменении названия автомобиля. Пустые характеристики не выдумываются.
+
+Вкладки RU/KK/EN открывают переводы. RU — основные поля, KK/EN — связанные записи с отдельным флагом публикации. Индикаторы в списках показывают отсутствующие/черновые переводы. Редактируются страницы, FAQ, города, шаги/преимущества, контакты, партнёрский блок, alt/caption фото и подписи тарифов. Изменения инвалидируют общий кеш контекста страниц; CSRF и CSP nonce формируются заново на каждый ответ.
+
+Заявки «Бронирование»/«Обратный звонок» сохраняются с телефоном, городом, автомобилем, датами, источником/UTM, статусом и заметками. Есть CSRF, honeypot, лимит 5 попыток за 15 минут; админский вход блокируется после 5 ошибок на час. Телефон и WhatsApp остаются основными действиями. Онлайн-оплаты и обещания свободных дат нет. Уведомления по внешнему провайдеру не подключены; переключатель зарезервирован и выключен.
+
+В Site Settings редактируются контакты, часы, robots, GTM/GA4/Метрика, верификация, модель/постер и карта имён деталей. Для пользовательского GLB укажите права/лицензию; лимит 3 МБ. Включённая загруженная модель имеет приоритет над путём. Значения `headlightMaterials`, `taillightMaterials`, `headlightNodes`, `wheelNodes` позволяют заменить ассет без правки логики. Необязательный локальный WebM задаётся отдельно; по умолчанию используется статический постер.
+
+## Дизайн и 3D
+
+Палитра получена из CSS и SVG действующего сайта: `#F7B500` основной жёлтый, `#ffdd56` hover, `#FFC355` логотип, `#000000`, `#1F1F1F`, `#FFFFFF`. Цвета зафиксированы в CSS custom properties. Шрифты Exo 2 (заголовки) и Golos Text (текст), self-hosted WOFF2, font-display: swap; наличие ә, ғ, қ, ң, ө, ұ, ү, һ, і проверено. Лицензии OFL лежат рядом. Исходный тяжёлый SVG логотипа сохранён, интерфейс использует уменьшенную WebP-копию.
+
+Three.js/OrbitControls и GSAP загружаются после idle и появления hero в viewport. На ширине <768, Save-Data, reduced-motion и слабом устройстве остаётся постер. Скролл меняет ракурс, свет и текст; есть ручное вращение и переключатель фар. Вертикальный touch остаётся прокруткой страницы. Рендер приостанавливается вне экрана/в скрытой вкладке, DPR ограничен 2; ресурсы освобождаются при уходе. Студийная environment map генерируется без HDR-загрузки, отражение упрощённое, свечение — лёгкие спрайты/плоскости.
+
+Предоставленная модель — **временный условный автомобиль**, не готовая фотореалистичная модель автопарка. Это ограничивает визуальную детализацию, но интерактивность работает. В `reports/asset_budget.json` проверяется Three + сцена + meshopt <150 000 байт gzip; отдельный GSAP/ScrollTrigger занимает ещё около 42 КБ gzip. Модель 13 КБ. Полный набор 3D-зависимостей с GSAP около 192 КБ gzip, основной JS около 2,6 КБ; бюджет относится к названным в ТЗ Three и сцене. Референсы не выдаются за клиентские фото.
+
+## Черновики партнёрского блока для проверки человеком
+
+RU опубликован дословно: «Стать партнером Легионавто» / «Вы можете стать нашим партнером предоставив нам ваше авто на субаренду.» Только телефон и WhatsApp, без инвесторской формы.
+
+KK: «Легионавто серіктесі болыңыз» / «Автокөлігіңізді бізге қосалқы жалға беру арқылы серіктесіміз бола аласыз.» Сообщение: «Сәлеметсіз бе! Легионавто серіктесі болып, автокөлігімді қосалқы жалға бергім келеді.»
+
+EN: “Become a Legion Auto partner” / “Become our partner by providing your car to us for sublease.” Сообщение: “Hello! I would like to become a Legion Auto partner and provide my car for sublease.”
+
+Оба перевода сохранены как неопубликованные черновики. Автоматического перевода отсутствующего каталога нет. Проверьте также контактные/юридические тексты, характеристики, депозиты, лимиты пробега, часы и координаты: отсутствующие у источника значения намеренно не заполнялись предположениями.
+
+## Проверки и документы
+
+```powershell
+.\.venv\Scripts\python.exe manage.py test --settings=legion.config.testing --keepdb --noinput
+.\.venv\Scripts\python.exe manage.py makemigrations --check --dry-run
+.\.venv\Scripts\python.exe tools/build_messages.py
+.\.venv\Scripts\python.exe tools/rebuild_browser_check.py
+.\.venv\Scripts\python.exe tools/validate_deployment.py
+& 'C:\Program Files\nodejs\npm.cmd' run check:budget
+```
+
+`--keepdb` сохраняет отдельную тестовую БД. Тесты импортера записывают CSV в reports; после них повторите `import_legacy --dry-run` на рабочей БД, чтобы файл расхождений отражал реальные данные. UI проверяется в Chrome; инструмент `validate_deployment.py` использует официальный schema Compose и опционально локальный Nginx. Для воспроизведения Lighthouse нужен Node и Chrome, команда приведена в `PERFORMANCE_REPORT.md`.
+
+Актуальные документы: `DEPLOY.md`, `reports/SEO_MIGRATION_REPORT.md`, `TEST_REPORT.md`, `PERFORMANCE_REPORT.md`, `RELEASE_STATUS.md`. Прежние отчёты сохранены как история checkpoint, а не действующее ТЗ. Одноразовые `tools/write_rebuild_*.py` — исторические генераторы начальной реализации; повторно запускать их поверх готового кода нельзя.
+
+Docker build/up, реальные HTTPS/DNS, отправка событий в production-аналитику и полевые Core Web Vitals требуют сервера/доступа владельца и здесь не объявляются проверенными.

@@ -1,0 +1,49 @@
+{
+  "date_local": "2026-10-03",
+  "django_suite": {
+    "tests": 57,
+    "passed": 57,
+    "postgresql": true,
+    "test_database_retained": true
+  },
+  "importer_followup": {
+    "tests": 6,
+    "passed": 6,
+    "unchanged_car_timestamps": true
+  },
+  "deployment_check": "no issues",
+  "makemigrations_check": "no changes",
+  "ui_translations": {
+    "total": 220,
+    "missing": 0
+  },
+  "migration": {
+    "legacy_urls": 122,
+    "preserved_200": 95,
+    "old_500_now_404": 27,
+    "passed": 122,
+    "failures": []
+  },
+  "backup": {
+    "timestamp_utc": "20261002T221404Z",
+    "database": "legion-20261002T221404Z.dump",
+    "media": "media-20261002T221404Z.tar.gz",
+    "database_sha256": "796f933a183d112e7969791af742badaa32313b0953f814df722780e88cde1b6",
+    "media_sha256": "52042b896e02739d1c812e4c2f37f972c9b83bec72abc444f3dabf519d8fe498",
+    "restore_verified": true,
+    "restore_database_retained": "legion_restore_verify_20261002t221404z",
+    "restored_counts": {
+      "cars_car": 91,
+      "locations_city": 4,
+      "cars_carimage": 302
+    },
+    "media_files": 3893,
+    "scope": "local development DB and imported media; not legacy production DB"
+  },
+  "limitations": [
+    "Docker build/up not run",
+    "Production DNS/TLS/analytics not tested",
+    "Field INP not measured",
+    "Final licensed GLB and content translations pending owner review"
+  ]
+}

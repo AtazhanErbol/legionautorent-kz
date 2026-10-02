@@ -34,11 +34,9 @@ try:
         counts={table:restored.execute(sql.SQL('SELECT count(*) FROM {}').format(sql.Identifier(table))).fetchone()[0] for table in ['cars_car','locations_city','cars_carimage']}
     assert counts=={'cars_car':91,'locations_city':4,'cars_carimage':302},counts
 finally:
-    # This uniquely named database was created above from our own backup, never a user database.
-    if created and restore_name.startswith('legion_restore_verify_'):
-        admin.execute(sql.SQL('DROP DATABASE {}').format(sql.Identifier(restore_name)))
+    # Preserve even the verification database: this rebuild explicitly forbids deletion.
     admin.close()
-report={'timestamp_utc':timestamp,'database':dump.name,'media':archive.name,'database_sha256':hashlib.sha256(dump.read_bytes()).hexdigest(),'media_sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'restore_verified':True,'restored_counts':counts,'media_files':media_count,'scope':'local development DB and imported media; not legacy production DB'}
+report={'timestamp_utc':timestamp,'database':dump.name,'media':archive.name,'database_sha256':hashlib.sha256(dump.read_bytes()).hexdigest(),'media_sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'restore_verified':True,'restore_database_retained':restore_name,'restored_counts':counts,'media_files':media_count,'scope':'local development DB and imported media; not legacy production DB'}
 (backup/f'manifest-{timestamp}.json').write_text(json.dumps(report,indent=2),encoding='utf8')
 (ROOT/'backup_report.json').write_text(json.dumps(report,indent=2),encoding='utf8')
 print(json.dumps(report))
