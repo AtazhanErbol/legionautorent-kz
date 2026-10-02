@@ -26,7 +26,7 @@ class MigrationAcceptanceTests(TestCase):
                     self.assertEqual(soup.title.get_text(),item['seo_title'])
                     self.assertEqual(soup.select_one('meta[name=description]')['content'],item['seo_description'])
                     self.assertEqual(soup.select_one('link[rel=canonical]')['href'],settings.SITE_URL+item['legacy_path'])
-                    self.assertEqual({n['hreflang'] for n in soup.select('link[hreflang]')},{'ru','kk','en','x-default'})
+                    self.assertEqual({n['hreflang'] for n in soup.select('link[hreflang]')},{'ru','x-default'})
                     self.assertEqual(len(soup.select('h1')),1)
     def test_import_live_wins_over_database_edits_without_duplicates(self):
         car=Car.objects.filter(slug__contains='_').first();path=car.legacy_path;slug=car.slug;original=car.seo_title

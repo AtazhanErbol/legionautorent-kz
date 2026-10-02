@@ -1,6 +1,52 @@
 import './site.css';
 const $=(selector,root=document)=>root.querySelector(selector);
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+const header=$('.site-header');
+const updateHeader=()=>header?.classList.toggle('is-scrolled',scrollY>32);
+updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
+
+// Every car remains in SSR HTML. Only the presentation is paged, with no request.
+function initFleets(root=document){
+  root.querySelectorAll('[data-fleet]').forEach(fleet=>{
+    if(fleet.dataset.ready)return;fleet.dataset.ready='true';
+    const grid=$('[data-fleet-grid]',fleet),cards=[...grid.querySelectorAll('.car-card')];
+    const more=$('[data-show-more]',fleet),status=$('[data-fleet-status]',fleet),empty=$('[data-fleet-empty]',fleet);
+    let category='',sort='',expanded=false;
+    const render=()=>{
+      const matching=cards.filter(card=>!category||card.dataset.category===category);
+      const ordered=sort?[...matching].sort((a,b)=>(Number(a.dataset.price)-Number(b.dataset.price))*(sort==='price'?1:-1)):matching;
+      cards.forEach(card=>card.hidden=true);
+      ordered.forEach((card,index)=>{grid.append(card);card.hidden=!expanded&&index>=12;});
+      grid.dataset.ready='true';more.hidden=expanded||matching.length<=12;
+      status.textContent=matching.length?`${Math.min(expanded?matching.length:12,matching.length)} / ${matching.length}`:'';
+      empty.hidden=!!matching.length||!cards.length;
+      fleet.querySelectorAll('[data-category]:not(.car-card)').forEach(button=>{const active=button.dataset.category===category;button.classList.toggle('is-active',active);button.setAttribute('aria-pressed',String(active));});
+    };
+    fleet.setCategory=value=>{category=value;expanded=false;render();};
+    fleet.querySelectorAll('button[data-category]').forEach(button=>button.addEventListener('click',()=>fleet.setCategory(button.dataset.category)));
+    $('[data-fleet-sort]',fleet)?.addEventListener('change',event=>{sort=event.target.value;expanded=false;render();});
+    more.addEventListener('click',()=>{expanded=true;render();});render();
+  });
+}
+initFleets();
+const quick=$('[data-quick-search]');
+if(quick){
+  const start=$('[name=start_date]',quick),end=$('[name=end_date]',quick);
+  const validateDates=()=>{end.min=start.value;end.setCustomValidity(start.value&&end.value&&end.value<=start.value?quick.dataset.dateError:'');};
+  start.addEventListener('change',validateDates);end.addEventListener('change',validateDates);
+  quick.addEventListener('submit',event=>{
+    if($('[name=city]',quick).value!==quick.dataset.city)return;
+    event.preventDefault();const fleet=$('#fleet [data-fleet]');
+    fleet.setCategory($('[name=category]',quick).value);
+    // Dates are a request, never a claim of confirmed availability.
+    fleet.querySelectorAll('[data-event=click_whatsapp]').forEach(link=>{
+      link.dataset.originalHref||=link.href;const url=new URL(link.dataset.originalHref);
+      const dates=[start.value,end.value].filter(Boolean).join(' — ');
+      if(dates)url.searchParams.set('text',`${url.searchParams.get('text')} ${dates}`);link.href=url;
+    });
+    $('#fleet').scrollIntoView({behavior:reduced.matches?'auto':'smooth'});
+  });
+}
 window.dataLayer=window.dataLayer||[];
 document.addEventListener('click',event=>{
   const link=event.target.closest('[data-event]');
@@ -42,7 +88,7 @@ if(filters&&window.fetch){
     try{
       const response=await fetch(url,{headers:{'X-Legion-Partial':'catalog'},signal:active.signal});
       if(!response.ok)throw new Error('Catalog response');
-      const html=await response.text();result.innerHTML=html;
+      const html=await response.text();result.innerHTML=html;initFleets(result);
       if(push)history.pushState(null,'',url);$('meta[name=robots]').content='noindex,follow';
     }catch(error){if(error.name!=='AbortError')location.href=url;}finally{result.removeAttribute('aria-busy');}
   };
@@ -74,10 +120,6 @@ if(analytics){
   const start=()=>{
     if(loaded)return;loaded=true;
     if(analytics.dataset.gtm){window.dataLayer.push({'gtm.start':Date.now(),event:'gtm.js'});script(`https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(analytics.dataset.gtm)}`);}
-    else{
-      if(analytics.dataset.ga){script(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(analytics.dataset.ga)}`);const gtag=(...args)=>window.dataLayer.push(args);gtag('js',new Date());gtag('config',analytics.dataset.ga);}
-      if(analytics.dataset.metrika){window.ym=function(){(window.ym.a=window.ym.a||[]).push(arguments);};window.ym.l=Date.now();script('https://mc.yandex.ru/metrika/tag.js');window.ym(Number(analytics.dataset.metrika),'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});}
-    }
   };
   window.addEventListener('load',()=>setTimeout(()=>{if('requestIdleCallback'in window)requestIdleCallback(start,{timeout:4000});else start();},2500),{once:true});
 }

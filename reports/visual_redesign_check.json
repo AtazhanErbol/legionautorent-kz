@@ -1,0 +1,140 @@
+{
+  "round": "3",
+  "pages": [
+    {
+      "name": "home",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "h1": 1,
+      "hero": "ready",
+      "cards": 59,
+      "visibleCards": 12
+    },
+    {
+      "name": "city",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "h1": 1,
+      "hero": "poster",
+      "cards": 14,
+      "visibleCards": 12
+    },
+    {
+      "name": "car",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "h1": 1,
+      "hero": "poster",
+      "cards": 3,
+      "visibleCards": 3
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "h1": 1,
+      "hero": "poster",
+      "cards": 59,
+      "visibleCards": 12
+    },
+    {
+      "name": "city",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "h1": 1,
+      "hero": "poster",
+      "cards": 14,
+      "visibleCards": 12
+    },
+    {
+      "name": "car",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "h1": 1,
+      "hero": "poster",
+      "cards": 3,
+      "visibleCards": 3
+    }
+  ],
+  "scroll": [
+    {
+      "scroll": 0,
+      "heroBottom": 944,
+      "fleetTop": 1694,
+      "searchBottom": 1000,
+      "gap": 694,
+      "solidHeader": false,
+      "visibleGap": 0
+    },
+    {
+      "scroll": 400,
+      "heroBottom": 944,
+      "fleetTop": 1294,
+      "searchBottom": 1000,
+      "gap": 294,
+      "solidHeader": true,
+      "visibleGap": 0
+    },
+    {
+      "scroll": 740,
+      "heroBottom": 944,
+      "fleetTop": 954,
+      "searchBottom": 1000,
+      "gap": 0,
+      "solidHeader": true,
+      "visibleGap": 0
+    },
+    {
+      "scroll": 900,
+      "heroBottom": 794.0009765625,
+      "fleetTop": 794,
+      "searchBottom": 850.0009765625,
+      "gap": 0,
+      "solidHeader": true,
+      "visibleGap": 0
+    },
+    {
+      "scroll": 1100,
+      "heroBottom": 594.0009765625,
+      "fleetTop": 594,
+      "searchBottom": 650.0009765625,
+      "gap": 0,
+      "solidHeader": true,
+      "visibleGap": 0
+    },
+    {
+      "scroll": 1400,
+      "heroBottom": 294.0009765625,
+      "fleetTop": 294,
+      "searchBottom": 350.0009765625,
+      "gap": 0,
+      "solidHeader": true,
+      "visibleGap": 0
+    }
+  ],
+  "checks": {
+    "show_more_1440": true,
+    "filter_sort_1440": true,
+    "gallery_1440": true,
+    "show_more_390": true,
+    "filter_sort_390": true,
+    "mobile_menu_and_language_targets": true,
+    "gallery_390": true,
+    "ajax_catalog": true,
+    "overflow_320": false,
+    "overflow_768": false,
+    "overflow_1024": false,
+    "overflow_1920": false,
+    "reduced_motion_fallback": true,
+    "save_data_fallback": true,
+    "low_memory_fallback": true,
+    "all_91_cars_without_js": true
+  },
+  "errors": []
+}

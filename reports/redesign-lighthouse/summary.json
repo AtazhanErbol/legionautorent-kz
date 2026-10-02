@@ -154,39 +154,5 @@
       "hero_glb_requested": false,
       "hero_chunk_requested": false
     }
-  ],
-  "car_mobile_repeats": {
-    "page": "car",
-    "profile": "mobile",
-    "samples": 3,
-    "scores": [
-      99,
-      99,
-      99
-    ],
-    "lcp_ms": [
-      2180,
-      2105,
-      2104
-    ],
-    "median_score": 99,
-    "median_lcp_ms": 2105
-  },
-  "baseline_mobile": [
-    {
-      "page": "home",
-      "performance": 98,
-      "lcp_ms": 2329
-    },
-    {
-      "page": "car",
-      "performance": 99,
-      "lcp_ms": 2179
-    },
-    {
-      "page": "catalog",
-      "performance": 99,
-      "lcp_ms": 2103
-    }
   ]
 }

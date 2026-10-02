@@ -1,6 +1,6 @@
 {
-  "main_gzip_bytes": 2640,
-  "three_scene_decoder_gzip_bytes": 149300,
+  "main_gzip_bytes": 3109,
+  "three_scene_decoder_gzip_bytes": 149303,
   "three_scene_budget_bytes": 150000,
   "motion_gzip_bytes": 42294,
   "model_bytes": 13012,
@@ -8,8 +8,8 @@
   "gzip_sizes": {
     "motion": 42294,
     "three": 124403,
-    "hero": 19200,
-    "main": 2640,
+    "hero": 19203,
+    "main": 3109,
     "meshopt_decoder.module": 5697,
     "DRACOLoader": 2536
   }

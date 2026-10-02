@@ -6,7 +6,7 @@ LANGUAGES=('ru','kk','en')
 def faq_languages():
     from pages.models import FAQ
     faqs=list(FAQ.objects.filter(active=True,car__isnull=True,page__isnull=True).prefetch_related('translations'))
-    return ['ru']+[lang for lang in ('kk','en') if faqs and all(get_translation(f,lang) for f in faqs)]
+    return ['ru']+[lang for lang in ('kk','en') if faqs and all((t:=get_translation(f,lang)) and t.title and t.content for f in faqs)]
 
 def languages_for(obj):
     if not obj or not obj.pk:return list(LANGUAGES)
@@ -36,10 +36,10 @@ def page_seo(request,obj=None,title='',description='',h1='',noindex=False,path=N
     if settings.IS_STAGING:robots='noindex,nofollow'
     legacy=getattr(obj,'legacy_meta',{}).get('open_graph',{}) if obj and lang=='ru' else {}
     return {'title':title,'description':description,'h1':h1,'canonical':canonical,'robots':robots,'fallback':fallback,
-            'alternates':[{'language':l,'url':settings.SITE_URL+language_url(path,l)} for l in LANGUAGES],
+            'alternates':[{'language':l,'url':settings.SITE_URL+language_url(path,l)} for l in available],
             'default_url':settings.SITE_URL+path,'og_title':(localized(obj,'og_title') if obj else '') or title,
             'og_description':(localized(obj,'og_description') if obj else '') or description,'og_image':getattr(obj,'og_image',''),
-            'og_url':legacy.get('og:url',canonical),'og_type':legacy.get('og:type','website'),'og_site_name':legacy.get('og:site_name','Legion Auto Rent'),'og_video':legacy.get('og:video','')}
+            'og_url':canonical if obj and obj._meta.model_name=='city' else legacy.get('og:url',canonical),'og_type':legacy.get('og:type','website'),'og_site_name':legacy.get('og:site_name','Legion Auto Rent'),'og_video':legacy.get('og:video','')}
 
 def schemas(request,seo,site,breadcrumbs=None,car=None,city=None,faqs=None):
     root=settings.SITE_URL;lang=request.LANGUAGE_CODE

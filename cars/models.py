@@ -34,7 +34,7 @@ class CarQuerySet(models.QuerySet):
     def public(self):
         return self.filter(active=True, category__active=True, cities__active=True).distinct()
     def with_content(self):
-        return self.select_related('brand', 'category').prefetch_related('cities__translations', 'translations', 'category__translations', 'features', Prefetch('images', queryset=CarImage.objects.prefetch_related('translations').order_by('-is_main', 'sort_order', 'pk')))
+        return self.select_related('brand', 'category').prefetch_related('cities__translations', 'translations', 'category__translations', 'features', 'discounts', Prefetch('images', queryset=CarImage.objects.prefetch_related('translations').order_by('-is_main', 'sort_order', 'pk')))
 
 class Car(SEOFields):
     name = models.CharField('Название', max_length=200)

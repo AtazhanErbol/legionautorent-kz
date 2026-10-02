@@ -1,0 +1,17 @@
+{
+  "page": "car",
+  "profile": "mobile",
+  "samples": 3,
+  "scores": [
+    99,
+    99,
+    99
+  ],
+  "lcp_ms": [
+    2180,
+    2105,
+    2104
+  ],
+  "median_score": 99,
+  "median_lcp_ms": 2105
+}

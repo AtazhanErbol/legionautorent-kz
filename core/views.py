@@ -1,7 +1,6 @@
 import secrets
 from django.conf import settings
 from django.core import signing
-from django.core.paginator import Paginator
 from django.db import connection
 from django.db.models import Q,Min
 from django.http import Http404,HttpResponseRedirect,JsonResponse
@@ -68,9 +67,9 @@ def catalog(request,category_slug=None):
                 qs=qs.order_by(*sort)
             else:qs=qs.none()
         else:qs=qs.order_by('-featured','sort_order','pk')
-        page=Paginator(qs,12).get_page(request.GET.get('page'));list(page.object_list)
+        page=list(qs)
         params=request.GET.copy();params.pop('page',None)
-        return {'seo':page_seo(request,category,title=_('Автопарк | Legion Auto Rent'),description=_('Выберите автомобиль для аренды без водителя. Цены, фотографии и классы автомобилей в Legion Auto Rent.'),h1=_('Ваш маршрут. Ваш автомобиль.'),noindex=bool(request.GET),available_languages=catalog_languages() if not category else None),'category':category,'cars':page,'pagination_query':params.urlencode(),'breadcrumbs':[(_('Главная'),language_url('/')),(_('Автопарк'),language_url('/cars/'))]}
+        return {'seo':page_seo(request,category,title=_('Автопарк | Legion Auto Rent'),description=_('Выберите автомобиль для аренды без водителя. Цены, фотографии и классы автомобилей в Legion Auto Rent.'),h1=_('Ваш маршрут. Ваш автомобиль.'),noindex=bool(request.GET),available_languages=catalog_languages() if not category else None),'category':category,'cars':page,'car_count':len(page),'pagination_query':params.urlencode(),'breadcrumbs':[(_('Главная'),language_url('/')),(_('Автопарк'),language_url('/cars/'))]}
     context=page_context(request,build);context['filter_form']=form
     if request.headers.get('X-Legion-Partial')=='catalog':return render(request,'components/catalog_results.html',context)
     return present(request,'catalog.html',context)

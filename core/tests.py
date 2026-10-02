@@ -73,7 +73,30 @@ class SiteTests(TestCase):
         self.assertContains(response,'<html lang="kk">')
         self.assertContains(response,'noindex,follow')
         self.assertContains(response,'translation-notice')
-        self.assertContains(response,'hreflang="kk"')
+        self.assertNotContains(response,'hreflang="kk"')
+        self.assertContains(response,'hreflang="ru"')
+    def test_incomplete_published_translation_excluded_from_html_and_sitemap(self):
+        self.translated(language='en')
+        Translation.objects.filter(language='en').update(content='')
+        for path in [self.car.legacy_path,'/en'+self.car.legacy_path]:
+            self.assertNotContains(self.client.get(path),'hreflang="en"')
+        self.assertContains(self.client.get('/en'+self.car.legacy_path),'noindex,follow')
+        self.assertNotContains(self.client.get('/sitemap-cars.xml'),'/en'+self.car.legacy_path)
+    def test_city_og_url_matches_canonical_without_changing_source(self):
+        from bs4 import BeautifulSoup
+        self.other.legacy_meta={'open_graph':{'og:url':'https://legionautorent.kz/'}}
+        self.other.save()
+        soup=BeautifulSoup(self.client.get(self.other.legacy_path).content,'html.parser')
+        self.assertEqual(soup.select_one('meta[property="og:url"]')['content'],soup.select_one('link[rel=canonical]')['href'])
+        self.other.refresh_from_db()
+        self.assertEqual(self.other.legacy_meta['open_graph']['og:url'],'https://legionautorent.kz/')
+    def test_catalog_renders_all_cars_before_client_pagination(self):
+        for index in range(14):
+            car=Car.objects.create(name=f'Test {index}',slug=f'test-{index}',legacy_id=f'pagination:{index}',brand=self.brand,category=self.category,base_price=20000)
+            car.cities.add(self.city)
+        response=self.client.get('/cars/')
+        self.assertContains(response,'class="car-card"',count=15)
+        self.assertContains(response,'data-show-more')
     def test_draft_translation_not_indexed(self):
         self.translated().delete()
         Translation.objects.create(content_object=self.car,language='en',published=False,title='Draft')

@@ -1,0 +1,7 @@
+{% load i18n legion_tags %}
+<div class="search-wrap container"><form class="quick-filter" action="{{ '/cars/'|local_url }}" method="get" data-quick-search data-city="{{ city.slug }}" data-date-error="{% trans 'Возврат должен быть позже получения.' %}">
+<div><label for="quick-city">{% icon 'pin' %}{% trans 'Город' %}</label><select id="quick-city" name="city">{% for item in nav_cities %}<option value="{{ item.slug }}" {% if item.pk == city.pk %}selected{% endif %}>{{ item|tr:'name' }}</option>{% endfor %}</select></div>
+<div><label for="quick-from">{% icon 'calendar' %}{% trans 'Дата получения' %}</label><input id="quick-from" type="date" name="start_date"></div>
+<div><label for="quick-to">{% icon 'calendar' %}{% trans 'Дата возврата' %}</label><input id="quick-to" type="date" name="end_date"></div>
+<div><label for="quick-category">{% icon 'car' %}{% trans 'Класс автомобиля' %}</label><select id="quick-category" name="category"><option value="">{% trans 'Все классы' %}</option>{% for cat in nav_categories %}<option value="{{ cat.slug }}">{{ cat|tr:'name' }}</option>{% endfor %}</select></div>
+<button class="button" type="submit">{% trans 'Найти автомобиль' %}{% icon 'arrow' %}</button></form></div>

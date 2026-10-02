@@ -688,3 +688,18 @@ msgstr "min"
 
 msgid "оформление"
 msgstr "paperwork"
+
+msgid "Рекомендуемые"
+msgstr "Recommended"
+
+msgid "Показать ещё"
+msgstr "Show more"
+
+msgid "Об аренде в вашем городе"
+msgstr "Renting in your city"
+
+msgid "Читать подробнее"
+msgstr "Read more"
+
+msgid "до"
+msgstr "up to"

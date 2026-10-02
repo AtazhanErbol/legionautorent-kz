@@ -45,15 +45,15 @@
       "profile": "mobile",
       "url": "http://127.0.0.1:8004/car/lexus-lx-570-superior",
       "lighthouse_version": "13.5.0",
-      "fetch_time": "2026-10-02T23:11:03.859Z",
+      "fetch_time": "2026-10-02T23:06:24.878Z",
       "scores": {
-        "performance": 99,
+        "performance": 98,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
         "agentic-browsing": 100
       },
-      "lcp_ms": 2180,
+      "lcp_ms": 2330,
       "cls": 0.000335749800254102,
       "tbt_ms": 0,
       "hero_glb_requested": false,
@@ -121,7 +121,7 @@
       "profile": "desktop",
       "url": "http://127.0.0.1:8004/car/lexus-lx-570-superior",
       "lighthouse_version": "13.5.0",
-      "fetch_time": "2026-10-02T23:12:22.718Z",
+      "fetch_time": "2026-10-02T23:07:21.738Z",
       "scores": {
         "performance": 100,
         "accessibility": 100,
@@ -129,7 +129,7 @@
         "seo": 100,
         "agentic-browsing": 100
       },
-      "lcp_ms": 464,
+      "lcp_ms": 465,
       "cls": 0.006633701955749193,
       "tbt_ms": 0,
       "hero_glb_requested": false,
@@ -153,40 +153,6 @@
       "tbt_ms": 0,
       "hero_glb_requested": false,
       "hero_chunk_requested": false
-    }
-  ],
-  "car_mobile_repeats": {
-    "page": "car",
-    "profile": "mobile",
-    "samples": 3,
-    "scores": [
-      99,
-      99,
-      99
-    ],
-    "lcp_ms": [
-      2180,
-      2105,
-      2104
-    ],
-    "median_score": 99,
-    "median_lcp_ms": 2105
-  },
-  "baseline_mobile": [
-    {
-      "page": "home",
-      "performance": 98,
-      "lcp_ms": 2329
-    },
-    {
-      "page": "car",
-      "performance": 99,
-      "lcp_ms": 2179
-    },
-    {
-      "page": "catalog",
-      "performance": 99,
-      "lcp_ms": 2103
     }
   ]
 }

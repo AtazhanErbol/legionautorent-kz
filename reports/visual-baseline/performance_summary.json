@@ -1,0 +1,51 @@
+{
+  "mode": "Lighthouse mobile simulated throttling, loopback native Nginx, production HTML, analytics disabled",
+  "field_inp_measured": false,
+  "results": [
+    {
+      "page": "home",
+      "url": "http://127.0.0.1:8004/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-02T22:10:39.547Z",
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcp_ms": 2329,
+      "cls": 9.182012023469629e-06,
+      "tbt_ms": 0
+    },
+    {
+      "page": "car",
+      "url": "http://127.0.0.1:8004/car/lexus-lx-570-superior",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-02T22:10:52.606Z",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcp_ms": 2179,
+      "cls": 0.0001141182284506531,
+      "tbt_ms": 0
+    },
+    {
+      "page": "catalog",
+      "url": "http://127.0.0.1:8004/cars/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-02T22:11:04.598Z",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcp_ms": 2103,
+      "cls": 7.126346381095694e-05,
+      "tbt_ms": 0
+    }
+  ]
+}

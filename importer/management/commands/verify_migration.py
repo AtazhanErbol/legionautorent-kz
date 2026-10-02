@@ -7,6 +7,10 @@ from django.core.management.base import BaseCommand,CommandError
 from django.test import Client,override_settings
 from bs4 import BeautifulSoup
 from importer.source import catalogue_source
+from seo.services import languages_for
+from core.i18n import language_url
+from cars.models import Car
+from locations.models import City
 
 def plain(value):return re.sub(r'\s+',' ',value or '').strip()
 class Command(BaseCommand):
@@ -38,9 +42,12 @@ class Command(BaseCommand):
                     if len(headings)!=1:issues.append('h1_count')
                     if canonical!=(raw['canonical'] or settings.SITE_URL+path):issues.append('canonical')
                     alternates={n.get('hreflang'):n.get('href') for n in soup.select('link[rel=alternate][hreflang]')}
-                    for lang,prefix in [('ru',''),('kk','/kk'),('en','/en'),('x-default','')]:
-                        if alternates.get(lang)!=settings.SITE_URL+prefix+path:issues.append('hreflang_'+lang)
+                    obj=(Car.objects if path.startswith('/car/') else City.objects).prefetch_related('translations').get(legacy_path=path)
+                    expected_alternates={lang:settings.SITE_URL+language_url(path,lang) for lang in languages_for(obj)}
+                    expected_alternates['x-default']=settings.SITE_URL+path
+                    if alternates!=expected_alternates:issues.append('hreflang_published_complete')
                     for property,value in raw.get('open_graph',{}).items():
+                        if property=='og:url' and isinstance(obj,City):value=canonical
                         node=soup.find('meta',attrs={'property':property})
                         if value and (not node or node.get('content')!=value):issues.append(property)
                     body=source_obj.get('body') or source_obj.get('description')
@@ -51,7 +58,7 @@ class Command(BaseCommand):
                     if path in ['/','/kostanay/','/ustkamenogorsk/','/pavlodar/']:
                         old_soup=BeautifulSoup((root/'migration/rebuild/snapshot'/raw['snapshot_file']).read_text(encoding='utf8'),'html.parser')
                         old_cars={urlsplit(n['href']).path for n in old_soup.select('a[href]') if urlsplit(n['href']).path.startswith('/car/')}
-                        new_cars={urlsplit(n['href']).path for n in soup.select('.car-card a[href]')}
+                        new_cars={urlsplit(n['href']).path for n in soup.select('.car-card a[href]') if urlsplit(n['href']).path.startswith('/car/')}
                         if old_cars!=new_cars:issues.append('city_car_links')
                     try:
                         for node in soup.select('script[type="application/ld+json"]'):
