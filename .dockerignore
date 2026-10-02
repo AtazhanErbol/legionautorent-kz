@@ -1,0 +1,11 @@
+.venv
+.local
+.env
+node_modules
+media
+staticfiles
+backups
+output
+__pycache__
+*.pyc
+.git

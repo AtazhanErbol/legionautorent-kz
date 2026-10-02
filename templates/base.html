@@ -1,0 +1,36 @@
+{% load static i18n legion_tags %}<!doctype html>
+<html lang="{{ current_language }}">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ seo.title }}</title><meta name="description" content="{{ seo.description }}"><meta name="robots" content="{{ seo.robots }}">
+  <link rel="canonical" href="{{ seo.canonical }}">
+  {% for alternate in seo.alternates %}<link rel="alternate" hreflang="{{ alternate.language }}" href="{{ alternate.url }}">{% endfor %}
+  {% if seo.alternates %}<link rel="alternate" hreflang="x-default" href="{{ seo.default_url }}">{% endif %}
+  <meta property="og:type" content="website"><meta property="og:site_name" content="{{ site.name }}"><meta property="og:title" content="{{ seo.og_title }}"><meta property="og:description" content="{{ seo.og_description }}"><meta property="og:url" content="{{ seo.canonical }}">
+  {% if seo.og_image %}<meta property="og:image" content="{{ seo.og_image }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{{ seo.title }}"><meta name="twitter:description" content="{{ seo.description }}">
+  {% if site.google_verification %}<meta name="google-site-verification" content="{{ site.google_verification }}">{% endif %}{% if site.yandex_verification %}<meta name="yandex-verification" content="{{ site.yandex_verification }}">{% endif %}
+  <meta name="theme-color" content="#20242b">
+  <link rel="icon" href="{% if site.favicon %}{{ site.favicon.url }}{% else %}{% static 'img/favicon.svg' %}{% endif %}" type="{% if not site.favicon %}image/svg+xml{% endif %}">
+  <link rel="preload" href="{% static 'fonts/golos.woff2' %}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  {% block head %}{% endblock %}
+  {% for schema in schemas %}<script type="application/ld+json">{{ schema|json_ld }}</script>{% endfor %}
+  <script defer src="{% static 'js/app.js' %}"></script>
+  {% if analytics_enabled %}{% include 'components/analytics.html' %}{% endif %}
+</head>
+<body {% block body_attrs %}{% endblock %}>
+<a class="skip-link" href="#main">{% trans 'Перейти к содержимому' %}</a>
+<header class="site-header" id="header">
+  <div class="container header-row">
+    <a class="brand" href="{{ '/'|local_url }}">{% if site.logo %}<img src="{{ site.logo.url }}" alt="Legion Auto Rent" width="180" height="42">{% else %}<svg class="brand-mark" width="34" height="38" viewBox="0 0 34 38" aria-hidden="true"><path d="M4 4h8v22h18v8H4z" fill="currentColor"/><path d="M18 4h12v8H18z" fill="#cc2434"/></svg><span>LEGION <small>AUTO RENT</small></span>{% endif %}</a>
+    <nav class="desktop-nav" aria-label="{% trans 'Основная навигация' %}"><a href="{{ '/cars/'|local_url }}">{% trans 'Автопарк' %}</a><a href="{{ '/rental-conditions/'|local_url }}">{% trans 'Условия аренды' %}</a><a href="{{ '/'|local_url }}#cities">{% trans 'Города' %}</a><a href="{{ '/about/'|local_url }}">{% trans 'О компании' %}</a><a href="{{ '/'|local_url }}#faq">FAQ</a><a href="{{ '/contacts/'|local_url }}">{% trans 'Контакты' %}</a></nav>
+    <div class="header-actions"><div class="language-switch" aria-label="{% trans 'Язык' %}">{% for item in language_links %}<a href="{{ item.url }}" lang="{{ item.language }}" {% if item.language == current_language %}aria-current="true" class="selected"{% endif %}>{{ item.label }}</a>{% endfor %}</div><a class="header-phone" href="tel:{{ site.phone_digits }}" data-event="click_phone">{{ site.phone }}</a><a class="button button-small header-book" href="{{ '/booking/'|local_url }}" data-event="booking_start">{% trans 'Забронировать' %}</a><button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="{% trans 'Открыть меню' %}"><span></span><span></span></button></div>
+  </div>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="{% trans 'Мобильная навигация' %}" hidden><a href="{{ '/cars/'|local_url }}">{% trans 'Автопарк' %}</a><a href="{{ '/rental-conditions/'|local_url }}">{% trans 'Условия аренды' %}</a><a href="{{ '/'|local_url }}#cities">{% trans 'Города' %}</a><a href="{{ '/about/'|local_url }}">{% trans 'О компании' %}</a><a href="{{ '/'|local_url }}#faq">FAQ</a><a href="{{ '/contacts/'|local_url }}">{% trans 'Контакты' %}</a></nav>
+</header>
+{% if seo.fallback %}<div class="translation-notice container" role="status">{% trans 'Перевод этой страницы ещё готовится. Ниже показан оригинал на русском языке.' %}</div>{% endif %}
+<main id="main">{% block content %}{% endblock %}</main>
+<footer class="site-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="{{ '/'|local_url }}"><span>LEGION <small>AUTO RENT</small></span></a><p>{{ site|tr:'footer_text' }}</p><a class="footer-phone" href="tel:{{ site.phone_digits }}" data-event="click_phone">{{ site.phone }}</a>{% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}</div><div><strong>{% trans 'Ваш автомобиль' %}</strong><a href="{{ '/cars/'|local_url }}">{% trans 'Автопарк' %}</a><a href="{{ '/rental-conditions/'|local_url }}">{% trans 'Условия аренды' %}</a><a href="{{ '/booking/'|local_url }}">{% trans 'Заявка на аренду' %}</a></div><div><strong>{% trans 'Legion Auto Rent' %}</strong><a href="{{ '/about/'|local_url }}">{% trans 'О компании' %}</a><a href="{{ '/contacts/'|local_url }}">{% trans 'Контакты' %}</a>{% if site.instagram %}<a href="{{ site.instagram }}" target="_blank" rel="noopener noreferrer">Instagram</a>{% endif %}{% for page in footer_pages %}<a href="{{ page.path|local_url }}">{{ page|tr:'title' }}</a>{% endfor %}</div><div><strong>{% trans 'Наши города' %}</strong>{% for city in nav_cities %}<a href="{{ city.legacy_path|local_url }}" data-event="select_city">{{ city|tr:'name' }}</a>{% endfor %}</div></div><div class="container footer-bottom"><span>© {% now 'Y' %} Legion Auto Rent</span><span>{% trans 'Автомобили не сдаются для такси и доставки.' %}</span></div></footer>
+<div class="mobile-bottom"><a href="tel:{{ site.phone_digits }}" data-event="click_phone">{% trans 'Позвонить' %}</a><a href="{{ site.whatsapp_url }}" data-event="click_whatsapp">WhatsApp</a><a class="mobile-book" href="{{ '/booking/'|local_url }}" data-event="booking_start">{% trans 'Забронировать' %}</a></div>
+</body></html>

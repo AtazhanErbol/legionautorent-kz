@@ -1,0 +1,21 @@
+[Unit]
+Description=Legion Auto Rent Django
+After=network.target postgresql.service
+
+[Service]
+User=legion
+Group=legion
+WorkingDirectory=/srv/legion
+EnvironmentFile=/srv/legion/.env
+ExecStart=/srv/legion/.venv/bin/gunicorn legion.wsgi:application --config deploy/gunicorn.conf.py
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/legion/media /srv/legion/backups
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

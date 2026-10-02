@@ -1,0 +1,9 @@
+Django>=5.2,<5.3
+psycopg[binary]>=3.2,<4
+gunicorn>=23,<24
+whitenoise>=6.9,<7
+Pillow>=11,<13
+beautifulsoup4>=4.13,<5
+requests>=2.32,<3
+python-dotenv>=1.1,<2
+nh3>=0.3,<0.4

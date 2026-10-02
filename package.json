@@ -1,0 +1,1 @@
+{"name":"legion-assets","private":true,"scripts":{"vendor":"node tools/vendor.cjs"},"dependencies":{"gsap":"^3.14.0","three":"^0.180.0"}}

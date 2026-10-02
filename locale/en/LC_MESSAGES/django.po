@@ -1,0 +1,462 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Legion Auto Rent\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "3D обзор"
+msgstr "3D view"
+
+msgid "Legion Auto Rent"
+msgstr "Legion Auto Rent"
+
+msgid "Автомат"
+msgstr "Automatic"
+
+msgid "Автомобили не сдаются для такси и доставки."
+msgstr "Vehicles are not rented for taxi or delivery work."
+
+msgid "Автомобиль"
+msgstr "Vehicle"
+
+msgid "Автомобиль Legion Auto Rent"
+msgstr "Legion Auto Rent vehicle"
+
+msgid "Автомобили"
+msgstr "Vehicles"
+
+msgid "Автопарк"
+msgstr "Our fleet"
+
+msgid "Автопарк Legion"
+msgstr "The Legion fleet"
+
+msgid "Автопарк | Legion Auto Rent"
+msgstr "Our fleet | Legion Auto Rent"
+
+msgid "Аренда, в которой"
+msgstr "Car rental with"
+
+msgid "Без водителя. Без лишних сложностей."
+msgstr "Self-drive. Simply arranged."
+
+msgid "Ваш автомобиль"
+msgstr "Your vehicle"
+
+msgid "Ваш маршрут. Ваш автомобиль."
+msgstr "Your route. Your car."
+
+msgid "Ваше имя"
+msgstr "Your name"
+
+msgid "Вернуться в автопарк"
+msgstr "Back to the fleet"
+
+msgid "Весь автопарк"
+msgstr "View the fleet"
+
+msgid "Возврат должен быть позже получения."
+msgstr "The return date must be after the pickup date."
+
+msgid "Все автомобили"
+msgstr "All vehicles"
+
+msgid "Все классы"
+msgstr "All classes"
+
+msgid "Все марки"
+msgstr "All brands"
+
+msgid "Все города"
+msgstr "All cities"
+
+msgid "Все условия"
+msgstr "All rental terms"
+
+msgid "Вы выбираете маршрут. Мы помогаем с автомобилем."
+msgstr "You choose the route. We help with the car."
+
+msgid ""
+"Выберите автомобиль для аренды без водителя. Цены, фотографии и классы "
+"автомобилей в Legion Auto Rent."
+msgstr ""
+"Choose a self-drive rental car. Prices, photos and vehicle classes at Legion"
+" Auto Rent."
+
+msgid "Выберите автомобиль для поездок по городу и за его пределами."
+msgstr "Choose a car for journeys in and out of the city."
+
+msgid "Выберите автомобиль и оставьте заявку менеджеру."
+msgstr "Choose a car and send a request to our manager."
+
+msgid "Выберите автомобиль, который подходит именно вам."
+msgstr "Choose the car that fits your plans."
+
+msgid "Выбрать автомобиль"
+msgstr "Choose a car"
+
+msgid "Главная"
+msgstr "Home"
+
+msgid "Год"
+msgstr "Year"
+
+msgid "Город"
+msgstr "City"
+
+msgid "Города"
+msgstr "Cities"
+
+msgid "Границы скидочных периодов и итоговую цену подтвердит менеджер."
+msgstr "Our manager will confirm the discount periods and final price."
+
+msgid "Давайте начнём с ваших планов."
+msgstr "Let's start with your plans."
+
+msgid "Далее"
+msgstr "Next"
+
+msgid "Дата возврата"
+msgstr "Return date"
+
+msgid "Дата получения"
+msgstr "Pickup date"
+
+msgid "Дата получения не может быть в прошлом."
+msgstr "The pickup date cannot be in the past."
+
+msgid "Даты можно оставить пустыми, если вы ещё не определились."
+msgstr "Leave the dates blank if you haven't decided yet."
+
+msgid "Даты, наличие и итоговую стоимость подтверждает менеджер."
+msgstr "Our manager confirms dates, availability and the final price."
+
+msgid "Двигатель"
+msgstr "Engine"
+
+msgid "Дольше аренда — больше выгода"
+msgstr "Longer rental, better value"
+
+msgid "Ещё несколько вариантов."
+msgstr "A few more options."
+
+msgid "Забронировать"
+msgstr "Request booking"
+
+msgid "Забронировать автомобиль"
+msgstr "Request a car booking"
+
+msgid "Задний"
+msgstr "Rear-wheel drive"
+
+msgid "Заявка на аренду"
+msgstr "Rental request"
+
+msgid "Заявка на аренду | Legion Auto Rent"
+msgstr "Rental request | Legion Auto Rent"
+
+msgid ""
+"Заявка не является подтверждённым бронированием. Мы свяжемся с вами и "
+"уточним детали."
+msgstr ""
+"A request is not a confirmed booking. We will contact you to arrange the "
+"details."
+
+msgid "Заявка отправлена"
+msgstr "Request sent"
+
+msgid "Заявка отправлена | Legion Auto Rent"
+msgstr "Request sent | Legion Auto Rent"
+
+msgid "Здесь начинается другой маршрут"
+msgstr "A different route starts here"
+
+msgid "Здравствуйте! Интересует аренда %(car)s."
+msgstr "Hello! I'm interested in renting %(car)s."
+
+msgid "Измените фильтры или попросите менеджера помочь с выбором."
+msgstr "Change the filters or ask our manager to help you choose."
+
+msgid "Класс"
+msgstr "Class"
+
+msgid "Класс автомобиля"
+msgstr "Vehicle class"
+
+msgid "Комментарий"
+msgstr "Comments"
+
+msgid "Контакты"
+msgstr "Contact"
+
+msgid "Контакты в вашем городе"
+msgstr "Contact us in your city"
+
+msgid "Коробка"
+msgstr "Transmission"
+
+msgid "Любая коробка"
+msgstr "Any transmission"
+
+msgid "Любой привод"
+msgstr "Any drivetrain"
+
+msgid "Марка"
+msgstr "Brand"
+
+msgid "Марка или модель"
+msgstr "Brand or model"
+
+msgid "Менеджер свяжется с вами, уточнит наличие автомобиля и условия аренды."
+msgstr ""
+"Our manager will contact you to confirm availability and rental terms."
+
+msgid "Мест"
+msgstr "Seats"
+
+msgid "Мест от"
+msgstr "Minimum seats"
+
+msgid "Механика"
+msgstr "Manual"
+
+msgid "Минимальная цена не может быть выше максимальной."
+msgstr "The minimum price cannot exceed the maximum price."
+
+msgid "Мобильная навигация"
+msgstr "Mobile navigation"
+
+msgid "Мы свяжемся с вами и подтвердим детали. Онлайн-оплата не требуется."
+msgstr ""
+"We will contact you to confirm the details. No online payment is required."
+
+msgid "Назад"
+msgstr "Previous"
+
+msgid "Найти автомобиль"
+msgstr "Find a car"
+
+msgid "Наличие на даты уточнит менеджер"
+msgstr "Our manager will confirm availability for your dates"
+
+msgid "Написать в WhatsApp"
+msgstr "Message on WhatsApp"
+
+msgid "Наши города"
+msgstr "Our cities"
+
+msgid "Не удалось отправить заявку. Попробуйте ещё раз."
+msgstr "Your request could not be sent. Please try again."
+
+msgid "Несколько простых шагов"
+msgstr "A few simple steps"
+
+msgid "Новые в каталоге"
+msgstr "Recently added"
+
+msgid "О компании"
+msgstr "About us"
+
+msgid "Об автомобиле"
+msgstr "About this car"
+
+msgid "Один сервис. Четыре города."
+msgstr "One service. Four cities."
+
+msgid "Основная навигация"
+msgstr "Main navigation"
+
+msgid "Оставить заявку"
+msgstr "Send a request"
+
+msgid "Остались вопросы? Мы на связи."
+msgstr "More questions? We're here to help."
+
+msgid "От выбора до ключей."
+msgstr "From choosing to driving."
+
+msgid "От эконом до премиум"
+msgstr "From economy to premium"
+
+msgid "Открыть карту"
+msgstr "Open map"
+
+msgid "Открыть меню"
+msgstr "Open menu"
+
+msgid "Отправить заявку"
+msgstr "Send request"
+
+msgid ""
+"Перевод этой страницы ещё готовится. Ниже показан оригинал на русском языке."
+msgstr ""
+"This page is being translated. The original Russian content is shown below."
+
+msgid "Передний"
+msgstr "Front-wheel drive"
+
+msgid "Перейти в автопарк"
+msgstr "Explore the fleet"
+
+msgid "Перейти к содержимому"
+msgstr "Skip to content"
+
+msgid "Под ваши планы."
+msgstr "For every plan."
+
+msgid "Подобрать автомобиль"
+msgstr "Find your car"
+
+msgid "Подробнее"
+msgstr "View details"
+
+msgid "Позвонить"
+msgstr "Call us"
+
+msgid "Поиск"
+msgstr "Search"
+
+msgid "Показать автомобили"
+msgstr "Show vehicles"
+
+msgid "Политика конфиденциальности"
+msgstr "Privacy policy"
+
+msgid "Полный"
+msgstr "All-wheel drive"
+
+msgid "Помогите выбрать автомобиль"
+msgstr "Help me choose a car"
+
+msgid "Понятный ответ."
+msgstr "A clear answer."
+
+msgid "Попробуем другой маршрут поиска"
+msgstr "Let's try another search"
+
+msgid "Популярные"
+msgstr "Popular"
+
+msgid "Почему Legion"
+msgstr "Why Legion"
+
+msgid "Привод"
+msgstr "Drivetrain"
+
+msgid "Принимают заявки"
+msgstr "Accepting requests"
+
+msgid ""
+"Расскажите о ваших планах. Менеджер уточнит наличие, стоимость и условия "
+"аренды."
+msgstr ""
+"Tell us about your plans. Our manager will confirm availability, prices and "
+"rental terms."
+
+msgid "Рядом с вашим маршрутом."
+msgstr "Along your route."
+
+msgid "Сбросить"
+msgstr "Reset"
+
+msgid "Сбросить фильтры"
+msgstr "Reset filters"
+
+msgid "Слишком много попыток. Попробуйте через 15 минут."
+msgstr "Too many attempts. Please try again in 15 minutes."
+
+msgid "Сначала дешевле"
+msgstr "Price: low to high"
+
+msgid "Сначала дороже"
+msgstr "Price: high to low"
+
+msgid "Сортировка"
+msgstr "Sort by"
+
+msgid "Спланируем вашу поездку"
+msgstr "Let's plan your trip"
+
+msgid "Спросить в WhatsApp"
+msgstr "Ask on WhatsApp"
+
+msgid "Срок действия формы истёк. Обновите страницу."
+msgstr "This form has expired. Please refresh the page."
+
+msgid "Стоимость аренды"
+msgstr "Rental price"
+
+msgid "Страница не найдена | Legion Auto Rent"
+msgstr "Page not found | Legion Auto Rent"
+
+msgid "Страницы каталога"
+msgstr "Catalog pages"
+
+msgid "Телефон"
+msgstr "Phone"
+
+msgid "Укажите корректный номер телефона."
+msgstr "Enter a valid phone number."
+
+msgid "Укажите номер телефона: от 10 до 15 цифр."
+msgstr "Enter a phone number with 10 to 15 digits."
+
+msgid "Укажите обе даты или оставьте их пустыми."
+msgstr "Enter both dates or leave both blank."
+
+msgid "Условия аренды"
+msgstr "Rental terms"
+
+msgid "Хлебные крошки"
+msgstr "Breadcrumbs"
+
+msgid "Хороший вопрос."
+msgstr "A good question."
+
+msgid "Цвет"
+msgstr "Color"
+
+msgid "Цена до"
+msgstr "Maximum price"
+
+msgid "Цена от"
+msgstr "Minimum price"
+
+msgid ""
+"Этой страницы нет. В нашем автопарке вы найдёте автомобиль для следующей "
+"поездки."
+msgstr ""
+"This page doesn't exist. Find a car for your next journey in our fleet."
+
+msgid "Этот автомобиль не представлен в выбранном городе."
+msgstr "This car is not listed in the selected city."
+
+msgid "Язык"
+msgstr "Language"
+
+msgid "автомобилей"
+msgstr "vehicles"
+
+msgid "автомобилей в Астане"
+msgstr "cars in Astana"
+
+msgid "всё на своём месте."
+msgstr "everything in place."
+
+msgid "мест"
+msgstr "seats"
+
+msgid "сутки"
+msgstr "day"
+
+msgid "фото"
+msgstr "photo"
+
+msgid ""
+"Я согласен на обработку имени, телефона, дат аренды и комментария компанией "
+"Legion Auto Rent для ответа на мою заявку."
+msgstr ""
+"I consent to Legion Auto Rent processing my name, phone number, rental dates"
+" and comments to respond to my request."

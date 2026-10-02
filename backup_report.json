@@ -1,0 +1,15 @@
+{
+  "timestamp_utc": "20261002T195502Z",
+  "database": "legion-20261002T195502Z.dump",
+  "media": "media-20261002T195502Z.tar.gz",
+  "database_sha256": "759f9f4af8e8a5377b0b1564b088f9a8e0fdbd962d626ea3f522ffc47705f989",
+  "media_sha256": "34388b76d10a3db9233c2cb319cdc9faadaca28f4a633a6adf43bcade88f53aa",
+  "restore_verified": true,
+  "restored_counts": {
+    "cars_car": 91,
+    "locations_city": 4,
+    "cars_carimage": 302
+  },
+  "media_files": 1500,
+  "scope": "local development DB and imported media; not legacy production DB"
+}

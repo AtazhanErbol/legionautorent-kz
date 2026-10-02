@@ -1,0 +1,1 @@
+{% load i18n %}{% if breadcrumbs %}<nav class="breadcrumbs" aria-label="{% trans 'Хлебные крошки' %}"><ol>{% for name,url in breadcrumbs %}<li>{% if not forloop.last %}<a href="{{ url }}">{{ name }}</a>{% else %}<span aria-current="page">{{ name }}</span>{% endif %}</li>{% endfor %}</ol></nav>{% endif %}
