@@ -460,3 +460,231 @@ msgid ""
 msgstr ""
 "I consent to Legion Auto Rent processing my name, phone number, rental dates"
 " and comments to respond to my request."
+
+msgid "3 простых шага для аренды"
+msgstr "3 simple steps to rent"
+
+msgid "FAQ | Legion Auto Rent"
+msgstr "FAQ | Legion Auto Rent"
+
+msgid "Автомобили уточняются. Позвоните нам."
+msgstr "Call us to discuss the cars."
+
+msgid "Автомобиль в студийном освещении"
+msgstr "Car under studio lighting"
+
+msgid "Базовый тариф"
+msgstr "Base rate"
+
+msgid "Без водителя"
+msgstr "Self-drive"
+
+msgid "Без водителя. Под ваши планы."
+msgstr "Self-drive. For your plans."
+
+msgid "Без такси и доставки"
+msgstr "No taxi or delivery use"
+
+msgid "В сутки"
+msgstr "Per day"
+
+msgid "Ваш выбор"
+msgstr "Your choice"
+
+msgid "Ваши планы — в движении"
+msgstr "Keep your plans moving"
+
+msgid "Включить фары"
+msgstr "Toggle headlights"
+
+msgid "Вопросы об аренде"
+msgstr "Rental questions"
+
+msgid "Все контакты"
+msgstr "All contacts"
+
+msgid "Все условия аренды"
+msgstr "All rental terms"
+
+msgid "Все фильтры"
+msgstr "All filters"
+
+msgid "Встретимся в Легионе"
+msgstr "Meet us at Legion"
+
+msgid "Всё начинается с вашего маршрута"
+msgstr "It starts with your journey"
+
+msgid "Всё просто"
+msgstr "Simple steps"
+
+msgid "Вы за рулём."
+msgstr "You take the wheel."
+
+msgid "Выберите город"
+msgstr "Select a city"
+
+msgid "Главное меню"
+msgstr "Main navigation"
+
+msgid "Город ждёт."
+msgstr "The city awaits."
+
+msgid "Дверей"
+msgstr "Doors"
+
+msgid "Депозит"
+msgstr "Deposit"
+
+msgid "Детали"
+msgstr "Details"
+
+msgid "Для аренды нужны водительское удостоверение и удостоверение личности."
+msgstr "A driving licence and an identity document are required."
+
+msgid "До начала поездки"
+msgstr "Before your journey"
+
+msgid "Ещё в вашем классе"
+msgstr "More in your class"
+
+msgid "Заказать звонок"
+msgstr "Request a callback"
+
+msgid "Информация"
+msgstr "Information"
+
+msgid "Итоговую стоимость, депозит и условия подтвердит менеджер."
+msgstr "Our team will confirm the final price, deposit and terms."
+
+msgid "К автопарку"
+msgstr "Explore the fleet"
+
+msgid "Карта проезда к Legion Auto Rent"
+msgstr "Directions to Legion Auto Rent"
+
+msgid "Конфиденциальность"
+msgstr "Privacy"
+
+msgid "Менеджер свяжется с вами для уточнения деталей."
+msgstr "Our team will contact you to confirm the details."
+
+msgid "Менеджер уточнит детали и подтвердит условия аренды."
+msgstr "Our team will confirm the details and rental terms."
+
+msgid "Мобильное меню"
+msgstr "Mobile navigation"
+
+msgid "Мы на связи"
+msgstr "Get in touch"
+
+msgid "Мы рядом"
+msgstr "Find us"
+
+msgid "Навигационная цепочка"
+msgstr "Breadcrumbs"
+
+msgid "Наличие на выбранные даты подтвердит менеджер."
+msgstr "Our team will confirm availability for your dates."
+
+msgid "От городских поездок до особенных событий — выберите свой класс."
+msgstr "From city journeys to special occasions, find your class."
+
+msgid "Ответы на вопросы об аренде автомобилей."
+msgstr "Answers to car rental questions."
+
+msgid "Партнёрам"
+msgstr "For partners"
+
+msgid "Перевод этой страницы готовится. Пока показан русский текст."
+msgstr "This page is being translated. Russian content is shown for now."
+
+msgid "Под режим такси и доставки авто не сдаем!"
+msgstr "Cars are not rented for taxi or delivery work!"
+
+msgid "Подробные характеристики уточните у менеджера."
+msgstr "Ask our team for the full specifications."
+
+msgid "Пока нет совпадений"
+msgstr "No matches yet"
+
+msgid "Показать на карте"
+msgstr "Show on map"
+
+msgid "Попробуйте изменить фильтры или свяжитесь с нами."
+msgstr "Try changing the filters or contact us."
+
+msgid "Попробуйте позже или позвоните нам."
+msgstr "Try again later or call us."
+
+msgid "Потяните, чтобы повернуть"
+msgstr "Drag to rotate"
+
+msgid "Предыдущее фото"
+msgstr "Previous photo"
+
+msgid "Пробег"
+msgstr "Mileage allowance"
+
+msgid "Проверьте параметры поиска."
+msgstr "Check the search settings."
+
+msgid "Сервис временно недоступен"
+msgstr "Service temporarily unavailable"
+
+msgid "Следующее фото"
+msgstr "Next photo"
+
+msgid "Спасибо"
+msgstr "Thank you"
+
+msgid "Срок аренды"
+msgstr "Rental period"
+
+msgid "Стоимость"
+msgstr "Price"
+
+msgid "Стоимость аренды автомобиля"
+msgstr "Car rental rates"
+
+msgid "Страница не найдена"
+msgstr "Page not found"
+
+msgid "Тарифы и скидки"
+msgstr "Rates and discounts"
+
+msgid "Топливо"
+msgstr "Fuel"
+
+msgid "Условия"
+msgstr "Terms"
+
+msgid "Фильтры"
+msgstr "Filters"
+
+msgid "Фотографии автомобиля"
+msgstr "Car photographs"
+
+msgid "Характеристики"
+msgstr "Specifications"
+
+msgid "Цена за сутки"
+msgstr "Daily price"
+
+msgid "Этот маршрут пока недоступен. Выберите автомобиль в каталоге."
+msgstr "This route is unavailable. Choose a car from the fleet."
+
+msgid "города"
+msgstr "cities"
+
+msgid "дней"
+msgstr "days"
+
+msgid "км/сутки"
+msgstr "km/day"
+
+msgid "мин"
+msgstr "min"
+
+msgid "оформление"
+msgstr "paperwork"
