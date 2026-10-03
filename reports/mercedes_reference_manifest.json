@@ -1,0 +1,73 @@
+{
+  "timestamp_utc": "2026-10-03T20:25:21.874811+00:00",
+  "authorization": "User: продолжай с моими кадрами",
+  "source_priority": "Use the supplied Mercedes frames instead of the generated generic SUV",
+  "original_badges": "Retained as supplied; no new logos, lettering or registration plates requested",
+  "files": [
+    {
+      "source": "C:\\Users\\Atazhan\\Downloads\\Изображение ChatGPT 3 окт. 2026 г., 16_31_18-1.png",
+      "preserved_copy": "D:\\legionautorent.kz\\review\\mercedes-reference-originals\\01-front.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1857936,
+      "sha256": "622ddfe2b44daa0abb4eca58e55349e363e8616fa0af91db3d8548a3de16954e",
+      "edited": false,
+      "higgsfield_media_id": "ff095bcf-b625-4ff3-989a-8f843fd98669"
+    },
+    {
+      "source": "C:\\Users\\Atazhan\\Downloads\\Изображение ChatGPT 3 окт. 2026 г., 16_31_21-2.png",
+      "preserved_copy": "D:\\legionautorent.kz\\review\\mercedes-reference-originals\\02-front-three-quarter.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1901713,
+      "sha256": "b4865bf7dc0edd86a1214b9e0e4a07842db51c32e81264a966872676817d11bb",
+      "edited": false,
+      "higgsfield_media_id": "3f3c5e47-39fa-4caa-aeab-c9a5a34f4af5"
+    },
+    {
+      "source": "C:\\Users\\Atazhan\\Downloads\\Изображение ChatGPT 3 окт. 2026 г., 16_31_24-3.png",
+      "preserved_copy": "D:\\legionautorent.kz\\review\\mercedes-reference-originals\\03-side.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1970060,
+      "sha256": "a621de9c276e34b6210a34a38cb885e4ec83c0e78a84dfe76194ab4e073a4b36",
+      "edited": false,
+      "higgsfield_media_id": null
+    },
+    {
+      "source": "C:\\Users\\Atazhan\\Downloads\\Изображение ChatGPT 3 окт. 2026 г., 16_31_25-4.png",
+      "preserved_copy": "D:\\legionautorent.kz\\review\\mercedes-reference-originals\\04-rear-three-quarter.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1977387,
+      "sha256": "fa321eeb1d55a21f19c0602a74d89d6f4eb19f32626240bc51297922e96234ff",
+      "edited": false,
+      "higgsfield_media_id": null
+    },
+    {
+      "source": "C:\\Users\\Atazhan\\Downloads\\Изображение ChatGPT 3 окт. 2026 г., 16_31_26-5.png",
+      "preserved_copy": "D:\\legionautorent.kz\\review\\mercedes-reference-originals\\05-rear.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "bytes": 1865307,
+      "sha256": "ed9dfa0b2c05bd50f2e002e4bc98558bef0965b44a7e5314e4a5abded2eb0702",
+      "edited": false,
+      "higgsfield_media_id": null
+    }
+  ],
+  "video_jobs_submitted": 0,
+  "new_credits_spent": 0,
+  "unused_generated_image": {
+    "job_id": "4f331dfd-156a-4b2a-8ba0-21851ff104a5",
+    "status": "completed",
+    "requested_model": "nano_banana_pro",
+    "reported_model": "nano_banana_2",
+    "quoted_credits": 2,
+    "used_on_site": false
+  }
+}
