@@ -17,7 +17,7 @@
 .hero.hero-story>.search-wrap{order:2;position:relative;bottom:auto;inset-inline:auto;margin-top:-56px;margin-bottom:48px;width:min(1280px,calc(100% - 64px));z-index:4}
 .hero.hero-story .story-about{order:3;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;padding-block:64px 96px;position:relative;z-index:2}
 .story-static-profile,.story-static-rear{width:100%;height:auto;object-fit:contain}
-.story-about h2{font-size:clamp(40px,4.6vw,74px);line-height:1.02;text-wrap:balance}
+.story-about .story-caption{font-size:clamp(40px,4.6vw,74px);line-height:1.02;text-wrap:balance}
 .hero.hero-story .hero-facts{margin-top:40px;gap:32px}
 .hero.hero-story .hero-note{font-size:14px;color:#c0c0c0;max-width:360px}
 .hero.hero-story .story-details{order:4;position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;padding-block:48px 96px;z-index:2}
@@ -28,7 +28,7 @@
 .story-detail-wheel{width:84%;justify-self:end;margin-top:48px}
 .story-detail-tail{grid-column:2;grid-row:2;width:100%;margin-top:8px}
 .hero.hero-story[data-story] .hero-end{order:5;position:relative;inset:auto;width:min(1280px,calc(100% - 64px));max-width:none;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;padding-block:48px 96px;opacity:1;visibility:visible;z-index:2}
-.hero.hero-story .hero-end h2{font-size:clamp(44px,4.6vw,74px)}
+.hero.hero-story .hero-end .story-caption{font-size:clamp(44px,4.6vw,74px)}
 .hero.hero-story .hero-end p{font-size:14px;line-height:1.75;color:#c9c9c9;max-width:400px}
 .story-progress{display:none}
 .hero-story~.fleet-section{padding-top:96px}
@@ -57,7 +57,7 @@
  .hero.hero-story[data-state=video-ready] .hero-copy{padding-top:108px;padding-bottom:88px}
  .story-brand{font-size:8.5vw}
  .hero.hero-story[data-state=video-ready] .story-about-copy,.hero.hero-story[data-state=video-ready] .story-end-copy{top:24%}
- .hero.hero-story .story-about h2,.hero.hero-story .hero-end h2{font-size:clamp(40px,4.2vw,64px)}
+ .hero.hero-story .story-about .story-caption,.hero.hero-story .hero-end .story-caption{font-size:clamp(40px,4.2vw,64px)}
  .hero.hero-story .hero-facts{margin-top:24px}
  .hero.hero-story[data-state=video-ready] .story-detail-light{width:36%;top:17%}
  .hero.hero-story[data-state=video-ready] .story-detail-wheel{width:23%;top:16%}
@@ -79,7 +79,7 @@
  .hero.hero-story .story-about{display:flex;flex-direction:column;gap:24px;padding-block:8px 56px}
  .story-static-profile{width:100%;max-width:700px}
  .story-about-copy{width:100%}
- .story-about h2{font-size:44px;max-width:500px}
+ .story-about .story-caption{font-size:44px;max-width:500px}
  .hero.hero-story .hero-facts{margin-top:24px;font-size:11px;gap:32px}
  .hero.hero-story .hero-facts strong{font-size:30px}
  .hero.hero-story .hero-note{margin:20px 0;max-width:none}
@@ -90,7 +90,7 @@
  .story-detail-title{font-size:48px;grid-column:1;grid-row:2}
  .story-detail figcaption{font-size:10px;padding-top:8px}
  .hero.hero-story[data-story] .hero-end{width:calc(100% - 40px);display:flex;flex-direction:column;gap:24px;padding:0 0 48px}
- .hero.hero-story .hero-end h2{font-size:44px}
+ .hero.hero-story .hero-end .story-caption{font-size:44px}
  .story-end-copy{width:100%}
  .hero.hero-story .hero-end p{margin-block:20px;max-width:600px}
  .hero-story~.fleet-section{padding-top:56px}
@@ -102,4 +102,6 @@
  .hero.hero-story .story-about{flex-direction:row;align-items:center;gap:32px}
  .story-static-profile{width:50%}
 }
-@media(max-width:374px){.story-brand{font-size:17vw}.story-intro-meta{margin-top:296px}.hero.hero-story .hero-stage{top:202px;height:340px}.story-about h2,.hero.hero-story .hero-end h2{font-size:38px}.story-detail-title{font-size:40px}.hero.hero-story .hero-facts{gap:24px}}
+@media(max-width:374px){.story-brand{font-size:17vw}.story-intro-meta{margin-top:296px}.hero.hero-story .hero-stage{top:202px;height:340px}.story-about .story-caption,.hero.hero-story .hero-end .story-caption{font-size:38px}.story-detail-title{font-size:40px}.hero.hero-story .hero-facts{gap:24px}}
+
+.hero-story .story-caption{font-family:var(--display);font-weight:600;letter-spacing:-.035em;line-height:1.08}.hero.hero-story .hero-end p.story-caption{font-size:clamp(44px,4.6vw,74px);line-height:1.08;color:#fff;margin:0;max-width:none}@media(max-width:899px){.hero.hero-story .hero-end p.story-caption{font-size:44px}}@media(max-width:374px){.hero.hero-story .hero-end p.story-caption{font-size:38px}}

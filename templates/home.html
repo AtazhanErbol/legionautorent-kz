@@ -14,17 +14,17 @@
     </div>
     <div class="story-about container" data-story-panel="about">
       <img class="story-static-profile" src="{% static 'img/hero-drive-profile.webp' %}" width="1280" height="720" alt="{% trans 'Автомобиль в студийном освещении' %}" loading="lazy" decoding="async">
-      <div class="story-about-copy"><h2>{% trans 'Без водителя. Под ваши планы.' %}</h2><p class="hero-note">{{ city|tr:'hero_text' }}</p><div class="hero-facts"><span><strong>{{ car_count }}</strong>{% trans 'автомобилей' %}</span><span><strong>04</strong>{% trans 'города' %}</span><span><strong>10 {% trans 'мин' %}</strong>{% trans 'оформление' %}</span></div></div>
+      <div class="story-about-copy"><p class="story-caption">{% trans 'Без водителя. Под ваши планы.' %}</p><p class="hero-note">{{ city|tr:'hero_text' }}</p><div class="hero-facts"><span><strong>{{ car_count }}</strong>{% trans 'автомобилей' %}</span><span><strong>04</strong>{% trans 'города' %}</span><span><strong>10 {% trans 'мин' %}</strong>{% trans 'оформление' %}</span></div></div>
     </div>
     <div class="story-details container" data-story-panel="details">
-      <h2 class="story-detail-title">{% trans 'В деталях.' %}</h2>
+      <p class="story-detail-title story-caption">{% trans 'В деталях.' %}</p>
       <figure class="story-detail story-detail-light"><img src="{% static 'img/hero-drive-headlight.webp' %}" width="540" height="330" alt="{% trans 'Передний свет' %}" loading="lazy" decoding="async"><figcaption>{% trans 'Передний свет' %}</figcaption></figure>
       <figure class="story-detail story-detail-wheel"><img src="{% static 'img/hero-drive-wheel.webp' %}" width="480" height="340" alt="{% trans 'Колесо и линия кузова' %}" loading="lazy" decoding="async"><figcaption>{% trans 'Колесо и линия кузова' %}</figcaption></figure>
       <figure class="story-detail story-detail-tail"><img src="{% static 'img/hero-drive-taillight.webp' %}" width="490" height="320" alt="{% trans 'Задние фонари' %}" loading="lazy" decoding="async"><figcaption>{% trans 'Задние фонари' %}</figcaption></figure>
     </div>
     <div class="hero-end container" data-story-panel="rear">
       <img class="story-static-rear" src="{% static 'img/hero-drive-rear.webp' %}" width="1280" height="720" alt="{% trans 'Задние фонари' %}" loading="lazy" decoding="async">
-      <div class="story-end-copy"><h2>{% trans 'Город ждёт.' %}<br>{% trans 'Вы за рулём.' %}</h2><p>{{ site|tr:'hero_text' }}</p><a class="text-link" href="#fleet" data-story-skip>{% trans 'К автопарку' %} ↓</a></div>
+      <div class="story-end-copy"><p class="story-caption">{% trans 'Город ждёт.' %}<br>{% trans 'Вы за рулём.' %}</p><p>{{ site|tr:'hero_text' }}</p><a class="text-link" href="#fleet" data-story-skip>{% trans 'К автопарку' %} ↓</a></div>
     </div>
   </div>
   {% include 'components/search_bar.html' %}

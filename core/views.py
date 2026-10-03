@@ -6,7 +6,7 @@ from django.db.models import Q,Min
 from django.http import Http404,HttpResponseRedirect,JsonResponse
 from django.shortcuts import get_object_or_404,render
 from django.utils.translation import gettext as _,get_language
-from django.views.decorators.http import require_GET,require_http_methods
+from django.views.decorators.http import require_safe,require_http_methods
 from cars.models import Car,CarCategory
 from cars.forms import CatalogFilterForm
 from locations.models import City
@@ -40,16 +40,31 @@ def city_context(request,path):
         'breadcrumbs':[] if path=='/' else [(_('Главная'),language_url('/')),(localized(city,'name'),language_url(path))]
     }
 
-@require_GET
+@require_safe
 def home(request):
     context=page_context(request,lambda:city_context(request,'/'));context['search_form']=CatalogFilterForm()
     return present(request,'home.html',context,city=context['city'])
-@require_GET
+
+@require_safe
+def styleguide(request):
+    """A review surface, never a public production page or sitemap entry."""
+    if settings.ENVIRONMENT == 'production':
+        raise Http404()
+    context=city_context(request,'/')
+    context.update({'seo':page_seo(request,title='LEGION — дизайн-система',description='Предпросмотр оформления Legion Auto Rent.',h1='Ночной гараж. Свет — в деталях.',noindex=True),
+                    'guide_car':Car.objects.public().with_content().filter(slug='lexus-lx-570-superior').first() or context['cars'][0],
+                    'styleguide':True})
+    context['seo']['robots']='noindex,nofollow'
+    response=present(request,'styleguide.html',context)
+    response['X-Robots-Tag']='noindex, nofollow'
+    response['Cache-Control']='no-store'
+    return response
+@require_safe
 def city_page(request,slug):
     context=page_context(request,lambda:city_context(request,request.base_path));context['search_form']=CatalogFilterForm(initial={'city':context['city'].slug})
     return present(request,'city.html',context,city=context['city'])
 
-@require_GET
+@require_safe
 def catalog(request,category_slug=None):
     form=CatalogFilterForm(request.GET or None)
     def build():
@@ -74,7 +89,7 @@ def catalog(request,category_slug=None):
     if request.headers.get('X-Legion-Partial')=='catalog':return render(request,'components/catalog_results.html',context)
     return present(request,'catalog.html',context)
 
-@require_GET
+@require_safe
 def car_detail(request,slug):
     def build():
         car=get_object_or_404(Car.objects.public().with_content().prefetch_related('discounts','prices__translations','extra_specs__translations'),legacy_path=request.base_path)
@@ -87,17 +102,17 @@ def car_detail(request,slug):
     context['car_whatsapp_message']=_('Здравствуйте! Интересует аренда %(car)s.')%{'car':localized(car,'name')}
     return present(request,'car_detail.html',context,car=car,city=city)
 
-@require_GET
+@require_safe
 def static_page(request,slug):
     def build():
         page=get_object_or_404(Page.objects.prefetch_related('translations'),path=request.base_path,active=True)
         return {'seo':page_seo(request,page),'page':page,'faqs':list(faq_queryset(page=page)),'conditions':blocks('condition'),'breadcrumbs':[(_('Главная'),language_url('/')),(localized(page,'title'),language_url(page.path))]}
     return present(request,'page.html',page_context(request,build))
-@require_GET
+@require_safe
 def faq_page(request):
     from seo.services import faq_languages
     return present(request,'faq_page.html',{'seo':page_seo(request,title=_('FAQ | Legion Auto Rent'),description=_('Ответы на вопросы об аренде автомобилей.'),h1=_('Вопросы об аренде'),available_languages=faq_languages()),'faqs':list(faq_queryset(car__isnull=True,page__isnull=True))})
-@require_GET
+@require_safe
 def content_page(request,slug):
     if City.objects.filter(legacy_path=request.base_path,active=True).exists():return city_page(request,slug)
     return static_page(request,slug)
@@ -125,7 +140,7 @@ def booking(request,callback=False):
                 return HttpResponseRedirect(language_url('/request-success/'))
         else:status=400
     return present(request,'booking.html',{'seo':page_seo(request,title=_('Заявка на аренду | Legion Auto Rent'),h1=_('Заказать звонок') if callback else _('Забронировать автомобиль'),noindex=True),'form':form,'selected_car':car,'callback':callback},status=status)
-@require_GET
+@require_safe
 def success(request):
     submitted=bool(request.session.pop('booking_success',None))
     return present(request,'success.html',{'seo':page_seo(request,title=_('Заявка отправлена | Legion Auto Rent'),h1=_('Заявка отправлена'),noindex=True),'submitted':submitted})
@@ -136,7 +151,7 @@ def server_error(request):
     from django.http import HttpResponse
     from django.template.loader import get_template
     return HttpResponse(get_template('500.html').render({'language':getattr(request,'LANGUAGE_CODE','ru')}),status=500)
-@require_GET
+@require_safe
 def health(request):
     try:
         with connection.cursor() as cursor:cursor.execute('SELECT 1')

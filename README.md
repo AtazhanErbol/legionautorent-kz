@@ -2,6 +2,22 @@
 
 Django 5.2 LTS, PostgreSQL 18, серверные шаблоны, небольшой Vite/Three.js frontend. Сохранены 91 автомобиль, 4 города, 302 связи фотографий и все 95 работавших URL старого сайта. Старые снимки и исходные медиа сохранены. Предыдущий интерфейс доступен в Git checkpoint `d5e7e0a`.
 
+## Текущий этап — согласование дизайна, 04.10.2026
+
+Последнее ТЗ вводит STOP 1: новый дизайн сначала доступен только на **http://127.0.0.1:8002/styleguide**. В production этот адрес возвращает 404, в остальных средах закрыт от индексации. Снимки: `output/playwright/styleguide-round3/index.html`. Полный перенос оформления и новое видео ждут утверждения владельца. Текущий hero использует существующее видео; описание Three.js ниже — история предыдущей версии.
+
+Новая пара: **Montserrat 600 + Golos Text 400–600**, только self-hosted subset WOFF2, `font-display: swap`. FontTools проверил в конечных файлах все `Ә Ғ Қ Ң Ө Ұ Ү Һ І ә ғ қ ң ө ұ ү һ і` и `₸` (U+20B8): отсутствующих глифов нет. Размеры 57 336 и 43 160 байт; хеши и результаты в `reports/night_fonts.json`, повторение — `tools/build_night_fonts.py`. OFL-лицензии хранятся рядом с исходниками и шрифтами. Основные цвета текста проверены на AA: `reports/styleguide_contrast.json`.
+
+SEO-проверки после каждого изменения оформления:
+
+```powershell
+.\.venv\Scripts\python.exe manage.py test seo.test_release --settings=legion.config.testing --keepdb --noinput
+.\.venv\Scripts\python.exe manage.py verify_migration
+.\.venv\Scripts\python.exe manage.py release_check --base-url http://127.0.0.1:8003
+```
+
+Эквиваленты для Linux: `make seo-test`, `make release-check BASE_URL=https://legionautorent.kz`, `sh scripts/prelaunch.sh https://legionautorent.kz`. HTTP-аудит не изменяет данные. Он проверяет 95 URL, 27 исключений, все sitemap-страницы и изображения, метаданные, schema/цены, hreflang, noindex, защитные заголовки и перенаправления. Отчёт `reports/prelaunch_report.md`; любой FAIL завершает команду ненулевым кодом. На loopback невозможно подтвердить публичные http/www/TLS-перенаправления — это остаётся явным FAIL. Сохранённые дубли SEO также считаются FAIL, а не исправляются автоматически.
+
 ## Локальный запуск на этом компьютере
 
 ```powershell
@@ -52,7 +68,7 @@ RU остаётся без префикса; KK — `/kk/`, EN — `/en/`. Вс�
 
 В Site Settings редактируются контакты, часы, robots, GTM/GA4/Метрика, верификация, модель/постер и карта имён деталей. Для пользовательского GLB укажите права/лицензию; лимит 3 МБ. Включённая загруженная модель имеет приоритет над путём. Значения `headlightMaterials`, `taillightMaterials`, `headlightNodes`, `wheelNodes` позволяют заменить ассет без правки логики. Необязательный локальный WebM задаётся отдельно; по умолчанию используется статический постер.
 
-## Дизайн и 3D
+## Предыдущая 3D-версия — история
 
 Палитра получена из CSS и SVG действующего сайта: `#F7B500` основной жёлтый, `#ffdd56` hover, `#FFC355` логотип, `#000000`, `#1F1F1F`, `#FFFFFF`. Цвета зафиксированы в CSS custom properties. Шрифты Exo 2 (заголовки) и Golos Text (текст), self-hosted WOFF2, font-display: swap; наличие ә, ғ, қ, ң, ө, ұ, ү, һ, і проверено. Лицензии OFL лежат рядом. Исходный тяжёлый SVG логотипа сохранён, интерфейс использует уменьшенную WebP-копию.
 

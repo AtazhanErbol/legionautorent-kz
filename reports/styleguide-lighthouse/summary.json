@@ -1,0 +1,83 @@
+{
+  "mode": "Informational only; loopback Django/WhiteNoise, analytics disabled; styleguide intentionally noindex",
+  "field_inp_measured": false,
+  "new_higgsfield_video_generated": false,
+  "results": [
+    {
+      "page": "home",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8003/",
+      "fetch_time": "2026-10-03T19:06:58.308Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 92,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 3081,
+      "cls": 0,
+      "tbt_ms": 0,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false
+    },
+    {
+      "page": "home",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8003/",
+      "fetch_time": "2026-10-03T19:07:12.347Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 625,
+      "cls": 0.0001268682196501325,
+      "tbt_ms": 0,
+      "hero_video_requested": true,
+      "glb_or_three_requested": false
+    },
+    {
+      "page": "styleguide",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8002/styleguide",
+      "fetch_time": "2026-10-03T19:14:02.033Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 69,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 2255,
+      "cls": 0.0006550733349213338,
+      "tbt_ms": 0,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false
+    },
+    {
+      "page": "styleguide",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8002/styleguide",
+      "fetch_time": "2026-10-03T19:14:14.566Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 69,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 504,
+      "cls": 0,
+      "tbt_ms": 0,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false
+    }
+  ]
+}

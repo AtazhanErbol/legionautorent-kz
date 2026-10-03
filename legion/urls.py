@@ -7,7 +7,7 @@ from core import views
 from core.legacy_assets import legacy_image,legacy_video
 from seo.views import robots,sitemap
 
-public=[path('',views.home,name='home'),path('cars/',views.catalog,name='catalog'),path('category/<slug:category_slug>/',views.catalog,name='category'),path('car/<slug:slug>',views.car_detail,name='car'),path('booking/',views.booking,name='booking'),path('callback/',views.booking,{'callback':True},name='callback'),path('request-success/',views.success,name='success'),path('faq/',views.faq_page,name='faq'),path('<slug:slug>/',views.content_page,name='page')]
+public=[path('styleguide',views.styleguide,name='styleguide'),path('styleguide/',views.styleguide),path('',views.home,name='home'),path('cars/',views.catalog,name='catalog'),path('category/<slug:category_slug>/',views.catalog,name='category'),path('car/<slug:slug>',views.car_detail,name='car'),path('booking/',views.booking,name='booking'),path('callback/',views.booking,{'callback':True},name='callback'),path('request-success/',views.success,name='success'),path('faq/',views.faq_page,name='faq'),path('<slug:slug>/',views.content_page,name='page')]
 def old_kazakh(request,path=''):
     # Every audited live /kz/ URL was 404. Do not redirect /kz/ to /kk/.
     raise Http404()

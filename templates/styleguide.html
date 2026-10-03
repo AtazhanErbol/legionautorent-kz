@@ -1,0 +1,47 @@
+{% extends 'base.html' %}{% load static i18n legion_tags %}
+{% block body_class %}styleguide-page{% endblock %}
+{% block font_preloads %}<link rel="preload" href="{% asset 'static/fonts/montserrat-site.woff2' %}" as="font" type="font/woff2" crossorigin><link rel="preload" href="{% asset 'static/fonts/golos-night.woff2' %}" as="font" type="font/woff2" crossorigin>{% endblock %}
+{% block extra_head %}{% critical_css 'frontend/styleguide.js' as guide_styles %}<style nonce="{{ request.csp_nonce }}">{{ guide_styles }}</style><script type="module" src="{% asset 'frontend/styleguide.js' %}" defer></script>{% endblock %}
+{% block content %}
+<section class="container sg-intro">
+  <div class="sg-status"><b>LEGION / DESIGN 01</b><span>Предпросмотр для согласования · noindex</span></div>
+  <p class="eyebrow">NIGHT GARAGE / INSTRUMENT CLUSTER</p>
+  <h1>Ночной гараж.<br>Свет — в деталях.</h1>
+  <p class="sg-lede">Тёплый графит, крупные цифры и свет фар. Автомобиль — в центре внимания, выбор и бронирование — всегда под рукой.</p>
+  <nav class="sg-nav" aria-label="Разделы дизайн-системы"><a href="#sg-color">Цвет</a><a href="#sg-type">Шрифты</a><a href="#sg-controls">Управление</a><a href="#sg-cars">Автопарк</a><a href="#sg-components">Компоненты</a></nav>
+</section>
+<section class="sg-section" id="sg-color"><div class="container sg-split">
+  <header><p class="eyebrow">01 / ПАЛИТРА</p><h2>Жёлтый —<br>как свет.</h2><p>Акцент на цене, действии и активном состоянии. Тонкие линии отделяют блоки, не превращая страницу в набор коробок.</p></header>
+  <div class="sg-palette"><div><i class="sg-swatch sg-garage"></i><p>Garage</p><code>#10100F</code></div><div><i class="sg-swatch sg-recessed"></i><p>Recessed</p><code>#0B0B0A</code></div><div><i class="sg-swatch sg-panel"></i><p>Panel</p><code>#1B1B18</code></div><div><i class="sg-swatch sg-ivory"></i><p>Ivory</p><code>#F3F1E9</code></div><div><i class="sg-swatch sg-muted"></i><p>Muted</p><code>#AAA99F</code></div><div><i class="sg-swatch sg-yellow"></i><p>Legion light</p><code>#F7B500</code></div></div>
+</div></section>
+<section class="sg-section" id="sg-type"><div class="container sg-split">
+  <header><p class="eyebrow">02 / ТИПОГРАФИКА</p><h2>Характер.<br>Читаемость.</h2><p>Montserrat 600 — заголовки и цифры.<br>Golos Text 400–600 — описания, формы и навигация.</p></header>
+  <div><p class="sg-type-display">ВАШ МАРШРУТ.<br>ВАШ АВТОМОБИЛЬ.<small>Montserrat / 600 / Display</small></p><p class="sg-body-example">Golos Text сохраняет спокойный ритм длинного текста. Межстрочный интервал оставляет воздух, а подписи и управление остаются понятными на небольшом экране.</p><div class="sg-glyphs"><p>Ә Ғ Қ Ң Ө Ұ Ү Һ І<br>ә ғ қ ң ө ұ ү һ і · ₸</p><p>Ә Ғ Қ Ң Ө Ұ Ү Һ І<br>ә ғ қ ң ө ұ ү һ і · ₸</p></div><p class="sg-caption">Все 19 обязательных символов проверены fontTools в конечных WOFF2. Шрифты загружаются с сайта. У цен и показателей — цифры одинаковой ширины.</p></div>
+</div></section>
+<section class="sg-section" id="sg-controls"><div class="container sg-split">
+  <header><p class="eyebrow">03 / УПРАВЛЕНИЕ</p><h2>Одно ясное<br>действие.</h2><p>Световая линия при наведении, заметный фокус с клавиатуры, область нажатия не меньше 44 px.</p></header>
+  <div class="sg-action-grid"><div class="sg-row"><a class="button" href="{{ '/cars/'|local_url }}">{% trans 'Выбрать автомобиль' %}{% icon 'arrow' %}</a><a class="button button-outline" href="{{ '/rental-conditions/'|local_url }}">{% trans 'Условия аренды' %}</a></div><div class="sg-row"><a class="button button-outline sg-state-hover" href="#sg-cars">Hover / Наведение</a><a class="button button-outline sg-state-focus" href="#sg-components">Focus / Клавиатура</a><button class="button button-dark" disabled>Недоступно</button></div><div class="category-chips" role="group" aria-label="Пример категорий"><button class="category-chip is-active" type="button" aria-pressed="true">{% trans 'Все классы' %}</button>{% for cat in nav_categories|slice:':3' %}<button class="category-chip" type="button" aria-pressed="false">{{ cat|tr:'name' }}</button>{% endfor %}</div><div class="sg-row"><a class="icon-button" href="{{ site.whatsapp_url }}" aria-label="WhatsApp">{% icon 'whatsapp' %}</a><a class="icon-button" href="tel:{{ site.phone|phone_link }}" aria-label="{% trans 'Позвонить' %}">{% icon 'phone' %}</a><span class="sg-caption">Контакты компактны, основная кнопка заметнее.</span></div></div>
+</div></section>
+<section class="sg-section" id="sg-cars"><div class="container">
+  <div class="section-heading"><div><p class="eyebrow">04 / {% trans 'Автопарк' %}</p><h2>{% trans 'Автопарк' %}<span class="count">91</span></h2></div><a class="text-link" href="{{ '/cars/'|local_url }}">{% trans 'Все фильтры' %}{% icon 'arrow' %}</a></div>
+  <div class="sg-car-layout"><div class="car-grid sg-single-card">{% include 'components/car_card.html' with car=guide_car %}</div><div class="sg-car-note"><h3>Сначала автомобиль.<br>Потом — детали.</h3><p>Высокое фото 4:3, открытая нижняя часть и выразительная цена. Название спокойнее цены; кнопки компактнее обоих. В карточке — реальный автомобиль и действующие данные проекта.</p><dl><div><dt>Фото</dt><dd>4:3 / мягкий нижний градиент</dd></div><div><dt>Характеристики</dt><dd>Тонкие контурные метки</dd></div><div><dt>Скидка</dt><dd>Небольшая скошенная лента</dd></div><div><dt>Наведение</dt><dd>Подъём 4 px / световая полоса</dd></div></dl></div></div>
+</div></section>
+<section class="sg-section" id="sg-components"><div class="container sg-split">
+  <header><p class="eyebrow">05 / КОМПОНЕНТЫ</p><h2>Уверенный<br>ритм.</h2><p>Одинаковая система линий и отступов объединяет разные композиции.</p></header>
+  <div><article class="sg-advantage">{% icon 'shield' %}<div><h3>{{ benefits.0|tr:'title' }}</h3><p>{{ benefits.0|tr:'text' }}</p></div></article><div class="steps-grid"><article><div class="step-top"><span class="step-number">01</span>{% icon 'car' %}</div><h3>{{ steps.0|tr:'title' }}</h3><p>{{ steps.0|tr:'text' }}</p></article></div><p class="sg-caption">Контурная нумерация станет частью трёх шагов. Преимущества — единой горизонтальной полосой, FAQ — смещёнными колонками.</p></div>
+</div></section>
+<section class="sg-section"><div class="container sg-split">
+  <header><p class="eyebrow">06 / ФОРМА</p><h2>Без лишнего.</h2><p>Подписи остаются над полями. Ошибка видна рядом с нужным значением. Это демонстрация: данные никуда не отправляются.</p></header>
+  <form class="sg-form"><div class="field"><label for="sg-name">{% trans 'Имя' %}</label><input id="sg-name" placeholder="Александр" autocomplete="off"></div><div class="field"><label for="sg-phone">{% trans 'Телефон' %}</label><input id="sg-phone" type="tel" placeholder="+7 ___ ___ __ __" autocomplete="off"></div><div class="field"><label for="sg-city">{% trans 'Город' %}</label><select id="sg-city">{% for item in nav_cities %}<option>{{ item|tr:'name' }}</option>{% endfor %}</select></div><div class="field error"><label for="sg-error">{% trans 'Телефон' %} / Ошибка</label><input id="sg-error" type="tel" value="+7" aria-invalid="true" aria-describedby="sg-error-text"><small id="sg-error-text">Укажите номер полностью.</small></div><div class="wide"><button class="button" type="button">{% trans 'Забронировать автомобиль' %}{% icon 'arrow' %}</button></div></form>
+</div></section>
+<section class="sg-section"><div class="container sg-split">
+  <header><p class="eyebrow">07 / FAQ</p><h2>{% trans 'Хороший вопрос.' %}</h2><p>Нативный аккордеон: доступен с клавиатуры и работает без JavaScript.</p></header>
+  <div class="faq-list">{% for faq in faqs|slice:':3' %}<details {% if forloop.first %}open{% endif %}><summary>{{ faq|tr:'question' }}<span aria-hidden="true">+</span></summary><div class="prose">{{ faq|tr:'answer'|richtext }}</div></details>{% endfor %}</div>
+</div></section>
+<section class="sg-section"><div class="container sg-split">
+  <header><p class="eyebrow">08 / ДЕТАЛИ</p><h2>Единый набор.</h2><p>Контурные SVG 1.6 px.<br>Сетка отступов 8 px.<br>Радиус 2–4 px; мобильный фильтр — нижняя панель с радиусом 16 px.</p></header>
+  <div><div class="sg-icons" role="group" aria-label="Иконки"><span>{% icon 'car' %}</span><span>{% icon 'pin' %}</span><span>{% icon 'calendar' %}</span><span>{% icon 'shield' %}</span><span>{% icon 'clock' %}</span><span>{% icon 'key' %}</span><span>{% icon 'phone' %}</span><span>{% icon 'whatsapp' %}</span></div><div class="sg-spacing"><span><i class="sg-space8"></i>8</span><span><i class="sg-space16"></i>16</span><span><i class="sg-space24"></i>24</span><span><i class="sg-space32"></i>32</span><span><i class="sg-space48"></i>48</span><span><i class="sg-space64"></i>64</span><span><i class="sg-space96"></i>96</span></div></div>
+</div></section>
+{% include 'components/partner.html' %}
+<section class="container sg-summary"><p class="eyebrow">СЛЕДУЮЩИЙ ЭТАП</p><h2>Сначала — ваше одобрение.</h2><p>После утверждения эта система будет применена ко всем страницам. Новые кадр и видео из Higgsfield проходят отдельное согласование стоимости и результата.</p></section>
+{% endblock %}

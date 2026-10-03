@@ -13,3 +13,6 @@ node_modules/
 static/build/
 .env.production
 .env.staging
+
+# Raw generation reviews never ship or enter Git.
+review/

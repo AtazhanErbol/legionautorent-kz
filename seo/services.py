@@ -1,5 +1,7 @@
 from django.conf import settings
 from django.utils import translation
+from django.templatetags.static import static
+from urllib.parse import urlsplit
 from core.i18n import localized,get_translation,language_url
 
 LANGUAGES=('ru','kk','en')
@@ -31,15 +33,22 @@ def page_seo(request,obj=None,title='',description='',h1='',noindex=False,path=N
     description=localized(obj,'seo_description') if obj else description
     h1=localized(obj,'seo_h1') if obj else h1
     canonical=settings.SITE_URL+language_url(path,lang)
-    if lang=='ru' and obj and obj.canonical_url:canonical=obj.canonical_url
+    if lang=='ru' and obj and obj.canonical_url:canonical=settings.SITE_URL+urlsplit(obj.canonical_url).path
     robots='noindex,follow' if noindex or fallback or (obj and 'noindex' in obj.robots) else 'index,follow'
     if settings.IS_STAGING:robots='noindex,nofollow'
     legacy=getattr(obj,'legacy_meta',{}).get('open_graph',{}) if obj and lang=='ru' else {}
+    image=getattr(obj,'og_image','')
+    if not image and obj and obj._meta.model_name=='car' and obj.main_image:image=obj.main_image.display_url
+    image=image or static('img/hero-drive-front.webp')
+    if not image.startswith(('https://','http://')):image=settings.SITE_URL+image
+    elif urlsplit(image).hostname=='legionautorent.kz':image=settings.SITE_URL+urlsplit(image).path
+    og_url=canonical if obj and obj._meta.model_name=='city' else legacy.get('og:url',canonical)
+    if urlsplit(og_url).hostname=='legionautorent.kz':og_url=settings.SITE_URL+urlsplit(og_url).path
     return {'title':title,'description':description,'h1':h1,'canonical':canonical,'robots':robots,'fallback':fallback,
             'alternates':[{'language':l,'url':settings.SITE_URL+language_url(path,l)} for l in available],
             'default_url':settings.SITE_URL+path,'og_title':(localized(obj,'og_title') if obj else '') or title,
-            'og_description':(localized(obj,'og_description') if obj else '') or description,'og_image':getattr(obj,'og_image',''),
-            'og_url':canonical if obj and obj._meta.model_name=='city' else legacy.get('og:url',canonical),'og_type':legacy.get('og:type','website'),'og_site_name':legacy.get('og:site_name','Legion Auto Rent'),'og_video':legacy.get('og:video','')}
+            'og_description':(localized(obj,'og_description') if obj else '') or description,'og_image':image,
+            'og_url':og_url,'og_type':legacy.get('og:type','website'),'og_site_name':legacy.get('og:site_name','Legion Auto Rent'),'og_video':legacy.get('og:video','')}
 
 def schemas(request,seo,site,breadcrumbs=None,car=None,city=None,faqs=None):
     root=settings.SITE_URL;lang=request.LANGUAGE_CODE

@@ -1,7 +1,5 @@
 import './site.css';
 import './hero-story.css';
-import './night-garage.css';
-import {initGarageUI} from './night-garage.js';
 import {initPageMotion} from './page-motion.js';
 const $=(selector,root=document)=>root.querySelector(selector);
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -33,7 +31,6 @@ function initFleets(root=document){
   });
 }
 initFleets();
-initGarageUI();
 // The optional reveal/accordion enhancement waits for the first layout and
 // fonts; native content and details remain usable while the page is loading.
 const startPageMotion=()=>{

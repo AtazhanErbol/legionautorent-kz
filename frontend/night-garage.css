@@ -1,7 +1,7 @@
 /* Night garage: the existing content, with a quieter instrument-panel rhythm. */
 @font-face{font-family:Montserrat;src:url('/static/fonts/montserrat-site.woff2') format('woff2');font-weight:600;font-display:swap}
 @font-face{font-family:GolosNight;src:url('/static/fonts/golos-night.woff2') format('woff2');font-weight:400 600;font-display:swap}
-:root{--paper:#10100f;--surface:#1b1b18;--muted:#aaa99f;--ink:#f3f1e9;--line:#f3f1e921;--display:Montserrat,Arial,sans-serif;--text:GolosNight,Arial,sans-serif;--gutter:32px}
+:root{--paper:#10100f;--surface:#1b1b18;--muted:#aaa99f;--ink:#f3f1e9;--line:#f3f1e921;--control-border:#75756b;--display:Montserrat,Arial,sans-serif;--text:GolosNight,Arial,sans-serif;--gutter:32px}
 body{background:var(--paper);color:var(--ink)}
 .container,.header-inner{width:min(1280px,calc(100% - var(--gutter)*2))}
 h1,h2,h3{letter-spacing:-.045em;text-wrap:balance;overflow-wrap:break-word}
@@ -14,7 +14,7 @@ h3{font-size:clamp(20px,1.9vw,28px);line-height:1.2}
 .button,.icon-button,.car-detail-link{border-radius:3px;position:relative;overflow:hidden}
 .button{font-weight:500;gap:20px}
 .button-dark{background:#292923;border-color:#44443b}
-.button-outline{background:transparent;border-color:#f3f1e940}
+.button-outline{background:transparent;border-color:var(--control-border)}
 .button:after,.car-detail-link:after{content:'';position:absolute;pointer-events:none;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,#fff,transparent);transform:translateX(-110%)}
 .text-link{min-height:44px;display:inline-flex;align-items:center;gap:8px}
 .site-header{background:#10100f;border-color:var(--line)}
@@ -57,8 +57,8 @@ h3{font-size:clamp(20px,1.9vw,28px);line-height:1.2}
 .car-price-row strong{font:600 clamp(28px,2.45vw,36px)/1 var(--display);letter-spacing:-.05em;font-variant-numeric:tabular-nums;color:var(--yellow)}
 .car-price-row strong span{font-size:.65em}
 .car-price-row p>span{font-size:11px}
-.car-detail-link{background:transparent;border:1px solid #f3f1e940;min-height:48px;padding-inline:16px}
-.icon-button{border-color:#f3f1e92e;flex-shrink:0}
+.car-detail-link{background:transparent;border:1px solid var(--control-border);min-height:48px;padding-inline:16px}
+.icon-button{border-color:var(--control-border);flex-shrink:0}
 .car-actions{gap:8px;position:relative}
 .fleet-more{align-items:stretch;flex-direction:row;justify-content:space-between;border-top:1px solid var(--line);padding-top:24px;margin-top:48px}
 .fleet-more .button{min-width:264px}.fleet-more p{align-self:center;font-variant-numeric:tabular-nums}
@@ -95,7 +95,7 @@ h3{font-size:clamp(20px,1.9vw,28px);line-height:1.2}
 .faq-list details{counter-increment:question}
 .faq-list summary:before{content:counter(question,decimal-leading-zero);color:var(--muted);font-size:10px;align-self:flex-start;padding-top:5px;font-variant-numeric:tabular-nums}
 .faq-list summary>span{margin-left:auto;width:28px;height:28px;border:1px solid #f3f1e930;display:grid;place-items:center;line-height:1;font-size:22px}
-.faq-list .prose{padding-left:40px}
+.faq-list .prose{padding-left:40px;padding-bottom:24px}
 .partner-section{background:var(--yellow);color:#12120e;padding-block:72px;border:0}
 .partner-inner{border-left:0;padding-left:0;grid-template-columns:1.15fr 1fr;gap:96px}
 .partner-inner .eyebrow{color:#49412b}.partner-inner .eyebrow:before{background:repeating-linear-gradient(90deg,#28230e 0 1px,transparent 1px 6px)}
@@ -133,7 +133,8 @@ h3{font-size:clamp(20px,1.9vw,28px);line-height:1.2}
 .booking-price{font-size:clamp(32px,3.4vw,48px);font-variant-numeric:tabular-nums;line-height:1.15}
 .booking-price span{white-space:nowrap}
 .booking-direct{grid-template-columns:1fr 1fr}
-.field input,.field select,.field textarea{background:#11110f;border-radius:2px;border-color:#f3f1e92c}
+.field input,.field select,.field textarea{background:#11110f;border-radius:2px;border-color:var(--control-border)}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted);opacity:1}
 .detail-section{padding-block:56px}
 .detail-section h2{font-size:clamp(28px,2.5vw,36px)}
 .specs div{padding-block:20px}.specs dd,.tariff-table,.discounts{font-variant-numeric:tabular-nums}
@@ -153,7 +154,7 @@ h3{font-size:clamp(20px,1.9vw,28px);line-height:1.2}
 .hero.hero-story .hero-facts{gap:24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));font-size:10px}
 .hero.hero-story .hero-facts strong{font:600 clamp(22px,2.25vw,32px)/1.2 var(--display);white-space:nowrap;font-variant-numeric:tabular-nums}
 .hero.hero-story .hero-facts span{gap:10px;min-width:0}
-.story-about h2,.hero.hero-story .hero-end h2{font-size:clamp(36px,3.7vw,58px);line-height:1.1}
+.story-about .story-caption,.hero.hero-story .hero-end .story-caption{font-size:clamp(36px,3.7vw,58px);line-height:1.1}
 .hero.hero-story .hero-note{font-size:14px;line-height:1.65;margin-block:24px}
 .story-detail-title{font-size:clamp(52px,7.5vw,108px)}
 .story-detail figcaption{font-size:11px;line-height:1.5;min-height:28px}
@@ -186,7 +187,7 @@ h3{font-size:clamp(20px,1.9vw,28px);line-height:1.2}
  .hero.hero-story[data-state=video-ready] .hero-copy{padding-top:104px;padding-bottom:64px}
  .story-brand{font-size:min(7.6vw,100px)}.story-city{margin-bottom:16px}
  .hero.hero-story[data-state=video-ready] .story-about-copy,.hero.hero-story[data-state=video-ready] .story-end-copy{top:25%}
- .hero.hero-story .story-about h2,.hero.hero-story .hero-end h2{font-size:clamp(34px,3.7vw,50px)}
+ .hero.hero-story .story-about .story-caption,.hero.hero-story .hero-end .story-caption{font-size:clamp(34px,3.7vw,50px)}
  .hero.hero-story .hero-facts{margin-top:24px}
  .hero.hero-story[data-state=video-ready] .story-detail-light{width:36%;top:18%}
  .hero.hero-story[data-state=video-ready] .story-detail-wheel{width:23%;top:16%}
@@ -210,7 +211,7 @@ h3{font-size:clamp(20px,1.9vw,28px);line-height:1.2}
  .story-intro-meta{margin-top:326px;width:calc(100% - var(--gutter)*2)}
  .hero.hero-story[data-story] .hero-copy h1{font-size:19px;line-height:1.4}
  .hero.hero-story>.search-wrap,.hero.hero-story[data-story] .hero-end{width:calc(100% - var(--gutter)*2)}
- .story-about h2,.hero.hero-story .hero-end h2{font-size:clamp(32px,6vw,48px)}
+ .story-about .story-caption,.hero.hero-story .hero-end .story-caption{font-size:clamp(32px,6vw,48px)}
  .hero.hero-story .hero-facts{gap:16px;font-size:10px}
  .hero.hero-story .hero-facts strong{font-size:28px}
  .story-detail-title{font-size:clamp(30px,6vw,48px)}
@@ -271,7 +272,7 @@ h3{font-size:clamp(20px,1.9vw,28px);line-height:1.2}
 @media(max-width:374px){
  :root{--gutter:16px}.header-inner{gap:8px}.brand img{width:96px}.city-menu{font-size:10px}
  .story-brand{font-size:11.8vw}.hero.hero-story .hero-stage{top:198px;height:324px}.story-intro-meta{margin-top:302px}
- .hero.hero-story[data-story] .hero-copy h1{font-size:18px}.story-about h2,.hero.hero-story .hero-end h2{font-size:30px}
+ .hero.hero-story[data-story] .hero-copy h1{font-size:18px}.story-about .story-caption,.hero.hero-story .hero-end .story-caption{font-size:30px}
  .hero.hero-story .hero-facts strong{font-size:24px}.hero.hero-story .hero-facts{gap:12px}
  .story-detail-title{font-size:30px}.car-info h3{font-size:22px}.steps-grid article{grid-template-columns:68px minmax(0,1fr);gap:16px}.step-number{font-size:64px}
  .steps-grid h3{font-size:22px}.booking-panel{padding:20px}.booking-price{font-size:34px}.booking-direct{grid-template-columns:1fr}

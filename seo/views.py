@@ -1,7 +1,7 @@
 from xml.etree.ElementTree import Element,SubElement,tostring,register_namespace
 from django.conf import settings
 from django.http import HttpResponse,Http404
-from django.views.decorators.http import require_GET
+from django.views.decorators.http import require_safe
 from locations.models import City
 from cars.models import Car,CarCategory
 from pages.models import Page
@@ -13,7 +13,7 @@ NS='http://www.sitemaps.org/schemas/sitemap/0.9';XHTML='http://www.w3.org/1999/x
 register_namespace('',NS);register_namespace('xhtml',XHTML)
 SECTIONS=('cities','cars','categories','pages')
 
-@require_GET
+@require_safe
 def robots(request):
     if settings.IS_STAGING:text='User-agent: *\nDisallow: /\n'
     else:
@@ -22,7 +22,7 @@ def robots(request):
         if 'Sitemap:' not in text:text+='\nSitemap: '+url+'\n'
     return HttpResponse(text,content_type='text/plain; charset=utf-8')
 
-@require_GET
+@require_safe
 def sitemap(request,section=None):
     if section is None:
         root=Element(f'{{{NS}}}sitemapindex')

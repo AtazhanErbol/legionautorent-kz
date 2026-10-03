@@ -10,7 +10,7 @@ class ContentSecurityPolicyMiddleware:
             "default-src 'self'",f'script-src {script}',"style-src 'self' 'unsafe-inline'",
             "img-src 'self' data: blob: https://mc.yandex.ru https://www.google-analytics.com",
             "font-src 'self'", "connect-src 'self' https://*.google-analytics.com https://*.googletagmanager.com https://mc.yandex.ru",
-            "frame-src https://yandex.ru https://www.googletagmanager.com", "media-src 'self'", "worker-src 'self' blob:",
+            "frame-src https://yandex.ru https://www.googletagmanager.com", "media-src 'self' blob:", "worker-src 'self' blob:",
             "object-src 'none'", "base-uri 'self'", "form-action 'self'", "frame-ancestors 'none'"
         ])
         response['Referrer-Policy']='strict-origin-when-cross-origin'

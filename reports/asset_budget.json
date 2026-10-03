@@ -1,6 +1,6 @@
 {
-  "main_gzip_bytes": 5032,
-  "three_scene_decoder_gzip_bytes": 149302,
+  "main_gzip_bytes": 5054,
+  "three_scene_decoder_gzip_bytes": 149307,
   "three_scene_budget_bytes": 150000,
   "motion_gzip_bytes": 42294,
   "model_bytes": 13012,
@@ -8,13 +8,14 @@
   "gzip_sizes": {
     "motion": 42294,
     "three": 124403,
-    "hero-video": 2704,
-    "hero": 19202,
-    "main": 5032,
+    "hero-video": 2924,
+    "hero": 19207,
+    "main": 5054,
+    "styleguide": 1150,
     "meshopt_decoder.module": 5697,
     "DRACOLoader": 2536
   },
-  "hero_video_controller_gzip_bytes": 2704,
+  "hero_video_controller_gzip_bytes": 2924,
   "hero_video_asset": "static/video/hero-drive.mp4",
   "hero_video_bytes": 3969555,
   "hero_video_poster_bytes": 13308,

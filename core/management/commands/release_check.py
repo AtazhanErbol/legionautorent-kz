@@ -9,8 +9,18 @@ import json
 
 class Command(BaseCommand):
     help='Report factual release gates; --strict fails while client data/configuration remain incomplete.'
-    def add_arguments(self,parser):parser.add_argument('--strict',action='store_true')
+    def add_arguments(self,parser):
+        parser.add_argument('--strict',action='store_true')
+        parser.add_argument('--base-url',help='Audit the running deployment over HTTP without changing data.')
+        parser.add_argument('--expect-mode',choices=['production','nonproduction'],default='production')
+        parser.add_argument('--redirect-origin',help='Public origin for real HTTP/www/HTTPS redirect probes.')
     def handle(self,*args,**options):
+        if options['base_url']:
+            from seo.release_audit import ReleaseAudit
+            result=ReleaseAudit(options['base_url'],options['expect_mode'],options['redirect_origin']).run()
+            self.stdout.write(json.dumps({key:value for key,value in result.items() if key not in ('failures','warnings','generated_legacy_metadata')},ensure_ascii=False,indent=2))
+            if not result['passed']:raise CommandError(f"Prelaunch audit found {len(result['failures'])} failures; see reports/prelaunch_report.md")
+            return
         gates=[]
         site=SiteSettings.get_solo()
         source=settings.BASE_DIR/'seo_audit_old_site.json'

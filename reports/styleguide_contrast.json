@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Main text",
+    "foreground": "#f3f1e9",
+    "background": "#10100f",
+    "ratio": 16.83,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "label": "Secondary text",
+    "foreground": "#aaa99f",
+    "background": "#1b1b18",
+    "ratio": 7.3,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "label": "Yellow price",
+    "foreground": "#f7b500",
+    "background": "#10100f",
+    "ratio": 10.48,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "label": "Primary button",
+    "foreground": "#10100f",
+    "background": "#f7b500",
+    "ratio": 10.48,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "label": "Input/outline border",
+    "foreground": "#75756b",
+    "background": "#1b1b18",
+    "ratio": 3.71,
+    "minimum": 3,
+    "passed": true
+  },
+  {
+    "label": "Placeholder",
+    "foreground": "#aaa99f",
+    "background": "#11110f",
+    "ratio": 8.0,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "label": "Field error",
+    "foreground": "#f5977f",
+    "background": "#10100f",
+    "ratio": 8.72,
+    "minimum": 4.5,
+    "passed": true
+  },
+  {
+    "label": "Keyboard focus",
+    "foreground": "#f7b500",
+    "background": "#1b1b18",
+    "ratio": 9.51,
+    "minimum": 3,
+    "passed": true
+  }
+]
