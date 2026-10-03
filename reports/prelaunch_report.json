@@ -1,12 +1,12 @@
 {
-  "timestamp_utc": "2026-10-03T20:01:43.529735+00:00",
+  "timestamp_utc": "2026-10-03T23:23:39.591633+00:00",
   "base_url": "http://127.0.0.1:8003",
   "mode": "production",
   "passed": false,
-  "requests": 1387,
+  "requests": 1383,
   "pages": 133,
   "sitemap_urls": 105,
-  "unique_images": 1243,
+  "unique_images": 1239,
   "failures": [
     {
       "path": "/car/toyota-lc-200-excalibur, /car/toyota-lc-200-excalibur_20250827073659, /car/toyota-lc-200-excalibur_20260615123651",

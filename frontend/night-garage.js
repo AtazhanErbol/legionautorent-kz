@@ -1,3 +1,4 @@
+import {queueFrame,cancelFrame} from './motion-frame.js';
 // Optional, local effects. No work is scheduled on touch or reduced-motion.
 export function initGarageUI(){
   const desktopEffects=matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)');
@@ -9,13 +10,13 @@ export function initGarageUI(){
     const draw=()=>{frame=0;light.style.transform=`translate3d(${x-240}px,${y-240}px,0)`;};
     const move=event=>{
       if(event.pointerType==='touch')return;
-      if(event.target.closest('.car-grid')){x=event.clientX;y=event.clientY;light.dataset.visible='';if(!frame)frame=requestAnimationFrame(draw);}
+      if(event.target.closest('.car-grid')){x=event.clientX;y=event.clientY;light.dataset.visible='';if(!frame)frame=queueFrame(draw);}
       else delete light.dataset.visible;
     };
     const hide=()=>{delete light.dataset.visible;};
     document.addEventListener('pointermove',move,{passive:true});document.addEventListener('pointerleave',hide);
     window.addEventListener('scroll',hide,{passive:true});
-    stopLight=()=>{cancelAnimationFrame(frame);light.remove();document.removeEventListener('pointermove',move);document.removeEventListener('pointerleave',hide);window.removeEventListener('scroll',hide);};
+    stopLight=()=>{cancelFrame(frame);light.remove();document.removeEventListener('pointermove',move);document.removeEventListener('pointerleave',hide);window.removeEventListener('scroll',hide);};
   };
   mountLight();desktopEffects.addEventListener('change',mountLight);
 

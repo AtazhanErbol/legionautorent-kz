@@ -1,9 +1,9 @@
-// Native sticky scroll review. The approved legacy hero remains a separate path.
+// Approved film, native scroll and complete static fallback.
 export function initMercedesPreview(root){
   const video=root.querySelector('video'),ring=root.querySelector('.mercedes-load');
   const intro=root.querySelector('.mercedes-caption--intro'),ending=root.querySelector('.mercedes-caption--end');
   const progressBar=root.querySelector('.mercedes-progress span');
-  const queries=['(max-width:899px)','(orientation:portrait) and (max-width:1024px)','(orientation:portrait) and (pointer:coarse)','(orientation:landscape) and (pointer:coarse) and (max-height:560px)','(prefers-reduced-motion:reduce)'].map(q=>matchMedia(q));
+  const queries=['(max-height:699px)','(max-width:899px)','(orientation:portrait) and (max-width:1024px)','(orientation:portrait) and (pointer:coarse)','(orientation:landscape) and (pointer:coarse) and (max-height:560px)','(prefers-reduced-motion:reduce)'].map(q=>matchMedia(q));
   const connection=navigator.connection;
   const watch=root.querySelector('.mercedes-watch'),picture=root.querySelector('.mercedes-picture');
   let manualPlayer;
@@ -34,7 +34,7 @@ export function initMercedesPreview(root){
   let enabled=false,loading=false,dead=false,controller,objectURL,watchdog,loadTimer,seekTimer;
   let frame=0,lastTick=0,target=0,shown=0,lastPaint=-1,start=0,distance=1,inView=true,desired=0;
   const clamp=(n)=>Math.max(0,Math.min(1,n));
-  const allowed=()=>!queries.some(q=>q.matches)&&!connection?.saveData&&!['slow-2g','2g','3g'].includes(connection?.effectiveType)&&(!navigator.deviceMemory||navigator.deviceMemory>=4)&&(!navigator.hardwareConcurrency||navigator.hardwareConcurrency>=4);
+  const allowed=()=>Boolean(root.dataset.video)&&!queries.some(q=>q.matches)&&!connection?.saveData&&!['slow-2g','2g','3g'].includes(connection?.effectiveType)&&(!navigator.deviceMemory||navigator.deviceMemory>=4)&&(!navigator.hardwareConcurrency||navigator.hardwareConcurrency>=4);
   const paint=(p)=>{
     if(Math.abs(p-lastPaint)<.0002)return;lastPaint=p;
     const out=clamp((p-.30)/.13),incoming=clamp((p-.53)/.13);
@@ -59,7 +59,7 @@ export function initMercedesPreview(root){
     if(shown!==target)schedule();else lastTick=0;
   };
   const schedule=()=>{if(!frame&&enabled&&inView&&!document.hidden)frame=requestAnimationFrame(tick);};
-  const onScroll=()=>{target=clamp((scrollY-start)/distance);schedule();};
+  const onScroll=()=>{if(!enabled&&objectURL&&!loading&&allowed()&&root.getBoundingClientRect().top>=-64)activate();target=clamp((scrollY-start)/distance);schedule();};
   const measure=()=>{start=root.getBoundingClientRect().top+scrollY;distance=Math.max(1,root.offsetHeight-root.querySelector('.mercedes-stage').offsetHeight);onScroll();};
   const reset=()=>{
     enabled=false;cancelAnimationFrame(frame);frame=0;lastTick=0;clearTimeout(seekTimer);
@@ -68,6 +68,8 @@ export function initMercedesPreview(root){
   const fallback=()=>{reset();root.dataset.state='fallback';};
   const activate=()=>{
     if(dead||!allowed()||!Number.isFinite(video.duration))return;
+    // Do not expand a late-loading pin underneath a visitor already in the catalogue.
+    if(scrollY>root.getBoundingClientRect().top+scrollY+root.offsetHeight-96)return;
     enabled=true;root.dataset.state='ready';ring.hidden=true;lastPaint=-1;
     measure();shown=target;paint(shown);schedule();
   };
@@ -83,7 +85,7 @@ export function initMercedesPreview(root){
       const reader=response.body.getReader(),chunks=[];let got=0,lastRing=0;
       for(;;){
         const {done,value}=await reader.read();if(done)break;rearm();chunks.push(value);got+=value.length;
-        const now=performance.now();if(now-lastRing>100||got>=total){ring.style.setProperty('--loaded',String(Math.round(126*(1-Math.min(1,got/total)))));lastRing=now;}
+        const now=performance.now();if(now-lastRing>100||got>=total){ring.style.setProperty('--loaded',String(Math.round(126*(1-(total?Math.min(1,got/total):0)))));lastRing=now;}
       }
       clearTimeout(watchdog);
       if(dead||!allowed())return;

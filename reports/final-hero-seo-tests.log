@@ -1,0 +1,17 @@
+Using existing test database for alias 'default'...
+
+......Not Found: /does-not-exist/
+......Not Found: /styleguide
+Not Found: /styleguide/
+Not Found: /kk/styleguide
+Not Found: /en/styleguide
+...
+----------------------------------------------------------------------
+Ran 15 tests in 1.385s
+
+OK
+Preserving test database for alias 'default'...
+
+Found 15 test(s).
+Cache table 'legion_cache' already exists.
+System check identified no issues (0 silenced).

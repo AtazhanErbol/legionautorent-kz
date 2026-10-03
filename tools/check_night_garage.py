@@ -18,11 +18,12 @@ from core.views import server_error
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--round', default='1')
+parser.add_argument('--headless', action='store_true')
 args = parser.parse_args()
 OUT = ROOT / 'output/playwright' / f'night-garage-round{args.round}'
 OUT.mkdir(parents=True, exist_ok=True)
 BASE = 'http://127.0.0.1:8002'
-report = {'round': args.round, 'headed_chrome': True, 'layouts': [], 'checks': {}, 'errors': [], 'failures': []}
+report = {'round': args.round, 'headed_chrome': not args.headless, 'layouts': [], 'checks': {}, 'errors': [], 'failures': []}
 routes = [('home','/'), ('city','/kostanay/'), ('city-east','/ustkamenogorsk/'), ('city-pavlodar','/pavlodar/'), ('catalog','/cars/'), ('car','/car/lexus-lx-570-superior'),
           ('conditions','/rental-conditions/'), ('faq','/faq/'), ('contacts','/contacts/'), ('404','/review-missing-page/')]
 widths = [(1920,1080),(1440,900),(1366,768),(1024,768),(768,1024),(390,844),(320,740)]
@@ -45,7 +46,7 @@ def inspect(page, language, name, width, status):
     check(f'{language}_{name}_{width}',status==(404 if name=='404' else 500 if name=='500' else 200) and not row['overflow'] and not row['headerOverlap'] and row['h1']==1 and not row['clipped'] and row['lang']==language and (not name.startswith('city') or row['h1Lines']<=3),row)
 
 with sync_playwright() as p:
-    browser=p.chromium.launch(channel='chrome',headless=False)
+    browser=p.chromium.launch(channel='chrome',headless=args.headless)
     for language in ['ru','kk','en']:
         context=browser.new_context()
         page=context.new_page()

@@ -1,5 +1,4 @@
 import './site.css';
-import './hero-story.css';
 import './night-garage.css';
 import './mercedes-preview.css';
 import {initPageMotion} from './page-motion.js';
@@ -112,38 +111,6 @@ if(filters&&window.fetch){
 
 const mercedesPreview=$('[data-mercedes-preview]');
 if(mercedesPreview)import('./mercedes-preview.js').then(({initMercedesPreview})=>initMercedesPreview(mercedesPreview)).catch(()=>{mercedesPreview.dataset.state='fallback';});
-const hero=$('[data-hero]');
-if(hero){
-  const minimum=hero.hasAttribute('data-story')?900:768;
-  const desktop=matchMedia(`(min-width:${minimum}px)`);let stopHero=()=>{};
-  const mountHero=()=>{
-  stopHero();
-  const connection=navigator.connection,motionAllowed=desktop.matches&&!connection?.saveData&&!reduced.matches;
-  const videoMode=Boolean(hero.dataset.video);
-  const eligible=motionAllowed&&(videoMode||(hero.dataset.enabled==='true'&&(!navigator.deviceMemory||navigator.deviceMemory>=4)&&(!navigator.hardwareConcurrency||navigator.hardwareConcurrency>=4)));
-  if(eligible){
-    const restoring=performance.getEntriesByType('navigation')[0]?.type==='back_forward';
-    let visible=restoring,idle=false,started=false,alive=true,scene,idleTask,loadTimer;
-    const start=async()=>{if(!alive||!visible||!idle||started)return;started=true;try{if(videoMode){const {createVideoHero}=await import('./hero-video.js');if(!alive)return;scene=await createVideoHero(hero);}else{const {createHero}=await import('./hero.js');if(!alive)return;scene=await createHero(hero);}if(!alive)scene?.dispose();}catch(error){if(alive){hero.dataset.state='fallback';console.warn('Legion hero fallback:',error.message);}}};
-    const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting||restoring;start();},{rootMargin:'0px'});observer.observe(hero);
-    const onIdle=()=>{idle=true;start();};
-    const afterLoad=()=>{if('requestIdleCallback'in window)idleTask=requestIdleCallback(onIdle,{timeout:2500});else loadTimer=setTimeout(onIdle,1200);};
-    if(document.readyState==='complete')afterLoad();else window.addEventListener('load',afterLoad,{once:true});
-    stopHero=()=>{alive=false;observer.disconnect();window.removeEventListener('load',afterLoad);if(idleTask)cancelIdleCallback(idleTask);clearTimeout(loadTimer);scene?.dispose();};
-  }else if(hero.dataset.staticPoster){
-    const poster=hero.querySelector('.hero-poster');poster.src=hero.dataset.staticPoster;
-  }
-  };
-  mountHero();desktop.addEventListener('change',mountHero);reduced.addEventListener('change',mountHero);
-  window.addEventListener('pagehide',event=>{if(!event.persisted)stopHero();});
-  window.addEventListener('pageshow',event=>{if(event.persisted&&hero.dataset.state!=='video-ready')mountHero();});
-  hero.querySelectorAll('[data-story-skip]').forEach(link=>link.addEventListener('click',event=>{
-    event.preventDefault();const fleet=$('#fleet');if(!fleet)return;
-    history.pushState(null,'','#fleet');window.scrollTo({top:fleet.getBoundingClientRect().top+scrollY-96,behavior:'instant'});
-    const heading=$('h2',fleet);heading.tabIndex=-1;heading.focus({preventScroll:true});
-  }));
-}
-
 // Defer analytics until LCP has had time to paint; retain all editable legacy IDs.
 const analytics=$('[data-analytics]');
 if(analytics){

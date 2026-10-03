@@ -17,11 +17,10 @@ for item in manifest.values():
     Path(str(path)+'.gz').write_bytes(compressed);Path(str(path)+'.br').write_bytes(brotli.compress(data,quality=11))
     sizes[item.get('name',item['file'])]=len(compressed)
 total=sum(sizes.get(name,0) for name in ['three','hero','meshopt_decoder.module'])
-report={'main_gzip_bytes':sizes.get('main'),'three_scene_decoder_gzip_bytes':total,'three_scene_budget_bytes':150000,'motion_gzip_bytes':sizes.get('motion'),'model_bytes':(ROOT/'static/models/hero-compressed.glb').stat().st_size,'poster_bytes':(ROOT/'static/img/hero-poster.webp').stat().st_size,'gzip_sizes':sizes}
-report['hero_video_controller_gzip_bytes']=sizes.get('hero-video')
-report['hero_video_asset']='static/video/hero-drive.mp4'
-for label,path in [('hero_video_bytes','static/video/hero-drive.mp4'),('hero_video_poster_bytes','static/img/hero-drive-poster.webp'),('hero_video_mobile_poster_bytes','static/img/hero-drive-mobile.webp')]:
-    if (ROOT/path).exists():report[label]=(ROOT/path).stat().st_size
+report={'main_gzip_bytes':sizes.get('main'),'retired_3d_gzip_bytes':total,'gzip_sizes':sizes,
+        'hero_video_controller_gzip_bytes':sizes.get('mercedes-preview'),
+        'all_runtime_js_gzip_bytes':sum(value for key,value in sizes.items() if key!='styleguide')}
 (ROOT/'reports').mkdir(exist_ok=True);(ROOT/'reports/asset_budget.json').write_text(json.dumps(report,indent=2),encoding='utf8')
 print(json.dumps(report))
-if total>=150000:raise SystemExit('Three/scene/decoder gzip budget exceeded')
+if total:raise SystemExit('Retired 3D renderer unexpectedly included in build')
+if report['all_runtime_js_gzip_bytes']>15000:raise SystemExit('Animation/runtime JS gzip budget exceeded')

@@ -1,23 +1,11 @@
 {
-  "main_gzip_bytes": 5719,
-  "three_scene_decoder_gzip_bytes": 149305,
-  "three_scene_budget_bytes": 150000,
-  "motion_gzip_bytes": 42294,
-  "model_bytes": 13012,
-  "poster_bytes": 8282,
+  "main_gzip_bytes": 5763,
+  "retired_3d_gzip_bytes": 0,
   "gzip_sizes": {
-    "motion": 42294,
-    "three": 124403,
-    "hero-video": 2924,
-    "hero": 19205,
-    "main": 5719,
-    "styleguide": 216,
-    "meshopt_decoder.module": 5697,
-    "DRACOLoader": 2536
+    "main": 5763,
+    "mercedes-preview": 2377,
+    "styleguide": 216
   },
-  "hero_video_controller_gzip_bytes": 2924,
-  "hero_video_asset": "static/video/hero-drive.mp4",
-  "hero_video_bytes": 3969555,
-  "hero_video_poster_bytes": 13308,
-  "hero_video_mobile_poster_bytes": 24290
+  "hero_video_controller_gzip_bytes": 2377,
+  "all_runtime_js_gzip_bytes": 8140
 }

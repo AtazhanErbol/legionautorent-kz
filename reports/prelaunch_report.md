@@ -1,11 +1,11 @@
 # Prelaunch report
 
-UTC: 2026-10-03T20:01:43.529735+00:00
+UTC: 2026-10-03T23:23:39.591633+00:00
 Base URL: http://127.0.0.1:8003
 Mode: production
 Result: FAIL
 
-133 pages; 105 sitemap URLs; 1243 unique image resources; 1387 HTTP requests.
+133 pages; 105 sitemap URLs; 1239 unique image resources; 1383 HTTP requests.
 
 Meaningful legacy SEO values are protected. Duplicates are reported as failures and are never rewritten by this checker. Length recommendations are warnings. Empty old metadata filled in the existing rebuild is listed separately.
 

@@ -58,7 +58,7 @@ class Translation(models.Model):
     whatsapp_message = models.TextField(blank=True)
     og_title = models.CharField(max_length=250, blank=True)
     og_description = models.TextField(blank=True)
-    hero_title = models.CharField('Hero заголовок', max_length=250, blank=True)
+    hero_title = models.CharField('Финальная подпись Hero (не H1)', max_length=250, blank=True)
     hero_text = models.TextField(blank=True)
     partner_title = models.CharField(max_length=250, blank=True)
     partner_description = models.TextField(blank=True)

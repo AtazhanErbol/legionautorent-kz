@@ -1,0 +1,28 @@
+.number-value{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%);white-space:nowrap}
+.number-visual{display:inline!important;font:inherit!important;color:inherit!important;white-space:pre}
+.number-visual>span{font:inherit!important;display:inline-block}
+.number-window{height:1.1em;vertical-align:bottom;overflow:hidden}
+.number-strip{display:block;white-space:pre;font:inherit!important;line-height:1.1em!important}
+.eyebrow-stroke{display:inline-block;width:40px;height:2px;vertical-align:middle;margin-right:16px;overflow:visible}.eyebrow-stroke path{transform-origin:left}
+.steps-grid article:after{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--yellow);transform:scaleX(var(--step-progress,1));transform-origin:left}
+.class-marquee{overflow:hidden;border-block:1px solid var(--line);padding:24px 0;color:var(--muted)}
+.class-marquee-track{display:flex;width:max-content;animation:class-drift 45s linear infinite}.class-marquee-track>div{display:flex;align-items:center;gap:56px;padding-right:56px}.class-marquee span{font:600 13px var(--display);text-transform:uppercase;white-space:nowrap;letter-spacing:.12em}.class-marquee span:after{content:' /';color:var(--yellow);margin-left:56px}
+.class-marquee:hover .class-marquee-track,.class-marquee:focus-within .class-marquee-track{animation-play-state:paused}
+@keyframes class-drift{to{transform:translateX(-50%)}}
+.garage-ending{position:relative;min-height:480px;overflow:hidden;display:grid;align-items:center;background:var(--bg)}
+.garage-ending>img{position:absolute;inset:-16px 0;width:100%;height:calc(100% + 32px);object-fit:contain;opacity:.38}
+.garage-ending .container{position:relative;z-index:1}.garage-ending p{max-width:440px;text-shadow:0 2px 20px #000}.garage-ending .garage-statement{font:600 clamp(30px,4vw,56px)/1.1 var(--display);letter-spacing:-.04em}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .button,.car-photo{overflow:hidden;position:relative}
+ .button:after,.car-photo:after{content:'';position:absolute;inset:-40% -100%;background:linear-gradient(110deg,transparent 40%,#fff2 50%,transparent 60%);transform:translateX(-40%);pointer-events:none;opacity:0;transition:transform .65s,opacity .3s}
+ .button:hover:after,.car-card:hover .car-photo:after{transform:translateX(40%);opacity:1}
+}
+@media(max-width:767px){.garage-ending{min-height:360px}.garage-ending>img{object-fit:cover;opacity:.23}.garage-ending .garage-statement{max-width:280px}.class-marquee-track{animation:none}}
+@media(prefers-reduced-motion:reduce){.class-marquee-track{animation:none}.garage-ending>img{transform:none!important}}
+
+.mercedes-facts strong .number-visual,.mercedes-facts strong .number-visual span{color:inherit;gap:0}
+.mercedes-facts strong .number-visual>span{display:inline-block}
+.mercedes-facts strong .number-strip{display:block}
+.headline-mask{overflow:clip}.headline-mask-line{display:block}
+.class-marquee-track{animation-play-state:paused}.class-marquee[data-visible=true] .class-marquee-track{animation-play-state:running}
+.class-marquee:hover .class-marquee-track,.class-marquee:focus-within .class-marquee-track{animation-play-state:paused}

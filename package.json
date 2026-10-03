@@ -2,17 +2,12 @@
   "name": "legion-assets",
   "private": true,
   "scripts": {
-    "vendor": "node tools/vendor.cjs",
     "build": "vite build",
     "dev": "vite",
     "check:budget": "node tools/check_asset_budget.cjs"
   },
-  "dependencies": {
-    "gsap": "^3.14.0",
-    "three": "^0.180.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@gltf-transform/cli": "^4.5.1",
     "esbuild": "^0.25.12",
     "lighthouse": "^13.5.0",
     "terser": "^5.51.2",

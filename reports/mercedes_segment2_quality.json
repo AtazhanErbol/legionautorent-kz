@@ -1,0 +1,614 @@
+{
+  "job_id": "b5c3c342-088a-4cc6-a100-b591b0942347",
+  "model": "minimax_hailuo",
+  "variant": "minimax",
+  "requested_seconds": 6,
+  "actual_seconds": 5.875,
+  "frames": 141,
+  "fps": 24,
+  "width": 1918,
+  "height": 1080,
+  "audio_stream": false,
+  "bytes": 1394191,
+  "sha256": "e04868b9cc6f90483350a76802016830b252e82c674562ccb5fca0d6629e4393",
+  "motion_metric": "FFmpeg tblend difference + signalstats YAVG (8-bit luma); includes haze, lighting and compression, not optical flow or proof of physical wheel motion",
+  "motion_bins": [
+    {
+      "second": 0,
+      "mean_yavg": 0.7024,
+      "max_yavg": 1.1848
+    },
+    {
+      "second": 1,
+      "mean_yavg": 1.3304,
+      "max_yavg": 1.50751
+    },
+    {
+      "second": 2,
+      "mean_yavg": 1.3099,
+      "max_yavg": 1.57888
+    },
+    {
+      "second": 3,
+      "mean_yavg": 0.7303,
+      "max_yavg": 1.10842
+    },
+    {
+      "second": 4,
+      "mean_yavg": 0.2149,
+      "max_yavg": 0.435325
+    },
+    {
+      "second": 5,
+      "mean_yavg": 0.0704,
+      "max_yavg": 0.249399
+    }
+  ],
+  "motion_samples": [
+    {
+      "seconds": 0.0416667,
+      "yavg": 0.52095
+    },
+    {
+      "seconds": 0.0833333,
+      "yavg": 0.270206
+    },
+    {
+      "seconds": 0.125,
+      "yavg": 0.248507
+    },
+    {
+      "seconds": 0.166667,
+      "yavg": 0.391997
+    },
+    {
+      "seconds": 0.208333,
+      "yavg": 0.555477
+    },
+    {
+      "seconds": 0.25,
+      "yavg": 0.423024
+    },
+    {
+      "seconds": 0.291667,
+      "yavg": 0.470616
+    },
+    {
+      "seconds": 0.333333,
+      "yavg": 0.537033
+    },
+    {
+      "seconds": 0.375,
+      "yavg": 0.642429
+    },
+    {
+      "seconds": 0.416667,
+      "yavg": 0.541629
+    },
+    {
+      "seconds": 0.458333,
+      "yavg": 0.575249
+    },
+    {
+      "seconds": 0.5,
+      "yavg": 0.652784
+    },
+    {
+      "seconds": 0.541667,
+      "yavg": 0.768243
+    },
+    {
+      "seconds": 0.583333,
+      "yavg": 0.717934
+    },
+    {
+      "seconds": 0.625,
+      "yavg": 0.796841
+    },
+    {
+      "seconds": 0.666667,
+      "yavg": 0.891803
+    },
+    {
+      "seconds": 0.708333,
+      "yavg": 1.02477
+    },
+    {
+      "seconds": 0.75,
+      "yavg": 0.913108
+    },
+    {
+      "seconds": 0.791667,
+      "yavg": 0.95553
+    },
+    {
+      "seconds": 0.833333,
+      "yavg": 0.993233
+    },
+    {
+      "seconds": 0.875,
+      "yavg": 1.1848
+    },
+    {
+      "seconds": 0.916667,
+      "yavg": 1.05122
+    },
+    {
+      "seconds": 0.958333,
+      "yavg": 1.02726
+    },
+    {
+      "seconds": 1.0,
+      "yavg": 1.07462
+    },
+    {
+      "seconds": 1.041667,
+      "yavg": 1.23501
+    },
+    {
+      "seconds": 1.083333,
+      "yavg": 1.15511
+    },
+    {
+      "seconds": 1.125,
+      "yavg": 1.18532
+    },
+    {
+      "seconds": 1.166667,
+      "yavg": 1.17483
+    },
+    {
+      "seconds": 1.208333,
+      "yavg": 1.32751
+    },
+    {
+      "seconds": 1.25,
+      "yavg": 1.20505
+    },
+    {
+      "seconds": 1.291667,
+      "yavg": 1.24652
+    },
+    {
+      "seconds": 1.333333,
+      "yavg": 1.30546
+    },
+    {
+      "seconds": 1.375,
+      "yavg": 1.48765
+    },
+    {
+      "seconds": 1.416667,
+      "yavg": 1.31209
+    },
+    {
+      "seconds": 1.458333,
+      "yavg": 1.29556
+    },
+    {
+      "seconds": 1.5,
+      "yavg": 1.32503
+    },
+    {
+      "seconds": 1.541667,
+      "yavg": 1.50751
+    },
+    {
+      "seconds": 1.583333,
+      "yavg": 1.40591
+    },
+    {
+      "seconds": 1.625,
+      "yavg": 1.41083
+    },
+    {
+      "seconds": 1.666667,
+      "yavg": 1.37555
+    },
+    {
+      "seconds": 1.708333,
+      "yavg": 1.4612
+    },
+    {
+      "seconds": 1.75,
+      "yavg": 1.39702
+    },
+    {
+      "seconds": 1.791667,
+      "yavg": 1.39137
+    },
+    {
+      "seconds": 1.833333,
+      "yavg": 1.3796
+    },
+    {
+      "seconds": 1.875,
+      "yavg": 1.47818
+    },
+    {
+      "seconds": 1.916667,
+      "yavg": 1.42022
+    },
+    {
+      "seconds": 1.958333,
+      "yavg": 1.3717
+    },
+    {
+      "seconds": 2.0,
+      "yavg": 1.36457
+    },
+    {
+      "seconds": 2.041667,
+      "yavg": 1.50553
+    },
+    {
+      "seconds": 2.083333,
+      "yavg": 1.40949
+    },
+    {
+      "seconds": 2.125,
+      "yavg": 1.43395
+    },
+    {
+      "seconds": 2.166667,
+      "yavg": 1.4101
+    },
+    {
+      "seconds": 2.208333,
+      "yavg": 1.57888
+    },
+    {
+      "seconds": 2.25,
+      "yavg": 1.40793
+    },
+    {
+      "seconds": 2.291667,
+      "yavg": 1.47913
+    },
+    {
+      "seconds": 2.333333,
+      "yavg": 1.42442
+    },
+    {
+      "seconds": 2.375,
+      "yavg": 1.50825
+    },
+    {
+      "seconds": 2.416667,
+      "yavg": 1.39132
+    },
+    {
+      "seconds": 2.458333,
+      "yavg": 1.34075
+    },
+    {
+      "seconds": 2.5,
+      "yavg": 1.33396
+    },
+    {
+      "seconds": 2.541667,
+      "yavg": 1.39682
+    },
+    {
+      "seconds": 2.583333,
+      "yavg": 1.27588
+    },
+    {
+      "seconds": 2.625,
+      "yavg": 1.22111
+    },
+    {
+      "seconds": 2.666667,
+      "yavg": 1.18656
+    },
+    {
+      "seconds": 2.708333,
+      "yavg": 1.20607
+    },
+    {
+      "seconds": 2.75,
+      "yavg": 1.08161
+    },
+    {
+      "seconds": 2.791667,
+      "yavg": 1.10291
+    },
+    {
+      "seconds": 2.833333,
+      "yavg": 1.08249
+    },
+    {
+      "seconds": 2.875,
+      "yavg": 1.18332
+    },
+    {
+      "seconds": 2.916667,
+      "yavg": 1.0474
+    },
+    {
+      "seconds": 2.958333,
+      "yavg": 1.0661
+    },
+    {
+      "seconds": 3.0,
+      "yavg": 1.03282
+    },
+    {
+      "seconds": 3.041667,
+      "yavg": 1.10842
+    },
+    {
+      "seconds": 3.083333,
+      "yavg": 0.965381
+    },
+    {
+      "seconds": 3.125,
+      "yavg": 0.894905
+    },
+    {
+      "seconds": 3.166667,
+      "yavg": 0.899563
+    },
+    {
+      "seconds": 3.208333,
+      "yavg": 0.905839
+    },
+    {
+      "seconds": 3.25,
+      "yavg": 0.754147
+    },
+    {
+      "seconds": 3.291667,
+      "yavg": 0.746934
+    },
+    {
+      "seconds": 3.333333,
+      "yavg": 0.779262
+    },
+    {
+      "seconds": 3.375,
+      "yavg": 0.831793
+    },
+    {
+      "seconds": 3.416667,
+      "yavg": 0.71601
+    },
+    {
+      "seconds": 3.458333,
+      "yavg": 0.722709
+    },
+    {
+      "seconds": 3.5,
+      "yavg": 0.680954
+    },
+    {
+      "seconds": 3.541667,
+      "yavg": 0.737684
+    },
+    {
+      "seconds": 3.583333,
+      "yavg": 0.755952
+    },
+    {
+      "seconds": 3.625,
+      "yavg": 0.652747
+    },
+    {
+      "seconds": 3.666667,
+      "yavg": 0.750517
+    },
+    {
+      "seconds": 3.708333,
+      "yavg": 0.584162
+    },
+    {
+      "seconds": 3.75,
+      "yavg": 0.638934
+    },
+    {
+      "seconds": 3.791667,
+      "yavg": 0.473358
+    },
+    {
+      "seconds": 3.833333,
+      "yavg": 0.55863
+    },
+    {
+      "seconds": 3.875,
+      "yavg": 0.456593
+    },
+    {
+      "seconds": 3.916667,
+      "yavg": 0.497378
+    },
+    {
+      "seconds": 3.958333,
+      "yavg": 0.38176
+    },
+    {
+      "seconds": 4.0,
+      "yavg": 0.430604
+    },
+    {
+      "seconds": 4.041667,
+      "yavg": 0.357181
+    },
+    {
+      "seconds": 4.083333,
+      "yavg": 0.355547
+    },
+    {
+      "seconds": 4.125,
+      "yavg": 0.292896
+    },
+    {
+      "seconds": 4.166667,
+      "yavg": 0.383789
+    },
+    {
+      "seconds": 4.208333,
+      "yavg": 0.308105
+    },
+    {
+      "seconds": 4.25,
+      "yavg": 0.273317
+    },
+    {
+      "seconds": 4.291667,
+      "yavg": 0.256164
+    },
+    {
+      "seconds": 4.333333,
+      "yavg": 0.435325
+    },
+    {
+      "seconds": 4.375,
+      "yavg": 0.223679
+    },
+    {
+      "seconds": 4.416667,
+      "yavg": 0.278209
+    },
+    {
+      "seconds": 4.458333,
+      "yavg": 0.303914
+    },
+    {
+      "seconds": 4.5,
+      "yavg": 0.203923
+    },
+    {
+      "seconds": 4.541667,
+      "yavg": 0.11196
+    },
+    {
+      "seconds": 4.583333,
+      "yavg": 0.121891
+    },
+    {
+      "seconds": 4.625,
+      "yavg": 0.0969987
+    },
+    {
+      "seconds": 4.666667,
+      "yavg": 0.212073
+    },
+    {
+      "seconds": 4.708333,
+      "yavg": 0.0784372
+    },
+    {
+      "seconds": 4.75,
+      "yavg": 0.0533069
+    },
+    {
+      "seconds": 4.791667,
+      "yavg": 0.0505315
+    },
+    {
+      "seconds": 4.833333,
+      "yavg": 0.148239
+    },
+    {
+      "seconds": 4.875,
+      "yavg": 0.0486555
+    },
+    {
+      "seconds": 4.916667,
+      "yavg": 0.0622157
+    },
+    {
+      "seconds": 4.958333,
+      "yavg": 0.0706344
+    },
+    {
+      "seconds": 5.0,
+      "yavg": 0.239804
+    },
+    {
+      "seconds": 5.041667,
+      "yavg": 0.109421
+    },
+    {
+      "seconds": 5.083333,
+      "yavg": 0.134135
+    },
+    {
+      "seconds": 5.125,
+      "yavg": 0.115175
+    },
+    {
+      "seconds": 5.166667,
+      "yavg": 0.249399
+    },
+    {
+      "seconds": 5.208333,
+      "yavg": 0.0852697
+    },
+    {
+      "seconds": 5.25,
+      "yavg": 0.068645
+    },
+    {
+      "seconds": 5.291667,
+      "yavg": 0.0445878
+    },
+    {
+      "seconds": 5.333333,
+      "yavg": 0.0835023
+    },
+    {
+      "seconds": 5.375,
+      "yavg": 0.0419727
+    },
+    {
+      "seconds": 5.416667,
+      "yavg": 0.034855
+    },
+    {
+      "seconds": 5.458333,
+      "yavg": 0.064349
+    },
+    {
+      "seconds": 5.5,
+      "yavg": 0.0509148
+    },
+    {
+      "seconds": 5.541667,
+      "yavg": 0.0198297
+    },
+    {
+      "seconds": 5.583333,
+      "yavg": 0.0151783
+    },
+    {
+      "seconds": 5.625,
+      "yavg": 0.039195
+    },
+    {
+      "seconds": 5.666667,
+      "yavg": 0.0283943
+    },
+    {
+      "seconds": 5.708333,
+      "yavg": 0.00758506
+    },
+    {
+      "seconds": 5.75,
+      "yavg": 0.00706127
+    },
+    {
+      "seconds": 5.791667,
+      "yavg": 0.0247383
+    },
+    {
+      "seconds": 5.833333,
+      "yavg": 0.0135104
+    }
+  ],
+  "credits_video": 10,
+  "credits_unused_image": 2,
+  "balance_after": 88,
+  "source_files_unchanged": true,
+  "installed_on_site": false
+}

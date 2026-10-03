@@ -28,7 +28,7 @@ if nginx.exists():
     common=(ROOT/'deploy/nginx-shared.conf').read_text().replace('root /srv;',f'root {WORK.as_posix()}/www;').replace('alias /srv/',f'alias {WORK.as_posix()}/www/').replace('http://web:8001','http://127.0.0.1:8003')
     (WORK/'shared.conf').write_text(common)
     for name in ['nginx.conf','nginx-bootstrap.conf','nginx-dev.conf']:
-        text=(ROOT/'deploy'/name).read_text().replace('listen 80;','listen 127.0.0.1:8004;').replace('listen 443 ssl;','listen 127.0.0.1:8443 ssl;')
+        text=(ROOT/'deploy'/name).read_text().replace('listen 8080;','listen 127.0.0.1:8004;').replace('listen 8443 ssl;','listen 127.0.0.1:8443 ssl;')
         text=text.replace('/etc/nginx/legion/shared.conf',f'{WORK.as_posix()}/shared.conf').replace('/var/www/acme',f'{WORK.as_posix()}/acme')
         text=text.replace('/etc/letsencrypt/live/legionautorent.kz/fullchain.pem',certificate.as_posix()).replace('/etc/letsencrypt/live/legionautorent.kz/privkey.pem',key.as_posix())
         config=f'worker_processes 1;\nevents {{ worker_connections 256; }}\nhttp {{\ninclude {nginx.parent.as_posix()}/conf/mime.types;\n'+(ROOT/'deploy/nginx-compression.conf').read_text()+'\n'+text+'\n}\n'

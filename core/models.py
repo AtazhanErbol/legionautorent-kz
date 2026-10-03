@@ -2,6 +2,7 @@ from urllib.parse import quote
 from django.db import models
 from django.contrib.contenttypes.fields import GenericRelation
 from .validators import validate_image, validate_glb
+from .hero import ASSETS
 
 def default_hero_names():
     return {'headlightMaterials':['Headlight_Lens'],'taillightMaterials':['Taillight_Lens'],'headlightNodes':['Headlight_L','Headlight_R'],'wheelNodes':['Wheel_FL','Wheel_FR','Wheel_RL','Wheel_RR']}
@@ -19,18 +20,20 @@ class SiteSettings(models.Model):
     hero_model = models.FileField(upload_to='models/', blank=True, validators=[validate_glb], help_text='Лицензированный GLB до 3 МБ. Draco и meshopt поддерживаются.')
     hero_model_license = models.CharField(max_length=250, blank=True, help_text='Источник и подтверждение прав на модель')
     hero_model_path = models.CharField(max_length=250,default='/static/models/hero.glb',help_text='Локальный путь GLB; для сохранённого hero.glb браузер использует hero-compressed.glb. Загрузка файла выше имеет приоритет.')
-    hero_poster_path = models.CharField(max_length=250,default='/static/img/hero-poster.webp')
-    hero_video_path = models.CharField(max_length=250,blank=True,help_text='Необязательный локальный WebM; показывается вместо 3D только по настройке.')
+    hero_poster_path = models.CharField('Постер первого экрана', max_length=250, default=ASSETS['poster'])
+    hero_mobile_poster_path = models.CharField('Постер для телефона', max_length=250, blank=True, default=ASSETS['mobile'])
+    hero_ending_path = models.CharField('Финальный кадр', max_length=250, blank=True, default=ASSETS['ending'])
+    hero_video_path = models.CharField('Видео первого экрана', max_length=250, blank=True, default=ASSETS['video'], help_text='Локальный MP4 /static/ или /media/. H.264, без звука, ключевой кадр каждые 8 кадров.')
     hero_names = models.JSONField(default=default_hero_names)
     enable_hero_3d = models.BooleanField(default=True)
-    enable_hero_video = models.BooleanField(default=False)
+    enable_hero_video = models.BooleanField('Анимация при прокрутке', default=True)
     hero_placeholder = models.BooleanField(default=True)
     robots_text = models.TextField(blank=True,help_text='Production robots; {sitemap_url} заменяется автоматически. Staging всегда закрыт.')
     default_seo_title = models.CharField(max_length=250,default='Legion Auto Rent — прокат автомобилей')
     default_seo_description = models.TextField(default='Аренда автомобилей без водителя в Казахстане. Автопарк, цены и контакты Legion Auto Rent.')
     whatsapp_message = models.TextField(default='Здравствуйте! Интересует аренда автомобиля в Legion Auto Rent.')
     notifications_enabled = models.BooleanField(default=False)
-    hero_title = models.CharField(max_length=200, default='Прокат авто без водителя в Астане')
+    hero_title = models.CharField('Финальная подпись', max_length=200, default='Без водителя. Под ваши планы.', help_text='Текст в конце анимации. H1 берётся только из SEO города и здесь не меняется.')
     hero_text = models.TextField(default='Для деловых встреч, городских маршрутов и поездок за город. Выберите свой автомобиль — остальное возьмём на себя.')
     hero_car = models.ForeignKey('cars.Car', null=True, blank=True, on_delete=models.SET_NULL, related_name='+')
     instagram = models.URLField(blank=True)
@@ -61,7 +64,7 @@ class SiteSettings(models.Model):
             value = getattr(self, field)
             if value and not re.fullmatch(pattern, value): raise ValidationError({field: 'Некорректное значение.'})
         if self.hero_model and not self.hero_model_license: raise ValidationError({'hero_model_license': 'Укажите источник лицензии 3D-модели.'})
-        for field in ('hero_model_path','hero_poster_path','hero_video_path'):
+        for field in ('hero_model_path','hero_poster_path','hero_video_path','hero_mobile_poster_path','hero_ending_path'):
             value=getattr(self,field)
             if value and (not value.startswith(('/static/','/media/')) or '..' in value or '\\' in value or '?' in value or '#' in value):
                 raise ValidationError({field:'Нужен локальный путь /static/ или /media/ без переходов между каталогами.'})

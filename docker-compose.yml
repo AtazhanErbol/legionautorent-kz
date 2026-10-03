@@ -2,6 +2,7 @@ name: legion
 services:
   db:
     image: postgres:18-bookworm
+    user: postgres
     restart: unless-stopped
     environment:
       POSTGRES_DB: legion
@@ -30,8 +31,6 @@ services:
       TRUST_PROXY_HEADERS: 'true'
       TRUSTED_PROXY_IPS: 172.30.0.10
       FORWARDED_ALLOW_IPS: 172.30.0.10
-      BOOTSTRAP_LEGACY: ${BOOTSTRAP_LEGACY:-true}
-      DOWNLOAD_LEGACY_IMAGES: ${DOWNLOAD_LEGACY_IMAGES:-true}
     volumes:
       - media:/app/media
       - staticfiles:/app/staticfiles
@@ -44,12 +43,15 @@ services:
         condition: service_healthy
   nginx:
     image: nginx:1.30.5-alpine
+    user: '101:101'
+    entrypoint: [nginx, -g, 'daemon off;']
     restart: unless-stopped
     ports:
-      - '80:80'
-      - '443:443'
+      - '80:8080'
+      - '443:8443'
     volumes:
       - ${NGINX_CONFIG:-./deploy/nginx-bootstrap.conf}:/etc/nginx/conf.d/default.conf:ro
+      - ./deploy/nginx-main.conf:/etc/nginx/nginx.conf:ro
       - ./deploy/nginx-compression.conf:/etc/nginx/conf.d/10-compression.conf:ro
       - ./deploy/nginx-shared.conf:/etc/nginx/legion/shared.conf:ro
       - media:/srv/media:ro
@@ -62,10 +64,16 @@ services:
     depends_on:
       web:
         condition: service_healthy
+    healthcheck:
+      test: [CMD-SHELL, 'nginx -t && kill -0 "$$(cat /tmp/nginx.pid)"']
+      interval: 30s
+      timeout: 5s
+      retries: 3
   certbot:
     image: certbot/certbot:latest
     profiles: [certificate]
     volumes:
+      - ./deploy/certificate-permissions.sh:/opt/certificate-permissions.sh:ro
       - acme:/var/www/acme
       - certificates:/etc/letsencrypt
 volumes:

@@ -1,0 +1,40 @@
+{
+  "authorization": "Разрешаю 10 кредитов; subsequent explicit delegation of visual approval to Codex",
+  "approved_credits": 10,
+  "params": {
+    "model": "minimax_hailuo",
+    "variant": "minimax",
+    "duration": 6,
+    "resolution": "1080",
+    "aspect_ratio": "16:9",
+    "count": 1,
+    "use_unlim": false,
+    "medias": [
+      {
+        "role": "start_image",
+        "value": "79ce62b8-c123-40bb-bf70-937ebf1822d8"
+      }
+    ],
+    "prompt": "Continue this exact shot from the supplied frame, seamlessly. One continuous six-second shot of this same black Mercedes sedan in the same dark industrial garage, no cuts. Preserve exactly the existing front three-quarter pose, left-facing orientation, camera height, lens, framing, car scale, body proportions, grille, headlights, wheel design, existing small badges and floor reflections at the opening. This is the final segment of a slow arrival: continue the same very gentle forward movement and same small ongoing turn, never restart or reverse it. The sedan creeps forward only a short distance toward the viewer along a shallow curve, turns at most another ten degrees to reveal slightly more of its current visible flank, and smoothly slows to a complete dignified rest by second four. Keep the car centrally composed; the entire roof, bumper, all tires and floor reflection stay inside frame with generous headroom and floor margin. Locked low camera, no zoom, no orbit, no reframing, no sudden acceleration. Wheel rotation must match the very slow forward movement, tires stay grounded, no sideways sliding. Hold the same composed resting ending for the last two seconds while only delicate haze drifts and restrained headlight beams shimmer. Maintain continuous edge-to-edge garage environment and constant exposure, accurate dark paint and smooth shadow gradients. No added text, no added logos, no lettering, no watermark, no license plate anywhere. No people, no extra wheels, no vehicle morphing, no scene changes. Silent video, no audio."
+  },
+  "result": {
+    "results": [
+      {
+        "id": "b5c3c342-088a-4cc6-a100-b591b0942347",
+        "type": "video",
+        "status": "pending",
+        "model": "minimax_hailuo",
+        "params": {
+          "prompt": "Continue this exact shot from the supplied frame, seamlessly. One continuous six-second shot of this same black Mercedes sedan in the same dark industrial garage, no cuts. Preserve exactly the existing front three-quarter pose, left-facing orientation, camera height, lens, framing, car scale, body proportions, grille, headlights, wheel design, existing small badges and floor reflections at the opening. This is the final segment of a slow arrival: continue the same very gentle forward movement and same small ongoing turn, never restart or reverse it. The sedan creeps forward only a short distance toward the viewer along a shallow curve, turns at most another ten degrees to reveal slightly more of its current visible flank, and smoothly slows to a complete dignified rest by second four. Keep the car centrally composed; the entire roof, bumper, all tires and floor reflection stay inside frame with generous headroom and floor margin. Locked low camera, no zoom, no orbit, no reframing, no sudden acceleration. Wheel rotation must match the very slow forward movement, tires stay grounded, no sideways sliding. Hold the same composed resting ending for the last two seconds while only delicate haze drifts and restrained headlight beams shimmer. Maintain continuous edge-to-edge garage environment and constant exposure, accurate dark paint and smooth shadow gradients. No added text, no added logos, no lettering, no watermark, no license plate anywhere. No people, no extra wheels, no vehicle morphing, no scene changes. Silent video, no audio.",
+          "aspect_ratio": "16:9",
+          "duration": 6,
+          "reference_images": [
+            "79ce62b8-c123-40bb-bf70-937ebf1822d8"
+          ],
+          "variant": "minimax",
+          "resolution": "1080"
+        }
+      }
+    ]
+  }
+}

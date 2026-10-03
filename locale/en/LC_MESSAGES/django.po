@@ -718,3 +718,12 @@ msgstr "Rear lights"
 
 msgid "Закрыть фильтры"
 msgstr "Close filters"
+
+msgid "Смотреть анимацию"
+msgstr "Watch animation"
+
+msgid "Приостановить"
+msgstr "Pause"
+
+msgid "Имя"
+msgstr "Name"

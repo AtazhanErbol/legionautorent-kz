@@ -1,3 +1,5 @@
+import {queueFrame,cancelFrame} from './motion-frame.js';
+import {initAmbientMotion} from './ambient-motion.js';
 import './page-motion.css';
 
 let currentInstance;
@@ -8,6 +10,7 @@ export function initPageMotion() {
   if (currentInstance) return currentInstance;
   if (!('IntersectionObserver' in window) || !Element.prototype.animate) return () => {};
 
+  initAmbientMotion();
   const reduced = matchMedia('(prefers-reduced-motion: reduce), (hover: none), (pointer: coarse)');
   const selector = '.car-card, .steps-grid > article, .benefits-grid > article, .contact-layout > div';
   const observed = new Set();
@@ -62,73 +65,20 @@ export function initPageMotion() {
       seen.add(element);
       if (!reduced.matches) entering.add(element);
     }
-    if (entering.size && !revealFrame) revealFrame = requestAnimationFrame(reveal);
+    if (entering.size && !revealFrame) revealFrame = queueFrame(reveal);
   }, {threshold: 0.06, rootMargin: '0px 0px -16px 0px'});
 
   function enhanceAccordion(details) {
     if (accordions.has(details)) return;
-    const summary = details.querySelector(':scope > summary');
-    const body = details.querySelector(':scope > .prose');
-    if (!summary || !body) return;
-    const originalInert = body.inert;
+    const body=details.querySelector(':scope > .prose');
     let animation;
-    let targetOpen = details.open;
-
-    const finish = () => {
-      if (!animation) {targetOpen = details.open; body.inert = originalInert; return;}
-      const running = animation;
-      animation = null;
-      if (running) {running.onfinish = null; running.cancel();}
-      details.open = targetOpen;
-      details.style.removeProperty('height');
-      details.classList.remove('faq-is-moving', 'faq-is-closing');
-      body.inert = originalInert;
+    const finish=()=>{animation?.cancel();animation=null;};
+    const onToggle=()=>{
+      finish();if(!body||!details.open||reduced.matches)return;
+      animation=body.animate([{opacity:.5,transform:'translateY(-4px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'});
     };
-
-    const onClick = event => {
-      if (event.defaultPrevented || event.button !== 0 || reduced.matches) return;
-      if (event.target.closest('a, button, input, select, textarea')) return;
-      event.preventDefault();
-      const startHeight = details.getBoundingClientRect().height;
-      targetOpen = animation ? !targetOpen : !details.open;
-      if (animation) {animation.onfinish = null; animation.cancel(); animation = null;}
-      details.style.removeProperty('height');
-      details.classList.remove('faq-is-moving', 'faq-is-closing');
-      if (targetOpen) details.open = true;
-      // Content being closed must not keep a keyboard focus target while its
-      // visual height shrinks. Native details takes over again on completion.
-      if (!targetOpen && body.contains(document.activeElement)) summary.focus({preventScroll: true});
-      body.inert = originalInert || !targetOpen;
-      const style = getComputedStyle(details);
-      const edges = ['borderTopWidth', 'borderBottomWidth', 'paddingTop', 'paddingBottom']
-        .reduce((sum, key) => sum + (parseFloat(style[key]) || 0), 0);
-      const endHeight = targetOpen ? details.getBoundingClientRect().height : summary.getBoundingClientRect().height + edges;
-      details.classList.add('faq-is-moving');
-      details.classList.toggle('faq-is-closing', !targetOpen);
-      details.style.height = `${startHeight}px`;
-      animation = details.animate([{height: `${startHeight}px`}, {height: `${endHeight}px`}], {
-        duration: 240, easing: 'cubic-bezier(.2,.65,.3,1)', fill: 'forwards',
-      });
-      animation.onfinish = finish;
-    };
-    const onFocus = event => {if (animation && targetOpen && body.contains(event.target)) finish();};
-    // External/native changes (including browser find-in-page) remain valid.
-    const onToggle = () => {
-      if (!animation) targetOpen = details.open;
-      else if (!details.open) {targetOpen = false; finish();}
-    };
-    summary.addEventListener('click', onClick);
-    details.addEventListener('focusin', onFocus);
-    details.addEventListener('toggle', onToggle);
-    accordions.set(details, {
-      finish,
-      dispose: () => {
-        finish();
-        summary.removeEventListener('click', onClick);
-        details.removeEventListener('focusin', onFocus);
-        details.removeEventListener('toggle', onToggle);
-      },
-    });
+    details.addEventListener('toggle',onToggle);
+    accordions.set(details,{finish,dispose:()=>{finish();details.removeEventListener('toggle',onToggle);}});
   }
 
   const scan = () => {
@@ -156,7 +106,7 @@ export function initPageMotion() {
     });
     document.querySelectorAll('.faq-list > details').forEach(enhanceAccordion);
   };
-  const scheduleScan = () => {if (!scanFrame) scanFrame = requestAnimationFrame(scan);};
+  const scheduleScan = () => {if (!scanFrame) scanFrame = queueFrame(scan);};
   const mutations = new MutationObserver(records => {
     let relevant = false;
     for (const record of records) {
@@ -175,7 +125,7 @@ export function initPageMotion() {
     if (relevant) scheduleScan();
   });
   const settle = () => {
-    cancelAnimationFrame(revealFrame); revealFrame = 0; entering.clear();
+    cancelFrame(revealFrame); revealFrame = 0; entering.clear();
     for (const element of reveals.keys()) stopReveal(element);
     for (const state of accordions.values()) state.finish();
   };
@@ -196,7 +146,7 @@ export function initPageMotion() {
 
   currentInstance = () => {
     disposed = true;
-    cancelAnimationFrame(scanFrame);
+    cancelFrame(scanFrame);
     mutations.disconnect(); observer.disconnect(); settle();
     for (const state of accordions.values()) state.dispose();
     accordions.clear(); observed.clear(); dirtyGrids.clear();
