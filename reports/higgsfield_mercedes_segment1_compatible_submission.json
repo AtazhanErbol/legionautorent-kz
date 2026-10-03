@@ -1,0 +1,62 @@
+{
+  "authorization": "User approved one Hailuo segment for 10 credits; compatible base variant preserves both reference frames and exact approved cost",
+  "approved_credits": 10,
+  "rejected_variant": "minimax-2.3",
+  "params": {
+    "duration": 6,
+    "resolution": "1080",
+    "aspect_ratio": "16:9",
+    "count": 1,
+    "medias": [
+      {
+        "role": "start_image",
+        "value": "ff095bcf-b625-4ff3-989a-8f843fd98669"
+      },
+      {
+        "role": "end_image",
+        "value": "3f3c5e47-39fa-4caa-aeab-c9a5a34f4af5"
+      }
+    ],
+    "prompt": "One continuous six-second automotive shot, no cuts or transitions. Start exactly from the supplied front-view frame and arrive at the supplied front three-quarter frame of the same black Mercedes sedan in the same dark industrial garage. Preserve the reference vehicle identity, grille, headlight geometry, wheel design, body proportions, paint and existing small badges exactly; do not redesign the car or substitute an SUV. With a locked low camera and natural perspective, the car creeps toward the viewer along one smooth shallow curve, gently rotating only enough to expose the flank shown in the end frame. The projected car size increases gradually toward the end-frame composition. Wheels roll coherently with the forward movement and remain in contact with the wet floor; no floating or stationary tire sliding. Keep the entire body, roof, tires and floor reflection inside the frame throughout, with generous headroom and floor margin. The garage stays a continuous edge-to-edge environment: no added black panels. The scene stays alive with delicate drifting haze, soft headlight beams and physically coherent reflections following the car; constant restrained exposure, no flashing or dramatic lighting changes. End on the supplied composed three-quarter pose, slowing to a barely perceptible forward crawl while haze continues, suitable for a continuous next segment. No added text, no added logos, no lettering, no watermark, no license plate anywhere. No people, no cuts, no morphing, no extra wheels, no scene change. Silent video, no audio.",
+    "model": "minimax_hailuo",
+    "variant": "minimax"
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "This tool provides an auto-updating generation widget for these jobs. Do not call job_display, show_generations, or show_generation_by_ids to display these jobs again, either before or after completion, unless the user explicitly requests a separate display. If you need to await completion, use jobs_wait with timeout_seconds <= 15. Use job_display only if the user explicitly requests a separate re-display of one specific job."
+      },
+      {
+        "type": "text",
+        "text": "Submitted 1 job. If a widget is visible, it polls automatically — do not call job_status or show_generations as a follow-up poll. In text-only clients, use job_status with sync:true to poll for completion.\n- 16341aed-e0d0-4e6b-8f1d-d02d60cc3322  \"One continuous six-second automotive shot, no cuts or transitions. Start exactly from the supplied front-view frame and arrive at the supplied front three-quarter frame of the same black Mercedes sedan in the same dark industrial garage. Preserve the reference vehicle identity, grille, headlight geometry, wheel design, body proportions, paint and existing small badges exactly; do not redesign the car or substitute an SUV. With a locked low camera and natural perspective, the car creeps toward the viewer along one smooth shallow curve, gently rotating only enough to expose the flank shown in the end frame. The projected car size increases gradually toward the end-frame composition. Wheels roll coherently with the forward movement and remain in contact with the wet floor; no floating or stationary tire sliding. Keep the entire body, roof, tires and floor reflection inside the frame throughout, with generous headroom and floor margin. The garage stays a continuous edge-to-edge environment: no added black panels. The scene stays alive with delicate drifting haze, soft headlight beams and physically coherent reflections following the car; constant restrained exposure, no flashing or dramatic lighting changes. End on the supplied composed three-quarter pose, slowing to a barely perceptible forward crawl while haze continues, suitable for a continuous next segment. No added text, no added logos, no lettering, no watermark, no license plate anywhere. No people, no cuts, no morphing, no extra wheels, no scene change. Silent video, no audio.\""
+      },
+      {
+        "type": "text",
+        "text": "If the user requests a combined display of multiple generations, including jobs submitted through separate generate_* calls, collect all requested job IDs, wait for the complete set with jobs_wait, then call show_generation_by_ids with jobs: [{\"index\":0,\"job_id\":\"<first actual job ID>\"},{\"index\":1,\"job_id\":\"<second actual job ID>\"}, ...]. job_display accepts only one id: never pass ids to it or loop over it to show a group. Do not create an extra display when the existing generation widgets already satisfy the request."
+      }
+    ],
+    "structuredContent": {
+      "results": [
+        {
+          "id": "16341aed-e0d0-4e6b-8f1d-d02d60cc3322",
+          "type": "video",
+          "status": "pending",
+          "model": "minimax_hailuo",
+          "params": {
+            "prompt": "One continuous six-second automotive shot, no cuts or transitions. Start exactly from the supplied front-view frame and arrive at the supplied front three-quarter frame of the same black Mercedes sedan in the same dark industrial garage. Preserve the reference vehicle identity, grille, headlight geometry, wheel design, body proportions, paint and existing small badges exactly; do not redesign the car or substitute an SUV. With a locked low camera and natural perspective, the car creeps toward the viewer along one smooth shallow curve, gently rotating only enough to expose the flank shown in the end frame. The projected car size increases gradually toward the end-frame composition. Wheels roll coherently with the forward movement and remain in contact with the wet floor; no floating or stationary tire sliding. Keep the entire body, roof, tires and floor reflection inside the frame throughout, with generous headroom and floor margin. The garage stays a continuous edge-to-edge environment: no added black panels. The scene stays alive with delicate drifting haze, soft headlight beams and physically coherent reflections following the car; constant restrained exposure, no flashing or dramatic lighting changes. End on the supplied composed three-quarter pose, slowing to a barely perceptible forward crawl while haze continues, suitable for a continuous next segment. No added text, no added logos, no lettering, no watermark, no license plate anywhere. No people, no cuts, no morphing, no extra wheels, no scene change. Silent video, no audio.",
+            "aspect_ratio": "16:9",
+            "duration": 6,
+            "reference_images": [
+              "ff095bcf-b625-4ff3-989a-8f843fd98669",
+              "3f3c5e47-39fa-4caa-aeab-c9a5a34f4af5"
+            ],
+            "resolution": "1080",
+            "variant": "minimax"
+          }
+        }
+      ]
+    },
+    "isError": false
+  }
+}
