@@ -5,6 +5,32 @@ export function initMercedesPreview(root){
   const progressBar=root.querySelector('.mercedes-progress span');
   const queries=['(max-width:899px)','(orientation:portrait) and (max-width:1024px)','(orientation:portrait) and (pointer:coarse)','(orientation:landscape) and (pointer:coarse) and (max-height:560px)','(prefers-reduced-motion:reduce)'].map(q=>matchMedia(q));
   const connection=navigator.connection;
+  const watch=root.querySelector('.mercedes-watch'),picture=root.querySelector('.mercedes-picture');
+  let manualPlayer;
+  const watchLabel=()=>{
+    const playing=manualPlayer&&!manualPlayer.paused&&!manualPlayer.ended;
+    watch.querySelector('[data-watch-label]').textContent=playing?watch.dataset.pauseLabel:watch.dataset.playLabel;
+    watch.querySelector('[aria-hidden]').textContent=playing?'Ⅱ':'▶';
+  };
+  const stopManual=()=>{
+    if(!manualPlayer)return;
+    manualPlayer.pause();manualPlayer.removeAttribute('src');manualPlayer.load();manualPlayer.remove();manualPlayer=null;
+    picture.setAttribute('aria-hidden','true');watchLabel();
+  };
+  // The narrow owner-review panel stays static until an explicit play click.
+  // This separate native player never alters scroll gates or starts by itself.
+  watch.addEventListener('click',event=>{
+    event.preventDefault();
+    if(!manualPlayer){
+      manualPlayer=document.createElement('video');manualPlayer.className='mercedes-manual';
+      manualPlayer.controls=true;manualPlayer.muted=true;manualPlayer.playsInline=true;manualPlayer.preload='none';
+      manualPlayer.poster=picture.querySelector('img').currentSrc;manualPlayer.src=root.dataset.video;
+      picture.removeAttribute('aria-hidden');picture.append(manualPlayer);
+      ['play','pause','ended'].forEach(name=>manualPlayer.addEventListener(name,watchLabel));
+    }
+    if(manualPlayer.paused||manualPlayer.ended){if(manualPlayer.ended)manualPlayer.currentTime=0;manualPlayer.play().catch(watchLabel);}
+    else manualPlayer.pause();
+  });
   let enabled=false,loading=false,dead=false,controller,objectURL,watchdog,loadTimer,seekTimer;
   let frame=0,lastTick=0,target=0,shown=0,lastPaint=-1,start=0,distance=1,inView=true,desired=0;
   const clamp=(n)=>Math.max(0,Math.min(1,n));
@@ -75,18 +101,22 @@ export function initMercedesPreview(root){
     }finally{clearTimeout(watchdog);loading=false;ring.hidden=true;}
   }
   const apply=()=>{
+    // Connection estimates change during a download; do not interrupt a
+    // viewer who explicitly started playback in the static layout.
+    if(manualPlayer&&!allowed())return;
+    stopManual();
     if(!allowed()){controller?.abort();reset();return;}
     if(document.readyState==='complete')load();
   };
   video.addEventListener('seeked',()=>{clearTimeout(seekTimer);requestSeek();});
   video.addEventListener('error',()=>{if(enabled)fallback();});
-  const observer=new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;if(inView){onScroll();}else{cancelAnimationFrame(frame);frame=0;lastTick=0;}},{threshold:0});
+  const observer=new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;if(inView){onScroll();}else{cancelAnimationFrame(frame);frame=0;lastTick=0;manualPlayer?.pause();}},{threshold:0});
   observer.observe(root);
   window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',measure,{passive:true});
-  window.addEventListener('load',apply,{once:true});queries.forEach(q=>q.addEventListener('change',apply));connection?.addEventListener?.('change',apply);
-  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;lastTick=0;}else onScroll();});
+  window.addEventListener('load',apply,{once:true});queries.forEach(q=>q.addEventListener('change',()=>{stopManual();apply();}));connection?.addEventListener?.('change',apply);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;lastTick=0;manualPlayer?.pause();}else onScroll();});
   window.addEventListener('pageshow',event=>{if(event.persisted){measure();apply();}});
-  window.addEventListener('pagehide',event=>{if(event.persisted)return;dead=true;controller?.abort();reset();observer.disconnect();if(objectURL)URL.revokeObjectURL(objectURL);});
+  window.addEventListener('pagehide',event=>{manualPlayer?.pause();if(event.persisted)return;dead=true;controller?.abort();stopManual();reset();observer.disconnect();if(objectURL)URL.revokeObjectURL(objectURL);});
   root.querySelector('a[href="#fleet"]').addEventListener('click',event=>{
     const fleet=document.querySelector('#fleet');if(!fleet)return;
     event.preventDefault();history.pushState(null,'','#fleet');window.scrollTo({top:fleet.getBoundingClientRect().top+scrollY-96,behavior:'instant'});

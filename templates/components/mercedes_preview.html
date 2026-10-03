@@ -2,6 +2,7 @@
 <section class="mercedes-preview" data-mercedes-preview data-video="{% static hero_review.video %}" data-bytes="{{ hero_review.bytes }}" data-state="static">
   <div class="mercedes-stage">
     <div class="mercedes-picture" aria-hidden="true"><picture><source media="(max-width:899px)" srcset="{% static hero_review.mobile %}"><img src="{% static hero_review.poster %}" width="1918" height="1080" alt="" fetchpriority="high" decoding="async"></picture><video class="mercedes-video" muted playsinline preload="none" aria-hidden="true" tabindex="-1" disablepictureinpicture></video></div>
+    <div class="mercedes-watch-wrap container"><a class="mercedes-watch" href="{% static hero_review.video %}" data-play-label="{% trans 'Смотреть анимацию' %}" data-pause-label="{% trans 'Приостановить' %}"><span aria-hidden="true">▶</span><span data-watch-label>{% trans 'Смотреть анимацию' %}</span></a></div>
     <div class="mercedes-veil" aria-hidden="true"></div>
     <div class="mercedes-captions container">
       <div class="mercedes-caption mercedes-caption--intro"><p class="mercedes-eyebrow">LEGION AUTO RENT / {{ city|tr:'name' }}</p><h1>{{ seo.h1 }}</h1></div>
