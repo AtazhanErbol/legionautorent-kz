@@ -1,0 +1,32 @@
+{
+  "purpose": "Local on-site preview for owner approval, not final approval",
+  "source_job": "16341aed-e0d0-4e6b-8f1d-d02d60cc3322",
+  "frames": 140,
+  "fps": 24,
+  "width": 1918,
+  "height": 1080,
+  "seconds": 5.833333333333333,
+  "audio": false,
+  "assets": {
+    "video": {
+      "path": "hero/mercedes-segment-01-43d4cc20ca42.mp4",
+      "bytes": 5546665,
+      "sha256": "43d4cc20ca426157d2bfd290575037acf621291d4b845716d053d0d2b315d797"
+    },
+    "poster": {
+      "path": "hero/mercedes-front-77ca8545d4d0.webp",
+      "bytes": 154990,
+      "sha256": "77ca8545d4d059f8568d3156b9a1be18aebb717516407025d8313c32de4244cf"
+    },
+    "mobile": {
+      "path": "hero/mercedes-front-mobile-940302853d4f.webp",
+      "bytes": 62954,
+      "sha256": "940302853d4f11e4188b96cfd8ea46d8d36aba7ca3ac8d235dd0cf52b659b940"
+    },
+    "ending": {
+      "path": "hero/mercedes-ending-1f6aa0701c89.webp",
+      "bytes": 182316,
+      "sha256": "1f6aa0701c89b711e6c1f976271372f9e565c9dd20aadee9c29d20051db10369"
+    }
+  }
+}

@@ -14,6 +14,15 @@ def flag(name, default=False):
 ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 DEBUG = flag('DEBUG', ENVIRONMENT == 'development')
 IS_STAGING = ENVIRONMENT != 'production'
+# Owner review is opt-in and cannot replace the production hero.
+HERO_REVIEW = IS_STAGING and flag('HERO_REVIEW')
+HERO_REVIEW_ASSETS = {
+    'video': 'hero/mercedes-segment-01-43d4cc20ca42.mp4',
+    'poster': 'hero/mercedes-front-77ca8545d4d0.webp',
+    'mobile': 'hero/mercedes-front-mobile-940302853d4f.webp',
+    'ending': 'hero/mercedes-ending-1f6aa0701c89.webp',
+    'bytes': 5546665,
+}
 SECRET_KEY = os.getenv('SECRET_KEY', 'development-only-legion-key-change-before-deploy')
 if ENVIRONMENT != 'development' and (len(SECRET_KEY) < 50 or SECRET_KEY.startswith(('development','replace-'))):
     raise ImproperlyConfigured('Set a unique SECRET_KEY of at least 50 characters.')

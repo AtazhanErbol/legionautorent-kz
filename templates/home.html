@@ -1,6 +1,7 @@
 {% extends 'base.html' %}{% load static i18n legion_tags %}{% block body_class %}home-page{% endblock %}
-{% block preload %}<link rel="preload" as="image" href="{% static 'img/hero-drive-mobile.webp' %}" media="(max-width:899px)" fetchpriority="high"><link rel="preload" as="image" href="{{ site.hero_poster_path }}" media="(min-width:900px)" fetchpriority="high">{% endblock %}
+{% block preload %}{% if hero_review %}<link rel="preload" as="image" href="{% static hero_review.mobile %}" media="(max-width:899px)" fetchpriority="high"><link rel="preload" as="image" href="{% static hero_review.poster %}" media="(min-width:900px)" fetchpriority="high">{% else %}<link rel="preload" as="image" href="{% static 'img/hero-drive-mobile.webp' %}" media="(max-width:899px)" fetchpriority="high"><link rel="preload" as="image" href="{{ site.hero_poster_path }}" media="(min-width:900px)" fetchpriority="high">{% endif %}{% endblock %}
 {% block content %}
+{% if hero_review %}{% include 'components/mercedes_preview.html' %}{% else %}
 <section class="hero hero-story" data-hero data-story tabindex="-1" data-model="{% if site.hero_model %}{{ site.hero_model.url }}{% else %}{{ site.hero_model_path }}{% endif %}" data-enabled="{{ site.enable_hero_3d|yesno:'true,false' }}" data-video="{% if site.enable_hero_video %}{% if site.hero_video_path == '/static/video/hero-drive.mp4' %}{% static 'video/hero-drive.mp4' %}{% else %}{{ site.hero_video_path }}{% endif %}{% endif %}" data-static-poster="{% static 'img/hero-drive-front.webp' %}">
   <div class="hero-stage" aria-hidden="true"><div class="hero-media">
     <picture><source media="(max-width:899px)" srcset="{% static 'img/hero-drive-mobile.webp' %}"><img class="hero-poster" src="{{ site.hero_poster_path }}" width="1280" height="720" alt="" fetchpriority="high" decoding="async"></picture>
@@ -31,4 +32,5 @@
   <div class="story-progress" aria-hidden="true"><span class="story-progress-fill"></span></div>
   <script type="application/json" id="hero-names" nonce="{{ request.csp_nonce }}">{{ site.hero_names|json_ld }}</script>
 </section>
+{% endif %}
 {% include 'components/city_sections.html' %}{% endblock %}

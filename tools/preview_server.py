@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 os.environ['DEBUG']='false'
 os.environ['ENVIRONMENT']='development'
+os.environ.setdefault('HERO_REVIEW','true')
 os.environ['SECURE_SSL_REDIRECT']='false'
 os.environ.setdefault('DJANGO_SETTINGS_MODULE','legion.settings')
 from django.core.wsgi import get_wsgi_application

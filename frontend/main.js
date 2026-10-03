@@ -1,6 +1,7 @@
 import './site.css';
 import './hero-story.css';
 import './night-garage.css';
+import './mercedes-preview.css';
 import {initPageMotion} from './page-motion.js';
 import {initGarageUI} from './night-garage.js';
 initGarageUI();
@@ -109,6 +110,8 @@ if(filters&&window.fetch){
   window.addEventListener('popstate',()=>location.reload());
 }
 
+const mercedesPreview=$('[data-mercedes-preview]');
+if(mercedesPreview)import('./mercedes-preview.js').then(({initMercedesPreview})=>initMercedesPreview(mercedesPreview)).catch(()=>{mercedesPreview.dataset.state='fallback';});
 const hero=$('[data-hero]');
 if(hero){
   const minimum=hero.hasAttribute('data-story')?900:768;
