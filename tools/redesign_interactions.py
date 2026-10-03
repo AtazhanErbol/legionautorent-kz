@@ -7,13 +7,20 @@ result={}
 with sync_playwright() as p:
     browser=p.chromium.launch(channel='chrome',headless=True,args=['--enable-webgl','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
     page=browser.new_page(viewport={'width':1440,'height':1000})
-    page.goto(BASE+'/',wait_until='networkidle');page.wait_for_selector('[data-hero][data-state=ready]')
-    assert page.evaluate('document.elementFromPoint(1000,450).tagName')=='CANVAS'
-    canvas=page.locator('.hero-canvas canvas');before=canvas.screenshot()
-    page.mouse.move(1000,450);page.mouse.down();page.mouse.move(1150,490,steps=10);page.mouse.up();page.wait_for_timeout(200)
-    assert before!=canvas.screenshot();result['hero_drag']=True
-    button=page.locator('[data-light-toggle]');assert button.get_attribute('aria-pressed')=='false'
-    button.click();page.wait_for_timeout(200);assert button.get_attribute('aria-pressed')=='true';result['hero_headlights']=True
+    page.goto(BASE+'/',wait_until='networkidle');page.wait_for_selector('[data-hero][data-state=ready],[data-hero][data-state=video-ready]')
+    if page.locator('[data-hero]').get_attribute('data-state')=='video-ready':
+        page.evaluate('window.scrollTo({top:600,behavior:"instant"})')
+        page.wait_for_function('()=>document.querySelector(".hero-video").currentTime > 3')
+        assert page.locator('.hero-video').evaluate('(v)=>v.paused')
+        page.evaluate('window.scrollTo({top:0,behavior:"instant"})');page.wait_for_timeout(250)
+        result['hero_video_scroll']=True
+    else:
+        assert page.evaluate('document.elementFromPoint(1000,450).tagName')=='CANVAS'
+        canvas=page.locator('.hero-canvas canvas');before=canvas.screenshot()
+        page.mouse.move(1000,450);page.mouse.down();page.mouse.move(1150,490,steps=10);page.mouse.up();page.wait_for_timeout(200)
+        assert before!=canvas.screenshot();result['hero_drag']=True
+        button=page.locator('[data-light-toggle]');assert button.get_attribute('aria-pressed')=='false'
+        button.click();page.wait_for_timeout(200);assert button.get_attribute('aria-pressed')=='true';result['hero_headlights']=True
     quick=page.locator('[data-quick-search]');quick.locator('[name=start_date]').fill('2026-10-10');quick.locator('[name=end_date]').fill('2026-10-10')
     assert not quick.evaluate('(form)=>form.checkValidity()')
     quick.locator('[name=end_date]').fill('2026-10-13');quick.locator('[name=category]').select_option('business');quick.locator('button').click();page.wait_for_timeout(600)

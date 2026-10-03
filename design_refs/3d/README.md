@@ -1,5 +1,7 @@
 # 3D hero references
 
+**Update — 2026-10-03:** The user explicitly approved assembling the three supplied frames (`01-start.png`, `02-scroll-50.png`, `03-end-headlights.png`) into the site's scroll-controlled video with smooth cross-dissolves and a small zoom. This approval overrides the earlier “not site assets” restriction **only for this montage and its posters**. See `HERO_VIDEO.md`. The remaining text below is preserved as the historical 3D art direction; this note makes no separate rights or licensing claim.
+
 Style references for the 3D hero. They are NOT site assets and must not be shipped on the website.
 
 IMPORTANT: the car in these images may look like the client's real car, but the 3D model is a generic car (`static/models/hero.glb`). Do not try to copy the shape, badges or logos. Take only atmosphere, lighting and light glow.

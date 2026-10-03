@@ -1,6 +1,5 @@
 {
-  "hero_drag": true,
-  "hero_headlights": true,
+  "hero_video_scroll": true,
   "quick_search_dates_and_class": true,
   "seo_full_dom_and_disclosure": true,
   "map_loads_on_request": true,

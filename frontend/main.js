@@ -99,17 +99,25 @@ if(filters&&window.fetch){
 
 const hero=$('[data-hero]');
 if(hero){
-  const connection=navigator.connection,eligible=hero.dataset.enabled==='true'&&innerWidth>=768&&!connection?.saveData&&!reduced.matches&&(!navigator.deviceMemory||navigator.deviceMemory>=4)&&(!navigator.hardwareConcurrency||navigator.hardwareConcurrency>=4);
+  const desktop=matchMedia('(min-width:768px)');let stopHero=()=>{};
+  const mountHero=()=>{
+  stopHero();
+  const connection=navigator.connection,motionAllowed=innerWidth>=768&&!connection?.saveData&&!reduced.matches;
+  const videoMode=Boolean(hero.dataset.video);
+  const eligible=motionAllowed&&(videoMode||(hero.dataset.enabled==='true'&&(!navigator.deviceMemory||navigator.deviceMemory>=4)&&(!navigator.hardwareConcurrency||navigator.hardwareConcurrency>=4)));
   if(eligible){
-    let visible=false,idle=false,started=false;
-    const start=async()=>{if(!visible||!idle||started)return;started=true;try{const {createHero}=await import('./hero.js');await createHero(hero);}catch(error){hero.dataset.state='fallback';console.warn('Legion 3D fallback:',error.message);}};
+    let visible=false,idle=false,started=false,alive=true,scene;
+    const start=async()=>{if(!alive||!visible||!idle||started)return;started=true;try{if(videoMode){const {createVideoHero}=await import('./hero-video.js');if(!alive)return;scene=await createVideoHero(hero);}else{const {createHero}=await import('./hero.js');if(!alive)return;scene=await createHero(hero);}if(!alive)scene?.dispose();}catch(error){if(alive){hero.dataset.state='fallback';console.warn('Legion hero fallback:',error.message);}}};
     const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;start();},{rootMargin:'0px'});observer.observe(hero);
     const onIdle=()=>{idle=true;start();};
-    window.addEventListener('load',()=>{if('requestIdleCallback'in window)requestIdleCallback(onIdle,{timeout:2500});else setTimeout(onIdle,1200);},{once:true});
-    window.addEventListener('pagehide',()=>observer.disconnect(),{once:true});
-  }else if(hero.dataset.video&&!connection?.saveData&&!reduced.matches){
-    const video=document.createElement('video');video.src=hero.dataset.video;video.muted=true;video.loop=true;video.playsInline=true;video.preload='none';video.className='hero-poster';video.setAttribute('aria-hidden','true');hero.prepend(video);video.play().catch(()=>video.remove());
+    const afterLoad=()=>{if('requestIdleCallback'in window)requestIdleCallback(onIdle,{timeout:2500});else setTimeout(onIdle,1200);};
+    if(document.readyState==='complete')afterLoad();else window.addEventListener('load',afterLoad,{once:true});
+    stopHero=()=>{alive=false;observer.disconnect();scene?.dispose();};
   }
+  };
+  mountHero();desktop.addEventListener('change',mountHero);reduced.addEventListener('change',mountHero);
+  window.addEventListener('pagehide',()=>stopHero());
+  window.addEventListener('pageshow',event=>{if(event.persisted)mountHero();});
 }
 
 // Defer analytics until LCP has had time to paint; retain all editable legacy IDs.

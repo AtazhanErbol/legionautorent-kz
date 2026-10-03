@@ -2,6 +2,8 @@
 
 Актуальная инструкция для полной переработки от 03.10.2026. Действующий сайт автоматически не переключается. Docker здесь отсутствует: Compose проверен по официальной JSON Schema, Nginx 1.30.5 проверен нативно (конфигурация и HTTP), но Linux image build, контейнерный запуск и выдача сертификата ещё не выполнены.
 
+Текущий первый экран использует согласованное видео из трёх референсных кадров вместо 3D-модели. Готовый MP4 и два WebP-постера поставляются со статическими ресурсами; Blender и FFmpeg на production-сервере не нужны. Поведение, параметры и исходники монтажа описаны в `HERO_VIDEO.md`.
+
 ## 1. Подготовка сервера
 
 Нужны Linux, Git, Docker Engine с Compose v2.20+, Python 3 для генерации секретов, домен и открытые 80/443. Сеть `172.30.0.0/24` не должна пересекаться с существующей инфраструктурой. Если она занята, поменяйте адреса всех трёх сервисов и доверенный адрес Nginx согласованно.
@@ -31,6 +33,8 @@ docker compose --env-file .env.production -f docker-compose.yml build
 
 Перенесите свежие `.dump`, `media-*.tar.gz` и их контрольные суммы из локального `backups/` на сервер защищённым способом. Дамп может содержать заявки и учётные записи: не помещайте его в публичный каталог. Следующие команды предназначены **только для новой пустой БД**, до первого запуска web.
 
+Проверенная копия перед включением видео: `legion-20261003T000113Z.dump`, `media-20261003T000113Z.tar.gz` и `manifest-20261003T000113Z.json`. Восстановление в отдельной локальной БД подтвердило 91 автомобиль, 4 города и 302 связи изображений; архив содержит 3893 медиафайла. Копия сделана до переключения первого экрана, поэтому после восстановления обязательно явно включить видеорежим следующей командой.
+
 ```sh
 docker compose --env-file .env.production -f docker-compose.yml up -d db
 # Дождитесь healthy. Подставьте точные имена перенесённых файлов.
@@ -47,6 +51,7 @@ docker compose --env-file .env.production -f docker-compose.yml up -d
 docker compose --env-file .env.production -f docker-compose.yml logs --tail=100 web
 docker compose --env-file .env.production -f docker-compose.yml ps
 docker compose --env-file .env.production -f docker-compose.yml exec web python manage.py migrate --noinput
+docker compose --env-file .env.production -f docker-compose.yml exec web python manage.py configure_hero_video
 docker compose --env-file .env.production -f docker-compose.yml exec web python manage.py collectstatic --noinput
 docker compose --env-file .env.production -f docker-compose.yml exec web python tools/precompress_assets.py --root staticfiles/build
 docker compose --env-file .env.production -f docker-compose.yml exec web python manage.py createsuperuser
@@ -54,7 +59,9 @@ docker compose --env-file .env.production -f docker-compose.yml exec web python 
 docker compose --env-file .env.production -f docker-compose.yml exec web python manage.py verify_migration
 ```
 
-Entrypoint уже выполняет migrate, createcachetable, collectstatic и precompress. Повторные команды выше нужны для явной проверки. После ручного collectstatic обязательно повторяйте precompress: он обеспечивает лимит gzip для 3D. `import_legacy --dry-run` показывает расхождения; явный `import_legacy` возвращает SEO и цены к live/raw источнику, поэтому после запуска сайта не используйте его как фоновую синхронизацию CMS.
+Entrypoint уже выполняет migrate, createcachetable, collectstatic и precompress. Повторные команды выше нужны для явной проверки. `configure_hero_video` — отдельный явный шаг: он проверяет готовые файлы, включает видео, отключает 3D, задаёт пути и очищает кеш; каталог, SEO и заявки не импортируются. Повтор команды безопасен для этих данных. После ручного collectstatic повторяйте precompress для актуальных сжатых JS/CSS-ресурсов. `import_legacy --dry-run` показывает расхождения; явный `import_legacy` возвращает SEO и цены к live/raw источнику, поэтому после запуска сайта не используйте его как фоновую синхронизацию CMS.
+
+Проверьте в Site Settings: `enable_hero_video=true`, `enable_hero_3d=false`, `hero_video_path=/static/video/hero-reference.mp4`, `hero_poster_path=/static/img/hero-video-poster.webp`, `hero_placeholder=false`. Стандартный путь ролика также включает отдельный мобильный постер. Прежние GLB и экспериментальные исходники остаются в репозитории, но не загружаются в активном видеорежиме.
 
 ## 3. HTTPS и включение production
 
@@ -72,9 +79,20 @@ docker compose --env-file .env.production -f docker-compose.yml exec nginx nginx
 docker compose --env-file .env.production -f docker-compose.yml exec web python manage.py check --deploy
 ```
 
-До открытия проверьте формы, медиа, языки, 27 проблемных URL и legal/переводные черновики. Затем установите `ENVIRONMENT=production`, `ANALYTICS_ENABLED=true`, пересоздайте web и nginx. Убедитесь, что robots разрешает обход и у публичных RU-страниц больше нет `X-Robots-Tag: noindex`. HTTP и www переходят одним 301 на HTTPS без www с сохранением пути/параметров. HSTS включается только в production.
+До открытия проверьте формы, медиа, языки, 27 проблемных URL и legal/переводные черновики. Для этих 27 URL сохраняется 404 без массовых перенаправлений и без включения в sitemap; восстановление карточек требует отдельных достоверных данных. Монтаж предоставленных кадров уже отдельно согласован пользователем. Затем установите `ENVIRONMENT=production`, `ANALYTICS_ENABLED=true`, пересоздайте web и nginx. Убедитесь, что robots разрешает обход и у публичных RU-страниц больше нет `X-Robots-Tag: noindex`. HTTP и www переходят одним 301 на HTTPS без www с сохранением пути/параметров. HSTS включается только в production.
 
-GTM, GA4 и Метрика сохранены. Если задан GTM, клиент загружает его первым и не вставляет отдельные дубли GA4/Метрики. Проверьте содержимое GTM-KJWPLLN в Tag Assistant: нет доступа к настройкам контейнера, поэтому наличие нужных тегов внутри нельзя подтвердить локально. Карта загружается после открытия пользователем; телефон/WhatsApp работают без JS.
+Идентификаторы GTM, GA4 и Метрики сохранены, но приложение подключает **только GTM**. Владелец проверяет внутри `GTM-KJWPLLN` наличие Яндекс Метрики **92545653** и GA4 **G-00P3VJTEK9**, затем проверяет события в Tag Assistant. Отдельного подключения GA4/Метрики и запасной прямой загрузки при пустом GTM нет. Доступа к настройкам контейнера локальная проверка не предоставляет. Карта загружается после открытия пользователем; телефон/WhatsApp работают без JS.
+
+После HTTPS проверьте видео и диапазонную загрузку:
+
+```sh
+curl -I https://legionautorent.kz/static/video/hero-reference.mp4
+curl -sS -D - -o /dev/null -H 'Range: bytes=0-1023' https://legionautorent.kz/static/video/hero-reference.mp4
+curl -I https://legionautorent.kz/static/img/hero-video-poster.webp
+curl -I https://legionautorent.kz/static/img/hero-video-mobile.webp
+```
+
+Ожидаются MP4 с `Content-Type: video/mp4`, ответ 206 с корректным `Content-Range` на запрос диапазона и 200 для обоих постеров. В браузере проверить прямую/обратную прокрутку через три ракурса, отсутствие пустого промежутка перед каталогом и статический постер без загрузки MP4 на мобильном, при уменьшении движения и экономии трафика. Видео не должно запускаться само после остановки прокрутки. Обновлённые лабораторные показатели смотреть в `PERFORMANCE_REPORT.md`; production-аналитика, сеть сервера и полевой INP требуют отдельной проверки после публикации.
 
 ## 4. Копии, cron, обновление и откат
 
@@ -88,6 +106,8 @@ LEGION_ROOT=/srv/legion sh deploy/backup-compose.sh
 Скрипт делает custom pg_dump, архив всего media и SHA256; ничего автоматически не удаляет. Храните отдельную зашифрованную копию вне сервера. Для приложения с частыми загрузками делайте резервирование в окне без изменений media. Проверяйте восстановление в изолированной БД регулярно.
 
 Перед обновлением: backup, зафиксировать текущий commit/image ID, получить новый код, собрать image, выполнить проверки на staging и затем `up -d --build`. Не удаляйте прежние images/тома. Для отката кода используйте сохранённый image/commit с совместимой схемой; добавляющие миграции этой версии не требуют удаления колонок. Если откатывается БД, восстановите копию в **новую** БД и согласованное media, проверьте их и только затем переключите конфигурацию. Откат к `d5e7e0a` вернёт старый отклонённый интерфейс; это аварийный checkpoint, не новая production-версия.
+
+Более свежая точка перед сменой первого экрана — тег `codex/checkpoint-before-video-20261003` и manifest `20261003T000113Z`. Для временного статического первого экрана достаточно отключить в Site Settings оба флага `enable_hero_video` и `enable_hero_3d`, оставив новый постер. Это сохраняет каталог и SEO без отката БД. Сбой MP4 также автоматически возвращает постер в рамках текущей страницы.
 
 ## 5. Docker для разработки
 

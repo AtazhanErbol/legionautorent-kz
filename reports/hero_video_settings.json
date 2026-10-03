@@ -1,0 +1,17 @@
+{
+  "before": {
+    "enable_hero_3d": true,
+    "enable_hero_video": false,
+    "hero_video_path": "",
+    "hero_poster_path": "/static/img/hero-poster.webp",
+    "hero_placeholder": true
+  },
+  "after": {
+    "enable_hero_3d": false,
+    "enable_hero_video": true,
+    "hero_video_path": "/static/video/hero-reference.mp4",
+    "hero_poster_path": "/static/img/hero-video-poster.webp",
+    "hero_placeholder": false
+  },
+  "scope": "Local development database only; complete backup before update"
+}

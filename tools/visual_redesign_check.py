@@ -1,4 +1,4 @@
-"""Reproducible Chromium visual rounds and progressive UI checks, with live 3D."""
+"""Reproducible Chromium visual rounds with the configured video or 3D hero."""
 import json,os
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -14,7 +14,7 @@ with sync_playwright() as p:
         page.on('pageerror',lambda e:report['errors'].append(str(e)))
         for name,path in [('home','/'),('city','/kostanay/'),('car','/car/lexus-lx-570-superior')]:
             response=page.goto(BASE+path,wait_until='networkidle')
-            if name=='home' and width==1440:page.wait_for_selector('[data-hero][data-state=ready]',timeout=30000)
+            if name=='home' and width==1440:page.wait_for_selector('[data-hero][data-state=ready],[data-hero][data-state=video-ready]',timeout=30000)
             page.wait_for_timeout(800)
             page.screenshot(path=str(OUT/f'{name}-{width}.png'))
             metrics=page.evaluate('''({overflow:document.documentElement.scrollWidth>innerWidth,h1:document.querySelectorAll('h1').length,hero:document.querySelector('[data-hero]')?.dataset.state||'poster',cards:document.querySelectorAll('.car-card').length,visibleCards:document.querySelectorAll('.car-card:not([hidden])').length})''')
