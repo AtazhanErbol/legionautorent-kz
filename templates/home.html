@@ -1,9 +1,34 @@
 {% extends 'base.html' %}{% load static i18n legion_tags %}{% block body_class %}home-page{% endblock %}
-{% block preload %}{% if site.enable_hero_video and site.hero_video_path == '/static/video/hero-reference.mp4' %}<link rel="preload" as="image" href="{% static 'img/hero-video-mobile.webp' %}" media="(max-width:767px)" fetchpriority="high"><link rel="preload" as="image" href="{{ site.hero_poster_path }}" media="(min-width:768px)" fetchpriority="high">{% else %}<link rel="preload" as="image" href="{{ site.hero_poster_path }}" fetchpriority="high">{% endif %}{% endblock %}
-{% block content %}<section class="hero" data-hero data-model="{% if site.hero_model %}{{ site.hero_model.url }}{% else %}{{ site.hero_model_path }}{% endif %}" data-enabled="{{ site.enable_hero_3d|yesno:'true,false' }}" data-video="{% if site.enable_hero_video %}{{ site.hero_video_path }}{% endif %}">
-<div class="hero-stage"><picture>{% if site.enable_hero_video and site.hero_video_path == '/static/video/hero-reference.mp4' %}<source media="(max-width:767px)" srcset="{% static 'img/hero-video-mobile.webp' %}">{% endif %}<img class="hero-poster" src="{{ site.hero_poster_path }}" width="1600" height="900" alt="{% trans 'Автомобиль в студийном освещении' %}" fetchpriority="high" decoding="async"></picture><div class="hero-canvas" aria-hidden="true"></div><div class="hero-shade"></div></div>
-<div class="container hero-content"><div class="hero-copy"><p class="eyebrow">LEGION AUTO RENT <span> / {{ city|tr:'name' }}</span></p><h1>{{ seo.h1 }}</h1><p class="hero-note">{{ city|tr:'hero_text' }}</p><a class="button" href="#fleet">{% trans 'Выбрать автомобиль' %}<span aria-hidden="true">↗</span></a><div class="hero-facts"><span><strong>{{ car_count }}</strong>{% trans 'автомобилей' %}</span><span><strong>04</strong>{% trans 'города' %}</span><span><strong>10 {% trans 'мин' %}</strong>{% trans 'оформление' %}</span></div></div>
-<div class="hero-end"><p class="eyebrow">{% trans 'Всё начинается с вашего маршрута' %}</p><h2>{% trans 'Город ждёт.' %}<br>{% trans 'Вы за рулём.' %}</h2><p>{{ site|tr:'hero_text' }}</p><a class="text-link" href="#fleet">{% trans 'К автопарку' %} ↓</a></div></div>
-<div class="hero-bottom container"><span>{% trans 'Без водителя. Под ваши планы.' %}</span><button type="button" class="light-toggle" data-light-toggle aria-pressed="false" hidden>{% trans 'Включить фары' %}</button><span class="hero-hint" hidden>{% trans 'Потяните, чтобы повернуть' %} ↔</span></div>
-{% include 'components/search_bar.html' %}<script type="application/json" id="hero-names" nonce="{{ request.csp_nonce }}">{{ site.hero_names|json_ld }}</script></section>
+{% block preload %}<link rel="preload" as="image" href="{% static 'img/hero-drive-mobile.webp' %}" media="(max-width:899px)" fetchpriority="high"><link rel="preload" as="image" href="{{ site.hero_poster_path }}" media="(min-width:900px)" fetchpriority="high">{% endblock %}
+{% block content %}
+<section class="hero hero-story" data-hero data-story tabindex="-1" data-model="{% if site.hero_model %}{{ site.hero_model.url }}{% else %}{{ site.hero_model_path }}{% endif %}" data-enabled="{{ site.enable_hero_3d|yesno:'true,false' }}" data-video="{% if site.enable_hero_video %}{% if site.hero_video_path == '/static/video/hero-drive.mp4' %}{% static 'video/hero-drive.mp4' %}{% else %}{{ site.hero_video_path }}{% endif %}{% endif %}" data-static-poster="{% static 'img/hero-drive-front.webp' %}">
+  <div class="hero-stage" aria-hidden="true"><div class="hero-media">
+    <picture><source media="(max-width:899px)" srcset="{% static 'img/hero-drive-mobile.webp' %}"><img class="hero-poster" src="{{ site.hero_poster_path }}" width="1280" height="720" alt="" fetchpriority="high" decoding="async"></picture>
+    <div class="hero-canvas"></div>
+  </div><div class="hero-shade"></div></div>
+  <div class="hero-content">
+    <div class="hero-copy story-intro" data-story-panel="intro">
+      <p class="story-city">{{ city|tr:'name' }}</p>
+      <p class="story-brand"><span>LEGION</span> <span>AUTO RENT</span></p>
+      <div class="story-intro-meta container"><h1>{{ seo.h1 }}</h1><a class="button" href="#fleet" data-story-skip>{% trans 'Выбрать автомобиль' %}<span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="story-about container" data-story-panel="about">
+      <img class="story-static-profile" src="{% static 'img/hero-drive-profile.webp' %}" width="1280" height="720" alt="{% trans 'Автомобиль в студийном освещении' %}" loading="lazy" decoding="async">
+      <div class="story-about-copy"><h2>{% trans 'Без водителя. Под ваши планы.' %}</h2><p class="hero-note">{{ city|tr:'hero_text' }}</p><div class="hero-facts"><span><strong>{{ car_count }}</strong>{% trans 'автомобилей' %}</span><span><strong>04</strong>{% trans 'города' %}</span><span><strong>10 {% trans 'мин' %}</strong>{% trans 'оформление' %}</span></div></div>
+    </div>
+    <div class="story-details container" data-story-panel="details">
+      <h2 class="story-detail-title">{% trans 'В деталях.' %}</h2>
+      <figure class="story-detail story-detail-light"><img src="{% static 'img/hero-drive-headlight.webp' %}" width="540" height="330" alt="{% trans 'Передний свет' %}" loading="lazy" decoding="async"><figcaption>{% trans 'Передний свет' %}</figcaption></figure>
+      <figure class="story-detail story-detail-wheel"><img src="{% static 'img/hero-drive-wheel.webp' %}" width="480" height="340" alt="{% trans 'Колесо и линия кузова' %}" loading="lazy" decoding="async"><figcaption>{% trans 'Колесо и линия кузова' %}</figcaption></figure>
+      <figure class="story-detail story-detail-tail"><img src="{% static 'img/hero-drive-taillight.webp' %}" width="490" height="320" alt="{% trans 'Задние фонари' %}" loading="lazy" decoding="async"><figcaption>{% trans 'Задние фонари' %}</figcaption></figure>
+    </div>
+    <div class="hero-end container" data-story-panel="rear">
+      <img class="story-static-rear" src="{% static 'img/hero-drive-rear.webp' %}" width="1280" height="720" alt="{% trans 'Задние фонари' %}" loading="lazy" decoding="async">
+      <div class="story-end-copy"><h2>{% trans 'Город ждёт.' %}<br>{% trans 'Вы за рулём.' %}</h2><p>{{ site|tr:'hero_text' }}</p><a class="text-link" href="#fleet" data-story-skip>{% trans 'К автопарку' %} ↓</a></div>
+    </div>
+  </div>
+  {% include 'components/search_bar.html' %}
+  <div class="story-progress" aria-hidden="true"><span class="story-progress-fill"></span></div>
+  <script type="application/json" id="hero-names" nonce="{{ request.csp_nonce }}">{{ site.hero_names|json_ld }}</script>
+</section>
 {% include 'components/city_sections.html' %}{% endblock %}

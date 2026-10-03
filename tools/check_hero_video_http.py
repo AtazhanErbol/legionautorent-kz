@@ -4,7 +4,7 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 
 root=Path(__file__).resolve().parents[1]
-asset=root/'static/video/hero-reference.mp4'
+asset=root/'static/video/hero-drive.mp4'
 data=asset.read_bytes()
 boxes=[]; offset=0
 while offset+8<=len(data):
@@ -13,7 +13,7 @@ while offset+8<=len(data):
     if not size:size=len(data)-offset
     if size<8:raise ValueError('Invalid MP4 box')
     boxes.append(kind.decode('ascii'));offset+=size
-url=os.getenv('PREVIEW_URL','http://127.0.0.1:8004')+'/static/video/hero-reference.mp4'
+url=os.getenv('PREVIEW_URL','http://127.0.0.1:8004')+'/static/video/hero-drive.mp4'
 with urlopen(Request(url,headers={'Range':'bytes=0-1023'}),timeout=20) as response:
     checks={
         'range_status_206':response.status==206,
@@ -23,6 +23,6 @@ with urlopen(Request(url,headers={'Range':'bytes=0-1023'}),timeout=20) as respon
         'faststart_moov_before_mdat':boxes.index('moov')<boxes.index('mdat'),
     }
 report={'url':url,'video_bytes':len(data),'mp4_boxes':boxes,'checks':checks,'passed':all(checks.values())}
-(root/'reports/hero_video_http.json').write_text(json.dumps(report,indent=2),encoding='utf8')
+(root/'reports/hero_story_http.json').write_text(json.dumps(report,indent=2),encoding='utf8')
 print(json.dumps(report))
 assert report['passed'],report

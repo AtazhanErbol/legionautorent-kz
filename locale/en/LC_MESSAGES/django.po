@@ -703,3 +703,15 @@ msgstr "Read more"
 
 msgid "до"
 msgstr "up to"
+
+msgid "В деталях."
+msgstr "In the details."
+
+msgid "Передний свет"
+msgstr "Front lights"
+
+msgid "Колесо и линия кузова"
+msgstr "Wheel and body line"
+
+msgid "Задние фонари"
+msgstr "Rear lights"

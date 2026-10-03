@@ -19,7 +19,8 @@ for item in manifest.values():
 total=sum(sizes.get(name,0) for name in ['three','hero','meshopt_decoder.module'])
 report={'main_gzip_bytes':sizes.get('main'),'three_scene_decoder_gzip_bytes':total,'three_scene_budget_bytes':150000,'motion_gzip_bytes':sizes.get('motion'),'model_bytes':(ROOT/'static/models/hero-compressed.glb').stat().st_size,'poster_bytes':(ROOT/'static/img/hero-poster.webp').stat().st_size,'gzip_sizes':sizes}
 report['hero_video_controller_gzip_bytes']=sizes.get('hero-video')
-for label,path in [('hero_video_bytes','static/video/hero-reference.mp4'),('hero_video_poster_bytes','static/img/hero-video-poster.webp'),('hero_video_mobile_poster_bytes','static/img/hero-video-mobile.webp')]:
+report['hero_video_asset']='static/video/hero-drive.mp4'
+for label,path in [('hero_video_bytes','static/video/hero-drive.mp4'),('hero_video_poster_bytes','static/img/hero-drive-poster.webp'),('hero_video_mobile_poster_bytes','static/img/hero-drive-mobile.webp')]:
     if (ROOT/path).exists():report[label]=(ROOT/path).stat().st_size
 (ROOT/'reports').mkdir(exist_ok=True);(ROOT/'reports/asset_budget.json').write_text(json.dumps(report,indent=2),encoding='utf8')
 print(json.dumps(report))

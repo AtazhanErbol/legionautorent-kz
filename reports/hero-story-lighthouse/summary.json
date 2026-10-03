@@ -1,0 +1,166 @@
+{
+  "mode": "Local Nginx production HTML; analytics disabled; actual video configuration, mobile poster; default Lighthouse profiles",
+  "field_inp_measured": false,
+  "results": [
+    {
+      "page": "home",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8004/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-03T12:47:44.951Z",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 2183,
+      "cls": 0,
+      "tbt_ms": 4,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false,
+      "hero_mobile_poster_requested": true
+    },
+    {
+      "page": "city",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8004/kostanay/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-03T12:48:00.281Z",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 2028,
+      "cls": 0,
+      "tbt_ms": 0,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false,
+      "hero_mobile_poster_requested": false
+    },
+    {
+      "page": "car",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8004/car/lexus-lx-570-superior",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-03T12:48:14.004Z",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 1957,
+      "cls": 0.000335749800254102,
+      "tbt_ms": 164,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false,
+      "hero_mobile_poster_requested": false
+    },
+    {
+      "page": "catalog",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8004/cars/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-03T12:48:26.729Z",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 2105,
+      "cls": 0.0009616925918621498,
+      "tbt_ms": 4,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false,
+      "hero_mobile_poster_requested": false
+    },
+    {
+      "page": "home",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8004/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-03T12:48:41.823Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 463,
+      "cls": 0.0001268682196501325,
+      "tbt_ms": 0,
+      "hero_video_requested": true,
+      "glb_or_three_requested": false,
+      "hero_mobile_poster_requested": false
+    },
+    {
+      "page": "city",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8004/kostanay/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-03T12:48:56.021Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 464,
+      "cls": 9.582078700930554e-05,
+      "tbt_ms": 0,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false,
+      "hero_mobile_poster_requested": false
+    },
+    {
+      "page": "car",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8004/car/lexus-lx-570-superior",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-03T12:49:09.589Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 465,
+      "cls": 0.006633701955749193,
+      "tbt_ms": 0,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false,
+      "hero_mobile_poster_requested": false
+    },
+    {
+      "page": "catalog",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8004/cars/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-03T12:49:22.433Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 464,
+      "cls": 0.0004447100325525438,
+      "tbt_ms": 0,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false,
+      "hero_mobile_poster_requested": false
+    }
+  ]
+}

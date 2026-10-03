@@ -6,10 +6,10 @@ from django.core.management.base import BaseCommand,CommandError
 from core.models import SiteSettings
 
 class Command(BaseCommand):
-    help='Enable the approved three-frame hero video; preserve catalogue, SEO and old 3D assets.'
+    help='Enable the supplied camera-orbit hero film; preserve catalogue, SEO and previous assets.'
     def handle(self,*args,**options):
-        paths={'hero_video_path':'/static/video/hero-reference.mp4','hero_poster_path':'/static/img/hero-video-poster.webp'}
-        for path in [*paths.values(),'/static/img/hero-video-mobile.webp']:
+        paths={'hero_video_path':'/static/video/hero-drive.mp4','hero_poster_path':'/static/img/hero-drive-poster.webp'}
+        for path in [*paths.values(),'/static/img/hero-drive-mobile.webp','/static/img/hero-drive-front.webp','/static/img/hero-drive-profile.webp','/static/img/hero-drive-rear.webp','/static/img/hero-drive-headlight.webp','/static/img/hero-drive-wheel.webp','/static/img/hero-drive-taillight.webp']:
             if not (settings.BASE_DIR/path.lstrip('/')).is_file():raise CommandError('Missing hero asset: '+path)
         site=SiteSettings.get_solo()
         values={**paths,'enable_hero_video':True,'enable_hero_3d':False,'hero_placeholder':False}

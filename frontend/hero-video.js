@@ -1,10 +1,12 @@
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {createFilmHero} from './hero-film';
 
 gsap.registerPlugin(ScrollTrigger);
 
 // The clip is paused. Scrolling selects its time; there is no autoplay or loop.
 export async function createVideoHero(hero){
+  if(hero.hasAttribute('data-story'))return createFilmHero(hero);
   const stage=hero.querySelector('.hero-stage'),poster=stage.querySelector('.hero-poster');
   const copy=hero.querySelector('.hero-copy'),end=hero.querySelector('.hero-end');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');

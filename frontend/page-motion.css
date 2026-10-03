@@ -1,0 +1,23 @@
+/* Content remains visible before enhancement and when scripts are unavailable. */
+.faq-list > details.faq-is-moving {
+  overflow: clip;
+}
+
+.faq-list > details.faq-is-moving > summary:focus-visible {
+  outline-offset: -3px;
+}
+
+.faq-list > details > summary > span {
+  flex-shrink: 0;
+  transition: transform 180ms ease;
+}
+
+.faq-list > details.faq-is-closing > summary > span {
+  transform: rotate(0deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-list > details > summary > span {
+    transition: none;
+  }
+}

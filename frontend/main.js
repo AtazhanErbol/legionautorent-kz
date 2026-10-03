@@ -1,4 +1,6 @@
 import './site.css';
+import './hero-story.css';
+import {initPageMotion} from './page-motion.js';
 const $=(selector,root=document)=>root.querySelector(selector);
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 const header=$('.site-header');
@@ -29,6 +31,13 @@ function initFleets(root=document){
   });
 }
 initFleets();
+// The optional reveal/accordion enhancement waits for the first layout and
+// fonts; native content and details remain usable while the page is loading.
+const startPageMotion=()=>{
+  if('requestIdleCallback'in window)requestIdleCallback(initPageMotion,{timeout:1800});
+  else setTimeout(initPageMotion,300);
+};
+if(document.readyState==='complete')startPageMotion();else window.addEventListener('load',startPageMotion,{once:true});
 const quick=$('[data-quick-search]');
 if(quick){
   const start=$('[name=start_date]',quick),end=$('[name=end_date]',quick);
@@ -99,25 +108,34 @@ if(filters&&window.fetch){
 
 const hero=$('[data-hero]');
 if(hero){
-  const desktop=matchMedia('(min-width:768px)');let stopHero=()=>{};
+  const minimum=hero.hasAttribute('data-story')?900:768;
+  const desktop=matchMedia(`(min-width:${minimum}px)`);let stopHero=()=>{};
   const mountHero=()=>{
   stopHero();
-  const connection=navigator.connection,motionAllowed=innerWidth>=768&&!connection?.saveData&&!reduced.matches;
+  const connection=navigator.connection,motionAllowed=desktop.matches&&!connection?.saveData&&!reduced.matches;
   const videoMode=Boolean(hero.dataset.video);
   const eligible=motionAllowed&&(videoMode||(hero.dataset.enabled==='true'&&(!navigator.deviceMemory||navigator.deviceMemory>=4)&&(!navigator.hardwareConcurrency||navigator.hardwareConcurrency>=4)));
   if(eligible){
-    let visible=false,idle=false,started=false,alive=true,scene;
+    const restoring=performance.getEntriesByType('navigation')[0]?.type==='back_forward';
+    let visible=restoring,idle=false,started=false,alive=true,scene,idleTask,loadTimer;
     const start=async()=>{if(!alive||!visible||!idle||started)return;started=true;try{if(videoMode){const {createVideoHero}=await import('./hero-video.js');if(!alive)return;scene=await createVideoHero(hero);}else{const {createHero}=await import('./hero.js');if(!alive)return;scene=await createHero(hero);}if(!alive)scene?.dispose();}catch(error){if(alive){hero.dataset.state='fallback';console.warn('Legion hero fallback:',error.message);}}};
-    const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;start();},{rootMargin:'0px'});observer.observe(hero);
+    const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting||restoring;start();},{rootMargin:'0px'});observer.observe(hero);
     const onIdle=()=>{idle=true;start();};
-    const afterLoad=()=>{if('requestIdleCallback'in window)requestIdleCallback(onIdle,{timeout:2500});else setTimeout(onIdle,1200);};
+    const afterLoad=()=>{if('requestIdleCallback'in window)idleTask=requestIdleCallback(onIdle,{timeout:2500});else loadTimer=setTimeout(onIdle,1200);};
     if(document.readyState==='complete')afterLoad();else window.addEventListener('load',afterLoad,{once:true});
-    stopHero=()=>{alive=false;observer.disconnect();scene?.dispose();};
+    stopHero=()=>{alive=false;observer.disconnect();window.removeEventListener('load',afterLoad);if(idleTask)cancelIdleCallback(idleTask);clearTimeout(loadTimer);scene?.dispose();};
+  }else if(hero.dataset.staticPoster){
+    const poster=hero.querySelector('.hero-poster');poster.src=hero.dataset.staticPoster;
   }
   };
   mountHero();desktop.addEventListener('change',mountHero);reduced.addEventListener('change',mountHero);
-  window.addEventListener('pagehide',()=>stopHero());
-  window.addEventListener('pageshow',event=>{if(event.persisted)mountHero();});
+  window.addEventListener('pagehide',event=>{if(!event.persisted)stopHero();});
+  window.addEventListener('pageshow',event=>{if(event.persisted&&hero.dataset.state!=='video-ready')mountHero();});
+  hero.querySelectorAll('[data-story-skip]').forEach(link=>link.addEventListener('click',event=>{
+    event.preventDefault();const fleet=$('#fleet');if(!fleet)return;
+    history.pushState(null,'','#fleet');window.scrollTo({top:fleet.getBoundingClientRect().top+scrollY-96,behavior:'instant'});
+    const heading=$('h2',fleet);heading.tabIndex=-1;heading.focus({preventScroll:true});
+  }));
 }
 
 // Defer analytics until LCP has had time to paint; retain all editable legacy IDs.
