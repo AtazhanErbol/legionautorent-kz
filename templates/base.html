@@ -1,11 +1,11 @@
 {% load static i18n legion_tags %}<!doctype html>
-<html lang="{{ current_language }}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111111">
+<html lang="{{ current_language }}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10100f">
 <title>{{ seo.title }}</title><meta name="description" content="{{ seo.description }}"><meta name="robots" content="{{ seo.robots }}"><link rel="canonical" href="{{ seo.canonical }}">
 {% for alt in seo.alternates %}<link rel="alternate" hreflang="{{ alt.language }}" href="{{ alt.url }}">{% endfor %}<link rel="alternate" hreflang="x-default" href="{{ seo.default_url }}">
 <meta property="og:title" content="{{ seo.og_title }}"><meta property="og:description" content="{{ seo.og_description }}"><meta property="og:type" content="{{ seo.og_type }}"><meta property="og:url" content="{{ seo.og_url }}"><meta property="og:site_name" content="{{ seo.og_site_name }}">{% if seo.og_image %}<meta property="og:image" content="{{ seo.og_image }}">{% endif %}{% if seo.og_video %}<meta property="og:video" content="{{ seo.og_video }}">{% endif %}<meta property="og:locale" content="{% if current_language == 'ru' %}ru_RU{% elif current_language == 'kk' %}kk_KZ{% else %}en_US{% endif %}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{{ seo.og_title }}"><meta name="twitter:description" content="{{ seo.og_description }}"><meta name="twitter:image" content="{{ seo.og_image }}">
 {% if site.google_verification %}<meta name="google-site-verification" content="{{ site.google_verification }}">{% endif %}{% if site.yandex_verification %}<meta name="yandex-verification" content="{{ site.yandex_verification }}">{% endif %}
-{% block preload %}{% endblock %}<link rel="icon" href="{% if site.favicon %}{{ site.favicon.url }}{% else %}{% static 'img/favicon.svg' %}{% endif %}" >{% block font_preloads %}<link rel="preload" href="{% asset 'static/fonts/exo2-site.woff2' %}" as="font" type="font/woff2" crossorigin>{% endblock %}
+{% block preload %}{% endblock %}<link rel="icon" href="{% if site.favicon %}{{ site.favicon.url }}{% else %}{% static 'img/favicon.svg' %}{% endif %}" >{% block font_preloads %}<link rel="preload" href="{% asset 'static/fonts/montserrat-site.woff2' %}" as="font" type="font/woff2" crossorigin><link rel="preload" href="{% asset 'static/fonts/golos-night.woff2' %}" as="font" type="font/woff2" crossorigin>{% endblock %}
 
 {% critical_css 'frontend/main.js' as styles %}<style nonce="{{ request.csp_nonce }}">{{ styles }}</style>
 {% block extra_head %}{% endblock %}

@@ -1,6 +1,9 @@
 import './site.css';
 import './hero-story.css';
+import './night-garage.css';
 import {initPageMotion} from './page-motion.js';
+import {initGarageUI} from './night-garage.js';
+initGarageUI();
 const $=(selector,root=document)=>root.querySelector(selector);
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 const header=$('.site-header');

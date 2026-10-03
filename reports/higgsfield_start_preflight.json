@@ -1,0 +1,27 @@
+{
+  "stage": "STOP 2: awaiting explicit approval for one starting image",
+  "params": {
+    "model": "nano_banana_pro",
+    "resolution": "2k",
+    "aspect_ratio": "16:9",
+    "count": 1,
+    "prompt": "A generic unbranded black luxury SUV, front view, placed in the right-center of the frame at moderate distance, composed as the first moment of a slow approach and gentle rotation toward a three-quarter view. The whole car, wheels and its wet-floor reflection are inside frame, with generous margin above the roof and below the tires. Low eye-level automotive cinema camera, natural 50mm perspective. Only crisp white headlights are lit; fine headlight beams cut through delicate haze, a very thin soft rim light barely reveals the black body silhouette. A warm near-black industrial garage and dark graphite glossy floor form one continuous, photorealistic environment filling the frame edge to edge. Subtle muted gold reflected light along the floor, ivory headlight glow, charcoal metal, restrained highlights. Soft receding garage depth and quiet surface detail on the left third and the upper fifth provide a calm region for future webpage typography; the garage scene continues naturally through those regions, no panels or borders. Symmetric coherent wheels and realistic automotive proportions, smooth paint gradients and natural low-light photography, cinematic premium commercial still, 16:9. No text, no logos, no badges, no lettering, no watermark, no license plate or plate recess anywhere. No people."
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Cost preflight for nano_banana_pro: 2 credits (2 exact). No job submitted."
+      }
+    ],
+    "structuredContent": {
+      "cost": {
+        "credits": 2,
+        "credits_exact": 2
+      }
+    },
+    "isError": false
+  },
+  "credits_spent": 0,
+  "job_submitted": false
+}

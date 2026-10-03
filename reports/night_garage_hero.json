@@ -1,0 +1,3102 @@
+{
+  "time": "2026-10-03T19:49:29.152849+00:00",
+  "passed": true,
+  "checks": {
+    "1440x1000_200": true,
+    "1440x1000_one_pin": true,
+    "1440x1000_pin_between_two_and_three_windows": true,
+    "1440x1000_no3d": true,
+    "1440x1000_video_1280x720": true,
+    "1440x1000_hashed_video_url": true,
+    "served_video_matches_current_source": true,
+    "1440x1000-p00_paused": true,
+    "1440x1000-p00_no_overflow": true,
+    "1440x1000-p00_about_hidden_accessibility": true,
+    "1440x1000-p00_details_hidden_accessibility": true,
+    "1440x1000-p00_rear_hidden_accessibility": true,
+    "1440x1000-p00_rear_cannot_focus": true,
+    "1440x1000-p00_search_hidden_accessibility": true,
+    "1440x1000-p00_search_cannot_focus": true,
+    "1440x1000-p12_paused": true,
+    "1440x1000-p12_no_overflow": true,
+    "1440x1000-p12_about_hidden_accessibility": true,
+    "1440x1000-p12_details_hidden_accessibility": true,
+    "1440x1000-p12_rear_hidden_accessibility": true,
+    "1440x1000-p12_rear_cannot_focus": true,
+    "1440x1000-p12_search_hidden_accessibility": true,
+    "1440x1000-p12_search_cannot_focus": true,
+    "1440x1000-p33_paused": true,
+    "1440x1000-p33_no_overflow": true,
+    "1440x1000-p33_intro_hidden_accessibility": true,
+    "1440x1000-p33_intro_cannot_focus": true,
+    "1440x1000-p33_details_hidden_accessibility": true,
+    "1440x1000-p33_rear_hidden_accessibility": true,
+    "1440x1000-p33_rear_cannot_focus": true,
+    "1440x1000-p33_search_hidden_accessibility": true,
+    "1440x1000-p33_search_cannot_focus": true,
+    "1440x1000-p58_paused": true,
+    "1440x1000-p58_no_overflow": true,
+    "1440x1000-p58_intro_hidden_accessibility": true,
+    "1440x1000-p58_intro_cannot_focus": true,
+    "1440x1000-p58_about_hidden_accessibility": true,
+    "1440x1000-p58_rear_hidden_accessibility": true,
+    "1440x1000-p58_rear_cannot_focus": true,
+    "1440x1000-p58_search_hidden_accessibility": true,
+    "1440x1000-p58_search_cannot_focus": true,
+    "1440x1000-p82_paused": true,
+    "1440x1000-p82_no_overflow": true,
+    "1440x1000-p82_intro_hidden_accessibility": true,
+    "1440x1000-p82_intro_cannot_focus": true,
+    "1440x1000-p82_about_hidden_accessibility": true,
+    "1440x1000-p82_details_hidden_accessibility": true,
+    "1440x1000-p82_search_hidden_accessibility": true,
+    "1440x1000-p82_search_cannot_focus": true,
+    "1440x1000-p96_paused": true,
+    "1440x1000-p96_no_overflow": true,
+    "1440x1000-p96_intro_hidden_accessibility": true,
+    "1440x1000-p96_intro_cannot_focus": true,
+    "1440x1000-p96_about_hidden_accessibility": true,
+    "1440x1000-p96_details_hidden_accessibility": true,
+    "1440x1000_forward_video_times": true,
+    "1440x1000_multiple_decoded_frames": true,
+    "1440x1000_stops_when_scrolling_stops": true,
+    "1440x1000_active_search_accepts_focus": true,
+    "1440x1000-reverse33_paused": true,
+    "1440x1000-reverse33_no_overflow": true,
+    "1440x1000-reverse33_intro_hidden_accessibility": true,
+    "1440x1000-reverse33_intro_cannot_focus": true,
+    "1440x1000-reverse33_details_hidden_accessibility": true,
+    "1440x1000-reverse33_rear_hidden_accessibility": true,
+    "1440x1000-reverse33_rear_cannot_focus": true,
+    "1440x1000-reverse33_search_hidden_accessibility": true,
+    "1440x1000-reverse33_search_cannot_focus": true,
+    "1440x1000_leaving_panel_moves_focus_to_hero": true,
+    "1440x1000_reverse_restores_frame": true,
+    "1440x1000-rapid58_paused": true,
+    "1440x1000-rapid58_no_overflow": true,
+    "1440x1000-rapid58_intro_hidden_accessibility": true,
+    "1440x1000-rapid58_intro_cannot_focus": true,
+    "1440x1000-rapid58_about_hidden_accessibility": true,
+    "1440x1000-rapid58_rear_hidden_accessibility": true,
+    "1440x1000-rapid58_rear_cannot_focus": true,
+    "1440x1000-rapid58_search_hidden_accessibility": true,
+    "1440x1000-rapid58_search_cannot_focus": true,
+    "1440x1000_rapid_final_frame": true,
+    "1440x1000_never_plays": true,
+    "1440x1000-exit-2592_gap": true,
+    "1440x1000-exit-2700_gap": true,
+    "1440x1000-exit-3100_gap": true,
+    "1440x1000-exit-3500_gap": true,
+    "1440x1000-before-skip_paused": true,
+    "1440x1000-before-skip_no_overflow": true,
+    "1440x1000-before-skip_about_hidden_accessibility": true,
+    "1440x1000-before-skip_details_hidden_accessibility": true,
+    "1440x1000-before-skip_rear_hidden_accessibility": true,
+    "1440x1000-before-skip_rear_cannot_focus": true,
+    "1440x1000-before-skip_search_hidden_accessibility": true,
+    "1440x1000-before-skip_search_cannot_focus": true,
+    "skip_immediately_focuses_catalog": true,
+    "initial_twelve_visible": true,
+    "show_more_reveals_all_ssr": true,
+    "category_filter": true,
+    "price_sort": true,
+    "card_contact_links": true,
+    "car_detail_navigation": true,
+    "real_browser_back_restores_scene": true,
+    "search-active_paused": true,
+    "search-active_no_overflow": true,
+    "search-active_intro_hidden_accessibility": true,
+    "search-active_intro_cannot_focus": true,
+    "search-active_about_hidden_accessibility": true,
+    "search-active_details_hidden_accessibility": true,
+    "dates_reject_equal": true,
+    "dates_valid_range": true,
+    "requested_dates_reach_whatsapp": true,
+    "faq_keyboard_open": true,
+    "faq_keyboard_close": true,
+    "faq_rapid_clicks_settle": true,
+    "footer_links_available": true,
+    "resize_mobile_removes_pin": true,
+    "resize_desktop_one_pin": true,
+    "1440x900_200": true,
+    "1440x900_one_pin": true,
+    "1440x900_pin_between_two_and_three_windows": true,
+    "1440x900_no3d": true,
+    "1440x900_video_1280x720": true,
+    "1440x900_hashed_video_url": true,
+    "1440x900-p00_paused": true,
+    "1440x900-p00_no_overflow": true,
+    "1440x900-p00_about_hidden_accessibility": true,
+    "1440x900-p00_details_hidden_accessibility": true,
+    "1440x900-p00_rear_hidden_accessibility": true,
+    "1440x900-p00_rear_cannot_focus": true,
+    "1440x900-p00_search_hidden_accessibility": true,
+    "1440x900-p00_search_cannot_focus": true,
+    "1440x900-p12_paused": true,
+    "1440x900-p12_no_overflow": true,
+    "1440x900-p12_about_hidden_accessibility": true,
+    "1440x900-p12_details_hidden_accessibility": true,
+    "1440x900-p12_rear_hidden_accessibility": true,
+    "1440x900-p12_rear_cannot_focus": true,
+    "1440x900-p12_search_hidden_accessibility": true,
+    "1440x900-p12_search_cannot_focus": true,
+    "1440x900-p33_paused": true,
+    "1440x900-p33_no_overflow": true,
+    "1440x900-p33_intro_hidden_accessibility": true,
+    "1440x900-p33_intro_cannot_focus": true,
+    "1440x900-p33_details_hidden_accessibility": true,
+    "1440x900-p33_rear_hidden_accessibility": true,
+    "1440x900-p33_rear_cannot_focus": true,
+    "1440x900-p33_search_hidden_accessibility": true,
+    "1440x900-p33_search_cannot_focus": true,
+    "1440x900-p58_paused": true,
+    "1440x900-p58_no_overflow": true,
+    "1440x900-p58_intro_hidden_accessibility": true,
+    "1440x900-p58_intro_cannot_focus": true,
+    "1440x900-p58_about_hidden_accessibility": true,
+    "1440x900-p58_rear_hidden_accessibility": true,
+    "1440x900-p58_rear_cannot_focus": true,
+    "1440x900-p58_search_hidden_accessibility": true,
+    "1440x900-p58_search_cannot_focus": true,
+    "1440x900-p82_paused": true,
+    "1440x900-p82_no_overflow": true,
+    "1440x900-p82_intro_hidden_accessibility": true,
+    "1440x900-p82_intro_cannot_focus": true,
+    "1440x900-p82_about_hidden_accessibility": true,
+    "1440x900-p82_details_hidden_accessibility": true,
+    "1440x900-p82_search_hidden_accessibility": true,
+    "1440x900-p82_search_cannot_focus": true,
+    "1440x900-p96_paused": true,
+    "1440x900-p96_no_overflow": true,
+    "1440x900-p96_intro_hidden_accessibility": true,
+    "1440x900-p96_intro_cannot_focus": true,
+    "1440x900-p96_about_hidden_accessibility": true,
+    "1440x900-p96_details_hidden_accessibility": true,
+    "1440x900_forward_video_times": true,
+    "1440x900_multiple_decoded_frames": true,
+    "1440x900_stops_when_scrolling_stops": true,
+    "1440x900_active_search_accepts_focus": true,
+    "1440x900-reverse33_paused": true,
+    "1440x900-reverse33_no_overflow": true,
+    "1440x900-reverse33_intro_hidden_accessibility": true,
+    "1440x900-reverse33_intro_cannot_focus": true,
+    "1440x900-reverse33_details_hidden_accessibility": true,
+    "1440x900-reverse33_rear_hidden_accessibility": true,
+    "1440x900-reverse33_rear_cannot_focus": true,
+    "1440x900-reverse33_search_hidden_accessibility": true,
+    "1440x900-reverse33_search_cannot_focus": true,
+    "1440x900_leaving_panel_moves_focus_to_hero": true,
+    "1440x900_reverse_restores_frame": true,
+    "1440x900-rapid58_paused": true,
+    "1440x900-rapid58_no_overflow": true,
+    "1440x900-rapid58_intro_hidden_accessibility": true,
+    "1440x900-rapid58_intro_cannot_focus": true,
+    "1440x900-rapid58_about_hidden_accessibility": true,
+    "1440x900-rapid58_rear_hidden_accessibility": true,
+    "1440x900-rapid58_rear_cannot_focus": true,
+    "1440x900-rapid58_search_hidden_accessibility": true,
+    "1440x900-rapid58_search_cannot_focus": true,
+    "1440x900_rapid_final_frame": true,
+    "1440x900_never_plays": true,
+    "1440x900-exit-2332_gap": true,
+    "1440x900-exit-2440_gap": true,
+    "1440x900-exit-2840_gap": true,
+    "1440x900-exit-3240_gap": true,
+    "1024x768_200": true,
+    "1024x768_one_pin": true,
+    "1024x768_pin_between_two_and_three_windows": true,
+    "1024x768_no3d": true,
+    "1024x768_video_1280x720": true,
+    "1024x768_hashed_video_url": true,
+    "1024x768-p00_paused": true,
+    "1024x768-p00_no_overflow": true,
+    "1024x768-p00_about_hidden_accessibility": true,
+    "1024x768-p00_details_hidden_accessibility": true,
+    "1024x768-p00_rear_hidden_accessibility": true,
+    "1024x768-p00_rear_cannot_focus": true,
+    "1024x768-p00_search_hidden_accessibility": true,
+    "1024x768-p00_search_cannot_focus": true,
+    "1024x768-p12_paused": true,
+    "1024x768-p12_no_overflow": true,
+    "1024x768-p12_about_hidden_accessibility": true,
+    "1024x768-p12_details_hidden_accessibility": true,
+    "1024x768-p12_rear_hidden_accessibility": true,
+    "1024x768-p12_rear_cannot_focus": true,
+    "1024x768-p12_search_hidden_accessibility": true,
+    "1024x768-p12_search_cannot_focus": true,
+    "1024x768-p33_paused": true,
+    "1024x768-p33_no_overflow": true,
+    "1024x768-p33_intro_hidden_accessibility": true,
+    "1024x768-p33_intro_cannot_focus": true,
+    "1024x768-p33_details_hidden_accessibility": true,
+    "1024x768-p33_rear_hidden_accessibility": true,
+    "1024x768-p33_rear_cannot_focus": true,
+    "1024x768-p33_search_hidden_accessibility": true,
+    "1024x768-p33_search_cannot_focus": true,
+    "1024x768-p58_paused": true,
+    "1024x768-p58_no_overflow": true,
+    "1024x768-p58_intro_hidden_accessibility": true,
+    "1024x768-p58_intro_cannot_focus": true,
+    "1024x768-p58_about_hidden_accessibility": true,
+    "1024x768-p58_rear_hidden_accessibility": true,
+    "1024x768-p58_rear_cannot_focus": true,
+    "1024x768-p58_search_hidden_accessibility": true,
+    "1024x768-p58_search_cannot_focus": true,
+    "1024x768-p82_paused": true,
+    "1024x768-p82_no_overflow": true,
+    "1024x768-p82_intro_hidden_accessibility": true,
+    "1024x768-p82_intro_cannot_focus": true,
+    "1024x768-p82_about_hidden_accessibility": true,
+    "1024x768-p82_details_hidden_accessibility": true,
+    "1024x768-p82_search_hidden_accessibility": true,
+    "1024x768-p82_search_cannot_focus": true,
+    "1024x768-p96_paused": true,
+    "1024x768-p96_no_overflow": true,
+    "1024x768-p96_intro_hidden_accessibility": true,
+    "1024x768-p96_intro_cannot_focus": true,
+    "1024x768-p96_about_hidden_accessibility": true,
+    "1024x768-p96_details_hidden_accessibility": true,
+    "1024x768_forward_video_times": true,
+    "1024x768_multiple_decoded_frames": true,
+    "1024x768_stops_when_scrolling_stops": true,
+    "1024x768_active_search_accepts_focus": true,
+    "1024x768-reverse33_paused": true,
+    "1024x768-reverse33_no_overflow": true,
+    "1024x768-reverse33_intro_hidden_accessibility": true,
+    "1024x768-reverse33_intro_cannot_focus": true,
+    "1024x768-reverse33_details_hidden_accessibility": true,
+    "1024x768-reverse33_rear_hidden_accessibility": true,
+    "1024x768-reverse33_rear_cannot_focus": true,
+    "1024x768-reverse33_search_hidden_accessibility": true,
+    "1024x768-reverse33_search_cannot_focus": true,
+    "1024x768_leaving_panel_moves_focus_to_hero": true,
+    "1024x768_reverse_restores_frame": true,
+    "1024x768-rapid58_paused": true,
+    "1024x768-rapid58_no_overflow": true,
+    "1024x768-rapid58_intro_hidden_accessibility": true,
+    "1024x768-rapid58_intro_cannot_focus": true,
+    "1024x768-rapid58_about_hidden_accessibility": true,
+    "1024x768-rapid58_rear_hidden_accessibility": true,
+    "1024x768-rapid58_rear_cannot_focus": true,
+    "1024x768-rapid58_search_hidden_accessibility": true,
+    "1024x768-rapid58_search_cannot_focus": true,
+    "1024x768_rapid_final_frame": true,
+    "1024x768_never_plays": true,
+    "1024x768-exit-1989_gap": true,
+    "1024x768-exit-2097_gap": true,
+    "1024x768-exit-2497_gap": true,
+    "1024x768-exit-2897_gap": true,
+    "wide1920_200": true,
+    "1920x1080-p00_paused": true,
+    "1920x1080-p00_no_overflow": true,
+    "1920x1080-p00_about_hidden_accessibility": true,
+    "1920x1080-p00_details_hidden_accessibility": true,
+    "1920x1080-p00_rear_hidden_accessibility": true,
+    "1920x1080-p00_rear_cannot_focus": true,
+    "1920x1080-p00_search_hidden_accessibility": true,
+    "1920x1080-p00_search_cannot_focus": true,
+    "1920x1080-p00_uniform_scale_no_distortion": true,
+    "1920_initial_media_scale_capped": true,
+    "1920x1080-p33_paused": true,
+    "1920x1080-p33_no_overflow": true,
+    "1920x1080-p33_intro_hidden_accessibility": true,
+    "1920x1080-p33_intro_cannot_focus": true,
+    "1920x1080-p33_details_hidden_accessibility": true,
+    "1920x1080-p33_rear_hidden_accessibility": true,
+    "1920x1080-p33_rear_cannot_focus": true,
+    "1920x1080-p33_search_hidden_accessibility": true,
+    "1920x1080-p33_search_cannot_focus": true,
+    "1920x1080-p33_uniform_scale_no_distortion": true,
+    "1920x1080-p82_paused": true,
+    "1920x1080-p82_no_overflow": true,
+    "1920x1080-p82_intro_hidden_accessibility": true,
+    "1920x1080-p82_intro_cannot_focus": true,
+    "1920x1080-p82_about_hidden_accessibility": true,
+    "1920x1080-p82_details_hidden_accessibility": true,
+    "1920x1080-p82_search_hidden_accessibility": true,
+    "1920x1080-p82_search_cannot_focus": true,
+    "1920x1080-p82_uniform_scale_no_distortion": true,
+    "mobile390_200": true,
+    "mobile390_no_pin": true,
+    "mobile390_no_video": true,
+    "mobile390_no3d": true,
+    "mobile390_no_mp4_request": true,
+    "mobile390_poster_loaded": true,
+    "mobile390_no_overflow": true,
+    "mobile390_all_static_panels_available": true,
+    "mobile390_search_accessible": true,
+    "mobile390_flow_order": true,
+    "mobile320_200": true,
+    "mobile320_no_pin": true,
+    "mobile320_no_video": true,
+    "mobile320_no3d": true,
+    "mobile320_no_mp4_request": true,
+    "mobile320_poster_loaded": true,
+    "mobile320_no_overflow": true,
+    "mobile320_all_static_panels_available": true,
+    "mobile320_search_accessible": true,
+    "mobile320_flow_order": true,
+    "tablet768_200": true,
+    "tablet768_no_pin": true,
+    "tablet768_no_video": true,
+    "tablet768_no3d": true,
+    "tablet768_no_mp4_request": true,
+    "tablet768_poster_loaded": true,
+    "tablet768_no_overflow": true,
+    "tablet768_all_static_panels_available": true,
+    "tablet768_search_accessible": true,
+    "tablet768_flow_order": true,
+    "reduced_200": true,
+    "reduced_no_pin": true,
+    "reduced_no_video": true,
+    "reduced_no3d": true,
+    "reduced_no_mp4_request": true,
+    "reduced_poster_loaded": true,
+    "reduced_no_overflow": true,
+    "reduced_all_static_panels_available": true,
+    "reduced_search_accessible": true,
+    "reduced_flow_order": true,
+    "save-data_200": true,
+    "save-data_no_pin": true,
+    "save-data_no_video": true,
+    "save-data_no3d": true,
+    "save-data_no_mp4_request": true,
+    "save-data_poster_loaded": true,
+    "save-data_no_overflow": true,
+    "save-data_all_static_panels_available": true,
+    "save-data_search_accessible": true,
+    "save-data_flow_order": true,
+    "404_200": true,
+    "404_no_pin": true,
+    "404_no_video": true,
+    "404_no3d": true,
+    "404_poster_loaded": true,
+    "404_no_overflow": true,
+    "404_all_static_panels_available": true,
+    "404_search_accessible": true,
+    "404_flow_order": true,
+    "no_javascript_errors": true
+  },
+  "failures": [],
+  "stages": [
+    {
+      "progress": 0,
+      "stage": "front",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 1000
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1048
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 1000
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1048
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 905,
+            "bottom": 1008
+          }
+        }
+      ],
+      "name": "1440x1000-p00",
+      "video": {
+        "hash": "f14de22b",
+        "time": 0,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.1199,
+      "stage": "front",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 1000
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1048
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 1000
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1048
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 905,
+            "bottom": 1008
+          }
+        }
+      ],
+      "name": "1440x1000-p12",
+      "video": {
+        "hash": "8571541d",
+        "time": 0.894506,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.3299,
+      "stage": "composition",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -90,
+            "bottom": 910
+          }
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.9156",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 4.048999786376953,
+            "bottom": 1004.048999786377
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 1000
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1048
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 905,
+            "bottom": 1008
+          }
+        }
+      ],
+      "name": "1440x1000-p33",
+      "video": {
+        "hash": "da01ae78",
+        "time": 3.710286,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.5799,
+      "stage": "details",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -90,
+            "bottom": 910
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 936
+          }
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 1000
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1048
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 905,
+            "bottom": 1008
+          }
+        }
+      ],
+      "name": "1440x1000-p58",
+      "video": {
+        "hash": "a5bdf0da",
+        "time": 6.703731,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.8199,
+      "stage": "rear",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -90,
+            "bottom": 910
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 936
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -120,
+            "bottom": 880
+          }
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.8323",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 8.05109977722168,
+            "bottom": 1008.0510997772217
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 905,
+            "bottom": 1008
+          }
+        }
+      ],
+      "name": "1440x1000-p82",
+      "video": {
+        "hash": "9a6c2417",
+        "time": 8.998111,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.9599,
+      "stage": "exit",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -90,
+            "bottom": 910
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 936
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -120,
+            "bottom": 880
+          }
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.6397",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": -26.603500366210938,
+            "bottom": 973.3964996337891
+          }
+        },
+        {
+          "name": "search",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.7485",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 875.0592041015625,
+            "bottom": 978.0592041015625
+          }
+        }
+      ],
+      "name": "1440x1000-p96",
+      "video": {
+        "hash": "91a6ca68",
+        "time": 9.958333,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.3301,
+      "stage": "composition",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -90,
+            "bottom": 910
+          }
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.9175",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 3.9595999717712402,
+            "bottom": 1003.9595999717712
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 1000
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1048
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 905,
+            "bottom": 1008
+          }
+        }
+      ],
+      "name": "1440x1000-reverse33",
+      "video": {
+        "hash": "da01ae78",
+        "time": 3.726197,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.5799,
+      "stage": "details",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -90,
+            "bottom": 910
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 936
+          }
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 1000
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1048
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 905,
+            "bottom": 1008
+          }
+        }
+      ],
+      "name": "1440x1000-rapid58",
+      "video": {
+        "hash": "a5bdf0da",
+        "time": 6.702294,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.0001,
+      "stage": "front",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 1000
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1048
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 1000
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1048
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 905,
+            "bottom": 1008
+          }
+        }
+      ],
+      "name": "1440x1000-before-skip",
+      "video": {
+        "hash": "f14de22b",
+        "time": 0.00577,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.9601,
+      "stage": "exit",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -90,
+            "bottom": 910
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 936
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -120,
+            "bottom": 880
+          }
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.638",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": -26.73270034790039,
+            "bottom": 973.2672996520996
+          }
+        },
+        {
+          "name": "search",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.7515",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 874.93798828125,
+            "bottom": 977.93798828125
+          }
+        }
+      ],
+      "name": "search-active",
+      "video": {
+        "hash": "91a6ca68",
+        "time": 9.958333,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0,
+      "stage": "front",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 900
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 948
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 900
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 948
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 805,
+            "bottom": 908
+          }
+        }
+      ],
+      "name": "1440x900-p00",
+      "video": {
+        "hash": "f14de22b",
+        "time": 0,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.1199,
+      "stage": "front",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 900
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 948
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 900
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 948
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 805,
+            "bottom": 908
+          }
+        }
+      ],
+      "name": "1440x900-p12",
+      "video": {
+        "hash": "8571541d",
+        "time": 0.891066,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.3298,
+      "stage": "composition",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -81,
+            "bottom": 819
+          }
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.9149",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 4.083199977874756,
+            "bottom": 904.0831999778748
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 900
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 948
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 805,
+            "bottom": 908
+          }
+        }
+      ],
+      "name": "1440x900-p33",
+      "video": {
+        "hash": "da01ae78",
+        "time": 3.708831,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.5798,
+      "stage": "details",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -81,
+            "bottom": 819
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 836
+          }
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 900
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 948
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 805,
+            "bottom": 908
+          }
+        }
+      ],
+      "name": "1440x900-p58",
+      "video": {
+        "hash": "a5bdf0da",
+        "time": 6.703113,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.82,
+      "stage": "rear",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -81,
+            "bottom": 819
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 836
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -108,
+            "bottom": 792
+          }
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.833",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 8.017000198364258,
+            "bottom": 908.0170001983643
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 805,
+            "bottom": 908
+          }
+        }
+      ],
+      "name": "1440x900-p82",
+      "video": {
+        "hash": "9a6c2417",
+        "time": 8.999118,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.9597,
+      "stage": "exit",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -81,
+            "bottom": 819
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 836
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -108,
+            "bottom": 792
+          }
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.641",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": -26.51219940185547,
+            "bottom": 873.4878005981445
+          }
+        },
+        {
+          "name": "search",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.7464",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 775.144775390625,
+            "bottom": 878.144775390625
+          }
+        }
+      ],
+      "name": "1440x900-p96",
+      "video": {
+        "hash": "91a6ca68",
+        "time": 9.958333,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.33,
+      "stage": "composition",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -81,
+            "bottom": 819
+          }
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.917",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 3.9855000972747803,
+            "bottom": 903.9855000972748
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 900
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 948
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 805,
+            "bottom": 908
+          }
+        }
+      ],
+      "name": "1440x900-reverse33",
+      "video": {
+        "hash": "da01ae78",
+        "time": 3.724733,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.5798,
+      "stage": "details",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -81,
+            "bottom": 819
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 836
+          }
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 900
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 948
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 805,
+            "bottom": 908
+          }
+        }
+      ],
+      "name": "1440x900-rapid58",
+      "video": {
+        "hash": "a5bdf0da",
+        "time": 6.70322,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0,
+      "stage": "front",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 768
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 816
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 768
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 816
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 673,
+            "bottom": 776
+          }
+        }
+      ],
+      "name": "1024x768-p00",
+      "video": {
+        "hash": "f14de22b",
+        "time": 0,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.12,
+      "stage": "front",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 768
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 816
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 768
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 816
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 673,
+            "bottom": 776
+          }
+        }
+      ],
+      "name": "1024x768-p12",
+      "video": {
+        "hash": "8571541d",
+        "time": 0.895851,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.3299,
+      "stage": "composition",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -69.12000274658203,
+            "bottom": 698.879997253418
+          }
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.9156",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 4.050899982452393,
+            "bottom": 772.0508999824524
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 768
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 816
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 673,
+            "bottom": 776
+          }
+        }
+      ],
+      "name": "1024x768-p33",
+      "video": {
+        "hash": "da01ae78",
+        "time": 3.714536,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.5798,
+      "stage": "details",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -69.12000274658203,
+            "bottom": 698.879997253418
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 704
+          }
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 768
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 816
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 673,
+            "bottom": 776
+          }
+        }
+      ],
+      "name": "1024x768-p58",
+      "video": {
+        "hash": "a5bdf0da",
+        "time": 6.702794,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.8201,
+      "stage": "rear",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -69.12000274658203,
+            "bottom": 698.879997253418
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 704
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -92.16000366210938,
+            "bottom": 675.8399963378906
+          }
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.8342",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 7.959099769592285,
+            "bottom": 775.9590997695923
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 673,
+            "bottom": 776
+          }
+        }
+      ],
+      "name": "1024x768-p82",
+      "video": {
+        "hash": "9a6c2417",
+        "time": 8.999483,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.9598,
+      "stage": "exit",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -69.12000274658203,
+            "bottom": 698.879997253418
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 704
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -92.16000366210938,
+            "bottom": 675.8399963378906
+          }
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.6402",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": -26.571500778198242,
+            "bottom": 741.4284992218018
+          }
+        },
+        {
+          "name": "search",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.7478",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 643.0892944335938,
+            "bottom": 746.0892944335938
+          }
+        }
+      ],
+      "name": "1024x768-p96",
+      "video": {
+        "hash": "91a6ca68",
+        "time": 9.958333,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.3301,
+      "stage": "composition",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -69.12000274658203,
+            "bottom": 698.879997253418
+          }
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.9177",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 3.9486000537872314,
+            "bottom": 771.9486000537872
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 768
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 816
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 673,
+            "bottom": 776
+          }
+        }
+      ],
+      "name": "1024x768-reverse33",
+      "video": {
+        "hash": "da01ae78",
+        "time": 3.726104,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0.5797,
+      "stage": "details",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -69.12000274658203,
+            "bottom": 698.879997253418
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 704
+          }
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 768
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 816
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 673,
+            "bottom": 776
+          }
+        }
+      ],
+      "name": "1024x768-rapid58",
+      "video": {
+        "hash": "a5bdf0da",
+        "time": 6.702787,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      }
+    },
+    {
+      "progress": 0,
+      "stage": "front",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "aria": "false",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 0,
+            "bottom": 1080
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1128
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 1080
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1128
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 985,
+            "bottom": 1088
+          }
+        }
+      ],
+      "name": "1920x1080-p00",
+      "video": {
+        "hash": "f14de22b",
+        "time": 0,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      },
+      "media": {
+        "width": 1331.199951171875,
+        "height": 1123.199951171875,
+        "scaleX": 1.04,
+        "scaleY": 1.04,
+        "skewX": 0,
+        "skewY": 0,
+        "objectFit": "contain"
+      }
+    },
+    {
+      "progress": 0.33,
+      "stage": "composition",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -97.19999694824219,
+            "bottom": 982.8000030517578
+          }
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.9168",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 3.993000030517578,
+            "bottom": 1083.9930000305176
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "1",
+          "visibility": "visible",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 0,
+            "bottom": 1080
+          }
+        },
+        {
+          "name": "rear",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 48,
+            "bottom": 1128
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 985,
+            "bottom": 1088
+          }
+        }
+      ],
+      "name": "1920x1080-p33",
+      "video": {
+        "hash": "da01ae78",
+        "time": 3.716871,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      },
+      "media": {
+        "width": 972.7999267578125,
+        "height": 820.800048828125,
+        "scaleX": 0.76,
+        "scaleY": 0.76,
+        "skewX": 0,
+        "skewY": 0,
+        "objectFit": "contain"
+      }
+    },
+    {
+      "progress": 0.82,
+      "stage": "rear",
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -97.19999694824219,
+            "bottom": 982.8000030517578
+          }
+        },
+        {
+          "name": "about",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -64,
+            "bottom": 1016
+          }
+        },
+        {
+          "name": "details",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": -129.60000610351562,
+            "bottom": 950.3999938964844
+          }
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "aria": "false",
+          "opacity": "0.8337",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "rect": {
+            "top": 7.982800006866455,
+            "bottom": 1087.9828000068665
+          }
+        },
+        {
+          "name": "search",
+          "inert": true,
+          "aria": "true",
+          "opacity": "0",
+          "visibility": "hidden",
+          "pointerEvents": "none",
+          "rect": {
+            "top": 985,
+            "bottom": 1088
+          }
+        }
+      ],
+      "name": "1920x1080-p82",
+      "video": {
+        "hash": "a4fde348",
+        "time": 9.000076,
+        "duration": 10,
+        "paused": true,
+        "seeking": false,
+        "ready": 4
+      },
+      "media": {
+        "width": 1177.5999755859375,
+        "height": 993.60009765625,
+        "scaleX": 0.92,
+        "scaleY": 0.92,
+        "skewX": 0,
+        "skewY": 0,
+        "objectFit": "contain"
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "scroll": 2592,
+      "heroBottom": 1000,
+      "fleetTop": 1008,
+      "searchBottom": 973.7578735351562,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1440x1000-exit-2592"
+    },
+    {
+      "scroll": 2700,
+      "heroBottom": 900.0009765625,
+      "fleetTop": 900,
+      "searchBottom": 868.0009765625,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1440x1000-exit-2700"
+    },
+    {
+      "scroll": 3100,
+      "heroBottom": 500.0009765625,
+      "fleetTop": 500,
+      "searchBottom": 468.0009765625,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1440x1000-exit-3100"
+    },
+    {
+      "scroll": 3500,
+      "heroBottom": 100.0009765625,
+      "fleetTop": 100,
+      "searchBottom": 68.0009765625,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1440x1000-exit-3500"
+    },
+    {
+      "scroll": 2332,
+      "heroBottom": 900,
+      "fleetTop": 908,
+      "searchBottom": 871.51611328125,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1440x900-exit-2332"
+    },
+    {
+      "scroll": 2440,
+      "heroBottom": 800.0009765625,
+      "fleetTop": 800,
+      "searchBottom": 768.0009765625,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1440x900-exit-2440"
+    },
+    {
+      "scroll": 2840,
+      "heroBottom": 400.0009765625,
+      "fleetTop": 400,
+      "searchBottom": 368.0009765625,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1440x900-exit-2840"
+    },
+    {
+      "scroll": 3240,
+      "heroBottom": 0.0009765625,
+      "fleetTop": 0,
+      "searchBottom": -31.9990234375,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1440x900-exit-3240"
+    },
+    {
+      "scroll": 1989,
+      "heroBottom": 768,
+      "fleetTop": 776,
+      "searchBottom": 739.7785034179688,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1024x768-exit-1989"
+    },
+    {
+      "scroll": 2097,
+      "heroBottom": 668.0009765625,
+      "fleetTop": 668,
+      "searchBottom": 636.0009765625,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1024x768-exit-2097"
+    },
+    {
+      "scroll": 2497,
+      "heroBottom": 268.0009765625,
+      "fleetTop": 268,
+      "searchBottom": 236.0009765625,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1024x768-exit-2497"
+    },
+    {
+      "scroll": 2897,
+      "heroBottom": -131.9990234375,
+      "fleetTop": -132,
+      "searchBottom": -163.9990234375,
+      "visibleGap": 0,
+      "overflow": false,
+      "name": "1024x768-exit-2897"
+    }
+  ],
+  "screenshots": [
+    "output\\playwright\\night-garage-hero\\1440x1000-p00.png",
+    "output\\playwright\\night-garage-hero\\1440x1000-p12.png",
+    "output\\playwright\\night-garage-hero\\1440x1000-p33.png",
+    "output\\playwright\\night-garage-hero\\1440x1000-p58.png",
+    "output\\playwright\\night-garage-hero\\1440x1000-p82.png",
+    "output\\playwright\\night-garage-hero\\1440x1000-p96.png",
+    "output\\playwright\\night-garage-hero\\1440x1000-catalog-exit.png",
+    "output\\playwright\\night-garage-hero\\footer-1440.png",
+    "output\\playwright\\night-garage-hero\\1440x900-p00.png",
+    "output\\playwright\\night-garage-hero\\1440x900-p12.png",
+    "output\\playwright\\night-garage-hero\\1440x900-p33.png",
+    "output\\playwright\\night-garage-hero\\1440x900-p58.png",
+    "output\\playwright\\night-garage-hero\\1440x900-p82.png",
+    "output\\playwright\\night-garage-hero\\1440x900-p96.png",
+    "output\\playwright\\night-garage-hero\\1440x900-catalog-exit.png",
+    "output\\playwright\\night-garage-hero\\1024x768-p00.png",
+    "output\\playwright\\night-garage-hero\\1024x768-p12.png",
+    "output\\playwright\\night-garage-hero\\1024x768-p33.png",
+    "output\\playwright\\night-garage-hero\\1024x768-p58.png",
+    "output\\playwright\\night-garage-hero\\1024x768-p82.png",
+    "output\\playwright\\night-garage-hero\\1024x768-p96.png",
+    "output\\playwright\\night-garage-hero\\1024x768-catalog-exit.png",
+    "output\\playwright\\night-garage-hero\\1920x1080-p00.png",
+    "output\\playwright\\night-garage-hero\\1920x1080-p33.png",
+    "output\\playwright\\night-garage-hero\\1920x1080-p82.png",
+    "output\\playwright\\night-garage-hero\\mobile390-first.png",
+    "output\\playwright\\night-garage-hero\\mobile390-search.png",
+    "output\\playwright\\night-garage-hero\\mobile390-about.png",
+    "output\\playwright\\night-garage-hero\\mobile390-details.png",
+    "output\\playwright\\night-garage-hero\\mobile390-rear.png",
+    "output\\playwright\\night-garage-hero\\mobile320-first.png",
+    "output\\playwright\\night-garage-hero\\mobile320-search.png",
+    "output\\playwright\\night-garage-hero\\mobile320-about.png",
+    "output\\playwright\\night-garage-hero\\mobile320-details.png",
+    "output\\playwright\\night-garage-hero\\mobile320-rear.png",
+    "output\\playwright\\night-garage-hero\\tablet768-first.png",
+    "output\\playwright\\night-garage-hero\\tablet768-search.png",
+    "output\\playwright\\night-garage-hero\\tablet768-about.png",
+    "output\\playwright\\night-garage-hero\\tablet768-details.png",
+    "output\\playwright\\night-garage-hero\\tablet768-rear.png",
+    "output\\playwright\\night-garage-hero\\reduced-first.png",
+    "output\\playwright\\night-garage-hero\\reduced-search.png",
+    "output\\playwright\\night-garage-hero\\reduced-about.png",
+    "output\\playwright\\night-garage-hero\\reduced-details.png",
+    "output\\playwright\\night-garage-hero\\reduced-rear.png",
+    "output\\playwright\\night-garage-hero\\save-data-first.png",
+    "output\\playwright\\night-garage-hero\\save-data-search.png",
+    "output\\playwright\\night-garage-hero\\save-data-about.png",
+    "output\\playwright\\night-garage-hero\\save-data-details.png",
+    "output\\playwright\\night-garage-hero\\save-data-rear.png",
+    "output\\playwright\\night-garage-hero\\404-first.png",
+    "output\\playwright\\night-garage-hero\\404-search.png",
+    "output\\playwright\\night-garage-hero\\404-about.png",
+    "output\\playwright\\night-garage-hero\\404-details.png",
+    "output\\playwright\\night-garage-hero\\404-rear.png"
+  ],
+  "errors": [],
+  "diagnostics": [
+    {
+      "case": "404",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "case": "404",
+      "type": "warning",
+      "message": "Legion hero fallback: Hero video could not be decoded"
+    }
+  ],
+  "navigation": [
+    {
+      "url": "http://127.0.0.1:8002/#fleet",
+      "type": "back_forward",
+      "state": "video-ready",
+      "videos": 1,
+      "pins": 1
+    }
+  ],
+  "fallbacks": [
+    {
+      "poster": "http://127.0.0.1:8002/static/img/hero-drive-mobile.d6f955b85e22.webp",
+      "complete": true,
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 0
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 1115.90625
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 1599.6875
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 2273.609375
+        },
+        {
+          "name": "search",
+          "inert": false,
+          "hidden": null,
+          "display": "block",
+          "opacity": "1",
+          "top": 760.90625
+        }
+      ],
+      "case": "mobile390"
+    },
+    {
+      "poster": "http://127.0.0.1:8002/static/img/hero-drive-mobile.d6f955b85e22.webp",
+      "complete": true,
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 0
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 1096.9375
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 1536.671875
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 2122.09375
+        },
+        {
+          "name": "search",
+          "inert": false,
+          "hidden": null,
+          "display": "block",
+          "opacity": "1",
+          "top": 741.9375
+        }
+      ],
+      "case": "mobile320"
+    },
+    {
+      "poster": "http://127.0.0.1:8002/static/img/hero-drive-mobile.d6f955b85e22.webp",
+      "complete": true,
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 0
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 1081.59375
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 1426.140625
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 2628.203125
+        },
+        {
+          "name": "search",
+          "inert": false,
+          "hidden": null,
+          "display": "block",
+          "opacity": "1",
+          "top": 872.59375
+        }
+      ],
+      "case": "tablet768"
+    },
+    {
+      "poster": "http://127.0.0.1:8002/static/img/hero-drive-front.9c47715d4d5a.webp",
+      "complete": true,
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 0
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 1095
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 1628.078125
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 2649.6875
+        },
+        {
+          "name": "search",
+          "inert": false,
+          "hidden": null,
+          "display": "block",
+          "opacity": "1",
+          "top": 944
+        }
+      ],
+      "case": "reduced"
+    },
+    {
+      "poster": "http://127.0.0.1:8002/static/img/hero-drive-front.9c47715d4d5a.webp",
+      "complete": true,
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 0
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 1095
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 1628.078125
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 2649.6875
+        },
+        {
+          "name": "search",
+          "inert": false,
+          "hidden": null,
+          "display": "block",
+          "opacity": "1",
+          "top": 944
+        }
+      ],
+      "case": "save-data"
+    },
+    {
+      "poster": "http://127.0.0.1:8002/static/img/hero-drive-front.9c47715d4d5a.webp",
+      "complete": true,
+      "overflow": false,
+      "panels": [
+        {
+          "name": "intro",
+          "inert": false,
+          "hidden": null,
+          "display": "flex",
+          "opacity": "1",
+          "top": 0
+        },
+        {
+          "name": "about",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 1095
+        },
+        {
+          "name": "details",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 1628.078125
+        },
+        {
+          "name": "rear",
+          "inert": false,
+          "hidden": null,
+          "display": "grid",
+          "opacity": "1",
+          "top": 2649.6875
+        },
+        {
+          "name": "search",
+          "inert": false,
+          "hidden": null,
+          "display": "block",
+          "opacity": "1",
+          "top": 944
+        }
+      ],
+      "case": "404"
+    }
+  ],
+  "video_asset": {
+    "url": "http://127.0.0.1:8002/static/video/hero-drive.92166043125a.mp4",
+    "width": 1280,
+    "height": 720,
+    "duration": 10,
+    "bytes": 3969555,
+    "sha256": "e1a2f0c037d052c623a8fa2f3b136d237ce98679d4d427e2f0ae2ffa5c7825fd",
+    "source_sha256": "e1a2f0c037d052c623a8fa2f3b136d237ce98679d4d427e2f0ae2ffa5c7825fd"
+  }
+}
