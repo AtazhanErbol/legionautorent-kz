@@ -715,3 +715,6 @@ msgstr "Wheel and body line"
 
 msgid "Задние фонари"
 msgstr "Rear lights"
+
+msgid "Закрыть фильтры"
+msgstr "Close filters"

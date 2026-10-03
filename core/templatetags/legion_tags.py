@@ -57,6 +57,7 @@ def car_discount(car):
 
 # Trusted, small inline icons avoid an external font or icon library.
 ICONS={
+    'close':'<path d="m6 6 12 12M18 6 6 18"/>',
     'arrow':'<path d="M5 19 19 5M5 5h14v14"/>',
     'phone':'<path d="M5 3h4l2 5-3 2c2 3 3 4 6 6l2-3 5 2v4a2 2 0 0 1-2 2C10 21 3 14 3 5a2 2 0 0 1 2-2Z"/>',
     'whatsapp':'<path d="M20 11.6a8.2 8.2 0 0 1-12.2 7.1L3 20l1.3-4.6A8.2 8.2 0 1 1 20 11.6Z"/><path d="m8 7 1 3-1 1c1 2 2 3 4 4l1-1 3 1c0 2-2 2-3 2-4-1-7-4-7-7 0-1 1-3 2-3Z"/>',
@@ -73,7 +74,11 @@ ICONS={
 }
 @register.simple_tag
 def icon(name):
-    return mark_safe('<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICONS.get(name,ICONS['arrow'])+'</svg>')
+    return mark_safe('<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+'<use href="#legion-icon-'+(name if name in ICONS else 'arrow')+'"/>'+'</svg>')
+@register.simple_tag
+def icon_sprite():
+    symbols = ''.join('<symbol id="legion-icon-'+name+'" viewBox="0 0 24 24">'+paths+'</symbol>' for name, paths in ICONS.items())
+    return mark_safe('<svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">'+symbols+'</svg>')
 @register.filter
 def json_ld(value):
     return mark_safe(json.dumps(value, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026'))

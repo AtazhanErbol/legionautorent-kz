@@ -8,7 +8,7 @@ export function initPageMotion() {
   if (currentInstance) return currentInstance;
   if (!('IntersectionObserver' in window) || !Element.prototype.animate) return () => {};
 
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce), (hover: none), (pointer: coarse)');
   const selector = '.car-card, .steps-grid > article, .benefits-grid > article, .contact-layout > div';
   const observed = new Set();
   const seen = new WeakSet();

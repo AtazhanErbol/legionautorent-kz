@@ -1,0 +1,25 @@
+[
+  {
+    "source": "assets/font-review/montserrat/Montserrat[wght].ttf",
+    "file": "static/fonts/montserrat-site.woff2",
+    "weights": 600,
+    "bytes": 57336,
+    "sha256": "4d171b3e663fe0031f7d45c33056cd08ecb528221c1cad6805152caa0f1ca0d2",
+    "required": "ӘҒҚҢӨҰҮҺІәғқңөұүһі₸",
+    "missing": [],
+    "glyphs": 769
+  },
+  {
+    "source": "static/fonts/GolosText.ttf",
+    "file": "static/fonts/golos-night.woff2",
+    "weights": [
+      400,
+      600
+    ],
+    "bytes": 43160,
+    "sha256": "20e6d9cf41b2ff6692f1a7d8b2411a812135e24ad8a5ca06dd4c3fd9daab0870",
+    "required": "ӘҒҚҢӨҰҮҺІәғқңөұүһі₸",
+    "missing": [],
+    "glyphs": 495
+  }
+]
