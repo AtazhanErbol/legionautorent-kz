@@ -106,7 +106,7 @@
   "samples": [
     {
       "progress": "0.0000",
-      "time": 0.000416,
+      "time": 0.000166,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -118,7 +118,7 @@
     },
     {
       "progress": "0.2498",
-      "time": 1.875416,
+      "time": 1.866833,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -126,155 +126,155 @@
       "headerBottom": 81,
       "h1Top": 220.296875,
       "width": 1920,
-      "target": 0.25
-    },
-    {
-      "progress": "0.4998",
-      "time": 3.70875,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 220.296875,
-      "width": 1920,
-      "target": 0.5
-    },
-    {
-      "progress": "0.7498",
-      "time": 5.583749,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 220.296875,
-      "width": 1920,
-      "target": 0.75
-    },
-    {
-      "progress": "0.9998",
-      "time": 7.458749,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 220.296875,
-      "width": 1920,
-      "target": 1
-    },
-    {
-      "progress": "0.2503",
-      "time": 1.875416,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 220.296875,
-      "width": 1920,
-      "target": 0.25
-    },
-    {
-      "progress": "0.0000",
-      "time": 0.000416,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 191.5,
-      "width": 1440,
-      "target": 0
-    },
-    {
-      "progress": "0.2498",
-      "time": 1.875416,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 191.5,
-      "width": 1440,
-      "target": 0.25
-    },
-    {
-      "progress": "0.4998",
-      "time": 3.70875,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 191.5,
-      "width": 1440,
-      "target": 0.5
-    },
-    {
-      "progress": "0.7498",
-      "time": 5.583749,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 191.5,
-      "width": 1440,
-      "target": 0.75
-    },
-    {
-      "progress": "0.9998",
-      "time": 7.458749,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 191.5,
-      "width": 1440,
-      "target": 1
-    },
-    {
-      "progress": "0.2502",
-      "time": 1.875416,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 191.5,
-      "width": 1440,
-      "target": 0.25
-    },
-    {
-      "progress": "0.0000",
-      "time": 0.000416,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 185.734375,
-      "width": 1366,
-      "target": 0
-    },
-    {
-      "progress": "0.2498",
-      "time": 1.875416,
-      "paused": true,
-      "seeking": false,
-      "overflow": false,
-      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
-      "headerBottom": 81,
-      "h1Top": 185.734375,
-      "width": 1366,
       "target": 0.25
     },
     {
       "progress": "0.4997",
-      "time": 3.70875,
+      "time": 3.7335,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 220.296875,
+      "width": 1920,
+      "target": 0.5
+    },
+    {
+      "progress": "0.7497",
+      "time": 5.616833,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 220.296875,
+      "width": 1920,
+      "target": 0.75
+    },
+    {
+      "progress": "0.9998",
+      "time": 7.4835,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 220.296875,
+      "width": 1920,
+      "target": 1
+    },
+    {
+      "progress": "0.2502",
+      "time": 1.866833,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 220.296875,
+      "width": 1920,
+      "target": 0.25
+    },
+    {
+      "progress": "0.0000",
+      "time": 0.000166,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 191.5,
+      "width": 1440,
+      "target": 0
+    },
+    {
+      "progress": "0.2498",
+      "time": 1.866833,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 191.5,
+      "width": 1440,
+      "target": 0.25
+    },
+    {
+      "progress": "0.4998",
+      "time": 3.7335,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 191.5,
+      "width": 1440,
+      "target": 0.5
+    },
+    {
+      "progress": "0.7498",
+      "time": 5.616833,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 191.5,
+      "width": 1440,
+      "target": 0.75
+    },
+    {
+      "progress": "0.9997",
+      "time": 7.4835,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 191.5,
+      "width": 1440,
+      "target": 1
+    },
+    {
+      "progress": "0.2503",
+      "time": 1.866833,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 191.5,
+      "width": 1440,
+      "target": 0.25
+    },
+    {
+      "progress": "0.0000",
+      "time": 0.000166,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 185.734375,
+      "width": 1366,
+      "target": 0
+    },
+    {
+      "progress": "0.2497",
+      "time": 1.866833,
+      "paused": true,
+      "seeking": false,
+      "overflow": false,
+      "h1": "ПРОКАТ АВТО БЕЗ ВОДИТЕЛЯ В АСТАНЕ,  ЦЕНЫ ОТ 20 000 ТГ/СУТКИ",
+      "headerBottom": 81,
+      "h1Top": 185.734375,
+      "width": 1366,
+      "target": 0.25
+    },
+    {
+      "progress": "0.4998",
+      "time": 3.7335,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -286,7 +286,7 @@
     },
     {
       "progress": "0.7497",
-      "time": 5.583749,
+      "time": 5.616833,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -298,7 +298,7 @@
     },
     {
       "progress": "0.9998",
-      "time": 7.458749,
+      "time": 7.4835,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -310,7 +310,7 @@
     },
     {
       "progress": "0.2503",
-      "time": 1.875416,
+      "time": 1.866833,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -370,6 +370,22 @@
       "h1Lines": 2,
       "cars": 59,
       "case": "missing"
+    }
+  ],
+  "network_idle_fallbacks": [
+    {
+      "url": "http://127.0.0.1:8002/",
+      "pending": [
+        "blob:http://127.0.0.1:8002/e89d118b-a76c-44a5-9dc4-3cc7d1992000"
+      ],
+      "ready_state": "complete"
+    },
+    {
+      "url": "http://127.0.0.1:8002/",
+      "pending": [
+        "blob:http://127.0.0.1:8002/353a027e-c95a-4971-9c08-627357bdc35a"
+      ],
+      "ready_state": "complete"
     }
   ],
   "passed": true,

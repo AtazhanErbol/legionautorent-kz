@@ -1,0 +1,88 @@
+{
+  "runs": [
+    {
+      "name": "original24",
+      "source_fps": 24,
+      "scroll_duration_ms": 8000,
+      "size": [
+        1280,
+        720
+      ],
+      "changed_frames": 301,
+      "video_changes_per_second": 37.62,
+      "p95_video_gap_ms": 55.5,
+      "max_video_gap_ms_same_direction": 97.2,
+      "max_video_gap_ms_including_reversal": 146.0,
+      "mean_seek_ms": 7.89,
+      "ui_fps": 140.77,
+      "ui_max_frame_ms": 20.9,
+      "file_fps": 24
+    },
+    {
+      "name": "original24",
+      "source_fps": 24,
+      "scroll_duration_ms": 16000,
+      "size": [
+        1280,
+        720
+      ],
+      "changed_frames": 335,
+      "video_changes_per_second": 20.94,
+      "p95_video_gap_ms": 76.5,
+      "max_video_gap_ms_same_direction": 111.3,
+      "max_video_gap_ms_including_reversal": 180.5,
+      "mean_seek_ms": 14.96,
+      "ui_fps": 134.77,
+      "ui_max_frame_ms": 27.7,
+      "file_fps": 24
+    },
+    {
+      "name": "smooth60",
+      "source_fps": 24,
+      "scroll_duration_ms": 8000,
+      "size": [
+        1280,
+        720
+      ],
+      "changed_frames": 614,
+      "video_changes_per_second": 76.75,
+      "p95_video_gap_ms": 41.7,
+      "max_video_gap_ms_same_direction": 97.2,
+      "max_video_gap_ms_including_reversal": 97.2,
+      "mean_seek_ms": 5.78,
+      "ui_fps": 140.17,
+      "ui_max_frame_ms": 14,
+      "file_fps": 60
+    },
+    {
+      "name": "smooth60",
+      "source_fps": 24,
+      "scroll_duration_ms": 16000,
+      "size": [
+        1280,
+        720
+      ],
+      "changed_frames": 774,
+      "video_changes_per_second": 48.38,
+      "p95_video_gap_ms": 41.6,
+      "max_video_gap_ms_same_direction": 132.2,
+      "max_video_gap_ms_including_reversal": 132.2,
+      "mean_seek_ms": 5.61,
+      "ui_fps": 137.52,
+      "ui_max_frame_ms": 34.8,
+      "file_fps": 60
+    }
+  ],
+  "errors": [],
+  "checks": {
+    "end-rests": true,
+    "unchanged-layout": true,
+    "8000-more-presented-frames": true,
+    "8000-lower-p95-gap": true,
+    "8000-ui-under-50ms": true,
+    "16000-more-presented-frames": true,
+    "16000-lower-p95-gap": true,
+    "16000-ui-under-50ms": true
+  },
+  "passed": true
+}

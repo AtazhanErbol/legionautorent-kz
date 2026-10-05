@@ -225,7 +225,7 @@
       "scroll": 0,
       "mode": "cinematic",
       "progress": "0.0000",
-      "time": 0.000416,
+      "time": 0.000166,
       "videoSize": [
         1280,
         720
@@ -252,7 +252,7 @@
       "scroll": 900,
       "mode": "cinematic",
       "progress": "0.2500",
-      "time": 1.875416,
+      "time": 1.866833,
       "videoSize": [
         1280,
         720
@@ -278,8 +278,8 @@
       "requested_progress": 0.5,
       "scroll": 1800,
       "mode": "cinematic",
-      "progress": "0.4998",
-      "time": 3.750416,
+      "progress": "0.5000",
+      "time": 3.750166,
       "videoSize": [
         1280,
         720
@@ -306,7 +306,7 @@
       "scroll": 2700,
       "mode": "cinematic",
       "progress": "0.7500",
-      "time": 5.583749,
+      "time": 5.616833,
       "videoSize": [
         1280,
         720
@@ -333,7 +333,7 @@
       "scroll": 3600,
       "mode": "cinematic",
       "progress": "1.0000",
-      "time": 7.458749,
+      "time": 7.4835,
       "videoSize": [
         1280,
         720
@@ -495,7 +495,7 @@
       "scroll": 0,
       "mode": "cinematic",
       "progress": "0.0000",
-      "time": 0.000416,
+      "time": 0.000166,
       "videoSize": [
         1280,
         720
@@ -522,7 +522,7 @@
       "scroll": 768,
       "mode": "cinematic",
       "progress": "0.2500",
-      "time": 1.875416,
+      "time": 1.866833,
       "videoSize": [
         1280,
         720
@@ -549,7 +549,7 @@
       "scroll": 1536,
       "mode": "cinematic",
       "progress": "0.5000",
-      "time": 3.750416,
+      "time": 3.750166,
       "videoSize": [
         1280,
         720
@@ -576,7 +576,7 @@
       "scroll": 2304,
       "mode": "cinematic",
       "progress": "0.7500",
-      "time": 5.583749,
+      "time": 5.616833,
       "videoSize": [
         1280,
         720
@@ -603,7 +603,7 @@
       "scroll": 3072,
       "mode": "cinematic",
       "progress": "1.0000",
-      "time": 7.458749,
+      "time": 7.4835,
       "videoSize": [
         1280,
         720
@@ -630,7 +630,7 @@
       "scroll": 0,
       "mode": "cinematic",
       "progress": "0.0000",
-      "time": 0.000416,
+      "time": 0.000166,
       "videoSize": [
         1280,
         720
@@ -657,7 +657,7 @@
       "scroll": 1080,
       "mode": "cinematic",
       "progress": "0.2500",
-      "time": 1.875416,
+      "time": 1.866833,
       "videoSize": [
         1280,
         720
@@ -684,7 +684,7 @@
       "scroll": 2160,
       "mode": "cinematic",
       "progress": "0.5000",
-      "time": 3.750416,
+      "time": 3.750166,
       "videoSize": [
         1280,
         720
@@ -711,7 +711,7 @@
       "scroll": 3240,
       "mode": "cinematic",
       "progress": "0.7500",
-      "time": 5.583749,
+      "time": 5.616833,
       "videoSize": [
         1280,
         720
@@ -737,8 +737,8 @@
       "requested_progress": 1,
       "scroll": 4320,
       "mode": "cinematic",
-      "progress": "1.0000",
-      "time": 7.458749,
+      "progress": "0.9998",
+      "time": 7.4835,
       "videoSize": [
         1280,
         720
@@ -765,7 +765,7 @@
       "scroll": 0,
       "mode": "cinematic",
       "progress": "0.0000",
-      "time": 0.000416,
+      "time": 0.000166,
       "videoSize": [
         1280,
         720
@@ -792,7 +792,7 @@
       "scroll": 768,
       "mode": "cinematic",
       "progress": "0.2500",
-      "time": 1.875416,
+      "time": 1.866833,
       "videoSize": [
         1280,
         720
@@ -819,7 +819,7 @@
       "scroll": 1536,
       "mode": "cinematic",
       "progress": "0.5000",
-      "time": 3.750416,
+      "time": 3.750166,
       "videoSize": [
         1280,
         720
@@ -846,7 +846,7 @@
       "scroll": 2304,
       "mode": "cinematic",
       "progress": "0.7500",
-      "time": 5.583749,
+      "time": 5.616833,
       "videoSize": [
         1280,
         720
@@ -873,7 +873,7 @@
       "scroll": 3072,
       "mode": "cinematic",
       "progress": "1.0000",
-      "time": 7.458749,
+      "time": 7.4835,
       "videoSize": [
         1280,
         720
@@ -1197,22 +1197,22 @@
     {
       "band": 1,
       "progress": 0.0176,
-      "ratio": 9.892
+      "ratio": 10.048
     },
     {
       "band": 1,
       "progress": 0.077,
-      "ratio": 9.459
+      "ratio": 9.781
     },
     {
       "band": 1,
       "progress": 0.14300000000000002,
-      "ratio": 9.598
+      "ratio": 9.629
     },
     {
       "band": 1,
       "progress": 0.2024,
-      "ratio": 9.609
+      "ratio": 9.781
     },
     {
       "band": 2,
@@ -1222,68 +1222,99 @@
     {
       "band": 2,
       "progress": 0.3385,
-      "ratio": 7.822
+      "ratio": 7.734
     },
     {
       "band": 2,
       "progress": 0.43150000000000005,
-      "ratio": 13.4
+      "ratio": 13.537
     },
     {
       "band": 2,
       "progress": 0.5152000000000001,
-      "ratio": 13.21
+      "ratio": 13.195
     },
     {
       "band": 3,
       "progress": 0.5676,
-      "ratio": 5.595
+      "ratio": 5.589
     },
     {
       "band": 3,
       "progress": 0.627,
-      "ratio": 5.697
+      "ratio": 5.759
     },
     {
       "band": 3,
       "progress": 0.6930000000000001,
-      "ratio": 6.014
+      "ratio": 6.04
     },
     {
       "band": 3,
       "progress": 0.7524000000000001,
-      "ratio": 6.132
+      "ratio": 6.199
     },
     {
       "band": 4,
       "progress": 0.7976,
-      "ratio": 9.301
+      "ratio": 9.185
     },
     {
       "band": 4,
       "progress": 0.857,
-      "ratio": 11.372
+      "ratio": 11.75
     },
     {
       "band": 4,
       "progress": 0.923,
-      "ratio": 9.761
+      "ratio": 9.439
     },
     {
       "band": 4,
       "progress": 0.9824,
-      "ratio": 8.772
+      "ratio": 9.114
     }
   ],
   "motion": [
     {
       "width": 1440,
       "height": 900,
-      "ui_average_fps": 139.77,
-      "ui_longest_frame_ms": 20.9,
+      "ui_average_fps": 144.02,
+      "ui_longest_frame_ms": 7.3,
       "ui_frames_over_50ms": 0,
       "source_fps": 24,
-      "presented_changes": 332
+      "file_fps": 60,
+      "presented_changes": 877
+    }
+  ],
+  "network_idle_fallbacks": [
+    {
+      "url": "http://127.0.0.1:8002/",
+      "pending": [
+        "blob:http://127.0.0.1:8002/29f50b21-701f-4416-82a8-cf350225fb1c"
+      ],
+      "ready_state": "complete"
+    },
+    {
+      "url": "http://127.0.0.1:8002/",
+      "pending": [
+        "blob:http://127.0.0.1:8002/b06b41a5-83ae-409d-9964-05fdfe1a5412"
+      ],
+      "ready_state": "complete"
+    },
+    {
+      "url": "http://127.0.0.1:8002/",
+      "pending": [
+        "blob:http://127.0.0.1:8002/833a435f-feed-4404-8d96-cf715c78e291"
+      ],
+      "ready_state": "complete"
+    },
+    {
+      "url": "http://127.0.0.1:8002/kk/",
+      "pending": [
+        "blob:http://127.0.0.1:8002/9cc54cc2-3aac-4922-9a7b-f3906cc10729"
+      ],
+      "ready_state": "complete"
     }
   ],
   "failed": [],

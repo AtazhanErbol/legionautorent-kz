@@ -5,7 +5,7 @@ from core.i18n import get_translation
 
 
 ASSETS = {
-    'video': '/static/hero/hero-scrub-4836d5f97269.mp4',
+    'video': '/static/hero/hero-scrub-smooth60-c86f40f74879.mp4',
     'poster': '/static/hero/hero-poster-e9b496d7a585.webp',
     'mobile': '/static/hero/hero-static-27f030789025.webp',
     'ending': '/static/hero/hero-ending-87350d5b2b8d.webp',
@@ -37,8 +37,8 @@ def hero_context(site):
         'poster': asset_url(poster),
         'mobile': asset_url(site.hero_mobile_poster_path or poster),
         'ending': asset_url(site.hero_ending_path) if site.hero_ending_path else '',
-        'bytes': 2826099 if approved else 0,
-        'fps': 24,
+        'bytes': 3673288 if approved else 0,
+        'fps': 60 if approved else 24,
         'width': 1280 if approved else 0,
         'height': 720 if approved else 0,
         **captions,

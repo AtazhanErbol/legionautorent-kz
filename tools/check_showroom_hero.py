@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 from PIL import Image
 from playwright.sync_api import sync_playwright
+from browser_ready import open_loaded_page
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'output/playwright/showroom-final'
@@ -28,7 +29,7 @@ with sync_playwright() as p:
         page = context.new_page();requests=[]
         page.on('pageerror', lambda error: report['errors'].append(str(error)))
         page.on('request', lambda request: requests.append(request.url))
-        page.goto('http://127.0.0.1:8002/',wait_until='networkidle')
+        open_loaded_page(page,'http://127.0.0.1:8002/',report)
         active = width >= 900
         if active: page.wait_for_selector('[data-state=ready]')
         check(f'{width}-single-h1',page.locator('h1').count()==1)
@@ -47,7 +48,7 @@ with sync_playwright() as p:
                 check(name+'-native-resolution',result['videoSize']==[1280,720])
                 check(name+'-500vh',abs(result['span']-4*height)<2)
                 if progress==0:check(name+'-h1-above-headlights',result['h1Bottom']<result['headlightsTop'] and result['lines']<=3)
-                if progress==1:check(name+'-rest-frame',abs(result['time']-179/24)<1/24)
+                if progress==1:check(name+'-rest-frame',abs(result['time']-449/60)<1/60)
             else:
                 check(name+'-no-video',not any('.mp4' in u for u in requests))
                 check(name+'-static-frame','hero-static-' in result['image'])
@@ -86,7 +87,7 @@ with sync_playwright() as p:
                         if opacity>=.98:hits[i]+=1
                 report['flicks'].append({'step':step,'fully_readable_samples':hits})
                 check(f'flick-{step}',all(count>=(5 if step==120 else 1) for count in hits))
-            # Quiet performance run: UI FPS is separate from the file's 24 fps.
+            # Quiet performance run: UI FPS is separate from the derivative's 60 fps.
             scroll(page,0)
             motion=page.evaluate('''()=>new Promise(resolve=>{
                 const h=document.querySelector('[data-mercedes-preview]'),v=h.querySelector('video'),span=h.offsetHeight-h.firstElementChild.offsetHeight;
@@ -97,7 +98,7 @@ with sync_playwright() as p:
                 requestAnimationFrame(tick);
             })''')
             ui=motion['frames'];shown=motion['shown'];unique=[s for i,s in enumerate(shown) if i==0 or s['media']!=shown[i-1]['media']]
-            result={'width':width,'height':height,'ui_average_fps':round(1000/(sum(ui)/len(ui)),2),'ui_longest_frame_ms':round(max(ui),2),'ui_frames_over_50ms':sum(v>50 for v in ui),'source_fps':24,'presented_changes':len(unique)}
+            result={'width':width,'height':height,'ui_average_fps':round(1000/(sum(ui)/len(ui)),2),'ui_longest_frame_ms':round(max(ui),2),'ui_frames_over_50ms':sum(v>50 for v in ui),'source_fps':24,'file_fps':60,'presented_changes':len(unique)}
             report['motion'].append(result);check('motion-55fps',result['ui_average_fps']>=55);check('motion-under-50ms',max(ui)<=50)
             scroll(page,1)
             page.locator('.mercedes-caption--end a[href="#fleet"]').click()
@@ -108,7 +109,7 @@ with sync_playwright() as p:
     # RU/KK/EN captions stay editable/localized; no additional headings are introduced.
     for prefix in ['kk/','en/']:
         page=browser.new_page(viewport={'width':1440,'height':900})
-        page.goto('http://127.0.0.1:8002/'+prefix,wait_until='networkidle');page.wait_for_selector('[data-state=ready]')
+        open_loaded_page(page,'http://127.0.0.1:8002/'+prefix,report);page.wait_for_selector('[data-state=ready]')
         for progress in [0,.35,.65,.9]:
             scroll(page,progress)
             check(prefix+str(progress)+'-no-overflow',page.evaluate('document.documentElement.scrollWidth<=innerWidth'))

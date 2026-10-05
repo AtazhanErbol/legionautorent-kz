@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+from browser_ready import open_loaded_page
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'output/playwright/mercedes-preview';OUT.mkdir(parents=True,exist_ok=True)
@@ -13,7 +14,7 @@ with sync_playwright() as p:
         context=browser.new_context(viewport={'width':width,'height':height})
         context.add_init_script("window.addEventListener('load',()=>window.__loadedAt=performance.now(),{once:true})")
         page=context.new_page();page.on('pageerror',lambda e:report['errors'].append(str(e)))
-        response=page.goto('http://127.0.0.1:8002/',wait_until='networkidle')
+        response=open_loaded_page(page,'http://127.0.0.1:8002/',report)
         page.wait_for_selector('[data-mercedes-preview][data-state=ready]',timeout=30000)
         page.evaluate('document.fonts.ready')
         expected_cars=page.locator('.car-card').count()
@@ -22,7 +23,7 @@ with sync_playwright() as p:
         check(f'{width}_one_h1',page.locator('h1').count()==1)
         check(f'{width}_500vh',abs(geometry['span']-height*4)<2)
         video=page.locator('.mercedes-video').evaluate('v=>({w:v.videoWidth,h:v.videoHeight,duration:v.duration,src:v.currentSrc})')
-        check(f'{width}_native_720p_blob',video['w']==1280 and video['h']==720 and video['src'].startswith('blob:') and page.locator('[data-mercedes-preview]').get_attribute('data-fps')=='24')
+        check(f'{width}_native_720p_blob',video['w']==1280 and video['h']==720 and video['src'].startswith('blob:') and page.locator('[data-mercedes-preview]').get_attribute('data-fps')=='60')
         timing=page.evaluate("()=>({load:__loadedAt,start:performance.getEntriesByType('resource').find(r=>r.name.includes('hero-scrub')&&r.initiatorType==='fetch')?.startTime})")
         check(f'{width}_video_after_load',timing['start']>=timing['load'])
         samples=[]
@@ -56,7 +57,7 @@ with sync_playwright() as p:
         if name=='save-data':context.add_init_script("Object.defineProperty(navigator,'connection',{value:{saveData:true}})")
         if name=='missing':context.route('**/*hero-scrub*.mp4',lambda route:route.fulfill(status=404,body='Test only'))
         page=context.new_page();requests=[];page.on('request',lambda r:requests.append(r.url));page.on('pageerror',lambda e:report['errors'].append(str(e)))
-        page.goto('http://127.0.0.1:8002/',wait_until='networkidle');page.wait_for_timeout(400)
+        open_loaded_page(page,'http://127.0.0.1:8002/',report);page.wait_for_timeout(400)
         check(name+'_static',page.locator('[data-mercedes-preview]').get_attribute('data-state')!='ready')
         check(name+'_h1',page.locator('h1').is_visible())
         check(name+'_search',page.locator('[data-quick-search]').is_visible())
@@ -70,7 +71,7 @@ with sync_playwright() as p:
         if name=='mobile':page.locator('[data-mercedes-preview]').screenshot(path=str(OUT/'mobile-hero-full.png'))
         context.close()
     context=browser.new_context(viewport={'width':1440,'height':900})
-    page=context.new_page();page.goto('http://127.0.0.1:8002/',wait_until='networkidle');page.wait_for_selector('[data-state=ready]')
+    page=context.new_page();open_loaded_page(page,'http://127.0.0.1:8002/',report);page.wait_for_selector('[data-state=ready]')
     page.emulate_media(reduced_motion='reduce');page.wait_for_timeout(150)
     check('live_reduced_on',page.locator('[data-mercedes-preview]').get_attribute('data-state')=='static')
     page.emulate_media(reduced_motion='no-preference');page.wait_for_selector('[data-state=ready]')
