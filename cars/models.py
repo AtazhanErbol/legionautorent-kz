@@ -9,16 +9,19 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.contenttypes.fields import GenericRelation
 
 class CarBrand(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(unique=True)
+    class Meta:
+        verbose_name = 'Марка'
+        verbose_name_plural = 'Марки автомобилей'
+    name = models.CharField(max_length=100, unique=True, verbose_name='Название')
+    slug = models.SlugField(unique=True, verbose_name='Код в адресе (slug)')
     def __str__(self): return self.name
 
 class CarCategory(SEOFields):
-    name = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True)
-    description = models.TextField(blank=True)
-    active = models.BooleanField(default=True)
-    sort_order = models.PositiveIntegerField(default=0)
+    name = models.CharField(max_length=100, verbose_name='Название')
+    slug = models.SlugField(unique=True, verbose_name='Код в адресе (slug)')
+    description = models.TextField(blank=True, verbose_name='Описание')
+    active = models.BooleanField(default=True, verbose_name='Опубликовано')
+    sort_order = models.PositiveIntegerField(default=0, verbose_name='Порядок')
     class Meta:
         ordering = ['sort_order', 'pk']
         verbose_name = 'Класс автомобиля'
@@ -27,7 +30,10 @@ class CarCategory(SEOFields):
     def __str__(self): return self.name
 
 class CarFeature(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    class Meta:
+        verbose_name = 'Оснащение'
+        verbose_name_plural = 'Оснащение'
+    name = models.CharField(max_length=100, unique=True, verbose_name='Название')
     def __str__(self): return self.name
 
 class CarQuerySet(models.QuerySet):
@@ -38,30 +44,30 @@ class CarQuerySet(models.QuerySet):
 
 class Car(SEOFields):
     name = models.CharField('Название', max_length=200)
-    slug = models.SlugField(max_length=200, unique=True)
-    legacy_path = models.CharField(max_length=250, unique=True, blank=True, validators=[validate_local_path], help_text='Пустое поле: автоматически /car/slug. Существующий путь не меняется.')
-    legacy_id = models.CharField(max_length=250, unique=True, blank=True)
-    brand = models.ForeignKey(CarBrand, on_delete=models.PROTECT)
-    model_name = models.CharField(max_length=200, blank=True)
-    category = models.ForeignKey(CarCategory, on_delete=models.PROTECT)
-    cities = models.ManyToManyField('locations.City', related_name='cars')
-    features = models.ManyToManyField(CarFeature, blank=True)
+    slug = models.SlugField(max_length=200, unique=True, verbose_name='Код в адресе (slug)')
+    legacy_path = models.CharField(max_length=250, unique=True, blank=True, validators=[validate_local_path], help_text='Пустое поле: автоматически /car/slug. Существующий путь не меняется.', verbose_name='Адрес страницы')
+    legacy_id = models.CharField(max_length=250, unique=True, blank=True, verbose_name='ID исходного сайта')
+    brand = models.ForeignKey(CarBrand, on_delete=models.PROTECT, verbose_name='Марка')
+    model_name = models.CharField(max_length=200, blank=True, verbose_name='Модель')
+    category = models.ForeignKey(CarCategory, on_delete=models.PROTECT, verbose_name='Класс')
+    cities = models.ManyToManyField('locations.City', related_name='cars', verbose_name='Города')
+    features = models.ManyToManyField(CarFeature, blank=True, verbose_name='Оснащение')
     base_price = models.DecimalField('Цена в сутки, ₸', max_digits=12, decimal_places=0, validators=[MinValueValidator(1)])
-    year = models.PositiveSmallIntegerField(null=True, blank=True, validators=[MinValueValidator(1950), MaxValueValidator(2100)])
-    engine = models.CharField(max_length=100, blank=True)
-    transmission = models.CharField(max_length=20, blank=True, choices=[('automatic', _('Автомат')), ('manual', _('Механика'))])
-    drive = models.CharField(max_length=20, blank=True, choices=[('front', _('Передний')), ('rear', _('Задний')), ('all', _('Полный'))])
-    seats = models.PositiveSmallIntegerField(null=True, blank=True, validators=[MinValueValidator(1), MaxValueValidator(20)])
-    color = models.CharField(max_length=100, blank=True)
-    fuel = models.CharField(max_length=100,blank=True)
-    doors = models.PositiveSmallIntegerField(null=True,blank=True,validators=[MinValueValidator(1),MaxValueValidator(10)])
-    deposit = models.DecimalField(max_digits=12,decimal_places=0,null=True,blank=True,validators=[MinValueValidator(0)])
-    mileage_limit = models.PositiveIntegerField(null=True,blank=True)
-    description = models.TextField(blank=True)
-    active = models.BooleanField(default=True)
-    featured = models.BooleanField(default=False)
+    year = models.PositiveSmallIntegerField(null=True, blank=True, validators=[MinValueValidator(1950), MaxValueValidator(2100)], verbose_name='Год выпуска')
+    engine = models.CharField(max_length=100, blank=True, verbose_name='Двигатель')
+    transmission = models.CharField(max_length=20, blank=True, choices=[('automatic', _('Автомат')), ('manual', _('Механика'))], verbose_name='Коробка передач')
+    drive = models.CharField(max_length=20, blank=True, choices=[('front', _('Передний')), ('rear', _('Задний')), ('all', _('Полный'))], verbose_name='Привод')
+    seats = models.PositiveSmallIntegerField(null=True, blank=True, validators=[MinValueValidator(1), MaxValueValidator(20)], verbose_name='Места')
+    color = models.CharField(max_length=100, blank=True, verbose_name='Цвет')
+    fuel = models.CharField(max_length=100,blank=True, verbose_name='Топливо')
+    doors = models.PositiveSmallIntegerField(null=True,blank=True,validators=[MinValueValidator(1),MaxValueValidator(10)], verbose_name='Двери')
+    deposit = models.DecimalField(max_digits=12,decimal_places=0,null=True,blank=True,validators=[MinValueValidator(0)], verbose_name='Депозит, ₸')
+    mileage_limit = models.PositiveIntegerField(null=True,blank=True, verbose_name='Пробег в сутки, км')
+    description = models.TextField(blank=True, verbose_name='Описание')
+    active = models.BooleanField(default=True, verbose_name='Опубликовано')
+    featured = models.BooleanField(default=False, verbose_name='Выделить в каталоге')
     accepts_requests = models.BooleanField('Принимать заявки', default=True, help_text='Это не проверка свободных дат.')
-    sort_order = models.PositiveIntegerField(default=0)
+    sort_order = models.PositiveIntegerField(default=0, verbose_name='Порядок')
     objects = CarQuerySet.as_manager()
 
     class Meta:
@@ -85,24 +91,26 @@ class Car(SEOFields):
     def __str__(self): return self.name
 
 class CarImage(models.Model):
-    car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='images')
-    original = models.ImageField(upload_to='cars/originals/', validators=[validate_image])
+    car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='images', verbose_name='Автомобиль')
+    original = models.ImageField(upload_to='cars/originals/', validators=[validate_image], verbose_name='Фотография')
     image = models.ImageField(upload_to='cars/webp/', blank=True, validators=[validate_image])
     small = models.ImageField(upload_to='cars/webp/', blank=True, validators=[validate_image])
     card_image = models.ImageField(upload_to='cars/webp/', blank=True, validators=[validate_image])
     card_small = models.ImageField(upload_to='cars/webp/', blank=True, validators=[validate_image])
     card_width = models.PositiveIntegerField(default=960)
     card_height = models.PositiveIntegerField(default=619)
-    legacy_url = models.URLField(max_length=600, blank=True)
-    alt = models.CharField(max_length=250, blank=True)
-    caption = models.CharField(max_length=250, blank=True)
-    is_main = models.BooleanField(default=False)
-    sort_order = models.PositiveIntegerField(default=0)
+    legacy_url = models.URLField(max_length=600, blank=True, verbose_name='Исходный адрес изображения')
+    alt = models.CharField(max_length=250, blank=True, verbose_name='Описание фото (alt)')
+    caption = models.CharField(max_length=250, blank=True, verbose_name='Подпись')
+    is_main = models.BooleanField(default=False, verbose_name='Главное фото')
+    sort_order = models.PositiveIntegerField(default=0, verbose_name='Порядок')
     width = models.PositiveIntegerField(default=1200)
     height = models.PositiveIntegerField(default=800)
     variants = models.JSONField(default=dict,blank=True)
     translations = GenericRelation('seo.Translation')
     class Meta:
+        verbose_name = 'Фотография'
+        verbose_name_plural = 'Фотографии'
         ordering = ['-is_main', 'sort_order', 'pk']
         constraints = [models.UniqueConstraint(fields=['car', 'legacy_url'], condition=~models.Q(legacy_url=''), name='unique_legacy_car_image'), models.UniqueConstraint(fields=['car'], condition=models.Q(is_main=True), name='one_main_image_per_car')]
     @property
@@ -150,14 +158,17 @@ class CarImage(models.Model):
 
 class CarPrice(models.Model):
     translations=GenericRelation('seo.Translation')
-    car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='prices')
-    min_days = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)])
-    max_days = models.PositiveIntegerField(null=True, blank=True, validators=[MinValueValidator(1)])
-    daily_price = models.DecimalField(max_digits=12, decimal_places=0, validators=[MinValueValidator(1)])
-    label = models.CharField(max_length=100, blank=True)
-    deposit = models.DecimalField(max_digits=12,decimal_places=0,null=True,blank=True,validators=[MinValueValidator(0)])
-    mileage_limit = models.PositiveIntegerField(null=True,blank=True)
-    class Meta: ordering = ['min_days']
+    car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='prices', verbose_name='Автомобиль')
+    min_days = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)], verbose_name='От дней')
+    max_days = models.PositiveIntegerField(null=True, blank=True, validators=[MinValueValidator(1)], verbose_name='До дней')
+    daily_price = models.DecimalField(max_digits=12, decimal_places=0, validators=[MinValueValidator(1)], verbose_name='В сутки, ₸')
+    label = models.CharField(max_length=100, blank=True, verbose_name='Название тарифа')
+    deposit = models.DecimalField(max_digits=12,decimal_places=0,null=True,blank=True,validators=[MinValueValidator(0)], verbose_name='Депозит, ₸')
+    mileage_limit = models.PositiveIntegerField(null=True,blank=True, verbose_name='Пробег в сутки, км')
+    class Meta:
+        ordering = ['min_days']
+        verbose_name = 'Тариф'
+        verbose_name_plural = 'Тарифы'
     def clean(self):
         super().clean()
         if self.max_days and self.max_days < self.min_days: raise ValidationError('Окончание диапазона раньше начала.')
@@ -168,19 +179,25 @@ class CarPrice(models.Model):
 
 class CarDiscount(models.Model):
     translations=GenericRelation('seo.Translation')
-    car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='discounts')
-    label = models.CharField(max_length=100)
-    min_days = models.PositiveIntegerField()
-    max_days = models.PositiveIntegerField(null=True, blank=True)
-    percent = models.PositiveSmallIntegerField(validators=[MaxValueValidator(100)])
-    class Meta: ordering = ['min_days']
+    car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='discounts', verbose_name='Автомобиль')
+    label = models.CharField(max_length=100, verbose_name='Название тарифа')
+    min_days = models.PositiveIntegerField(verbose_name='От дней')
+    max_days = models.PositiveIntegerField(null=True, blank=True, verbose_name='До дней')
+    percent = models.PositiveSmallIntegerField(validators=[MaxValueValidator(100)], verbose_name='Скидка, %')
+    class Meta:
+        ordering = ['min_days']
+        verbose_name = 'Скидка'
+        verbose_name_plural = 'Скидки'
     def __str__(self): return f'{self.label}: {self.percent}%'
 
 class CarSpecification(models.Model):
-    car=models.ForeignKey(Car,on_delete=models.CASCADE,related_name='extra_specs')
-    name=models.CharField(max_length=100)
-    value=models.CharField(max_length=250)
-    sort_order=models.PositiveIntegerField(default=0)
+    car=models.ForeignKey(Car,on_delete=models.CASCADE,related_name='extra_specs', verbose_name='Автомобиль')
+    name=models.CharField(max_length=100, verbose_name='Название')
+    value=models.CharField(max_length=250, verbose_name='Значение')
+    sort_order=models.PositiveIntegerField(default=0, verbose_name='Порядок')
     translations=GenericRelation('seo.Translation')
-    class Meta:ordering=['sort_order','pk']
+    class Meta:
+        ordering = ['sort_order','pk']
+        verbose_name = 'Характеристика'
+        verbose_name_plural = 'Характеристики'
     def __str__(self):return f'{self.name}: {self.value}'

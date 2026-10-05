@@ -1,0 +1,5 @@
+<aside class="cms-nav" aria-label="Разделы управления">
+  <a class="cms-overview" href="{% url 'admin:index' %}"><span aria-hidden="true">◈</span> Обзор</a>
+  <label class="cms-nav-search">Найти раздел<input type="search" placeholder="Автомобили, тексты…" data-nav-search></label>
+  <nav>{% for group in available_apps %}<div class="cms-nav-group"><p>{{ group.name }}</p>{% for model in group.models %}{% if model.admin_url %}<a href="{{ model.admin_url }}" {% if model.admin_url in request.path %}aria-current="page"{% endif %}>{{ model.name }}</a>{% endif %}{% endfor %}</div>{% endfor %}</nav>
+</aside>

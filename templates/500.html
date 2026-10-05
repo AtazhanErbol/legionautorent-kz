@@ -1,8 +1,8 @@
 {% load i18n static %}<!doctype html>
 <html lang="{{ language }}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#10100f">
 <title>{% trans 'Сервис временно недоступен' %}</title>
-<link rel="stylesheet" href="{% static 'css/error-page.css' %}"></head>
+<link rel="stylesheet" href="{% static 'css/error-page.css' %}"><link rel="icon" type="image/jpeg" href="{% static 'img/favicon-original.jpg' %}"></head>
 <body><a class="skip-link" href="#main">{% trans 'Перейти к содержимому' %}</a>
-<header><a href="{% if language == 'kk' %}/kk/{% elif language == 'en' %}/en/{% else %}/{% endif %}" aria-label="Legion Auto Rent — {% trans 'Главная' %}"><img src="{% static 'img/logo-site.webp' %}" width="140" height="36" alt="Legion Auto Rent"></a><a href="tel:+77057277777">+7 (705) 727-77-77</a></header>
-<main id="main" tabindex="-1"><p class="eyebrow">LEGION / 500</p><p class="error-code" aria-hidden="true">500</p><h1>{% trans 'Сервис временно недоступен' %}</h1><p class="description">{% trans 'Попробуйте позже или позвоните нам.' %}</p><div class="actions"><a class="button" href="tel:+77057277777">{% trans 'Позвонить' %} ↗</a><a class="button outline" href="https://wa.me/77057277777">WhatsApp ↗</a></div></main>
+<header><a href="{% if language == 'kk' %}/kk/{% elif language == 'en' %}/en/{% else %}/{% endif %}" aria-label="LEGIONAUTORENT — {% trans 'Главная' %}"><img src="{% static 'img/logo-site.webp' %}" width="140" height="36" alt="LEGIONAUTORENT"></a><a href="tel:+77057277777">+7 (705) 727-77-77</a></header>
+<main id="main" tabindex="-1"><p class="eyebrow">LEGIONAUTORENT / 500</p><p class="error-code" aria-hidden="true">500</p><h1>{% trans 'Сервис временно недоступен' %}</h1><p class="description">{% trans 'Попробуйте позже или позвоните нам.' %}</p><div class="actions"><a class="button" href="tel:+77057277777">{% trans 'Позвонить' %} ↗</a><a class="button outline" href="https://wa.me/77057277777" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div></main>
 </body></html>

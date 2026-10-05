@@ -1,0 +1,730 @@
+{
+  "applied": true,
+  "duplicate_groups": 52,
+  "pages": 55,
+  "fields": 153,
+  "changes": {
+    "/car/toyota-lc-200-excalibur": {
+      "title": {
+        "before": "TOYOTA LC 200 EXCALIBUR",
+        "after": "TOYOTA LC 200 EXCALIBUR — аренда, Астана, Павлодар | Legion"
+      },
+      "description": {
+        "before": "Аренда TOYOTA LC 200 EXCALIBUR без водителя от 120 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда TOYOTA LC 200 EXCALIBUR без водителя. Астана, Павлодар. От 120 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда TOYOTA LC 200 EXCALIBUR",
+        "after": "Аренда TOYOTA LC 200 EXCALIBUR — Астана, Павлодар"
+      }
+    },
+    "/car/toyota-land-cruiser-200-new": {
+      "title": {
+        "before": "Toyota Land Cruiser 200",
+        "after": "Toyota Land Cruiser 200 — аренда, Астана | Legion · авто №7"
+      },
+      "description": {
+        "before": "Аренда Toyota Land Cruiser 200 без водителя от 80 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Land Cruiser 200 без водителя. Астана. От 80 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №7."
+      },
+      "h1": {
+        "before": "Аренда Toyota Land Cruiser 200",
+        "after": "Аренда Toyota Land Cruiser 200 — Астана · авто №7"
+      }
+    },
+    "/car/toyota-land-cruiser-200_20240429104403": {
+      "title": {
+        "before": "Toyota Land Cruiser 200",
+        "after": "Toyota Land Cruiser 200 — аренда, Астана | Legion · авто №8"
+      },
+      "description": {
+        "before": "Аренда Toyota Land Cruiser 200 без водителя от 80 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Land Cruiser 200 без водителя. Астана. От 80 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №8."
+      },
+      "h1": {
+        "before": "Аренда Toyota Land Cruiser 200",
+        "after": "Аренда Toyota Land Cruiser 200 — Астана · авто №8"
+      }
+    },
+    "/car/toyota-land-cruiser-200": {
+      "title": {
+        "before": "TOYOTA LAND CRUISER 200",
+        "after": "TOYOTA LAND CRUISER 200 — аренда, Усть-Каменогорск | Legion · авто №9"
+      },
+      "description": {
+        "before": "Аренда TOYOTA LAND CRUISER 200 без водителя от 100 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда TOYOTA LAND CRUISER 200 без водителя. Усть-Каменогорск. От 100 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №9."
+      },
+      "h1": {
+        "before": "Аренда TOYOTA LAND CRUISER 200",
+        "after": "Аренда TOYOTA LAND CRUISER 200 — Усть-Каменогорск · авто №9"
+      }
+    },
+    "/car/toyota-land-cruiser-200_20211104112631": {
+      "title": {
+        "before": "TOYOTA LAND CRUISER 200",
+        "after": "TOYOTA LAND CRUISER 200 — аренда, Усть-Каменогорск | Legion · авто №10"
+      },
+      "description": {
+        "before": "Аренда TOYOTA LAND CRUISER 200 без водителя от 100 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда TOYOTA LAND CRUISER 200 без водителя. Усть-Каменогорск. От 100 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №10."
+      },
+      "h1": {
+        "before": "Аренда TOYOTA LAND CRUISER 200",
+        "after": "Аренда TOYOTA LAND CRUISER 200 — Усть-Каменогорск · авто №10"
+      }
+    },
+    "/car/toyota-lc-200": {
+      "title": {
+        "before": "Toyota LC 200",
+        "after": "Toyota LC 200 — аренда, Астана | Legion · авто №15"
+      },
+      "h1": {
+        "before": "Аренда Toyota LC 200",
+        "after": "Аренда Toyota LC 200 — Астана · авто №15"
+      }
+    },
+    "/car/toyota-camry-xv-70-prestige-plus": {
+      "title": {
+        "before": "Toyota Camry XV 70  Prestige Plus",
+        "after": "Toyota Camry XV 70  Prestige Plus — аренда, Астана | Legion"
+      },
+      "description": {
+        "before": "Аренда Toyota Camry XV 70  Prestige Plus без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Camry XV 70  Prestige Plus без водителя. Астана. От 45 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда Toyota Camry XV 70  Prestige Plus",
+        "after": "Аренда Toyota Camry XV 70  Prestige Plus — Астана"
+      }
+    },
+    "/car/toyota-camry-xv-70-prestige-plus_20230127093610": {
+      "title": {
+        "before": "Toyota Camry XV 70  Prestige plus",
+        "after": "Toyota Camry XV 70  Prestige plus — аренда, Усть-Каменогорск | Legion"
+      },
+      "description": {
+        "before": "Аренда Toyota Camry XV 70  Prestige plus без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Camry XV 70  Prestige plus без водителя. Усть-Каменогорск. От 45 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда Toyota Camry XV 70  Prestige plus",
+        "after": "Аренда Toyota Camry XV 70  Prestige plus — Усть-Каменогорск"
+      }
+    },
+    "/car/kia-k-5": {
+      "title": {
+        "before": "KIA K-5",
+        "after": "KIA K-5 — аренда, Астана, Павлодар | Legion"
+      },
+      "description": {
+        "before": "Аренда KIA K-5 без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда KIA K-5 без водителя. Астана, Павлодар. От 45 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда KIA K-5",
+        "after": "Аренда KIA K-5 — Астана, Павлодар"
+      }
+    },
+    "/car/hyundai-tucson": {
+      "title": {
+        "before": "Hyundai Tucson",
+        "after": "Hyundai Tucson — аренда, Астана | Legion · авто №26"
+      },
+      "description": {
+        "before": "Аренда Hyundai Tucson без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Hyundai Tucson без водителя. Астана. От 40 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №26."
+      },
+      "h1": {
+        "before": "Аренда Hyundai Tucson",
+        "after": "Аренда Hyundai Tucson — Астана · авто №26"
+      }
+    },
+    "/car/toyota-camry-xv-55_20231013120702": {
+      "title": {
+        "before": "Toyota Camry XV 55",
+        "after": "Toyota Camry XV 55 — аренда, Астана | Legion · авто №29"
+      },
+      "description": {
+        "before": "Аренда Toyota Camry XV 55 без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Camry XV 55 без водителя. Астана. От 35 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда Toyota Camry XV 55",
+        "after": "Аренда Toyota Camry XV 55 — Астана · авто №29"
+      }
+    },
+    "/car/kia-seltos": {
+      "title": {
+        "before": "KIA SELTOS",
+        "after": "KIA SELTOS — аренда, Астана | Legion"
+      },
+      "description": {
+        "before": "Аренда KIA SELTOS без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда KIA SELTOS без водителя. Астана. От 35 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда KIA SELTOS",
+        "after": "Аренда KIA SELTOS — Астана"
+      }
+    },
+    "/car/toyota-camry-xv-55": {
+      "title": {
+        "before": "Toyota Camry XV 55",
+        "after": "Toyota Camry XV 55 — аренда, Усть-Каменогорск | Legion · авто №31"
+      },
+      "description": {
+        "before": "Аренда Toyota Camry XV 55 без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Camry XV 55 без водителя. Усть-Каменогорск. От 30 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №31."
+      },
+      "h1": {
+        "before": "Аренда Toyota Camry XV 55",
+        "after": "Аренда Toyota Camry XV 55 — Усть-Каменогорск · авто №31"
+      }
+    },
+    "/car/toyota-camry-xv-55_20230127093040": {
+      "title": {
+        "before": "Toyota Camry XV 55",
+        "after": "Toyota Camry XV 55 — аренда, Астана | Legion · авто №32"
+      },
+      "description": {
+        "before": "Аренда Toyota Camry XV 55 без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Camry XV 55 без водителя. Астана. От 30 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №32."
+      },
+      "h1": {
+        "before": "Аренда Toyota Camry XV 55",
+        "after": "Аренда Toyota Camry XV 55 — Астана · авто №32"
+      }
+    },
+    "/car/toyota-camry-xv-55_20230201112348": {
+      "title": {
+        "before": "TOYOTA CAMRY XV 55",
+        "after": "TOYOTA CAMRY XV 55 — аренда, Астана | Legion · авто №33"
+      },
+      "description": {
+        "before": "Аренда TOYOTA CAMRY XV 55 без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда TOYOTA CAMRY XV 55 без водителя. Астана. От 30 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №33."
+      },
+      "h1": {
+        "before": "Аренда TOYOTA CAMRY XV 55",
+        "after": "Аренда TOYOTA CAMRY XV 55 — Астана · авто №33"
+      }
+    },
+    "/car/toyota-camry-xv-55_20230306085552": {
+      "title": {
+        "before": "TOYOTA CAMRY XV 55",
+        "after": "TOYOTA CAMRY XV 55 — аренда, Костанай | Legion"
+      },
+      "description": {
+        "before": "Аренда TOYOTA CAMRY XV 55 без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда TOYOTA CAMRY XV 55 без водителя. Костанай. От 35 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда TOYOTA CAMRY XV 55",
+        "after": "Аренда TOYOTA CAMRY XV 55 — Костанай"
+      }
+    },
+    "/car/hyundai-tucson_20240515094333": {
+      "title": {
+        "before": "HYUNDAI TUCSON",
+        "after": "HYUNDAI TUCSON — аренда, Усть-Каменогорск | Legion · авто №35"
+      },
+      "h1": {
+        "before": "Аренда HYUNDAI TUCSON",
+        "after": "Аренда HYUNDAI TUCSON — Усть-Каменогорск · авто №35"
+      }
+    },
+    "/car/hyundai-elantra": {
+      "title": {
+        "before": "HYUNDAI ELANTRA",
+        "after": "HYUNDAI ELANTRA — аренда, Астана, Павлодар | Legion"
+      },
+      "description": {
+        "before": "Аренда HYUNDAI ELANTRA без водителя от 32 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда HYUNDAI ELANTRA без водителя. Астана, Павлодар. От 32 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда HYUNDAI ELANTRA",
+        "after": "Аренда HYUNDAI ELANTRA — Астана, Павлодар"
+      }
+    },
+    "/car/hyundai-elantra_20230815091736": {
+      "title": {
+        "before": "HYUNDAI ELANTRA",
+        "after": "HYUNDAI ELANTRA — аренда, Костанай | Legion"
+      },
+      "h1": {
+        "before": "Аренда HYUNDAI ELANTRA",
+        "after": "Аренда HYUNDAI ELANTRA — Костанай"
+      }
+    },
+    "/car/hyundai-accent": {
+      "title": {
+        "before": "Hyundai Accent",
+        "after": "Hyundai Accent — аренда, Астана | Legion · авто №39"
+      },
+      "description": {
+        "before": "Аренда Hyundai Accent без водителя от 23 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Hyundai Accent без водителя. Астана. От 23 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №39."
+      },
+      "h1": {
+        "before": "Аренда Hyundai Accent",
+        "after": "Аренда Hyundai Accent — Астана · авто №39"
+      }
+    },
+    "/car/hyundai-accent-2015-god-1-6-avtomat": {
+      "title": {
+        "before": "Hyundai Accent",
+        "after": "Hyundai Accent — аренда, Костанай | Legion · авто №40"
+      },
+      "description": {
+        "before": "Аренда Hyundai Accent без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Hyundai Accent без водителя. Костанай. От 20 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №40."
+      },
+      "h1": {
+        "before": "Аренда Hyundai Accent",
+        "after": "Аренда Hyundai Accent — Костанай · авто №40"
+      }
+    },
+    "/car/chevrolet-cobalt-2022-1-5-avtomat": {
+      "title": {
+        "before": "Chevrolet Cobalt",
+        "after": "Chevrolet Cobalt — аренда, Астана | Legion"
+      },
+      "description": {
+        "before": "Аренда Chevrolet Cobalt без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Chevrolet Cobalt без водителя. Астана. От 20 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда Chevrolet Cobalt",
+        "after": "Аренда Chevrolet Cobalt — Астана"
+      }
+    },
+    "/car/hyundai-accent_20231115121923": {
+      "title": {
+        "before": "Hyundai Accent",
+        "after": "Hyundai Accent — аренда, Костанай | Legion · авто №42"
+      },
+      "description": {
+        "before": "Аренда Hyundai Accent без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Hyundai Accent без водителя. Костанай. От 20 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №42."
+      },
+      "h1": {
+        "before": "Аренда Hyundai Accent",
+        "after": "Аренда Hyundai Accent — Костанай · авто №42"
+      }
+    },
+    "/car/bmw-x6": {
+      "title": {
+        "before": "BMW X6",
+        "after": "BMW X6 — аренда, Астана | Legion · авто №44"
+      },
+      "description": {
+        "before": "Аренда BMW X6 без водителя от 80 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда BMW X6 без водителя. Астана. От 80 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №44."
+      },
+      "h1": {
+        "before": "Аренда BMW X6",
+        "after": "Аренда BMW X6 — Астана · авто №44"
+      }
+    },
+    "/car/bmw-x6_20241001102848": {
+      "title": {
+        "before": "BMW X6",
+        "after": "BMW X6 — аренда, Астана | Legion · авто №45"
+      },
+      "description": {
+        "before": "Аренда BMW X6 без водителя от 80 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда BMW X6 без водителя. Астана. От 80 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №45."
+      },
+      "h1": {
+        "before": "Аренда BMW X6",
+        "after": "Аренда BMW X6 — Астана · авто №45"
+      }
+    },
+    "/car/bmw-x6_20260622070809": {
+      "title": {
+        "before": "Bmw X6",
+        "after": "Bmw X6 — аренда, Астана | Legion · авто №46"
+      },
+      "h1": {
+        "before": "Аренда Bmw X6",
+        "after": "Аренда Bmw X6 — Астана · авто №46"
+      }
+    },
+    "/car/changan-x5-plus": {
+      "title": {
+        "before": "Changan X5 Plus",
+        "after": "Changan X5 Plus — аренда, Астана | Legion"
+      },
+      "h1": {
+        "before": "Аренда Changan X5 Plus",
+        "after": "Аренда Changan X5 Plus — Астана"
+      }
+    },
+    "/car/chevrolet-cobalt": {
+      "title": {
+        "before": "Chevrolet Cobalt",
+        "after": "Chevrolet Cobalt — аренда, Астана, Павлодар | Legion"
+      },
+      "description": {
+        "before": "Аренда Chevrolet Cobalt без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Chevrolet Cobalt без водителя. Астана, Павлодар. От 20 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда Chevrolet Cobalt",
+        "after": "Аренда Chevrolet Cobalt — Астана, Павлодар"
+      }
+    },
+    "/car/hyundai-accent_20241125134834": {
+      "title": {
+        "before": "Hyundai Accent",
+        "after": "Hyundai Accent — аренда, Астана | Legion · авто №50"
+      },
+      "description": {
+        "before": "Аренда Hyundai Accent без водителя от 23 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Hyundai Accent без водителя. Астана. От 23 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №50."
+      },
+      "h1": {
+        "before": "Аренда Hyundai Accent",
+        "after": "Аренда Hyundai Accent — Астана · авто №50"
+      }
+    },
+    "/car/hyundai-elantra_20240819123613": {
+      "title": {
+        "before": "HYUNDAI ELANTRA",
+        "after": "HYUNDAI ELANTRA — аренда, Астана | Legion · авто №51"
+      },
+      "description": {
+        "before": "Аренда HYUNDAI ELANTRA без водителя от 32 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда HYUNDAI ELANTRA без водителя. Астана. От 32 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №51."
+      },
+      "h1": {
+        "before": "Аренда HYUNDAI ELANTRA",
+        "after": "Аренда HYUNDAI ELANTRA — Астана · авто №51"
+      }
+    },
+    "/car/hyundai-elantra_20260403070232": {
+      "title": {
+        "before": "Hyundai Elantra",
+        "after": "Hyundai Elantra — аренда, Астана | Legion · авто №52"
+      },
+      "description": {
+        "before": "Аренда Hyundai Elantra без водителя от 32 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Hyundai Elantra без водителя. Астана. От 32 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №52."
+      },
+      "h1": {
+        "before": "Аренда Hyundai Elantra",
+        "after": "Аренда Hyundai Elantra — Астана · авто №52"
+      }
+    },
+    "/car/hyundai-santa-fe": {
+      "title": {
+        "before": "Hyundai Santa Fe",
+        "after": "Hyundai Santa Fe — аренда, Астана | Legion · авто №54"
+      },
+      "h1": {
+        "before": "Аренда Hyundai Santa Fe",
+        "after": "Аренда Hyundai Santa Fe — Астана · авто №54"
+      }
+    },
+    "/car/hyundai-santa-fe_20241218064857": {
+      "title": {
+        "before": "Hyundai Santa Fe",
+        "after": "Hyundai Santa Fe — аренда, Астана | Legion · авто №56"
+      },
+      "h1": {
+        "before": "Аренда Hyundai Santa Fe",
+        "after": "Аренда Hyundai Santa Fe — Астана · авто №56"
+      }
+    },
+    "/car/hyundai-tucson_20240914134010": {
+      "title": {
+        "before": "Hyundai Tucson",
+        "after": "Hyundai Tucson — аренда, Астана | Legion · авто №57"
+      },
+      "description": {
+        "before": "Аренда Hyundai Tucson без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Hyundai Tucson без водителя. Астана. От 40 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №57."
+      },
+      "h1": {
+        "before": "Аренда Hyundai Tucson",
+        "after": "Аренда Hyundai Tucson — Астана · авто №57"
+      }
+    },
+    "/car/kia-k-5_20240701073837": {
+      "title": {
+        "before": "KIA K-5",
+        "after": "KIA K-5 — аренда, Астана | Legion"
+      },
+      "description": {
+        "before": "Аренда KIA K-5 без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда KIA K-5 без водителя. Астана. От 45 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда KIA K-5",
+        "after": "Аренда KIA K-5 — Астана"
+      }
+    },
+    "/car/kia-sportage": {
+      "title": {
+        "before": "KIA SPORTAGE",
+        "after": "KIA SPORTAGE — аренда, Астана | Legion"
+      },
+      "description": {
+        "before": "Аренда KIA SPORTAGE без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда KIA SPORTAGE без водителя. Астана. От 40 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда KIA SPORTAGE",
+        "after": "Аренда KIA SPORTAGE — Астана"
+      }
+    },
+    "/car/toyota-camry-xv-75": {
+      "title": {
+        "before": "TOYOTA CAMRY XV 75",
+        "after": "TOYOTA CAMRY XV 75 — аренда, Астана | Legion"
+      },
+      "h1": {
+        "before": "Аренда TOYOTA CAMRY XV 75",
+        "after": "Аренда TOYOTA CAMRY XV 75 — Астана"
+      }
+    },
+    "/car/toyota-camry-xv-75_20260408104311": {
+      "title": {
+        "before": "Toyota Camry XV 75",
+        "after": "Toyota Camry XV 75 — аренда, Астана, Павлодар | Legion"
+      },
+      "h1": {
+        "before": "Аренда Toyota Camry XV 75",
+        "after": "Аренда Toyota Camry XV 75 — Астана, Павлодар"
+      }
+    },
+    "/car/toyota-camry-xv-80": {
+      "title": {
+        "before": "Toyota Camry XV 80",
+        "after": "Toyota Camry XV 80 — аренда, Астана | Legion · авто №65"
+      },
+      "description": {
+        "before": "Аренда Toyota Camry XV 80 без водителя от 75 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Camry XV 80 без водителя. Астана. От 75 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №65."
+      },
+      "h1": {
+        "before": "Аренда Toyota Camry XV 80",
+        "after": "Аренда Toyota Camry XV 80 — Астана · авто №65"
+      }
+    },
+    "/car/toyota-camry-xv-80_20251115074721": {
+      "title": {
+        "before": "Toyota Camry XV 80",
+        "after": "Toyota Camry XV 80 — аренда, Астана | Legion · авто №66"
+      },
+      "description": {
+        "before": "Аренда Toyota Camry XV 80 без водителя от 75 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Camry XV 80 без водителя. Астана. От 75 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №66."
+      },
+      "h1": {
+        "before": "Аренда Toyota Camry XV 80",
+        "after": "Аренда Toyota Camry XV 80 — Астана · авто №66"
+      }
+    },
+    "/car/toyota-land-cruiser-200_20240926132114": {
+      "title": {
+        "before": "Toyota Land Cruiser 200",
+        "after": "Toyota Land Cruiser 200 — аренда, Астана | Legion · авто №68"
+      },
+      "description": {
+        "before": "Аренда Toyota Land Cruiser 200 без водителя от 95 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Land Cruiser 200 без водителя. Астана. От 95 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №68."
+      },
+      "h1": {
+        "before": "Аренда Toyota Land Cruiser 200",
+        "after": "Аренда Toyota Land Cruiser 200 — Астана · авто №68"
+      }
+    },
+    "/car/toyota-land-cruiser-200_20250604084050": {
+      "title": {
+        "before": "Toyota Land Cruiser 200",
+        "after": "Toyota Land Cruiser 200 — аренда, Астана | Legion · авто №69"
+      },
+      "description": {
+        "before": "Аренда Toyota Land Cruiser 200 без водителя от 95 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Land Cruiser 200 без водителя. Астана. От 95 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №69."
+      },
+      "h1": {
+        "before": "Аренда Toyota Land Cruiser 200",
+        "after": "Аренда Toyota Land Cruiser 200 — Астана · авто №69"
+      }
+    },
+    "/car/toyota-lc-200-excalibur_20250827073659": {
+      "title": {
+        "before": "Toyota Lc 200 Excalibur",
+        "after": "Toyota Lc 200 Excalibur — аренда, Астана | Legion"
+      },
+      "description": {
+        "before": "Аренда Toyota Lc 200 Excalibur без водителя от 120 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Lc 200 Excalibur без водителя. Астана. От 120 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда Toyota Lc 200 Excalibur",
+        "after": "Аренда Toyota Lc 200 Excalibur — Астана"
+      }
+    },
+    "/car/toyota-lc-200_20240626072039": {
+      "title": {
+        "before": "TOYOTA LC 200",
+        "after": "TOYOTA LC 200 — аренда, Астана | Legion · авто №71"
+      },
+      "h1": {
+        "before": "Аренда TOYOTA LC 200",
+        "after": "Аренда TOYOTA LC 200 — Астана · авто №71"
+      }
+    },
+    "/car/hyundai-accent_20240611104858": {
+      "title": {
+        "before": "Hyundai Accent",
+        "after": "Hyundai Accent — аренда, Костанай | Legion · авто №73"
+      },
+      "description": {
+        "before": "Аренда Hyundai Accent без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Hyundai Accent без водителя. Костанай. От 20 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №73."
+      },
+      "h1": {
+        "before": "Аренда Hyundai Accent",
+        "after": "Аренда Hyundai Accent — Костанай · авто №73"
+      }
+    },
+    "/car/kia-seltos_20240920104836": {
+      "title": {
+        "before": "KIA SELTOS",
+        "after": "KIA SELTOS — аренда, Костанай | Legion"
+      },
+      "description": {
+        "before": "Аренда KIA SELTOS без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда KIA SELTOS без водителя. Костанай. От 35 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда KIA SELTOS",
+        "after": "Аренда KIA SELTOS — Костанай"
+      }
+    },
+    "/car/kia-sportage_20260729090852": {
+      "title": {
+        "before": "Kia Sportage",
+        "after": "Kia Sportage — аренда, Костанай | Legion"
+      },
+      "description": {
+        "before": "Аренда Kia Sportage без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Kia Sportage без водителя. Костанай. От 40 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда Kia Sportage",
+        "after": "Аренда Kia Sportage — Костанай"
+      }
+    },
+    "/car/changan-x5-plus_20260810090844": {
+      "title": {
+        "before": "Changan X5 Plus",
+        "after": "Changan X5 Plus — аренда, Усть-Каменогорск, Павлодар | Legion"
+      },
+      "description": {
+        "before": "Аренда Changan X5 Plus без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Changan X5 Plus без водителя. Усть-Каменогорск, Павлодар. От 30 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда Changan X5 Plus",
+        "after": "Аренда Changan X5 Plus — Усть-Каменогорск, Павлодар"
+      }
+    },
+    "/car/changan-x5-plus_20260901073633": {
+      "title": {
+        "before": "Changan X5 Plus",
+        "after": "Changan X5 Plus — аренда, Усть-Каменогорск | Legion"
+      },
+      "description": {
+        "before": "Аренда Changan X5 Plus без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Changan X5 Plus без водителя. Усть-Каменогорск. От 30 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда Changan X5 Plus",
+        "after": "Аренда Changan X5 Plus — Усть-Каменогорск"
+      }
+    },
+    "/car/chevrolet-cobalt_20241220111045": {
+      "title": {
+        "before": "Chevrolet Cobalt",
+        "after": "Chevrolet Cobalt — аренда, Усть-Каменогорск | Legion · авто №81"
+      },
+      "description": {
+        "before": "Аренда Chevrolet Cobalt без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Chevrolet Cobalt без водителя. Усть-Каменогорск. От 20 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №81."
+      },
+      "h1": {
+        "before": "Аренда Chevrolet Cobalt",
+        "after": "Аренда Chevrolet Cobalt — Усть-Каменогорск · авто №81"
+      }
+    },
+    "/car/chevrolet-cobalt_20251111103617": {
+      "title": {
+        "before": "Chevrolet Cobalt",
+        "after": "Chevrolet Cobalt — аренда, Усть-Каменогорск | Legion · авто №82"
+      },
+      "description": {
+        "before": "Аренда Chevrolet Cobalt без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Chevrolet Cobalt без водителя. Усть-Каменогорск. От 20 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №82."
+      },
+      "h1": {
+        "before": "Аренда Chevrolet Cobalt",
+        "after": "Аренда Chevrolet Cobalt — Усть-Каменогорск · авто №82"
+      }
+    },
+    "/car/hyundai-tucson_20260604100103": {
+      "title": {
+        "before": "Hyundai Tucson",
+        "after": "Hyundai Tucson — аренда, Усть-Каменогорск | Legion · авто №84"
+      },
+      "h1": {
+        "before": "Аренда Hyundai Tucson",
+        "after": "Аренда Hyundai Tucson — Усть-Каменогорск · авто №84"
+      }
+    },
+    "/car/toyota-camry-xv-55_20250605065343": {
+      "title": {
+        "before": "Toyota Camry XV 55",
+        "after": "Toyota Camry XV 55 — аренда, Усть-Каменогорск | Legion · авто №88"
+      },
+      "description": {
+        "before": "Аренда Toyota Camry XV 55 без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Camry XV 55 без водителя. Усть-Каменогорск. От 30 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent. Автомобиль №88."
+      },
+      "h1": {
+        "before": "Аренда Toyota Camry XV 55",
+        "after": "Аренда Toyota Camry XV 55 — Усть-Каменогорск · авто №88"
+      }
+    },
+    "/car/toyota-camry-xv-55_20260731072807": {
+      "title": {
+        "before": "Toyota Camry XV 55",
+        "after": "Toyota Camry XV 55 — аренда, Усть-Каменогорск | Legion · авто №89"
+      },
+      "description": {
+        "before": "Аренда Toyota Camry XV 55 без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent.",
+        "after": "Аренда Toyota Camry XV 55 без водителя. Усть-Каменогорск. От 35 000 ₸ в сутки. Фото, тарифы и условия Legion Auto Rent."
+      },
+      "h1": {
+        "before": "Аренда Toyota Camry XV 55",
+        "after": "Аренда Toyota Camry XV 55 — Усть-Каменогорск · авто №89"
+      }
+    },
+    "/car/toyota-lc-200-excalibur_20260615123651": {
+      "title": {
+        "before": "TOYOTA LC 200 EXCALIBUR",
+        "after": "TOYOTA LC 200 EXCALIBUR — аренда, Усть-Каменогорск | Legion"
+      },
+      "h1": {
+        "before": "Аренда TOYOTA LC 200 EXCALIBUR",
+        "after": "Аренда TOYOTA LC 200 EXCALIBUR — Усть-Каменогорск"
+      }
+    }
+  }
+}

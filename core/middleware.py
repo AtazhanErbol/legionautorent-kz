@@ -1,5 +1,41 @@
 import secrets
 
+
+class SelectedCityMiddleware:
+    """Remember a visitor's city independently of a page's SEO/location data."""
+    def __init__(self, get_response): self.get_response = get_response
+
+    def __call__(self, request):
+        from django.conf import settings
+        from locations.models import City
+        request.selected_city = None
+        if not request.path.startswith(('/' + settings.ADMIN_PATH, '/healthz/', '/static/', '/media/')):
+            cities = list(City.objects.filter(active=True).prefetch_related('translations'))
+            request.nav_cities = cities
+            explicit = request.GET.get('city')
+            page_path = getattr(request, 'base_path', request.path)
+            chosen = next((city for city in cities if city.slug == explicit), None)
+            if chosen is None and page_path != '/':
+                chosen = next((city for city in cities if city.legacy_path == page_path), None)
+            if chosen is not None and request.session.get('selected_city') != chosen.slug:
+                request.session['selected_city'] = chosen.slug
+            saved = request.session.get('selected_city')
+            request.selected_city = chosen or next((city for city in cities if city.slug == saved), None)
+        return self.get_response(request)
+
+
+class CanonicalHostMiddleware:
+    def __init__(self, get_response): self.get_response = get_response
+    def __call__(self, request):
+        from django.conf import settings
+        from django.http import HttpResponsePermanentRedirect
+        from urllib.parse import urlsplit
+        if settings.CANONICAL_HOST_REDIRECT and request.path != '/healthz/':
+            canonical = urlsplit(settings.SITE_URL)
+            if request.get_host().lower() != canonical.netloc.lower():
+                return HttpResponsePermanentRedirect(settings.SITE_URL + request.get_full_path())
+        return self.get_response(request)
+
 class ContentSecurityPolicyMiddleware:
     def __init__(self,get_response):self.get_response=get_response
     def __call__(self,request):

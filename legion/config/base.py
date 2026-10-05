@@ -6,7 +6,7 @@ from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parents[2]
-load_dotenv(BASE_DIR / '.env')
+load_dotenv(os.getenv('LEGION_ENV_FILE') or BASE_DIR / '.env')
 
 def flag(name, default=False):
     return os.getenv(name, str(default)).lower() in ('true', '1', 'yes')
@@ -21,8 +21,8 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver').spl
 SITE_URL = os.getenv('SITE_URL', 'https://legionautorent.kz').rstrip('/')
 CSRF_TRUSTED_ORIGINS = [x for x in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if x]
 
-INSTALLED_APPS = ['django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'axes', 'core', 'locations', 'cars', 'pages', 'seo', 'bookings', 'analytics', 'importer']
-MIDDLEWARE = ['django.middleware.security.SecurityMiddleware', 'whitenoise.middleware.WhiteNoiseMiddleware', 'django.contrib.sessions.middleware.SessionMiddleware', 'core.i18n.LegionLocaleMiddleware', 'django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware', 'django.contrib.auth.middleware.AuthenticationMiddleware', 'axes.middleware.AxesMiddleware', 'django.contrib.messages.middleware.MessageMiddleware', 'django.middleware.clickjacking.XFrameOptionsMiddleware', 'analytics.middleware.AttributionMiddleware', 'seo.middleware.SEOMiddleware', 'core.middleware.ContentSecurityPolicyMiddleware']
+INSTALLED_APPS = ['core.admin_site.LegionAdminConfig', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'axes', 'core', 'locations', 'cars', 'pages', 'seo', 'bookings', 'analytics', 'importer']
+MIDDLEWARE = ['django.middleware.security.SecurityMiddleware', 'django.middleware.gzip.GZipMiddleware', 'core.middleware.CanonicalHostMiddleware', 'whitenoise.middleware.WhiteNoiseMiddleware', 'django.contrib.sessions.middleware.SessionMiddleware', 'core.i18n.LegionLocaleMiddleware', 'core.middleware.SelectedCityMiddleware', 'django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware', 'django.contrib.auth.middleware.AuthenticationMiddleware', 'axes.middleware.AxesMiddleware', 'django.contrib.messages.middleware.MessageMiddleware', 'django.middleware.clickjacking.XFrameOptionsMiddleware', 'analytics.middleware.AttributionMiddleware', 'seo.middleware.SEOMiddleware', 'core.middleware.ContentSecurityPolicyMiddleware']
 ROOT_URLCONF = 'legion.urls'
 TEMPLATES = [{'BACKEND': 'django.template.backends.django.DjangoTemplates', 'DIRS': [BASE_DIR / 'templates'], 'APP_DIRS': True, 'OPTIONS': {'context_processors': ['django.template.context_processors.debug', 'django.template.context_processors.request', 'django.contrib.auth.context_processors.auth', 'django.contrib.messages.context_processors.messages', 'core.context.site_context']}}]
 WSGI_APPLICATION = 'legion.wsgi.application'
@@ -67,6 +67,9 @@ SECURE_HSTS_SECONDS = 31536000 if ENVIRONMENT == 'production' else 0
 SECURE_HSTS_INCLUDE_SUBDOMAINS = ENVIRONMENT == 'production'
 SECURE_HSTS_PRELOAD = ENVIRONMENT == 'production'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+HOSTING_PLATFORM = os.getenv('HOSTING_PLATFORM', 'generic')
+CANONICAL_HOST_REDIRECT = flag('CANONICAL_HOST_REDIRECT', False)
+SECURE_SSL_HOST = urlparse(SITE_URL).netloc if CANONICAL_HOST_REDIRECT else None
 ADMIN_PATH = os.getenv('ADMIN_PATH','control-legion/').strip('/')+'/'
 KAZAKH_PREFIX = '/kk'
 PAGE_CACHE_TIMEOUT = int(os.getenv('PAGE_CACHE_TIMEOUT','60'))

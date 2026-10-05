@@ -1,14 +1,17 @@
 import './site.css';
 import './night-garage.css';
 import './mercedes-preview.css';
+import './refinements.css';
 import {initPageMotion} from './page-motion.js';
 import {initGarageUI} from './night-garage.js';
 initGarageUI();
 const $=(selector,root=document)=>root.querySelector(selector);
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 const header=$('.site-header');
-const updateHeader=()=>header?.classList.toggle('is-scrolled',scrollY>32);
-updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
+const headerMarker=$('.header-scroll-marker');
+if(header&&headerMarker&&'IntersectionObserver'in window){
+  new IntersectionObserver(([entry])=>header.classList.toggle('is-scrolled',!entry.isIntersecting)).observe(headerMarker);
+}else window.addEventListener('scroll',()=>header?.classList.toggle('is-scrolled',scrollY>32),{passive:true});
 
 // Every car remains in SSR HTML. Only the presentation is paged, with no request.
 function initFleets(root=document){
@@ -34,13 +37,14 @@ function initFleets(root=document){
   });
 }
 initFleets();
-// The optional reveal/accordion enhancement waits for the first layout and
-// fonts; native content and details remain usable while the page is loading.
+// Decorative motion begins with interaction; native controls are already ready.
+const motionTriggers=['scroll','pointerdown','keydown'];
 const startPageMotion=()=>{
-  if('requestIdleCallback'in window)requestIdleCallback(initPageMotion,{timeout:1800});
-  else setTimeout(initPageMotion,300);
+  motionTriggers.forEach(type=>window.removeEventListener(type,startPageMotion));
+  if('requestIdleCallback'in window)requestIdleCallback(initPageMotion,{timeout:500});
+  else setTimeout(initPageMotion,0);
 };
-if(document.readyState==='complete')startPageMotion();else window.addEventListener('load',startPageMotion,{once:true});
+motionTriggers.forEach(type=>window.addEventListener(type,startPageMotion,{passive:true}));
 const quick=$('[data-quick-search]');
 if(quick){
   const start=$('[name=start_date]',quick),end=$('[name=end_date]',quick);
@@ -79,6 +83,27 @@ document.querySelectorAll('[data-gallery]').forEach(gallery=>{
   $('[data-gallery-next]',gallery)?.addEventListener('click',()=>move(1));
   track.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();move(event.key==='ArrowRight'?1:-1);}});
   track.addEventListener('scroll',()=>{const count=$('[data-gallery-count]',gallery);if(count)count.textContent=`${Math.round(track.scrollLeft/track.clientWidth)+1} / ${figures.length}`;},{passive:true});
+  const dialog=$('.gallery-dialog',gallery),photos=[...gallery.querySelectorAll('[data-gallery-open]')];
+  if(!dialog||!photos.length||!dialog.showModal)return;
+  const image=$('[data-lightbox-image]',dialog),counter=$('[data-lightbox-count]',dialog);
+  let activePhoto=0,opener,touchX=0,touchY=0;
+  const show=index=>{
+    activePhoto=(index+photos.length)%photos.length;
+    image.width=Number(photos[activePhoto].dataset.width)||1280;image.height=Number(photos[activePhoto].dataset.height)||720;
+    image.src=photos[activePhoto].href;image.alt=$('img',photos[activePhoto]).alt;
+    counter.textContent=`${activePhoto+1} / ${photos.length}`;
+  };
+  photos.forEach((photo,index)=>photo.addEventListener('click',event=>{
+    event.preventDefault();opener=photo;show(index);dialog.showModal();document.documentElement.classList.add('lightbox-open');
+  }));
+  $('[data-lightbox-close]',dialog).addEventListener('click',()=>dialog.close());
+  $('[data-lightbox-prev]',dialog).addEventListener('click',()=>show(activePhoto-1));
+  $('[data-lightbox-next]',dialog).addEventListener('click',()=>show(activePhoto+1));
+  dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+  dialog.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();show(activePhoto+(event.key==='ArrowRight'?1:-1));}});
+  dialog.addEventListener('close',()=>{document.documentElement.classList.remove('lightbox-open');opener?.focus({preventScroll:true});});
+  image.addEventListener('touchstart',event=>{touchX=event.changedTouches[0].clientX;touchY=event.changedTouches[0].clientY;},{passive:true});
+  image.addEventListener('touchend',event=>{const dx=event.changedTouches[0].clientX-touchX,dy=event.changedTouches[0].clientY-touchY;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5)show(activePhoto+(dx<0?1:-1));},{passive:true});
 });
 const booking=$('[data-car-booking]');
 if(booking){
@@ -101,6 +126,12 @@ if(filters&&window.fetch){
       const response=await fetch(url,{headers:{'X-Legion-Partial':'catalog'},signal:active.signal});
       if(!response.ok)throw new Error('Catalog response');
       const html=await response.text();result.innerHTML=html;initFleets(result);
+      const city=response.headers.get('X-Legion-Selected-City');
+      const option=[...($('[name=city]',filters)?.options||[])].find(item=>item.value===city);
+      if(city&&option){
+        $('[data-city-label]').textContent=option.textContent;
+        document.querySelectorAll('[data-site-nav]').forEach(link=>{const href=new URL(link.href);if(href.pathname.endsWith('/cars/')||href.pathname.includes('/cars/category/')){href.searchParams.set('city',city);link.href=href;}});
+      }
       if(push)history.pushState(null,'',url);$('meta[name=robots]').content='noindex,follow';
     }catch(error){if(error.name!=='AbortError')location.href=url;}finally{result.removeAttribute('aria-busy');}
   };

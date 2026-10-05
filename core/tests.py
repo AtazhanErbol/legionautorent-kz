@@ -26,7 +26,7 @@ class SiteTests(TestCase):
         cls.car=Car.objects.create(name='Toyota Camry',slug='toyota-camry',legacy_path='/car/toyota-camry',legacy_id='test:1',brand=cls.brand,category=cls.category,base_price=45000,seo_title='Toyota Camry',seo_description='Аренда Camry',seo_h1='Аренда Toyota Camry')
         cls.car.cities.add(cls.city)
         cls.site=SiteSettings.objects.create(pk=1)
-        cls.page=Page.objects.create(title='О компании',slug='about',path='/about/',seo_title='О Legion',seo_description='Компания Legion',seo_h1='О компании',body='<p>Legion</p>')
+        cls.page=Page.objects.create(title='О компании',slug='about',path='/about/',seo_title='О LEGIONAUTORENT',seo_description='Компания LEGIONAUTORENT',seo_h1='О компании',body='<p>LEGIONAUTORENT</p>')
         cls.admin=get_user_model().objects.create_superuser('qa-admin','qa@example.test','test-only-password-52847')
     def payload(self,**changes):
         start=timezone.localdate()+timedelta(days=2)
@@ -198,14 +198,14 @@ class SiteTests(TestCase):
     def test_partner_settings_and_whatsapp(self):
         self.site.partner_whatsapp='77000000000';self.site.partner_whatsapp_message='Тест партнёра';self.site.save()
         response=self.client.get('/')
-        self.assertContains(response,'Стать партнером Легионавто');self.assertContains(response,'https://wa.me/77000000000?text=')
+        self.assertContains(response,'Стать партнером LEGIONAUTORENT');self.assertContains(response,'https://wa.me/77000000000?text=')
         self.assertNotContains(response,'InvestorApplication')
         self.site.show_partner_section=False;self.site.save()
-        self.assertNotContains(self.client.get('/'),'Стать партнером Легионавто')
+        self.assertNotContains(self.client.get('/'),'Стать партнером LEGIONAUTORENT')
     def test_partner_translation_message(self):
-        Translation.objects.create(content_object=self.site,language='en',published=True,hero_title='Cars',hero_text='Rent a car',partner_title='Partner with Legion',partner_description='Provide your car for sublease.',partner_whatsapp_message='Hello partnership',footer_text='Your plans')
+        Translation.objects.create(content_object=self.site,language='en',published=True,hero_title='Cars',hero_text='Rent a car',partner_title='Partner with LEGIONAUTORENT',partner_description='Provide your car for sublease.',partner_whatsapp_message='Hello partnership',footer_text='Your plans')
         response=self.client.get('/en/')
-        self.assertContains(response,'Partner with Legion');self.assertContains(response,'Hello%20partnership')
+        self.assertContains(response,'Partner with LEGIONAUTORENT');self.assertContains(response,'Hello%20partnership')
     def test_no_investor_routes(self):
         self.assertEqual(self.client.get('/investors/').status_code,404)
         self.assertEqual(self.client.get('/partners/').status_code,404)

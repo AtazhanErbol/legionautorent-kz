@@ -5,6 +5,10 @@
 .mercedes-picture picture,.mercedes-picture img,.mercedes-video,.mercedes-manual{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;max-width:none}
 .mercedes-picture{pointer-events:none}.mercedes-manual{pointer-events:auto;z-index:2}.mercedes-video{opacity:0;transform:translateZ(0);transition:opacity .35s}
 .mercedes-preview[data-state=ready] .mercedes-video{opacity:1}
+.mercedes-mobile-film{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;opacity:0;transition:opacity .45s}
+.mercedes-preview[data-ambient=ready] .mercedes-mobile-film{opacity:1}
+.mercedes-picture video::-webkit-media-controls{display:none!important}
+.mercedes-picture video::-webkit-media-controls-start-playback-button{display:none!important}
 .mercedes-veil,.mercedes-grain{position:absolute;inset:0;pointer-events:none;z-index:1}
 .mercedes-veil{background:radial-gradient(ellipse 110% 90% at 50% 48%,transparent 36%,#10100f99 100%),linear-gradient(var(--garage),transparent 28%,transparent 74%,var(--garage))}
 .mercedes-grain{background-image:url('../static/hero/grain.svg');background-size:64px 64px;opacity:.045;mix-blend-mode:soft-light}

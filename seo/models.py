@@ -10,13 +10,13 @@ class SEOFields(models.Model):
     seo_description = models.TextField('Meta Description', blank=True)
     seo_h1 = models.CharField('H1', max_length=250, blank=True)
     canonical_url = models.URLField('Canonical override', blank=True)
-    robots = models.CharField(max_length=40, choices=[('index,follow', 'Индексировать'), ('noindex,follow', 'Не индексировать')], default='index,follow')
-    og_title = models.CharField(max_length=250, blank=True)
-    og_description = models.TextField(blank=True)
-    og_image = models.URLField(blank=True)
-    legacy_meta = models.JSONField(default=dict,blank=True,help_text='Исходные Open Graph/Twitter поля сохранены для точной миграции.')
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    robots = models.CharField(max_length=40, choices=[('index,follow', 'Индексировать'), ('noindex,follow', 'Не индексировать')], default='index,follow', verbose_name='Индексация')
+    og_title = models.CharField(max_length=250, blank=True, verbose_name='Заголовок при отправке ссылки')
+    og_description = models.TextField(blank=True, verbose_name='Описание при отправке ссылки')
+    og_image = models.URLField(blank=True, verbose_name='Адрес картинки для соцсетей')
+    legacy_meta = models.JSONField(default=dict,blank=True,help_text='Исходные Open Graph/Twitter поля сохранены для точной миграции.', verbose_name='Сохранённые метаданные')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Создано')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Обновлено')
     translations = GenericRelation('seo.Translation')
 
     class Meta:
@@ -50,23 +50,23 @@ class Translation(models.Model):
     h1 = models.CharField('H1', max_length=250, blank=True)
     content = models.TextField('Контент / ответ / HTML', blank=True)
     intro = models.TextField('Вводный текст', blank=True)
-    address = models.CharField(max_length=250,blank=True)
-    hours = models.CharField(max_length=120,blank=True)
-    fuel = models.CharField(max_length=100,blank=True)
-    color = models.CharField(max_length=100,blank=True)
-    caption = models.CharField(max_length=250,blank=True)
-    whatsapp_message = models.TextField(blank=True)
-    og_title = models.CharField(max_length=250, blank=True)
-    og_description = models.TextField(blank=True)
+    address = models.CharField(max_length=250,blank=True, verbose_name='Адрес')
+    hours = models.CharField(max_length=120,blank=True, verbose_name='Часы работы')
+    fuel = models.CharField(max_length=100,blank=True, verbose_name='Топливо')
+    color = models.CharField(max_length=100,blank=True, verbose_name='Цвет')
+    caption = models.CharField(max_length=250,blank=True, verbose_name='Подпись')
+    whatsapp_message = models.TextField(blank=True, verbose_name='Сообщение в WhatsApp')
+    og_title = models.CharField(max_length=250, blank=True, verbose_name='Заголовок при отправке ссылки')
+    og_description = models.TextField(blank=True, verbose_name='Описание при отправке ссылки')
     hero_title = models.CharField('Финальная подпись Hero (не H1)', max_length=250, blank=True)
-    hero_text = models.TextField(blank=True)
+    hero_text = models.TextField(blank=True, verbose_name='Описание первого экрана')
     hero_price_caption = models.CharField('Подпись Hero о цене', max_length=150, blank=True)
     hero_steps_caption = models.CharField('Три шага Hero', max_length=250, blank=True)
-    partner_title = models.CharField(max_length=250, blank=True)
-    partner_description = models.TextField(blank=True)
-    partner_whatsapp_message = models.TextField(blank=True)
-    footer_text = models.CharField(max_length=250, blank=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    partner_title = models.CharField(max_length=250, blank=True, verbose_name='Заголовок')
+    partner_description = models.TextField(blank=True, verbose_name='Описание')
+    partner_whatsapp_message = models.TextField(blank=True, verbose_name='Сообщение для партнёров')
+    footer_text = models.CharField(max_length=250, blank=True, verbose_name='Подпись в подвале')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Обновлено')
     class Meta:
         constraints = [models.UniqueConstraint(fields=['content_type', 'object_id', 'language'], name='unique_object_translation')]
         verbose_name = 'Перевод'
@@ -94,10 +94,13 @@ class Translation(models.Model):
 
 
 class Redirect(models.Model):
-    old_path = models.CharField(max_length=500, unique=True, validators=[validate_local_path])
-    new_path = models.CharField(max_length=500, validators=[validate_local_path])
-    status_code = models.PositiveSmallIntegerField(default=301, choices=[(301, '301 Permanent'), (302, '302 Temporary')])
-    active = models.BooleanField(default=True)
+    class Meta:
+        verbose_name = 'Перенаправление'
+        verbose_name_plural = 'Перенаправления'
+    old_path = models.CharField(max_length=500, unique=True, validators=[validate_local_path], verbose_name='Старый адрес')
+    new_path = models.CharField(max_length=500, validators=[validate_local_path], verbose_name='Конечный адрес')
+    status_code = models.PositiveSmallIntegerField(default=301, choices=[(301, '301 Permanent'), (302, '302 Temporary')], verbose_name='Код ответа')
+    active = models.BooleanField(default=True, verbose_name='Опубликовано')
 
     def clean(self):
         super().clean()

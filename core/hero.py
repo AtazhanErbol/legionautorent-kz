@@ -6,6 +6,7 @@ from core.i18n import get_translation
 
 ASSETS = {
     'video': '/static/hero/hero-scrub-smooth60-c86f40f74879.mp4',
+    'mobile_video': '/static/hero/hero-mobile-loop-5994b169495b.mp4',
     'poster': '/static/hero/hero-poster-e9b496d7a585.webp',
     'mobile': '/static/hero/hero-static-27f030789025.webp',
     'ending': '/static/hero/hero-ending-87350d5b2b8d.webp',
@@ -34,11 +35,12 @@ def hero_context(site):
     approved = site.hero_video_path == ASSETS['video']
     return {
         'video': asset_url(site.hero_video_path) if site.enable_hero_video else '',
+        'mobile_video': asset_url(site.hero_mobile_video_path or (ASSETS['mobile_video'] if approved else site.hero_video_path)) if site.enable_hero_video else '',
         'poster': asset_url(poster),
         'mobile': asset_url(site.hero_mobile_poster_path or poster),
         'ending': asset_url(site.hero_ending_path) if site.hero_ending_path else '',
         'bytes': 3673288 if approved else 0,
-        'fps': 60 if approved else 24,
+        'fps': 60 if approved else site.hero_video_fps,
         'width': 1280 if approved else 0,
         'height': 720 if approved else 0,
         **captions,

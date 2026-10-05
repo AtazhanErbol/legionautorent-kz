@@ -16,6 +16,7 @@ from bookings.spam import allow_request
 from core.models import SiteSettings,ContentBlock
 from core.i18n import language_url,localized,get_translation
 from core.cache import page_context
+from core.cms import edit_form_copy
 from seo.services import page_seo,schemas,catalog_languages
 
 def faq_queryset(**filters):
@@ -25,6 +26,8 @@ def blocks(kind):
     qs=ContentBlock.objects.filter(kind=kind,active=True).prefetch_related('translations')
     return list(qs)
 def present(request,template,context,status=200,**schema_args):
+    for key in ('form', 'booking_form', 'search_form', 'filter_form'):
+        if key in context: edit_form_copy(request, context[key])
     site=SiteSettings.get_solo();request.site_settings=site
     context['schemas']=schemas(request,context['seo'],site,breadcrumbs=context.get('breadcrumbs'),faqs=context.get('faqs'),**schema_args)
     return render(request,template,context,status=status)
@@ -51,7 +54,7 @@ def styleguide(request):
     if settings.ENVIRONMENT == 'production':
         raise Http404()
     context=city_context(request,'/')
-    context.update({'seo':page_seo(request,title='LEGION — дизайн-система',description='Предпросмотр оформления Legion Auto Rent.',h1='Ночной гараж. Свет — в деталях.',noindex=True),
+    context.update({'seo':page_seo(request,title='LEGIONAUTORENT — дизайн-система',description='Предпросмотр оформления LEGIONAUTORENT.',h1='Ночной гараж. Свет — в деталях.',noindex=True),
                     'guide_car':Car.objects.public().with_content().filter(slug='lexus-lx-570-superior').first() or context['cars'][0],
                     'styleguide':True})
     context['seo']['robots']='noindex,nofollow'
@@ -84,9 +87,13 @@ def catalog(request,category_slug=None):
         else:qs=qs.order_by('-featured','sort_order','pk')
         page=list(qs)
         params=request.GET.copy();params.pop('page',None)
-        return {'seo':page_seo(request,category,title=_('Автопарк | Legion Auto Rent'),description=_('Выберите автомобиль для аренды без водителя. Цены, фотографии и классы автомобилей в Legion Auto Rent.'),h1=_('Ваш маршрут. Ваш автомобиль.'),noindex=bool(request.GET),available_languages=catalog_languages() if not category else None),'category':category,'cars':page,'car_count':len(page),'pagination_query':params.urlencode(),'breadcrumbs':[(_('Главная'),language_url('/')),(_('Автопарк'),language_url('/cars/'))]}
+        return {'seo':page_seo(request,category,title=_('Автопарк | LEGIONAUTORENT'),description=_('Выберите автомобиль для аренды без водителя. Цены, фотографии и классы автомобилей в LEGIONAUTORENT.'),h1=_('Ваш маршрут. Ваш автомобиль.'),noindex=bool(request.GET),available_languages=catalog_languages() if not category else None),'category':category,'cars':page,'car_count':len(page),'pagination_query':params.urlencode(),'breadcrumbs':[(_('Главная'),language_url('/')),(_('Автопарк'),language_url('/cars/'))]}
     context=page_context(request,build);context['filter_form']=form
-    if request.headers.get('X-Legion-Partial')=='catalog':return render(request,'components/catalog_results.html',context)
+    if request.headers.get('X-Legion-Partial')=='catalog':
+        response=render(request,'components/catalog_results.html',context)
+        selected=getattr(request,'selected_city',None)
+        response['X-Legion-Selected-City']=selected.slug if selected else ''
+        return response
     return present(request,'catalog.html',context)
 
 @require_safe
@@ -107,11 +114,16 @@ def static_page(request,slug):
     def build():
         page=get_object_or_404(Page.objects.prefetch_related('translations'),path=request.base_path,active=True)
         return {'seo':page_seo(request,page),'page':page,'faqs':list(faq_queryset(page=page)),'conditions':blocks('condition'),'breadcrumbs':[(_('Главная'),language_url('/')),(localized(page,'title'),language_url(page.path))]}
-    return present(request,'page.html',page_context(request,build))
+    context=page_context(request,build)
+    if context['page'].slug == 'contacts':
+        city=getattr(request,'selected_city',None)
+        context['city']=city
+        context['form']=CallbackForm(initial={'city':city.pk if city else None,'source_token':signing.dumps(context['page'].path,salt='booking-source')})
+    return present(request,'page.html',context)
 @require_safe
 def faq_page(request):
     from seo.services import faq_languages
-    return present(request,'faq_page.html',{'seo':page_seo(request,title=_('FAQ | Legion Auto Rent'),description=_('Ответы на вопросы об аренде автомобилей.'),h1=_('Вопросы об аренде'),available_languages=faq_languages()),'faqs':list(faq_queryset(car__isnull=True,page__isnull=True))})
+    return present(request,'faq_page.html',{'seo':page_seo(request,title=_('FAQ | LEGIONAUTORENT'),description=_('Ответы на вопросы об аренде автомобилей.'),h1=_('Вопросы об аренде'),available_languages=faq_languages()),'faqs':list(faq_queryset(car__isnull=True,page__isnull=True))})
 @require_safe
 def content_page(request,slug):
     if City.objects.filter(legacy_path=request.base_path,active=True).exists():return city_page(request,slug)
@@ -121,12 +133,14 @@ def content_page(request,slug):
 def booking(request,callback=False):
     kind='callback' if callback else 'booking';initial={}
     raw=request.GET.get('car','');car=Car.objects.public().filter(pk=int(raw)).first() if raw.isdigit() else None
-    city=car.cities.filter(active=True).first() if car else City.objects.filter(active=True).first()
+    selected=getattr(request,'selected_city',None)
+    city=(selected if selected and (not car or car.cities.filter(pk=selected.pk).exists()) else car.cities.filter(active=True).first() if car else City.objects.filter(active=True).first())
     if car:initial['car']=car.pk
     if city:initial['city']=city.pk
     source=car.legacy_path if car else '/cars/'
     initial['source_token']=signing.dumps(source,salt='booking-source')
     form=(CallbackForm if callback else BookingForm)(request.POST or None,initial=initial);status=200
+    edit_form_copy(request, form)
     if request.method=='POST':
         if not allow_request(request):form.is_valid();form.add_error(None,_('Слишком много попыток. Попробуйте через 15 минут.'));status=429
         elif form.is_valid():
@@ -139,13 +153,13 @@ def booking(request,callback=False):
                 lead.save();request.session['booking_success']=secrets.token_urlsafe(20)
                 return HttpResponseRedirect(language_url('/request-success/'))
         else:status=400
-    return present(request,'booking.html',{'seo':page_seo(request,title=_('Заявка на аренду | Legion Auto Rent'),h1=_('Заказать звонок') if callback else _('Забронировать автомобиль'),noindex=True),'form':form,'selected_car':car,'callback':callback},status=status)
+    return present(request,'booking.html',{'seo':page_seo(request,title=_('Заявка на аренду | LEGIONAUTORENT'),h1=_('Заказать звонок') if callback else _('Забронировать автомобиль'),noindex=True),'form':form,'selected_car':car,'callback':callback},status=status)
 @require_safe
 def success(request):
     submitted=bool(request.session.pop('booking_success',None))
-    return present(request,'success.html',{'seo':page_seo(request,title=_('Заявка отправлена | Legion Auto Rent'),h1=_('Заявка отправлена'),noindex=True),'submitted':submitted})
+    return present(request,'success.html',{'seo':page_seo(request,title=_('Заявка отправлена | LEGIONAUTORENT'),h1=_('Заявка отправлена'),noindex=True),'submitted':submitted})
 def not_found(request,exception=None):
-    return present(request,'404.html',{'seo':page_seo(request,title=_('Страница не найдена | Legion Auto Rent'),h1=_('Страница не найдена'),noindex=True)},status=404)
+    return present(request,'404.html',{'seo':page_seo(request,title=_('Страница не найдена | LEGIONAUTORENT'),h1=_('Страница не найдена'),noindex=True)},status=404)
 def server_error(request):
     # The error page works even when the DB/cache is unavailable.
     from django.http import HttpResponse

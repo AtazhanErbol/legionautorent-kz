@@ -1,0 +1,1 @@
+{% load i18n legion_tags %}{% with body=city|tr:'body' %}{% if body %}<section class="section seo-section"><div class="container"><details class="seo-disclosure"><summary>{% site_text 'Об аренде в вашем городе' %}<span>{% site_text 'Читать подробнее' %} +</span></summary><div class="prose seo-columns">{{ body|richtext }}</div></details></div></section>{% endif %}{% endwith %}

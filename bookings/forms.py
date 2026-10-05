@@ -7,7 +7,7 @@ from locations.models import City
 from .models import BookingRequest
 from core.forms import LocalizedModelChoiceField
 
-CONSENT_TEXT = 'Я согласен на обработку имени, телефона, дат аренды и комментария компанией Legion Auto Rent для ответа на мою заявку.'
+CONSENT_TEXT = 'Я согласен на обработку имени, телефона, дат аренды и комментария компанией LEGIONAUTORENT для ответа на мою заявку.'
 
 class BookingForm(forms.ModelForm):
     website = forms.CharField(required=False, label='Website', widget=forms.TextInput(attrs={'tabindex': '-1', 'autocomplete': 'off'}))

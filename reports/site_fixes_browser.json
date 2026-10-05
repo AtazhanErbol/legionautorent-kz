@@ -1,0 +1,161 @@
+{
+  "checks": [
+    {
+      "page": "home",
+      "width": 1440,
+      "scrub_end_time": 7.4835,
+      "rest_scroll_y": 3600
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "city",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "contacts",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "privacy",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "car",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "catalog",
+      "width": 1440,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "mobile_playback": {
+        "time": 0.934541,
+        "paused": false,
+        "controls": false,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "quality": 0
+      }
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "city",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "contacts",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "privacy",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "car",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "catalog",
+      "width": 768,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "mobile_playback": {
+        "time": 0.948794,
+        "paused": false,
+        "controls": false,
+        "width": 1280,
+        "height": 720,
+        "fit": "contain",
+        "quality": 1
+      }
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "city",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "contacts",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "privacy",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "car",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "page": "catalog",
+      "width": 390,
+      "status": 200,
+      "overflow": false
+    },
+    {
+      "gate": "reduced-motion",
+      "mp4_requested": false,
+      "h1_visible": true
+    },
+    {
+      "gate": "save-data",
+      "mp4_requested": false,
+      "h1_visible": true
+    },
+    {
+      "gate": "no-js",
+      "mp4_requested": false,
+      "h1_visible": true
+    }
+  ],
+  "js_errors": [],
+  "live_form_submissions": 0
+}

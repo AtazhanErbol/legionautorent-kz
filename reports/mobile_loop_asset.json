@@ -1,0 +1,15 @@
+{
+  "source": "static\\hero\\hero-scrub-smooth60-c86f40f74879.mp4",
+  "source_sha256": "c86f40f748794a4ecc3910deaaac5cf5739ecb3ee1d82610ef65213a49a1b14d",
+  "file": "static/hero/hero-mobile-loop-5994b169495b.mp4",
+  "bytes": 6471262,
+  "sha256": "5994b169495b616688c3b00c9a286ba737aa7cc4809a0c73b7c5ead470b33731",
+  "duration_seconds": 15,
+  "fps": 60,
+  "resolution": [
+    1280,
+    720
+  ],
+  "audio": false,
+  "treatment": "Approved film forward then reverse, no crop, upscale or generated imagery; CRF18, native inline playback."
+}

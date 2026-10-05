@@ -1,0 +1,1 @@
+{% load i18n legion_tags %}{% if nav_categories %}<div class="class-marquee" aria-hidden="true"><div class="class-marquee-track">{% for repeat in '12' %}<div>{% for category in nav_categories %}<span>{{ category|tr:'name' }}</span>{% endfor %}</div>{% endfor %}</div></div>{% endif %}

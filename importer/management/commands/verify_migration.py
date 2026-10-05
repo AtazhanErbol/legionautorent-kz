@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 from importer.source import catalogue_source
 from seo.services import languages_for
 from core.i18n import language_url
+from seo.editorial import editorial_expected
 from cars.models import Car
 from locations.models import City
 
@@ -38,6 +39,7 @@ class Command(BaseCommand):
                 if expected_status==200 and source_obj:
                     for field,new_value in [('title',title),('description',desc),('h1',h1)]:
                         expected=source_obj[{'title':'seo_title','description':'seo_description','h1':'seo_h1'}[field]]
+                        expected=editorial_expected(path,field,expected)
                         if plain(new_value)!=plain(expected):issues.append(field)
                     if len(headings)!=1:issues.append('h1_count')
                     if canonical!=(raw['canonical'] or settings.SITE_URL+path):issues.append('canonical')
@@ -48,10 +50,12 @@ class Command(BaseCommand):
                     if alternates!=expected_alternates:issues.append('hreflang_published_complete')
                     for property,value in raw.get('open_graph',{}).items():
                         if property=='og:url' and isinstance(obj,City):value=canonical
+                        value=editorial_expected(path,property,value)
                         node=soup.find('meta',attrs={'property':property})
                         if value and (not node or node.get('content')!=value):issues.append(property)
                     body=source_obj.get('body') or source_obj.get('description')
                     if body:
+                        body=editorial_expected(path,'seo_text',body)
                         source_text=plain(BeautifulSoup(body,'html.parser').get_text(' ',strip=True))
                         if source_text not in plain(soup.get_text(' ',strip=True)):issues.append('seo_text')
                     if path.startswith('/car/') and new_gallery!=old_gallery:issues.append('gallery_count')

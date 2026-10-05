@@ -9,7 +9,10 @@ from .models import RateLimitBucket
 def client_ip(request):
     # Nginx must overwrite X-Real-IP; only a configured proxy peer may supply it.
     address = request.META.get('REMOTE_ADDR', '')
-    if settings.TRUST_PROXY_HEADERS and address in settings.TRUSTED_PROXY_IPS:
+    # PythonAnywhere replaces X-Real-IP at its own load balancer. This branch is
+    # enabled only in that hosting profile, never inferred from request headers.
+    provider_proxy = settings.HOSTING_PLATFORM == 'pythonanywhere'
+    if settings.TRUST_PROXY_HEADERS and (provider_proxy or address in settings.TRUSTED_PROXY_IPS):
         try:address=str(ipaddress.ip_address(request.META.get('HTTP_X_REAL_IP','')))
         except ValueError:pass
     try:return str(ipaddress.ip_address(address))

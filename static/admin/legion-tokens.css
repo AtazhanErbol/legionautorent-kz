@@ -1,0 +1,19 @@
+@font-face{font-family:LegionText;src:url('../fonts/golos-night.woff2') format('woff2');font-display:swap;font-weight:100 900}
+@font-face{font-family:LegionDisplay;src:url('../fonts/montserrat-site.woff2') format('woff2');font-display:swap;font-weight:100 900}
+:root,html[data-theme="light"],html[data-theme="dark"]{
+  color-scheme:dark;
+  --cms-bg:#10100f;--cms-panel:#1a1a18;--cms-raised:#242420;--cms-line:#41413a;
+  --cms-text:#f4f2e9;--cms-muted:#b4b3a8;--cms-accent:#f7b500;--cms-ink:#12120e;
+  --cms-danger:#ff9890;--cms-success:#a5d9ac;--cms-radius:12px;--cms-space:8px;
+  --body-bg:var(--cms-bg);--body-fg:var(--cms-text);--body-quiet-color:var(--cms-muted);--body-loud-color:var(--cms-text);
+  --primary:var(--cms-accent);--secondary:var(--cms-panel);--accent:var(--cms-accent);
+  --header-color:var(--cms-text);--header-branding-color:var(--cms-accent);--header-bg:var(--cms-bg);--header-link-color:var(--cms-text);
+  --breadcrumbs-fg:var(--cms-muted);--breadcrumbs-link-fg:var(--cms-text);--breadcrumbs-bg:var(--cms-bg);
+  --link-fg:var(--cms-accent);--link-hover-color:var(--cms-text);--link-selected-fg:var(--cms-accent);
+  --hairline-color:var(--cms-line);--border-color:var(--cms-line);--darkened-bg:var(--cms-panel);--selected-bg:var(--cms-raised);--selected-row:var(--cms-raised);
+  --button-fg:var(--cms-ink);--button-bg:var(--cms-accent);--button-hover-bg:var(--cms-text);--default-button-bg:var(--cms-accent);--default-button-hover-bg:var(--cms-text);
+  --close-button-bg:var(--cms-raised);--close-button-hover-bg:var(--cms-line);--delete-button-bg:#713832;--delete-button-hover-bg:#90473e;
+  --message-success-bg:#253b28;--message-warning-bg:#463b20;--message-error-bg:#482924;--error-fg:var(--cms-danger);
+  --object-tools-fg:var(--cms-ink);--object-tools-bg:var(--cms-accent);--object-tools-hover-bg:var(--cms-text);
+  --font-family-primary:LegionText,system-ui,sans-serif;
+}

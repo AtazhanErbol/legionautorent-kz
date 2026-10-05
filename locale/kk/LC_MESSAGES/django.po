@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Legion Auto Rent\n"
+"Project-Id-Version: LEGIONAUTORENT\n"
 "Language: kk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -9,8 +9,8 @@ msgstr ""
 msgid "3D обзор"
 msgstr "3D шолу"
 
-msgid "Legion Auto Rent"
-msgstr "Legion Auto Rent"
+msgid "LEGIONAUTORENT"
+msgstr "LEGIONAUTORENT"
 
 msgid "Автомат"
 msgstr "Автомат"
@@ -21,8 +21,8 @@ msgstr "Көліктер такси және жеткізу қызметіне �
 msgid "Автомобиль"
 msgstr "Автокөлік"
 
-msgid "Автомобиль Legion Auto Rent"
-msgstr "Legion Auto Rent автокөлігі"
+msgid "Автомобиль LEGIONAUTORENT"
+msgstr "LEGIONAUTORENT автокөлігі"
 
 msgid "Автомобили"
 msgstr "Автокөліктер"
@@ -30,11 +30,11 @@ msgstr "Автокөліктер"
 msgid "Автопарк"
 msgstr "Автопарк"
 
-msgid "Автопарк Legion"
-msgstr "Legion автопаркі"
+msgid "Автопарк LEGIONAUTORENT"
+msgstr "LEGIONAUTORENT автопаркі"
 
-msgid "Автопарк | Legion Auto Rent"
-msgstr "Автопарк | Legion Auto Rent"
+msgid "Автопарк | LEGIONAUTORENT"
+msgstr "Автопарк | LEGIONAUTORENT"
 
 msgid "Аренда, в которой"
 msgstr "Көлік жалдауда"
@@ -80,9 +80,9 @@ msgstr "Сіз бағытты таңдайсыз. Біз көлік таңдау
 
 msgid ""
 "Выберите автомобиль для аренды без водителя. Цены, фотографии и классы "
-"автомобилей в Legion Auto Rent."
+"автомобилей в LEGIONAUTORENT."
 msgstr ""
-"Жүргізушісіз жалға алуға көлік таңдаңыз. Legion Auto Rent: бағалар, "
+"Жүргізушісіз жалға алуға көлік таңдаңыз. LEGIONAUTORENT: бағалар, "
 "фотосуреттер және көлік кластары."
 
 msgid "Выберите автомобиль для поездок по городу и за его пределами."
@@ -154,8 +154,8 @@ msgstr "Артқы"
 msgid "Заявка на аренду"
 msgstr "Жалдауға өтінім"
 
-msgid "Заявка на аренду | Legion Auto Rent"
-msgstr "Жалдауға өтінім | Legion Auto Rent"
+msgid "Заявка на аренду | LEGIONAUTORENT"
+msgstr "Жалдауға өтінім | LEGIONAUTORENT"
 
 msgid ""
 "Заявка не является подтверждённым бронированием. Мы свяжемся с вами и "
@@ -167,8 +167,8 @@ msgstr ""
 msgid "Заявка отправлена"
 msgstr "Өтінім жіберілді"
 
-msgid "Заявка отправлена | Legion Auto Rent"
-msgstr "Өтінім жіберілді | Legion Auto Rent"
+msgid "Заявка отправлена | LEGIONAUTORENT"
+msgstr "Өтінім жіберілді | LEGIONAUTORENT"
 
 msgid "Здесь начинается другой маршрут"
 msgstr "Мұнда басқа бағыт басталады"
@@ -341,8 +341,8 @@ msgstr "Іздеудің басқа жолын көрейік"
 msgid "Популярные"
 msgstr "Танымал"
 
-msgid "Почему Legion"
-msgstr "Неліктен Legion"
+msgid "Почему LEGIONAUTORENT"
+msgstr "Неліктен LEGIONAUTORENT"
 
 msgid "Привод"
 msgstr "Жетек"
@@ -390,8 +390,8 @@ msgstr "Пішіннің жарамдылық мерзімі аяқталды. �
 msgid "Стоимость аренды"
 msgstr "Жалдау құны"
 
-msgid "Страница не найдена | Legion Auto Rent"
-msgstr "Бет табылмады | Legion Auto Rent"
+msgid "Страница не найдена | LEGIONAUTORENT"
+msgstr "Бет табылмады | LEGIONAUTORENT"
 
 msgid "Страницы каталога"
 msgstr "Каталог беттері"
@@ -458,16 +458,16 @@ msgstr "фото"
 
 msgid ""
 "Я согласен на обработку имени, телефона, дат аренды и комментария компанией "
-"Legion Auto Rent для ответа на мою заявку."
+"LEGIONAUTORENT для ответа на мою заявку."
 msgstr ""
-"Өтініміме жауап беру үшін Legion Auto Rent компаниясының атымды, телефон "
+"Өтініміме жауап беру үшін LEGIONAUTORENT компаниясының атымды, телефон "
 "нөмірімді, жалдау күндері мен пікірімді өңдеуіне келісемін."
 
 msgid "3 простых шага для аренды"
 msgstr "Жалға алудың 3 қарапайым қадамы"
 
-msgid "FAQ | Legion Auto Rent"
-msgstr "Сұрақтар | Legion Auto Rent"
+msgid "FAQ | LEGIONAUTORENT"
+msgstr "Сұрақтар | LEGIONAUTORENT"
 
 msgid "Автомобили уточняются. Позвоните нам."
 msgstr "Автокөліктер туралы бізге қоңырау шалыңыз."
@@ -511,8 +511,8 @@ msgstr "Жалға алудың барлық шарттары"
 msgid "Все фильтры"
 msgstr "Барлық сүзгілер"
 
-msgid "Встретимся в Легионе"
-msgstr "Легионда кездескенше"
+msgid "Встретимся в LEGIONAUTORENT"
+msgstr "LEGIONAUTORENT кездескенше"
 
 msgid "Всё начинается с вашего маршрута"
 msgstr "Бәрі сіздің бағытыңыздан басталады"
@@ -562,8 +562,8 @@ msgstr "Қорытынды бағаны, кепілдік төлемді жән�
 msgid "К автопарку"
 msgstr "Автопаркке"
 
-msgid "Карта проезда к Legion Auto Rent"
-msgstr "Legion Auto Rent мекенжайының картасы"
+msgid "Карта проезда к LEGIONAUTORENT"
+msgstr "LEGIONAUTORENT мекенжайының картасы"
 
 msgid "Конфиденциальность"
 msgstr "Құпиялық"

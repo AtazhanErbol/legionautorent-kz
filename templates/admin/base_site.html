@@ -1,0 +1,10 @@
+{% extends 'admin/base.html' %}{% load static i18n %}
+{% block title %}{{ title }} | LEGIONAUTORENT CMS{% endblock %}
+{% block dark-mode-vars %}{% endblock %}
+{% block responsive %}{{ block.super }}<link rel="stylesheet" href="{% static 'admin/legion-tokens.css' %}"><link rel="stylesheet" href="{% static 'admin/legion.css' %}">{% endblock %}
+{% block extrahead %}{{ block.super }}<link rel="icon" href="{{ brand_favicon }}"><script src="{% static 'admin/legion.js' %}" defer></script>{% endblock %}
+{% block branding %}<a class="cms-brand" href="{% url 'admin:index' %}"><img src="{% static 'img/logo-site.webp' %}" width="164" height="42" alt="LEGIONAUTORENT"><span>УПРАВЛЕНИЕ САЙТОМ</span></a>{% endblock %}
+{% block welcome-msg %}<span class="cms-user">{{ user.get_username }}</span>{% endblock %}
+{% block userlinks %}<a href="{{ site_url|default:'/' }}" target="_blank" rel="noopener">Открыть сайт ↗</a><a href="{% url 'admin:password_change' %}">Пароль</a><form id="logout-form" method="post" action="{% url 'admin:logout' %}">{% csrf_token %}<button type="submit">Выйти</button></form>{% endblock %}
+{% block nav-sidebar %}{% include 'admin/workspace_nav.html' %}{% endblock %}
+{% block footer %}<div class="cms-footer">LEGIONAUTORENT <span>Кабинет управления</span></div>{% endblock %}

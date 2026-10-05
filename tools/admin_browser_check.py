@@ -24,7 +24,7 @@ with sync_playwright() as p:
         tabs=page.locator('.language-editor-tabs');assert tabs.count()==1
         tabs.get_by_role('tab',name='EN',exact=True).click()
         assert page.locator('.translation-inline .inline-related:not(.empty-form):visible select[name$="-language"]').input_value()=='en'
-        tabs.get_by_role('tab',name='KK',exact=True).click()
+        tabs.get_by_role('tab',name='KZ',exact=True).click()
         assert page.locator('.translation-inline .inline-related:not(.empty-form):visible select[name$="-language"]').input_value()=='kk'
         tabs.get_by_role('tab',name='RU',exact=True).click()
         assert page.locator('.translation-inline .inline-related:not(.empty-form):visible').count()==0

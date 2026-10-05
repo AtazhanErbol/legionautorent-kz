@@ -10,6 +10,7 @@ from xml.etree import ElementTree as ET
 from bs4 import BeautifulSoup
 from django.conf import settings
 import requests
+from .editorial import editorial_expected
 
 
 def normalized(value):
@@ -158,6 +159,7 @@ class ReleaseAudit:
             for field in ['title','description','h1','canonical']:
                 old=legacy.get(field,'')
                 if isinstance(old,list):old=' '.join(old)
+                old=editorial_expected(path,field,old)
                 if old and normalized(old)!=normalized(info[field]):self.fail(path,'legacy_'+field,old)
                 elif not old and field in ('title','description'):self.generated.append({'path':path,'field':field,'value':info[field]})
         return info

@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-10-05T06:04:37.881490+00:00",
+  "timestamp_utc": "2026-10-05T12:23:54.397005+00:00",
   "base_url": "http://127.0.0.1:8003",
   "mode": "production",
   "passed": false,
@@ -9,747 +9,633 @@
   "unique_images": 1239,
   "failures": [
     {
-      "path": "/car/toyota-lc-200-excalibur, /car/toyota-lc-200-excalibur_20250827073659, /car/toyota-lc-200-excalibur_20260615123651",
-      "check": "duplicate_title",
-      "detail": "toyota lc 200 excalibur"
-    },
-    {
-      "path": "/car/toyota-land-cruiser-200-new, /car/toyota-land-cruiser-200_20240429104403, /car/toyota-land-cruiser-200, /car/toyota-land-cruiser-200_20211104112631, /car/toyota-land-cruiser-200_20240926132114, /car/toyota-land-cruiser-200_20250604084050",
-      "check": "duplicate_title",
-      "detail": "toyota land cruiser 200"
-    },
-    {
-      "path": "/car/toyota-lc-200, /car/toyota-lc-200_20240626072039",
-      "check": "duplicate_title",
-      "detail": "toyota lc 200"
-    },
-    {
-      "path": "/car/toyota-camry-xv-70-prestige-plus, /car/toyota-camry-xv-70-prestige-plus_20230127093610",
-      "check": "duplicate_title",
-      "detail": "toyota camry xv 70 prestige plus"
-    },
-    {
-      "path": "/car/kia-k-5, /car/kia-k-5_20240701073837",
-      "check": "duplicate_title",
-      "detail": "kia k-5"
-    },
-    {
-      "path": "/car/hyundai-tucson, /car/hyundai-tucson_20240515094333, /car/hyundai-tucson_20240914134010, /car/hyundai-tucson_20260604100103",
-      "check": "duplicate_title",
-      "detail": "hyundai tucson"
-    },
-    {
-      "path": "/car/toyota-camry-xv-55_20231013120702, /car/toyota-camry-xv-55, /car/toyota-camry-xv-55_20230127093040, /car/toyota-camry-xv-55_20230201112348, /car/toyota-camry-xv-55_20230306085552, /car/toyota-camry-xv-55_20250605065343, /car/toyota-camry-xv-55_20260731072807",
-      "check": "duplicate_title",
-      "detail": "toyota camry xv 55"
-    },
-    {
-      "path": "/car/kia-seltos, /car/kia-seltos_20240920104836",
-      "check": "duplicate_title",
-      "detail": "kia seltos"
-    },
-    {
-      "path": "/car/hyundai-elantra, /car/hyundai-elantra_20230815091736, /car/hyundai-elantra_20240819123613, /car/hyundai-elantra_20260403070232",
-      "check": "duplicate_title",
-      "detail": "hyundai elantra"
-    },
-    {
-      "path": "/car/hyundai-accent, /car/hyundai-accent-2015-god-1-6-avtomat, /car/hyundai-accent_20231115121923, /car/hyundai-accent_20241125134834, /car/hyundai-accent_20240611104858",
-      "check": "duplicate_title",
-      "detail": "hyundai accent"
-    },
-    {
-      "path": "/car/chevrolet-cobalt-2022-1-5-avtomat, /car/chevrolet-cobalt, /car/chevrolet-cobalt_20241220111045, /car/chevrolet-cobalt_20251111103617",
-      "check": "duplicate_title",
-      "detail": "chevrolet cobalt"
-    },
-    {
-      "path": "/car/bmw-x6, /car/bmw-x6_20241001102848, /car/bmw-x6_20260622070809",
-      "check": "duplicate_title",
-      "detail": "bmw x6"
-    },
-    {
-      "path": "/car/changan-x5-plus, /car/changan-x5-plus_20260810090844, /car/changan-x5-plus_20260901073633",
-      "check": "duplicate_title",
-      "detail": "changan x5 plus"
-    },
-    {
-      "path": "/car/hyundai-santa-fe, /car/hyundai-santa-fe_20241218064857",
-      "check": "duplicate_title",
-      "detail": "hyundai santa fe"
-    },
-    {
-      "path": "/car/kia-sportage, /car/kia-sportage_20260729090852",
-      "check": "duplicate_title",
-      "detail": "kia sportage"
-    },
-    {
-      "path": "/car/toyota-camry-xv-75, /car/toyota-camry-xv-75_20260408104311",
-      "check": "duplicate_title",
-      "detail": "toyota camry xv 75"
-    },
-    {
-      "path": "/car/toyota-camry-xv-80, /car/toyota-camry-xv-80_20251115074721",
-      "check": "duplicate_title",
-      "detail": "toyota camry xv 80"
-    },
-    {
-      "path": "/car/toyota-lc-200-excalibur, /car/toyota-lc-200-excalibur_20250827073659",
-      "check": "duplicate_description",
-      "detail": "аренда toyota lc 200 excalibur без водителя от 120 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/toyota-land-cruiser-200-new, /car/toyota-land-cruiser-200_20240429104403",
-      "check": "duplicate_description",
-      "detail": "аренда toyota land cruiser 200 без водителя от 80 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/toyota-land-cruiser-200, /car/toyota-land-cruiser-200_20211104112631",
-      "check": "duplicate_description",
-      "detail": "аренда toyota land cruiser 200 без водителя от 100 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/toyota-camry-xv-70-prestige-plus, /car/toyota-camry-xv-70-prestige-plus_20230127093610",
-      "check": "duplicate_description",
-      "detail": "аренда toyota camry xv 70 prestige plus без водителя от 45 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/kia-k-5, /car/kia-k-5_20240701073837",
-      "check": "duplicate_description",
-      "detail": "аренда kia k-5 без водителя от 45 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/hyundai-tucson, /car/hyundai-tucson_20240914134010",
-      "check": "duplicate_description",
-      "detail": "аренда hyundai tucson без водителя от 40 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/toyota-camry-xv-55_20231013120702, /car/toyota-camry-xv-55_20230306085552, /car/toyota-camry-xv-55_20260731072807",
-      "check": "duplicate_description",
-      "detail": "аренда toyota camry xv 55 без водителя от 35 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/kia-seltos, /car/kia-seltos_20240920104836",
-      "check": "duplicate_description",
-      "detail": "аренда kia seltos без водителя от 35 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/toyota-camry-xv-55, /car/toyota-camry-xv-55_20230127093040, /car/toyota-camry-xv-55_20230201112348, /car/toyota-camry-xv-55_20250605065343",
-      "check": "duplicate_description",
-      "detail": "аренда toyota camry xv 55 без водителя от 30 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/hyundai-elantra, /car/hyundai-elantra_20240819123613, /car/hyundai-elantra_20260403070232",
-      "check": "duplicate_description",
-      "detail": "аренда hyundai elantra без водителя от 32 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/hyundai-accent, /car/hyundai-accent_20241125134834",
-      "check": "duplicate_description",
-      "detail": "аренда hyundai accent без водителя от 23 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/hyundai-accent-2015-god-1-6-avtomat, /car/hyundai-accent_20231115121923, /car/hyundai-accent_20240611104858",
-      "check": "duplicate_description",
-      "detail": "аренда hyundai accent без водителя от 20 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/chevrolet-cobalt-2022-1-5-avtomat, /car/chevrolet-cobalt, /car/chevrolet-cobalt_20241220111045, /car/chevrolet-cobalt_20251111103617",
-      "check": "duplicate_description",
-      "detail": "аренда chevrolet cobalt без водителя от 20 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/bmw-x6, /car/bmw-x6_20241001102848",
-      "check": "duplicate_description",
-      "detail": "аренда bmw x6 без водителя от 80 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/kia-sportage, /car/kia-sportage_20260729090852",
-      "check": "duplicate_description",
-      "detail": "аренда kia sportage без водителя от 40 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/toyota-camry-xv-80, /car/toyota-camry-xv-80_20251115074721",
-      "check": "duplicate_description",
-      "detail": "аренда toyota camry xv 80 без водителя от 75 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/toyota-land-cruiser-200_20240926132114, /car/toyota-land-cruiser-200_20250604084050",
-      "check": "duplicate_description",
-      "detail": "аренда toyota land cruiser 200 без водителя от 95 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/changan-x5-plus_20260810090844, /car/changan-x5-plus_20260901073633",
-      "check": "duplicate_description",
-      "detail": "аренда changan x5 plus без водителя от 30 000 ₸ в сутки. фотографии скидки и условия legion auto rent."
-    },
-    {
-      "path": "/car/toyota-lc-200-excalibur, /car/toyota-lc-200-excalibur_20250827073659, /car/toyota-lc-200-excalibur_20260615123651",
-      "check": "duplicate_h1",
-      "detail": "аренда toyota lc 200 excalibur"
-    },
-    {
-      "path": "/car/toyota-land-cruiser-200-new, /car/toyota-land-cruiser-200_20240429104403, /car/toyota-land-cruiser-200, /car/toyota-land-cruiser-200_20211104112631, /car/toyota-land-cruiser-200_20240926132114, /car/toyota-land-cruiser-200_20250604084050",
-      "check": "duplicate_h1",
-      "detail": "аренда toyota land cruiser 200"
-    },
-    {
-      "path": "/car/toyota-lc-200, /car/toyota-lc-200_20240626072039",
-      "check": "duplicate_h1",
-      "detail": "аренда toyota lc 200"
-    },
-    {
-      "path": "/car/toyota-camry-xv-70-prestige-plus, /car/toyota-camry-xv-70-prestige-plus_20230127093610",
-      "check": "duplicate_h1",
-      "detail": "аренда toyota camry xv 70 prestige plus"
-    },
-    {
-      "path": "/car/kia-k-5, /car/kia-k-5_20240701073837",
-      "check": "duplicate_h1",
-      "detail": "аренда kia k-5"
-    },
-    {
-      "path": "/car/hyundai-tucson, /car/hyundai-tucson_20240515094333, /car/hyundai-tucson_20240914134010, /car/hyundai-tucson_20260604100103",
-      "check": "duplicate_h1",
-      "detail": "аренда hyundai tucson"
-    },
-    {
-      "path": "/car/toyota-camry-xv-55_20231013120702, /car/toyota-camry-xv-55, /car/toyota-camry-xv-55_20230127093040, /car/toyota-camry-xv-55_20230201112348, /car/toyota-camry-xv-55_20230306085552, /car/toyota-camry-xv-55_20250605065343, /car/toyota-camry-xv-55_20260731072807",
-      "check": "duplicate_h1",
-      "detail": "аренда toyota camry xv 55"
-    },
-    {
-      "path": "/car/kia-seltos, /car/kia-seltos_20240920104836",
-      "check": "duplicate_h1",
-      "detail": "аренда kia seltos"
-    },
-    {
-      "path": "/car/hyundai-elantra, /car/hyundai-elantra_20230815091736, /car/hyundai-elantra_20240819123613, /car/hyundai-elantra_20260403070232",
-      "check": "duplicate_h1",
-      "detail": "аренда hyundai elantra"
-    },
-    {
-      "path": "/car/hyundai-accent, /car/hyundai-accent-2015-god-1-6-avtomat, /car/hyundai-accent_20231115121923, /car/hyundai-accent_20241125134834, /car/hyundai-accent_20240611104858",
-      "check": "duplicate_h1",
-      "detail": "аренда hyundai accent"
-    },
-    {
-      "path": "/car/chevrolet-cobalt-2022-1-5-avtomat, /car/chevrolet-cobalt, /car/chevrolet-cobalt_20241220111045, /car/chevrolet-cobalt_20251111103617",
-      "check": "duplicate_h1",
-      "detail": "аренда chevrolet cobalt"
-    },
-    {
-      "path": "/car/bmw-x6, /car/bmw-x6_20241001102848, /car/bmw-x6_20260622070809",
-      "check": "duplicate_h1",
-      "detail": "аренда bmw x6"
-    },
-    {
-      "path": "/car/changan-x5-plus, /car/changan-x5-plus_20260810090844, /car/changan-x5-plus_20260901073633",
-      "check": "duplicate_h1",
-      "detail": "аренда changan x5 plus"
-    },
-    {
-      "path": "/car/hyundai-santa-fe, /car/hyundai-santa-fe_20241218064857",
-      "check": "duplicate_h1",
-      "detail": "аренда hyundai santa fe"
-    },
-    {
-      "path": "/car/kia-sportage, /car/kia-sportage_20260729090852",
-      "check": "duplicate_h1",
-      "detail": "аренда kia sportage"
-    },
-    {
-      "path": "/car/toyota-camry-xv-75, /car/toyota-camry-xv-75_20260408104311",
-      "check": "duplicate_h1",
-      "detail": "аренда toyota camry xv 75"
-    },
-    {
-      "path": "/car/toyota-camry-xv-80, /car/toyota-camry-xv-80_20251115074721",
-      "check": "duplicate_h1",
-      "detail": "аренда toyota camry xv 80"
-    },
-    {
       "path": "http://127.0.0.1:8003",
       "check": "public_redirects_not_verified",
       "detail": "Run with public HTTPS --base-url after deployment; local rendering does not prove DNS/TLS."
     }
   ],
-  "warnings": [],
+  "warnings": [
+    {
+      "path": "/car/toyota-lc-200-excalibur",
+      "check": "title_length",
+      "detail": "67"
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200-new",
+      "check": "title_length",
+      "detail": "67"
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200_20240429104403",
+      "check": "title_length",
+      "detail": "67"
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200",
+      "check": "title_length",
+      "detail": "77"
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200_20211104112631",
+      "check": "title_length",
+      "detail": "78"
+    },
+    {
+      "path": "/car/toyota-camry-xv-70-prestige-plus",
+      "check": "title_length",
+      "detail": "67"
+    },
+    {
+      "path": "/car/toyota-camry-xv-70-prestige-plus_20230127093610",
+      "check": "title_length",
+      "detail": "77"
+    },
+    {
+      "path": "/car/toyota-camry-xv-55_20231013120702",
+      "check": "title_length",
+      "detail": "63"
+    },
+    {
+      "path": "/car/toyota-camry-xv-55",
+      "check": "title_length",
+      "detail": "73"
+    },
+    {
+      "path": "/car/toyota-camry-xv-55_20230127093040",
+      "check": "title_length",
+      "detail": "63"
+    },
+    {
+      "path": "/car/toyota-camry-xv-55_20230201112348",
+      "check": "title_length",
+      "detail": "63"
+    },
+    {
+      "path": "/car/hyundai-tucson_20240515094333",
+      "check": "title_length",
+      "detail": "69"
+    },
+    {
+      "path": "/car/hyundai-accent-2015-god-1-6-avtomat",
+      "check": "title_length",
+      "detail": "61"
+    },
+    {
+      "path": "/car/hyundai-accent_20231115121923",
+      "check": "title_length",
+      "detail": "61"
+    },
+    {
+      "path": "/car/hyundai-santa-fe",
+      "check": "title_length",
+      "detail": "61"
+    },
+    {
+      "path": "/car/hyundai-santa-fe_20241218064857",
+      "check": "title_length",
+      "detail": "61"
+    },
+    {
+      "path": "/car/toyota-camry-xv-75_20260408104311",
+      "check": "title_length",
+      "detail": "62"
+    },
+    {
+      "path": "/car/toyota-camry-xv-80",
+      "check": "title_length",
+      "detail": "63"
+    },
+    {
+      "path": "/car/toyota-camry-xv-80_20251115074721",
+      "check": "title_length",
+      "detail": "63"
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200_20240926132114",
+      "check": "title_length",
+      "detail": "68"
+    },
+    {
+      "path": "/car/toyota-land-cruiser-200_20250604084050",
+      "check": "title_length",
+      "detail": "68"
+    },
+    {
+      "path": "/car/hyundai-accent_20240611104858",
+      "check": "title_length",
+      "detail": "61"
+    },
+    {
+      "path": "/car/changan-x5-plus_20260810090844",
+      "check": "title_length",
+      "detail": "69"
+    },
+    {
+      "path": "/car/chevrolet-cobalt_20241220111045",
+      "check": "title_length",
+      "detail": "71"
+    },
+    {
+      "path": "/car/chevrolet-cobalt_20251111103617",
+      "check": "title_length",
+      "detail": "71"
+    },
+    {
+      "path": "/car/hyundai-tucson_20260604100103",
+      "check": "title_length",
+      "detail": "69"
+    },
+    {
+      "path": "/car/toyota-camry-xv-55_20250605065343",
+      "check": "title_length",
+      "detail": "73"
+    },
+    {
+      "path": "/car/toyota-camry-xv-55_20260731072807",
+      "check": "title_length",
+      "detail": "73"
+    },
+    {
+      "path": "/car/toyota-lc-200-excalibur_20260615123651",
+      "check": "title_length",
+      "detail": "67"
+    }
+  ],
   "generated_legacy_metadata": [
     {
       "path": "/",
       "field": "title",
-      "value": "Аренда авто без водителя в Астане | Legion Auto Rent"
+      "value": "Аренда авто без водителя в Астане | LEGIONAUTORENT"
     },
     {
       "path": "/",
       "field": "description",
-      "value": "Прокат автомобилей без водителя в Астане. Автопарк Legion Auto Rent  цены от 20 000 ₸  документы и условия аренды."
+      "value": "Прокат автомобилей без водителя в Астане. Автопарк LEGIONAUTORENT  цены от 20 000 ₸  документы и условия аренды."
     },
     {
       "path": "/kostanay/",
       "field": "title",
-      "value": "Аренда авто без водителя в Костанае | Legion Auto Rent"
+      "value": "Аренда авто без водителя в Костанае | LEGIONAUTORENT"
     },
     {
       "path": "/ustkamenogorsk/",
       "field": "description",
-      "value": "Прокат автомобилей без водителя в Усть-Каменогорске. Автопарк Legion Auto Rent  цены от 20 000 ₸  документы и условия аренды."
+      "value": "Прокат автомобилей без водителя в Усть-Каменогорске. Автопарк LEGIONAUTORENT  цены от 20 000 ₸  документы и условия аренды."
     },
     {
       "path": "/pavlodar/",
       "field": "description",
-      "value": "Прокат автомобилей без водителя в Павлодаре. Автопарк Legion Auto Rent  цены от 20 000 ₸  документы и условия аренды."
+      "value": "Прокат автомобилей без водителя в Павлодаре. Автопарк LEGIONAUTORENT  цены от 20 000 ₸  документы и условия аренды."
     },
     {
       "path": "/car/lexus-lx-570-superior",
       "field": "description",
-      "value": "Аренда Lexus Lx 570 Superior без водителя от 180 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Lexus Lx 570 Superior без водителя от 180 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/mercedes-s-500",
       "field": "description",
-      "value": "Аренда MERCEDES W 222 S-500 без водителя от 140 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда MERCEDES W 222 S-500 без водителя от 140 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/mercedes-w-222-s-400",
       "field": "description",
-      "value": "Аренда Mercedes W 222 S 400 без водителя от 120 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Mercedes W 222 S 400 без водителя от 120 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-lc-200-luxe",
       "field": "description",
-      "value": "Аренда Toyota LC 200 Luxe без водителя от 95 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota LC 200 Luxe без водителя от 95 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-lc-200-excalibur",
       "field": "description",
-      "value": "Аренда TOYOTA LC 200 EXCALIBUR без водителя от 120 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда TOYOTA LC 200 EXCALIBUR без водителя. Астана, Павлодар. От 120 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/range-rover",
       "field": "description",
-      "value": "Аренда RANGE ROVER без водителя от 100 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда RANGE ROVER без водителя от 100 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-land-cruiser-200-new",
       "field": "description",
-      "value": "Аренда Toyota Land Cruiser 200 без водителя от 80 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Land Cruiser 200 без водителя. Астана. От 80 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №7."
     },
     {
       "path": "/car/toyota-land-cruiser-200_20240429104403",
       "field": "description",
-      "value": "Аренда Toyota Land Cruiser 200 без водителя от 80 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Land Cruiser 200 без водителя. Астана. От 80 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №8."
     },
     {
       "path": "/car/toyota-land-cruiser-200",
       "field": "description",
-      "value": "Аренда TOYOTA LAND CRUISER 200 без водителя от 100 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда TOYOTA LAND CRUISER 200 без водителя. Усть-Каменогорск. От 100 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №9."
     },
     {
       "path": "/car/toyota-land-cruiser-200_20211104112631",
       "field": "description",
-      "value": "Аренда TOYOTA LAND CRUISER 200 без водителя от 100 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда TOYOTA LAND CRUISER 200 без водителя. Усть-Каменогорск. От 100 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №10."
     },
     {
       "path": "/car/mercedes-g-500",
       "field": "description",
-      "value": "Аренда Mercedes G 500 без водителя от 70 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Mercedes G 500 без водителя от 70 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/lexus-gs-350-f-sport",
       "field": "description",
-      "value": "Аренда Lexus GS 350 F SPORT без водителя от 55 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Lexus GS 350 F SPORT без водителя от 55 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/mercedes-benz-s221",
       "field": "description",
-      "value": "Аренда Mercedes W221 S-550 без водителя от 55 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Mercedes W221 S-550 без водителя от 55 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-sonata-n-line",
       "field": "description",
-      "value": "Аренда HYUNDAI SONATA N-LINE без водителя от 55 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда HYUNDAI SONATA N-LINE без водителя от 55 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-lc-200",
       "field": "description",
-      "value": "Аренда Toyota LC 200 без водителя от 50 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota LC 200 без водителя от 50 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/mercedes-w-212-e-class",
       "field": "description",
-      "value": "Аренда Mercedes W 212 E class без водителя от 50 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Mercedes W 212 E class без водителя от 50 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv-70-luxe-safety",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 70 Luxe Safety без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 70 Luxe Safety без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv-70-prestige-plus",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 70  Prestige Plus без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 70  Prestige Plus без водителя. Астана. От 45 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv-70-prestige-plus_20230127093610",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 70  Prestige plus без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 70  Prestige plus без водителя. Усть-Каменогорск. От 45 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-sonata",
       "field": "description",
-      "value": "Аренда Hyundai Sonata без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Sonata без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-70-usa-komplektacia-se",
       "field": "description",
-      "value": "Аренда Toyota Camry 70 USA  комплектация SE без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry 70 USA  комплектация SE без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv-55-n5",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 55 N5 без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 55 N5 без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/kia-k-5",
       "field": "description",
-      "value": "Аренда KIA K-5 без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда KIA K-5 без водителя. Астана, Павлодар. От 45 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv-70",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 70 без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 70 без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/kia-spotage-2023",
       "field": "description",
-      "value": "Аренда KIA SPOTAGE 2023 без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда KIA SPOTAGE 2023 без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-tucson",
       "field": "description",
-      "value": "Аренда Hyundai Tucson без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Tucson без водителя. Астана. От 40 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №26."
     },
     {
       "path": "/car/toyota-camry-xv-55-n4-navi-15-31",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 55 N4 Navi без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 55 N4 Navi без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/kia-sportage-2020-god",
       "field": "description",
-      "value": "Аренда KIA SPORTAGE 2020 год без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда KIA SPORTAGE 2020 год без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv-55_20231013120702",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 55 без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 55 без водителя. Астана. От 35 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/kia-seltos",
       "field": "description",
-      "value": "Аренда KIA SELTOS без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда KIA SELTOS без водителя. Астана. От 35 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv-55",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 55 без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 55 без водителя. Усть-Каменогорск. От 30 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №31."
     },
     {
       "path": "/car/toyota-camry-xv-55_20230127093040",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 55 без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 55 без водителя. Астана. От 30 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №32."
     },
     {
       "path": "/car/toyota-camry-xv-55_20230201112348",
       "field": "description",
-      "value": "Аренда TOYOTA CAMRY XV 55 без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда TOYOTA CAMRY XV 55 без водителя. Астана. От 30 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №33."
     },
     {
       "path": "/car/toyota-camry-xv-55_20230306085552",
       "field": "description",
-      "value": "Аренда TOYOTA CAMRY XV 55 без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда TOYOTA CAMRY XV 55 без водителя. Костанай. От 35 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-tucson_20240515094333",
       "field": "description",
-      "value": "Аренда HYUNDAI TUCSON без водителя от 27 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда HYUNDAI TUCSON без водителя от 27 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/lexus-gs-350-awd-restajling",
       "field": "description",
-      "value": "Аренда Lexus GS 350 AWD Рестайлинг без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Lexus GS 350 AWD Рестайлинг без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-elantra",
       "field": "description",
-      "value": "Аренда HYUNDAI ELANTRA без водителя от 32 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда HYUNDAI ELANTRA без водителя. Астана, Павлодар. От 32 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-elantra_20230815091736",
       "field": "description",
-      "value": "Аренда HYUNDAI ELANTRA без водителя от 23 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда HYUNDAI ELANTRA без водителя от 23 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-accent",
       "field": "description",
-      "value": "Аренда Hyundai Accent без водителя от 23 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Accent без водителя. Астана. От 23 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №39."
     },
     {
       "path": "/car/hyundai-accent-2015-god-1-6-avtomat",
       "field": "description",
-      "value": "Аренда Hyundai Accent без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Accent без водителя. Костанай. От 20 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №40."
     },
     {
       "path": "/car/chevrolet-cobalt-2022-1-5-avtomat",
       "field": "description",
-      "value": "Аренда Chevrolet Cobalt без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Chevrolet Cobalt без водителя. Астана. От 20 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-accent_20231115121923",
       "field": "description",
-      "value": "Аренда Hyundai Accent без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Accent без водителя. Костанай. От 20 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №42."
     },
     {
       "path": "/car/bmw-530i-x-drive",
       "field": "description",
-      "value": "Аренда BMW 530i X-DRIVE без водителя от 90 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда BMW 530i X-DRIVE без водителя от 90 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/bmw-x6",
       "field": "description",
-      "value": "Аренда BMW X6 без водителя от 80 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда BMW X6 без водителя. Астана. От 80 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №44."
     },
     {
       "path": "/car/bmw-x6_20241001102848",
       "field": "description",
-      "value": "Аренда BMW X6 без водителя от 80 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда BMW X6 без водителя. Астана. От 80 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №45."
     },
     {
       "path": "/car/bmw-x6_20260622070809",
       "field": "description",
-      "value": "Аренда Bmw X6 без водителя от 200 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Bmw X6 без водителя от 200 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/changan-x5-plus",
       "field": "description",
-      "value": "Аренда Changan X5 Plus без водителя от 28 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Changan X5 Plus без водителя от 28 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/chevrolet-cobalt",
       "field": "description",
-      "value": "Аренда Chevrolet Cobalt без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Chevrolet Cobalt без водителя. Астана, Павлодар. От 20 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/chevrolet-tahoe",
       "field": "description",
-      "value": "Аренда CHEVROLET TAHOE без водителя от 200 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда CHEVROLET TAHOE без водителя от 200 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-accent_20241125134834",
       "field": "description",
-      "value": "Аренда Hyundai Accent без водителя от 23 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Accent без водителя. Астана. От 23 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №50."
     },
     {
       "path": "/car/hyundai-elantra_20240819123613",
       "field": "description",
-      "value": "Аренда HYUNDAI ELANTRA без водителя от 32 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда HYUNDAI ELANTRA без водителя. Астана. От 32 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №51."
     },
     {
       "path": "/car/hyundai-elantra_20260403070232",
       "field": "description",
-      "value": "Аренда Hyundai Elantra без водителя от 32 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Elantra без водителя. Астана. От 32 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №52."
     },
     {
       "path": "/car/hyundai-santa-fe",
       "field": "description",
-      "value": "Аренда Hyundai Santa Fe без водителя от 50 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Santa Fe без водителя от 50 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-santa-fe-high-tech",
       "field": "description",
-      "value": "Аренда Hyundai Santa Fe High Tech без водителя от 70 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Santa Fe High Tech без водителя от 70 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-santa-fe_20241218064857",
       "field": "description",
-      "value": "Аренда Hyundai Santa Fe без водителя от 70 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Santa Fe без водителя от 70 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-tucson_20240914134010",
       "field": "description",
-      "value": "Аренда Hyundai Tucson без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Tucson без водителя. Астана. От 40 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №57."
     },
     {
       "path": "/car/kia-cerato-gt-line",
       "field": "description",
-      "value": "Аренда KIA CERATO GT-LINE без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда KIA CERATO GT-LINE без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/kia-k-5_20240701073837",
       "field": "description",
-      "value": "Аренда KIA K-5 без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда KIA K-5 без водителя. Астана. От 45 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/kia-sportage",
       "field": "description",
-      "value": "Аренда KIA SPORTAGE без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда KIA SPORTAGE без водителя. Астана. От 40 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/lixiang-l7-pro",
       "field": "description",
-      "value": "Аренда LIXIANG L7 PRO без водителя от 95 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда LIXIANG L7 PRO без водителя от 95 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/mercedes-w222-s-63-amg",
       "field": "description",
-      "value": "Аренда Mercedes W222 S-63 AMG без водителя от 300 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Mercedes W222 S-63 AMG без водителя от 300 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv-75",
       "field": "description",
-      "value": "Аренда TOYOTA CAMRY XV 75 без водителя от 50 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда TOYOTA CAMRY XV 75 без водителя от 50 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv-75_20260408104311",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 75 без водителя от 55 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 75 без водителя от 55 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv-80",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 80 без водителя от 75 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 80 без водителя. Астана. От 75 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №65."
     },
     {
       "path": "/car/toyota-camry-xv-80_20251115074721",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 80 без водителя от 75 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 80 без водителя. Астана. От 75 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №66."
     },
     {
       "path": "/car/toyota-highlander",
       "field": "description",
-      "value": "Аренда Toyota Highlander без водителя от 90 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Highlander без водителя от 90 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-land-cruiser-200_20240926132114",
       "field": "description",
-      "value": "Аренда Toyota Land Cruiser 200 без водителя от 95 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Land Cruiser 200 без водителя. Астана. От 95 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №68."
     },
     {
       "path": "/car/toyota-land-cruiser-200_20250604084050",
       "field": "description",
-      "value": "Аренда Toyota Land Cruiser 200 без водителя от 95 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Land Cruiser 200 без водителя. Астана. От 95 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №69."
     },
     {
       "path": "/car/toyota-lc-200-excalibur_20250827073659",
       "field": "description",
-      "value": "Аренда Toyota Lc 200 Excalibur без водителя от 120 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Lc 200 Excalibur без водителя. Астана. От 120 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-lc-200_20240626072039",
       "field": "description",
-      "value": "Аренда TOYOTA LC 200 без водителя от 95 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда TOYOTA LC 200 без водителя от 95 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/chery-tiggo-4",
       "field": "description",
-      "value": "Аренда CHERY TIGGO 4 без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда CHERY TIGGO 4 без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-accent_20240611104858",
       "field": "description",
-      "value": "Аренда Hyundai Accent без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Accent без водителя. Костанай. От 20 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №73."
     },
     {
       "path": "/car/kia-ceed",
       "field": "description",
-      "value": "Аренда KIA CEED без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда KIA CEED без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/kia-seltos_20240920104836",
       "field": "description",
-      "value": "Аренда KIA SELTOS без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда KIA SELTOS без водителя. Костанай. От 35 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/kia-sportage_20260729090852",
       "field": "description",
-      "value": "Аренда Kia Sportage без водителя от 40 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Kia Sportage без водителя. Костанай. От 40 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv70",
       "field": "description",
-      "value": "Аренда Toyota Camry XV70 без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV70 без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-xv50",
       "field": "description",
-      "value": "Аренда Toyota XV50 без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota XV50 без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/changan-x5-plus_20260810090844",
       "field": "description",
-      "value": "Аренда Changan X5 Plus без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Changan X5 Plus без водителя. Усть-Каменогорск, Павлодар. От 30 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/changan-x5-plus_20260901073633",
       "field": "description",
-      "value": "Аренда Changan X5 Plus без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Changan X5 Plus без водителя. Усть-Каменогорск. От 30 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/chevrolet-cobalt_20241220111045",
       "field": "description",
-      "value": "Аренда Chevrolet Cobalt без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Chevrolet Cobalt без водителя. Усть-Каменогорск. От 20 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №81."
     },
     {
       "path": "/car/chevrolet-cobalt_20251111103617",
       "field": "description",
-      "value": "Аренда Chevrolet Cobalt без водителя от 20 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Chevrolet Cobalt без водителя. Усть-Каменогорск. От 20 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №82."
     },
     {
       "path": "/car/hyundai-creta",
       "field": "description",
-      "value": "Аренда HYUNDAI CRETA без водителя от 28 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда HYUNDAI CRETA без водителя от 28 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/hyundai-tucson_20260604100103",
       "field": "description",
-      "value": "Аренда Hyundai Tucson без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Hyundai Tucson без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/jac-j7",
       "field": "description",
-      "value": "Аренда JAC J7 без водителя от 25 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда JAC J7 без водителя от 25 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/kia-soul",
       "field": "description",
-      "value": "Аренда KIA SOUL без водителя от 25 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда KIA SOUL без водителя от 25 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/lexus-es-250",
       "field": "description",
-      "value": "Аренда Lexus Es 250 без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Lexus Es 250 без водителя от 45 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-camry-xv-55_20250605065343",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 55 без водителя от 30 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 55 без водителя. Усть-Каменогорск. От 30 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT. Автомобиль №88."
     },
     {
       "path": "/car/toyota-camry-xv-55_20260731072807",
       "field": "description",
-      "value": "Аренда Toyota Camry XV 55 без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota Camry XV 55 без водителя. Усть-Каменогорск. От 35 000 ₸ в сутки. Фото, тарифы и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-lc-200-excalibur_20260615123651",
       "field": "description",
-      "value": "Аренда TOYOTA LC 200 EXCALIBUR без водителя от 150 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда TOYOTA LC 200 EXCALIBUR без водителя от 150 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     },
     {
       "path": "/car/toyota-rav4_20241007122739",
       "field": "description",
-      "value": "Аренда Toyota RAV4 без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия Legion Auto Rent."
+      "value": "Аренда Toyota RAV4 без водителя от 35 000 ₸ в сутки. Фотографии  скидки и условия LEGIONAUTORENT."
     }
   ],
   "redirects": []

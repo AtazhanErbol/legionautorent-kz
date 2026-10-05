@@ -1,0 +1,158 @@
+{
+  "mode": "Production rendering on local :8003; analytics off; desktop scrub enabled; mobile motion starts on first interaction and is tested separately. Default Lighthouse profiles, explicitly managed Chrome.",
+  "field_inp_measured": false,
+  "results": [
+    {
+      "page": "home",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8003/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-05T11:59:54.283Z",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 2255,
+      "cls": 0,
+      "tbt_ms": 132,
+      "hero_video_requested": false,
+      "hero_mobile_loop_requested": false
+    },
+    {
+      "page": "city",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8003/kostanay/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-05T12:00:08.729Z",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 2104,
+      "cls": 0,
+      "tbt_ms": 152,
+      "hero_video_requested": false,
+      "hero_mobile_loop_requested": false
+    },
+    {
+      "page": "car",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8003/car/lexus-lx-570-superior",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-05T12:00:22.362Z",
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 2106,
+      "cls": 0.003107132532157617,
+      "tbt_ms": 128,
+      "hero_video_requested": false,
+      "hero_mobile_loop_requested": false
+    },
+    {
+      "page": "catalog",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8003/cars/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-05T12:00:34.698Z",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 2106,
+      "cls": 0,
+      "tbt_ms": 78,
+      "hero_video_requested": false,
+      "hero_mobile_loop_requested": false
+    },
+    {
+      "page": "home",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8003/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-05T12:00:49.479Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 504,
+      "cls": 0,
+      "tbt_ms": 0,
+      "hero_video_requested": true,
+      "hero_mobile_loop_requested": false
+    },
+    {
+      "page": "city",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8003/kostanay/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-05T12:01:03.367Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 484,
+      "cls": 0.001038956609535067,
+      "tbt_ms": 0,
+      "hero_video_requested": false,
+      "hero_mobile_loop_requested": false
+    },
+    {
+      "page": "car",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8003/car/lexus-lx-570-superior",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-05T12:01:16.187Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 445,
+      "cls": 0,
+      "tbt_ms": 0,
+      "hero_video_requested": false,
+      "hero_mobile_loop_requested": false
+    },
+    {
+      "page": "catalog",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8003/cars/",
+      "lighthouse_version": "13.5.0",
+      "fetch_time": "2026-10-05T12:01:28.445Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 484,
+      "cls": 0,
+      "tbt_ms": 0,
+      "hero_video_requested": false,
+      "hero_mobile_loop_requested": false
+    }
+  ]
+}

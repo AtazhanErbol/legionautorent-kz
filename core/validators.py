@@ -20,3 +20,14 @@ def validate_glb(file):
     header=file.read(12)
     file.seek(0)
     if Path(file.name).suffix.lower() != '.glb' or len(header)!=12 or header[:4] != b'glTF' or struct.unpack_from('<II',header,4)!=(2,file.size): raise ValidationError('Нужен корректный GLB glTF 2.0.')
+def validate_hero_video(value):
+    from django.core.exceptions import ValidationError
+    from pathlib import Path
+    if Path(value.name).suffix.lower() != '.mp4' or value.size > 20 * 1024 * 1024:
+        raise ValidationError('Нужен MP4 размером до 20 МБ.')
+    position = value.tell()
+    value.seek(0)
+    header = value.read(32)
+    value.seek(position)
+    if len(header) < 12 or header[4:8] != b'ftyp':
+        raise ValidationError('Файл не содержит корректный заголовок MP4.')

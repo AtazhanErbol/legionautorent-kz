@@ -3,6 +3,7 @@ from django.utils import translation
 from django.templatetags.static import static
 from urllib.parse import urlsplit
 from core.i18n import localized,get_translation,language_url
+from core.branding import brand_text
 
 LANGUAGES=('ru','kk','en')
 def faq_languages():
@@ -48,7 +49,7 @@ def page_seo(request,obj=None,title='',description='',h1='',noindex=False,path=N
             'alternates':[{'language':l,'url':settings.SITE_URL+language_url(path,l)} for l in available],
             'default_url':settings.SITE_URL+path,'og_title':(localized(obj,'og_title') if obj else '') or title,
             'og_description':(localized(obj,'og_description') if obj else '') or description,'og_image':image,
-            'og_url':og_url,'og_type':legacy.get('og:type','website'),'og_site_name':legacy.get('og:site_name','Legion Auto Rent'),'og_video':legacy.get('og:video','')}
+            'og_url':og_url,'og_type':legacy.get('og:type','website'),'og_site_name':brand_text(legacy.get('og:site_name','LEGIONAUTORENT')),'og_video':legacy.get('og:video','')}
 
 def schemas(request,seo,site,breadcrumbs=None,car=None,city=None,faqs=None):
     root=settings.SITE_URL;lang=request.LANGUAGE_CODE

@@ -12,7 +12,7 @@ export function initPageMotion() {
 
   initAmbientMotion();
   const reduced = matchMedia('(prefers-reduced-motion: reduce), (hover: none), (pointer: coarse)');
-  const selector = '.car-card, .steps-grid > article, .benefits-grid > article, .contact-layout > div';
+  const selector = '.car-card, .steps-grid > article, .benefits-grid, .contact-layout > div';
   const observed = new Set();
   const seen = new WeakSet();
   const reveals = new Map();
