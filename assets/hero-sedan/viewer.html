@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Legion — просмотр модели</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#080a0c;color:#e8edf2;font:14px system-ui}canvas{display:block;width:100%;height:100vh}.ui{position:fixed;top:24px;left:24px;z-index:2;pointer-events:none}.ui strong{font-size:20px;display:block;letter-spacing:.12em}.ui p{color:#97a0a9}.buttons{display:flex;gap:8px;flex-wrap:wrap;pointer-events:auto}button{border:1px solid #ffffff35;background:#171c23;color:inherit;padding:12px 16px;border-radius:6px;cursor:pointer}button.active{background:#f4d34f;color:#111;border-color:transparent}.hint{position:fixed;bottom:24px;left:24px;color:#9ca5b0;font-size:12px}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<div class="ui"><strong>LEGION / SEDAN</strong><p>Оригинальная модель · интерактивный просмотр</p><div class="buttons"><button data-view="front">Спереди</button><button data-view="side">Профиль</button><button data-view="rear">Сзади</button><button id="lights">Фары</button><button id="studio">Светлая студия</button></div></div>
+<div class="hint">Потяните мышью для вращения · Колесо мыши — масштаб</div>
+<script type="module">
+import * as T from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {MeshoptDecoder} from 'three/addons/libs/meshopt_decoder.module.js';
+const renderer=new T.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.25;document.body.append(renderer.domElement);
+const scene=new T.Scene();scene.background=new T.Color('#080a0c');
+const camera=new T.PerspectiveCamera(33,innerWidth/innerHeight,.05,100);camera.position.set(6.8,2.8,8.6);
+const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,.67,0);controls.enableDamping=true;controls.minDistance=4;controls.maxDistance=16;controls.maxPolarAngle=Math.PI*.49;
+const studio=document.createElement('canvas');studio.width=1024;studio.height=512;const ctx=studio.getContext('2d');ctx.fillStyle='#181e24';ctx.fillRect(0,0,1024,512);ctx.filter='blur(10px)';ctx.fillStyle='#dfeeff';ctx.fillRect(144,90,56,310);ctx.fillRect(710,76,140,270);ctx.fillStyle='#ffffff';ctx.fillRect(260,24,440,40);
+const tex=new T.CanvasTexture(studio);tex.mapping=T.EquirectangularReflectionMapping;tex.colorSpace=T.SRGBColorSpace;const pmrem=new T.PMREMGenerator(renderer);scene.environment=pmrem.fromEquirectangular(tex).texture;
+scene.add(new T.AmbientLight(0xffffff,.5));const key=new T.DirectionalLight(0xffffff,2);key.position.set(6,4,3);scene.add(key);const rim=new T.DirectionalLight(0xdcecff,3);rim.position.set(-3,5,-4);scene.add(rim);
+const floor=new T.Mesh(new T.PlaneGeometry(200,200),new T.MeshBasicMaterial({color:0x080a0c,transparent:true,opacity:.94,depthWrite:false}));floor.rotation.x=-Math.PI/2;floor.position.y=-.03;floor.renderOrder=1;scene.add(floor);
+const loader=new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);const gltf=await loader.loadAsync('./legion-sedan-compressed.glb');const model=gltf.scene;scene.add(model);
+const reflection=model.clone(true);reflection.scale.y=-1;reflection.position.y=-.04;reflection.traverse(o=>{if(o.isMesh){o.material=o.material.clone();o.material.transparent=true;o.material.opacity=.10;o.material.roughness=1;o.material.depthWrite=false;}});scene.add(reflection);
+let on=false,bright=false;const front=[],rear=[];model.traverse(o=>{if(o.isMesh){if(o.material.name==='Headlight_Lens')front.push(o.material);if(o.material.name==='Taillight_Lens')rear.push(o.material);}});
+document.querySelector('#lights').onclick=e=>{on=!on;front.forEach(m=>{m.emissive.set('#deefff');m.emissiveIntensity=on?3:0});rear.forEach(m=>{m.emissive.set('#ff1515');m.emissiveIntensity=on?2:0});e.target.classList.toggle('active',on)};
+document.querySelector('#studio').onclick=e=>{bright=!bright;const c=bright?0x919aa5:0x080a0c;scene.background.set(c);floor.material.color.set(c);e.target.classList.toggle('active',bright)};
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{const p={front:[6.8,2.8,8.6],side:[9,1.8,0],rear:[-6.8,2.6,-8.6]}[b.dataset.view];camera.position.set(...p);controls.target.set(0,.67,0);controls.update()});
+window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera)});
+window.heroViewer={scene,model,renderer,camera,controls,front,rear};document.body.dataset.ready='true';
+</script></html>
