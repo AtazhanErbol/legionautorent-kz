@@ -1,4 +1,4 @@
-"""Read-only browser check for the owner's temporary, local video preview."""
+"""Read-only browser check for the current hero and its static fallbacks."""
 import json
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -22,7 +22,7 @@ with sync_playwright() as p:
         check(f'{width}_one_h1',page.locator('h1').count()==1)
         check(f'{width}_400vh',abs(geometry['span']-height*3)<2)
         video=page.locator('.mercedes-video').evaluate('v=>({w:v.videoWidth,h:v.videoHeight,duration:v.duration,src:v.currentSrc})')
-        check(f'{width}_1080_blob',video['w']==1918 and video['h']==1080 and video['src'].startswith('blob:'))
+        check(f'{width}_motion60_blob',video['w']==1440 and video['h']==810 and video['src'].startswith('blob:') and page.locator('[data-mercedes-preview]').get_attribute('data-fps')=='60')
         timing=page.evaluate("()=>({load:__loadedAt,start:performance.getEntriesByType('resource').find(r=>r.name.includes('mercedes-segment-01')&&r.initiatorType==='fetch')?.startTime})")
         check(f'{width}_video_after_load',timing['start']>=timing['load'])
         samples=[]

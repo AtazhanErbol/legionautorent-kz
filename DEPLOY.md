@@ -2,7 +2,7 @@
 
 Актуальная инструкция от 05.10.2026. Действующий сайт автоматически не переключается. Docker здесь отсутствует: Compose проверен по официальной JSON Schema, Nginx 1.30.5 проверен нативно (конфигурация и HTTP), но Linux image build, контейнерный запуск и выдача сертификата ещё не выполнены.
 
-Первый экран использует утверждённый Hailuo Mercedes: 5,833 с, 1918×1080, 5 546 665 байт, прокрутка управляет временем видео. MP4 и постеры с хешем имени находятся в `static/hero/`. Первым появляется постер; мобильный режим статический с ручной кнопкой просмотра. Подробности: `reports/FINAL_PROJECT_REPORT.md`. Старые ролики, GLB и исходники сохранены локально и в истории, но исключены из Docker и активной сборки.
+Первый экран использует производную версию утверждённого Hailuo Mercedes: 60 fps, 5,767 с, 1440×810, 5 120 095 байт; прокрутка управляет временем видео. MP4 и постеры с хешем имени находятся в `static/hero/`. Первый утверждённый файл сохранён: `core/hero.py` подставляет новую версию только для его стандартного CMS-пути. Произвольные пользовательские видео не заменяются. Первым появляется постер; мобильный режим статический с ручной кнопкой просмотра. Подробности: `reports/BANNER_REDESIGN_REPORT.md`. Прежние экспериментальные ролики, GLB и исходники сохранены локально и в истории, но исключены из Docker и активной сборки.
 
 ## 1. Подготовка сервера
 
@@ -102,8 +102,8 @@ docker compose --env-file .env.production -f docker-compose.yml exec web python 
 После HTTPS проверьте видео и диапазонную загрузку:
 
 ```sh
-curl -I https://legionautorent.kz/static/hero/mercedes-segment-01-43d4cc20ca42.mp4
-curl -sS -D - -o /dev/null -H 'Range: bytes=0-1023' https://legionautorent.kz/static/hero/mercedes-segment-01-43d4cc20ca42.mp4
+curl -I https://legionautorent.kz/static/hero/mercedes-segment-01-motion60-bdfa81f7498c.mp4
+curl -sS -D - -o /dev/null -H 'Range: bytes=0-1023' https://legionautorent.kz/static/hero/mercedes-segment-01-motion60-bdfa81f7498c.mp4
 curl -I https://legionautorent.kz/static/hero/mercedes-front-77ca8545d4d0.webp
 curl -I https://legionautorent.kz/static/hero/mercedes-front-mobile-940302853d4f.webp
 ```

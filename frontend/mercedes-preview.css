@@ -1,5 +1,5 @@
 /* Approved scroll film with an uncropped, complete static fallback. */
-.mercedes-preview{--garage:#10100f;position:relative;background:var(--garage)}
+.mercedes-preview{--garage:#10100f;position:relative;background:var(--garage);isolation:isolate}
 .mercedes-stage{position:relative;min-height:760px;height:100svh;height:100dvh;overflow:hidden}
 .mercedes-picture,.mercedes-picture picture,.mercedes-picture img,.mercedes-video,.mercedes-veil{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .mercedes-picture img,.mercedes-video{object-fit:contain;object-position:center;max-width:none}
@@ -38,3 +38,35 @@
 .mercedes-preview[data-video=""] .mercedes-watch-wrap{display:none}
 .home-page .site-header:not(.is-scrolled){background:transparent;border-color:transparent}
 .mercedes-captions h1,.mercedes-display{text-shadow:0 2px 24px #000b}
+
+/* A moving automotive exhibit: offset composition, architectural light, clear action lane. */
+.mercedes-architecture{position:absolute;inset:0;overflow:hidden;pointer-events:none;background:linear-gradient(90deg,transparent calc(33.33% - 1px),#f3f1e906 33.33%,transparent calc(33.33% + 1px),transparent calc(66.66% - 1px),#f3f1e906 66.66%,transparent calc(66.66% + 1px)),radial-gradient(ellipse at 72% 50%,#332b1829,transparent 64%)}
+.mercedes-light{position:absolute;width:2px;height:52%;top:15%;background:linear-gradient(transparent,var(--yellow),transparent);opacity:.26;transform:rotate(27deg);will-change:transform}
+.mercedes-light--one{left:76%}.mercedes-light--two{left:90%;height:32%;top:30%;opacity:.1}
+.mercedes-horizon{position:absolute;left:6%;right:6%;top:76%;height:1px;background:linear-gradient(90deg,transparent,#f3f1e921,transparent)}
+.mercedes-edition{position:absolute;left:max(var(--gutter),calc((100% - 1280px)/2));top:106px;display:flex;gap:14px;font:500 9px/1 var(--text);letter-spacing:.2em;color:var(--muted)}
+.mercedes-edition span:first-child{color:var(--yellow)}
+.mercedes-chapter{position:absolute;right:max(var(--gutter),calc((100% - 1280px)/2));top:106px;display:flex;gap:14px;align-items:center;font:500 11px/1 var(--text);font-variant-numeric:tabular-nums;color:var(--muted)}
+.mercedes-chapter span:first-child{color:var(--yellow)}.mercedes-chapter i{width:52px;height:1px;background:var(--line)}
+@media(min-width:900px) and (min-height:700px) and (prefers-reduced-motion:no-preference){
+ .mercedes-stage{min-height:760px}
+ .mercedes-picture{top:11%;height:76%;width:104%;left:0;will-change:transform;transform:translate3d(13vw,0,0);mask-image:radial-gradient(ellipse 52% 48% at 50% 51%,#000 54%,transparent 100%)}
+ .mercedes-veil{background:linear-gradient(180deg,var(--garage),transparent 23%,transparent 72%,var(--garage) 92%);z-index:1}
+ .mercedes-captions{position:absolute;inset:0;z-index:2;padding-top:0;text-align:left;pointer-events:none}
+ .mercedes-caption--intro{position:absolute;top:19%;left:0;width:58%;max-width:740px}
+ .mercedes-eyebrow{font-size:10px;letter-spacing:.16em;margin-bottom:24px}
+ .mercedes-captions h1{font-size:clamp(35px,3.5vw,52px);line-height:1.05;letter-spacing:-.055em;text-wrap:balance;margin:0;max-width:730px;text-shadow:0 3px 30px var(--garage)}
+ .mercedes-caption--end{inset:25% 0 auto auto;width:37%;max-width:480px;text-align:left}
+ .mercedes-display{font-size:clamp(32px,3.2vw,54px);line-height:1.06;max-width:480px;text-wrap:balance;margin:0}
+ .mercedes-bottom{bottom:166px;align-items:center}.mercedes-facts{gap:56px}.mercedes-facts strong{font-size:30px}
+ .mercedes-stage>.search-wrap{bottom:32px}
+ .mercedes-stage .quick-search{box-shadow:none}
+ .mercedes-progress{left:max(var(--gutter),calc((100% - 1280px)/2));right:max(var(--gutter),calc((100% - 1280px)/2));height:1px;bottom:12px;background:var(--line)}
+}
+@media(min-width:900px) and (max-height:820px) and (min-height:700px) and (prefers-reduced-motion:no-preference){
+ .mercedes-stage{min-height:700px}.mercedes-caption--intro{top:20%;width:61%}.mercedes-captions h1{font-size:clamp(32px,3.15vw,44px)}.mercedes-picture{top:12%;height:72%}.mercedes-bottom{bottom:144px}.mercedes-facts strong{font-size:26px}.mercedes-stage>.search-wrap{bottom:24px}
+}
+@media(max-width:899px),(max-height:699px),(orientation:portrait) and (max-width:1024px),(orientation:portrait) and (pointer:coarse),(prefers-reduced-motion:reduce){
+ .mercedes-edition,.mercedes-chapter,.mercedes-architecture{display:none}.mercedes-picture{transform:none!important;mask-image:none}.mercedes-captions{text-align:left}.mercedes-captions h1{margin:0;max-width:760px}.mercedes-eyebrow{display:flex;align-items:center;gap:12px}.mercedes-eyebrow:before{content:'';height:1px;width:24px;background:var(--yellow)}
+ .mercedes-stage{min-height:0}.mercedes-picture{top:auto;left:auto;width:100%;height:auto}.mercedes-captions{position:relative;inset:auto;padding-top:112px;pointer-events:auto}.mercedes-caption--intro{position:relative;inset:auto;width:100%;max-width:none}.mercedes-caption--end{display:none}.mercedes-bottom{position:relative;inset:auto}.mercedes-stage>.search-wrap{inset:auto}
+}

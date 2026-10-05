@@ -1,11 +1,11 @@
 {
-  "main_gzip_bytes": 5763,
+  "main_gzip_bytes": 5771,
   "retired_3d_gzip_bytes": 0,
   "gzip_sizes": {
-    "main": 5763,
-    "mercedes-preview": 2377,
+    "main": 5771,
+    "mercedes-preview": 2733,
     "styleguide": 216
   },
-  "hero_video_controller_gzip_bytes": 2377,
-  "all_runtime_js_gzip_bytes": 8140
+  "hero_video_controller_gzip_bytes": 2733,
+  "all_runtime_js_gzip_bytes": 8504
 }

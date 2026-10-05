@@ -1,15 +1,18 @@
 {% load static i18n legion_tags %}
-<section class="mercedes-preview" data-mercedes-preview data-video="{{ hero_film.video }}" data-bytes="{{ hero_film.bytes }}" data-state="static">
+<section class="mercedes-preview" data-mercedes-preview data-video="{{ hero_film.video }}" data-bytes="{{ hero_film.bytes }}" data-fps="{{ hero_film.fps|default:24 }}" data-state="static">
   <div class="mercedes-stage">
+    <div class="mercedes-architecture" aria-hidden="true"><span class="mercedes-light mercedes-light--one"></span><span class="mercedes-light mercedes-light--two"></span><span class="mercedes-horizon"></span></div>
     <div class="mercedes-picture" aria-hidden="true"><picture><source media="(max-width:899px)" srcset="{{ hero_film.mobile }}"><img src="{{ hero_film.poster }}" width="1918" height="1080" alt="" fetchpriority="high" decoding="async"></picture><video class="mercedes-video" muted playsinline preload="none" aria-hidden="true" tabindex="-1" disablepictureinpicture></video></div>
     <div class="mercedes-watch-wrap container"><a class="mercedes-watch" href="{{ hero_film.video }}" data-play-label="{% trans 'Смотреть анимацию' %}" data-pause-label="{% trans 'Приостановить' %}"><span aria-hidden="true">▶</span><span data-watch-label>{% trans 'Смотреть анимацию' %}</span></a></div>
     <div class="mercedes-veil" aria-hidden="true"></div>
+    <div class="mercedes-edition" aria-hidden="true"><span>LEGION</span><span>AUTO / RENT</span></div>
     <div class="mercedes-captions container">
       <div class="mercedes-caption mercedes-caption--intro"><p class="mercedes-eyebrow">LEGION AUTO RENT / {{ city|tr:'name' }}</p><h1>{{ seo.h1 }}</h1></div>
       <div class="mercedes-caption mercedes-caption--end" aria-hidden="true"><p class="mercedes-eyebrow">LEGION AUTO RENT</p><p class="mercedes-display">{{ site|tr:'hero_title' }}</p></div>
     </div>
     <div class="mercedes-bottom container"><div class="mercedes-facts"><span><strong>{{ car_count }}</strong>{% trans 'автомобилей' %}</span><span><strong>04</strong>{% trans 'города' %}</span><span><strong>10 {% trans 'мин' %}</strong>{% trans 'оформление' %}</span></div><a class="text-link" href="#fleet">{% trans 'К автопарку' %} <span aria-hidden="true">↘</span></a></div>
     {% include 'components/search_bar.html' %}
+    <div class="mercedes-chapter" aria-hidden="true"><span data-chapter>01</span><i></i><span>02</span></div>
     <div class="mercedes-load" hidden aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="126"/></svg></div>
     <div class="mercedes-progress" aria-hidden="true"><span></span></div>
   </div>

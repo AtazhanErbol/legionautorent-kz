@@ -1,0 +1,47 @@
+{
+  "mode": "Informational only; loopback Django/WhiteNoise production HTML, analytics disabled; approved Hailuo film enabled, normal mobile static gate",
+  "field_inp_measured": false,
+  "new_higgsfield_video_generated": false,
+  "results": [
+    {
+      "page": "home",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8003/",
+      "fetch_time": "2026-10-05T06:41:39.394Z",
+      "lighthouse_version": "13.5.0",
+      "browser_cleanup_timeout": false,
+      "scores": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 3379,
+      "cls": 0,
+      "tbt_ms": 2,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false
+    },
+    {
+      "page": "home",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8003/",
+      "fetch_time": "2026-10-05T06:41:53.949Z",
+      "lighthouse_version": "13.5.0",
+      "browser_cleanup_timeout": false,
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 784,
+      "cls": 0,
+      "tbt_ms": 0,
+      "hero_video_requested": true,
+      "glb_or_three_requested": false
+    }
+  ]
+}

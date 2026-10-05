@@ -1,4 +1,5 @@
-// Approved film, native scroll and complete static fallback.
+// Native scroll with frame-quantized seeks and a complete static fallback.
+import {queueFrame,cancelFrame} from './motion-frame.js';
 export function initMercedesPreview(root){
   const video=root.querySelector('video'),ring=root.querySelector('.mercedes-load');
   const intro=root.querySelector('.mercedes-caption--intro'),ending=root.querySelector('.mercedes-caption--end');
@@ -6,6 +7,8 @@ export function initMercedesPreview(root){
   const queries=['(max-height:699px)','(max-width:899px)','(orientation:portrait) and (max-width:1024px)','(orientation:portrait) and (pointer:coarse)','(orientation:landscape) and (pointer:coarse) and (max-height:560px)','(prefers-reduced-motion:reduce)'].map(q=>matchMedia(q));
   const connection=navigator.connection;
   const watch=root.querySelector('.mercedes-watch'),picture=root.querySelector('.mercedes-picture');
+  const chapter=root.querySelector('[data-chapter]'),lights=[...root.querySelectorAll('.mercedes-light')];
+  const sourceFPS=Number(root.dataset.fps)||24;
   let manualPlayer;
   const watchLabel=()=>{
     const playing=manualPlayer&&!manualPlayer.paused&&!manualPlayer.ended;
@@ -31,38 +34,61 @@ export function initMercedesPreview(root){
     if(manualPlayer.paused||manualPlayer.ended){if(manualPlayer.ended)manualPlayer.currentTime=0;manualPlayer.play().catch(watchLabel);}
     else manualPlayer.pause();
   });
-  let enabled=false,loading=false,dead=false,controller,objectURL,watchdog,loadTimer,seekTimer;
+  let enabled=false,loading=false,dead=false,controller,objectURL,watchdog,loadTimer,seekTimer,seekBusy=false,presentCallback=0,releaseTimer;
+  let lastSeekFrame=-1,lastChapter='01';
   let frame=0,lastTick=0,target=0,shown=0,lastPaint=-1,start=0,distance=1,inView=true,desired=0;
   const clamp=(n)=>Math.max(0,Math.min(1,n));
   const allowed=()=>Boolean(root.dataset.video)&&!queries.some(q=>q.matches)&&!connection?.saveData&&!['slow-2g','2g','3g'].includes(connection?.effectiveType)&&(!navigator.deviceMemory||navigator.deviceMemory>=4)&&(!navigator.hardwareConcurrency||navigator.hardwareConcurrency>=4);
   const paint=(p)=>{
     if(Math.abs(p-lastPaint)<.0002)return;lastPaint=p;
-    const out=clamp((p-.30)/.13),incoming=clamp((p-.53)/.13);
+    const smooth=n=>n*n*(3-2*n);
+    const out=smooth(clamp((p-.22)/.18)),incoming=smooth(clamp((p-.57)/.19));
     intro.style.opacity=String(1-out);intro.style.transform=`translateY(${-out*16}px)`;
     ending.style.opacity=String(incoming);ending.style.transform=`translateY(${(1-incoming)*16}px)`;
     ending.style.visibility=incoming?'visible':'hidden';
     const hidden=String(incoming===0);if(ending.getAttribute('aria-hidden')!==hidden)ending.setAttribute('aria-hidden',hidden);
     progressBar.style.transform=`scaleX(${p})`;root.dataset.progress=p.toFixed(4);
+    const travel=smooth(clamp((p-.12)/.7));
+    picture.style.transform=`translate3d(${13-24*travel}vw,${-1.5*travel}vh,0) scale(${1-.07*travel})`;
+    lights.forEach((light,index)=>light.style.transform=`translate3d(${-travel*(index?70:140)}px,0,0) rotate(${27-14*travel}deg)`);
+    const label=p>.5?'02':'01';if(chapter&&label!==lastChapter){chapter.textContent=label;lastChapter=label;}
   };
   const requestSeek=()=>{
-    if(!enabled||video.seeking||video.readyState<2||!Number.isFinite(video.duration))return;
-    if(Math.abs(video.currentTime-desired)<1/120)return;
-    video.currentTime=desired;
+    if(!enabled||seekBusy||video.seeking||video.readyState<2||!Number.isFinite(video.duration))return;
+    const wanted=Math.round(desired*sourceFPS);
+    if(wanted===lastSeekFrame)return;
+    lastSeekFrame=wanted;seekBusy=true;
+    if(video.requestVideoFrameCallback){
+      const presented=(now,metadata)=>{
+        presentCallback=0;
+        if(!video.seeking&&Math.abs(metadata.mediaTime-wanted/sourceFPS)<1/sourceFPS)releaseSeek();
+        else if(enabled)presentCallback=video.requestVideoFrameCallback(presented);
+      };
+      presentCallback=video.requestVideoFrameCallback(presented);
+    }
+    video.currentTime=Math.min(video.duration-.002,(wanted+.01)/sourceFPS);
     clearTimeout(seekTimer);seekTimer=setTimeout(()=>{if(video.seeking)fallback();},12000);
+  };
+  const releaseSeek=()=>{
+    clearTimeout(releaseTimer);clearTimeout(seekTimer);
+    if(presentCallback)video.cancelVideoFrameCallback?.(presentCallback);presentCallback=0;
+    seekBusy=false;requestSeek();
   };
   const tick=(now)=>{
     frame=0;if(!enabled||!inView||document.hidden){lastTick=0;return;}
     const dt=lastTick?Math.min(100,now-lastTick):16.667;lastTick=now;
-    shown+=(target-shown)*(1-Math.pow(.84,dt/16.667));
+    shown+=(target-shown)*(1-Math.exp(-dt/115));
     if(Math.abs(target-shown)<.0001)shown=target;
-    paint(shown);desired=shown*Math.max(0,video.duration-1/24);requestSeek();
+    paint(shown);desired=shown*Math.max(0,video.duration-1/sourceFPS);requestSeek();
     if(shown!==target)schedule();else lastTick=0;
   };
-  const schedule=()=>{if(!frame&&enabled&&inView&&!document.hidden)frame=requestAnimationFrame(tick);};
+  const schedule=()=>{if(!frame&&enabled&&inView&&!document.hidden)frame=queueFrame(tick);};
   const onScroll=()=>{if(!enabled&&objectURL&&!loading&&allowed()&&root.getBoundingClientRect().top>=-64)activate();target=clamp((scrollY-start)/distance);schedule();};
   const measure=()=>{start=root.getBoundingClientRect().top+scrollY;distance=Math.max(1,root.offsetHeight-root.querySelector('.mercedes-stage').offsetHeight);onScroll();};
   const reset=()=>{
-    enabled=false;cancelAnimationFrame(frame);frame=0;lastTick=0;clearTimeout(seekTimer);
+    enabled=false;cancelFrame(frame);frame=0;lastTick=0;clearTimeout(seekTimer);clearTimeout(releaseTimer);
+    if(presentCallback)video.cancelVideoFrameCallback?.(presentCallback);presentCallback=0;
+    seekBusy=false;lastSeekFrame=-1;
     video.pause();root.dataset.state='static';lastPaint=-1;paint(0);ring.hidden=true;
   };
   const fallback=()=>{reset();root.dataset.state='fallback';};
@@ -110,13 +136,19 @@ export function initMercedesPreview(root){
     if(!allowed()){controller?.abort();reset();return;}
     if(document.readyState==='complete')load();
   };
-  video.addEventListener('seeked',()=>{clearTimeout(seekTimer);requestSeek();});
+  // Let the decoded image reach the compositor before another seek replaces it.
+  // On browsers without frame callbacks, one paint plus the watchdog releases it.
+  video.addEventListener('seeked',()=>{
+    clearTimeout(seekTimer);
+    if(!video.requestVideoFrameCallback)queueFrame(releaseSeek);
+    clearTimeout(releaseTimer);releaseTimer=setTimeout(releaseSeek,34);
+  });
   video.addEventListener('error',()=>{if(enabled)fallback();});
-  const observer=new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;if(inView){onScroll();}else{cancelAnimationFrame(frame);frame=0;lastTick=0;manualPlayer?.pause();}},{threshold:0});
+  const observer=new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;if(inView){onScroll();}else{cancelFrame(frame);frame=0;lastTick=0;manualPlayer?.pause();}},{threshold:0});
   observer.observe(root);
   window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',measure,{passive:true});
   window.addEventListener('load',apply,{once:true});queries.forEach(q=>q.addEventListener('change',()=>{stopManual();apply();}));connection?.addEventListener?.('change',apply);
-  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;lastTick=0;manualPlayer?.pause();}else onScroll();});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelFrame(frame);frame=0;lastTick=0;manualPlayer?.pause();}else onScroll();});
   window.addEventListener('pageshow',event=>{if(event.persisted){measure();apply();}});
   window.addEventListener('pagehide',event=>{manualPlayer?.pause();if(event.persisted)return;dead=true;controller?.abort();stopManual();reset();observer.disconnect();if(objectURL)URL.revokeObjectURL(objectURL);});
   root.querySelector('a[href="#fleet"]').addEventListener('click',event=>{

@@ -1,0 +1,39 @@
+{
+  "scope": "Same Chrome, 1440x900, eight seconds forward/reverse native scroll; no CPU throttle. Video frames via requestVideoFrameCallback; excludes identical mediaTime callbacks.",
+  "reversal_note": "A soft stop at direction reversal intentionally holds a frame; its full gap is also reported.",
+  "baseline_commit": "codex/checkpoint-before-banner-motion-20261005",
+  "runs": [
+    {
+      "label": "baseline",
+      "size": [
+        1918,
+        1080
+      ],
+      "changed_video_frames": 240,
+      "video_updates_per_second": 30.0,
+      "p95_video_gap_ms": 62.6,
+      "longest_video_gap_ms_including_direction_reversal": 125.0,
+      "longest_video_gap_ms_same_direction": 76.5,
+      "seek_count": 611,
+      "mean_seek_ms": 11.64,
+      "ui_average_fps": 125.95,
+      "ui_longest_frame_ms": 20.9
+    },
+    {
+      "label": "revised",
+      "size": [
+        1440,
+        810
+      ],
+      "changed_video_frames": 666,
+      "video_updates_per_second": 83.25,
+      "p95_video_gap_ms": 14.0,
+      "longest_video_gap_ms_including_direction_reversal": 83.3,
+      "longest_video_gap_ms_same_direction": 27.8,
+      "seek_count": 666,
+      "mean_seek_ms": 1.25,
+      "ui_average_fps": 144.02,
+      "ui_longest_frame_ms": 7.2
+    }
+  ]
+}
