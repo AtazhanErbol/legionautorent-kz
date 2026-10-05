@@ -9,26 +9,21 @@ ASSETS = {
     'ending': '/static/hero/mercedes-ending-1f6aa0701c89.webp',
 }
 
-# A presentation derivative of the owner's source. CMS paths remain editable;
-# custom uploads are served verbatim. The original approved master is retained.
-SCRUB_VARIANT = '/static/hero/mercedes-segment-01-motion60-bdfa81f7498c.mp4'
-
-
 def asset_url(path):
     return static(path.removeprefix('/static/')) if path.startswith('/static/') else path
 
 
 def hero_context(site):
     poster = site.hero_poster_path or ASSETS['poster']
-    optimized = site.hero_video_path == ASSETS['video']
-    video = SCRUB_VARIANT if optimized else site.hero_video_path
+    # Serve the owner's selected film unchanged, at its original resolution/FPS.
+    approved = site.hero_video_path == ASSETS['video']
     return {
-        'video': asset_url(video) if site.enable_hero_video else '',
+        'video': asset_url(site.hero_video_path) if site.enable_hero_video else '',
         'poster': asset_url(poster),
         'mobile': asset_url(site.hero_mobile_poster_path or poster),
         'ending': asset_url(site.hero_ending_path) if site.hero_ending_path else '',
-        'bytes': 5120095 if optimized else 0,
-        'fps': 60 if optimized else 24,
-        'width': 1440 if optimized else 0,
-        'height': 810 if optimized else 0,
+        'bytes': 5546665 if approved else 0,
+        'fps': 24,
+        'width': 1918 if approved else 0,
+        'height': 1080 if approved else 0,
     }

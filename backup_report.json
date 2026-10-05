@@ -1,11 +1,11 @@
 {
-  "timestamp_utc": "20261005T061136Z",
-  "database": "legion-20261005T061136Z.dump",
-  "media": "media-20261005T061136Z.tar.gz",
-  "database_sha256": "1365d2f3e10f5c87bbf7961591af76bb2885a8a4cbd21076d52fda93b93c4cb0",
-  "media_sha256": "f5d7595609853bac79ef20676a7951407b78783b684ddf0141f3cb0f0ebbac6a",
+  "timestamp_utc": "20261005T065133Z",
+  "database": "legion-20261005T065133Z.dump",
+  "media": "media-20261005T065133Z.tar.gz",
+  "database_sha256": "362d71992d304aed067d0c81cfbfbe771d433ff11d6e7902ec1a2ddc698f80cc",
+  "media_sha256": "c6f3e0f2278b3fc23623d29b18c653034d455c0190104c088bb17aef52634767",
   "restore_verified": true,
-  "restore_database_retained": "legion_restore_verify_20261005t061136z",
+  "restore_database_retained": "legion_restore_verify_20261005t065133z",
   "restored_counts": {
     "cars_car": 91,
     "locations_city": 4,
