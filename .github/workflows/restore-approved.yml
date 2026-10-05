@@ -1,0 +1,59 @@
+name: Restore verified current project
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Verify and publish the exact approved Git history
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import os, json, base64, hashlib, subprocess, urllib.request
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
+          repo = os.environ['GITHUB_REPOSITORY']
+          token = os.environ['GH_TOKEN']
+          api = 'https://api.github.com/repos/' + repo
+          def get(path):
+              request = urllib.request.Request(api+path, headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','User-Agent':'LegionVerifiedBackup'})
+              with urllib.request.urlopen(request, timeout=60) as response:
+                  return json.load(response)
+          tree = get('/git/trees/' + os.environ['GITHUB_SHA'] + '?recursive=1')
+          assert not tree.get('truncated')
+          parts = sorted((x for x in tree['tree'] if x['path'].startswith('.backup-transfer/part-')), key=lambda x:x['path'])
+          assert len(parts) == 161
+          def fetch(item):
+              blob = get('/git/blobs/' + item['sha'])
+              data = base64.b64decode(blob['content'])
+              assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest() == item['sha']
+              return data
+          bundle = Path(os.environ['RUNNER_TEMP'])/'approved-current.bundle'
+          digest = hashlib.sha256()
+          with bundle.open('xb') as output, ThreadPoolExecutor(max_workers=4) as pool:
+              for data in pool.map(fetch, parts):
+                  digest.update(data); output.write(data)
+          assert digest.hexdigest() == 'f50f826935ae585c68020b3620c70d5487f66dc7aa055abc3b2a4439afd2ec70'
+          checkout = Path(os.environ['RUNNER_TEMP'])/'verified-legion'
+          subprocess.run(['git','init',str(checkout)],check=True)
+          def git(*args, **kwargs):
+              return subprocess.run(['git','-C',str(checkout),*args],check=True,**kwargs)
+          git('bundle','verify',str(bundle))
+          git('fetch',str(bundle),'HEAD:refs/heads/verified-current')
+          head = git('rev-parse','verified-current',capture_output=True,text=True).stdout.strip()
+          assert head == '716ea53b8d76f23dc05b397aaa0e9afa45a3a9b2'
+          actual_tree = git('rev-parse','verified-current^{tree}',capture_output=True,text=True).stdout.strip()
+          assert actual_tree == '1b1d4b31f9f7220e5fa9eaada598e771c728f13c'
+          askpass = checkout/'askpass.sh'
+          askpass.write_text('#!/bin/sh\ncase "$1" in *Username*) printf "%s\\n" "x-access-token";; *Password*) printf "%s\\n" "$GH_TOKEN";; esac\n')
+          askpass.chmod(0o700)
+          environment = dict(os.environ, GIT_ASKPASS=str(askpass), GIT_TERMINAL_PROMPT='0')
+          remote = 'https://github.com/'+repo+'.git'
+          git('-c','credential.helper=','push',remote,'verified-current:refs/heads/main',env=environment)
+          published = git('-c','credential.helper=','ls-remote',remote,'refs/heads/main',env=environment,capture_output=True,text=True).stdout.split()[0]
+          assert published == head
+          print(json.dumps({'main':head,'tree':actual_tree,'bundle_sha256':digest.hexdigest(),'full_history':True,'verified':True}))
+          PY

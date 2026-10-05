@@ -1,0 +1,8 @@
+{
+  "source_commit": "716ea53b8d76f23dc05b397aaa0e9afa45a3a9b2",
+  "tree": "1b1d4b31f9f7220e5fa9eaada598e771c728f13c",
+  "bundle_sha256": "f50f826935ae585c68020b3620c70d5487f66dc7aa055abc3b2a4439afd2ec70",
+  "bundle_bytes": 84137094,
+  "parts": 161,
+  "purpose": "Verified transfer only; main will contain the exact approved original project and history."
+}
