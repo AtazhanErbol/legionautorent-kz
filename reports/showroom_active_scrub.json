@@ -1,0 +1,218 @@
+[
+  {
+    "progress": "0.0295",
+    "current": 0.20875,
+    "presented": [
+      1633.2,
+      0.208333
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.0701",
+    "current": 0.542083,
+    "presented": [
+      2029.1,
+      0.5
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.1117",
+    "current": 0.83375,
+    "presented": [
+      2480.4,
+      0.833333
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.1527",
+    "current": 1.125416,
+    "presented": [
+      2869.2,
+      1.125
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.1930",
+    "current": 1.45875,
+    "presented": [
+      3258.1,
+      1.416667
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.2679",
+    "current": 2.000416,
+    "presented": [
+      4042.8,
+      2
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.3096",
+    "current": 2.292083,
+    "presented": [
+      4431.6,
+      2.291667
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.3506",
+    "current": 2.625416,
+    "presented": [
+      4876,
+      2.625
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.3922",
+    "current": 2.917083,
+    "presented": [
+      5271.7,
+      2.916667
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.4332",
+    "current": 3.250416,
+    "presented": [
+      5660.5,
+      3.208333
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.5096",
+    "current": 3.792083,
+    "presented": [
+      6445.2,
+      3.791667
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.5506",
+    "current": 4.125416,
+    "presented": [
+      6834.1,
+      4.083333
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.5922",
+    "current": 4.417083,
+    "presented": [
+      7278.4,
+      4.416667
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.6339",
+    "current": 4.70875,
+    "presented": [
+      7674.1,
+      4.708333
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.6749",
+    "current": 5.042083,
+    "presented": [
+      8118.7,
+      5.041667
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.7478",
+    "current": 5.583749,
+    "presented": [
+      8847.7,
+      5.583333
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.7888",
+    "current": 5.875416,
+    "presented": [
+      9236.5,
+      5.875
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.8297",
+    "current": 6.208749,
+    "presented": [
+      9625.4,
+      6.166667
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.8700",
+    "current": 6.500416,
+    "presented": [
+      10076.7,
+      6.5
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.9103",
+    "current": 6.792083,
+    "presented": [
+      10465.4,
+      6.791667
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.9839",
+    "current": 7.333749,
+    "presented": [
+      11194.6,
+      7.333333
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "0.9993",
+    "current": 7.458749,
+    "presented": [
+      11305.6,
+      7.416667
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "1.0000",
+    "current": 7.458749,
+    "presented": [
+      11305.6,
+      7.416667
+    ],
+    "state": "ready"
+  },
+  {
+    "progress": "1.0000",
+    "current": 7.458749,
+    "presented": [
+      11305.6,
+      7.416667
+    ],
+    "state": "ready"
+  }
+]

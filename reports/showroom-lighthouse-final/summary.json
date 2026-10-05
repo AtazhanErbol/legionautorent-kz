@@ -1,0 +1,47 @@
+{
+  "mode": "Informational only; loopback Django/WhiteNoise production HTML, analytics disabled; owner-supplied showroom film enabled, normal mobile static gate",
+  "field_inp_measured": false,
+  "new_higgsfield_video_generated": false,
+  "results": [
+    {
+      "page": "home",
+      "profile": "mobile",
+      "url": "http://127.0.0.1:8003/",
+      "fetch_time": "2026-10-05T08:19:24.755Z",
+      "lighthouse_version": "13.5.0",
+      "browser_cleanup_timeout": false,
+      "scores": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 3307,
+      "cls": 0,
+      "tbt_ms": 17,
+      "hero_video_requested": false,
+      "glb_or_three_requested": false
+    },
+    {
+      "page": "home",
+      "profile": "desktop",
+      "url": "http://127.0.0.1:8003/",
+      "fetch_time": "2026-10-05T08:19:38.664Z",
+      "lighthouse_version": "13.5.0",
+      "browser_cleanup_timeout": false,
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "lcp_ms": 664,
+      "cls": 0,
+      "tbt_ms": 4,
+      "hero_video_requested": true,
+      "glb_or_three_requested": false
+    }
+  ]
+}

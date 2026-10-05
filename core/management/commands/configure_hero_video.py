@@ -1,4 +1,4 @@
-"""Explicit deployment step for the approved reference montage; never imports data."""
+"""Explicit deployment step for the supplied showroom film; never imports data."""
 import json
 from django.conf import settings
 from django.core.cache import cache
@@ -7,7 +7,7 @@ from core.models import SiteSettings
 from core.hero import ASSETS
 
 class Command(BaseCommand):
-    help='Enable the owner-approved Mercedes film; preserve catalogue, SEO and previous assets.'
+    help='Enable the owner-supplied showroom film; preserve catalogue, SEO and previous assets.'
     def handle(self,*args,**options):
         paths={'hero_video_path':ASSETS['video'],'hero_poster_path':ASSETS['poster'],
                'hero_mobile_poster_path':ASSETS['mobile'],'hero_ending_path':ASSETS['ending']}

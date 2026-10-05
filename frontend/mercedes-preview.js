@@ -2,12 +2,13 @@
 import {queueFrame,cancelFrame} from './motion-frame.js';
 export function initMercedesPreview(root){
   const video=root.querySelector('video'),ring=root.querySelector('.mercedes-load');
-  const intro=root.querySelector('.mercedes-caption--intro'),ending=root.querySelector('.mercedes-caption--end');
+  const bands=[...root.querySelectorAll('[data-band]')].map(el=>({el,start:Number(el.dataset.start),end:Number(el.dataset.end),opacity:-1}));
+  const booking=root.querySelector('.search-wrap'),still=()=>root.dataset.mode!=='cinematic';
   const progressBar=root.querySelector('.mercedes-progress span');
   const queries=['(max-height:699px)','(max-width:899px)','(orientation:portrait) and (max-width:1024px)','(orientation:portrait) and (pointer:coarse)','(orientation:landscape) and (pointer:coarse) and (max-height:560px)','(prefers-reduced-motion:reduce)'].map(q=>matchMedia(q));
   const connection=navigator.connection;
   const watch=root.querySelector('.mercedes-watch'),picture=root.querySelector('.mercedes-picture');
-  const chapter=root.querySelector('[data-chapter]'),lights=[...root.querySelectorAll('.mercedes-light')];
+  const chapter=root.querySelector('[data-chapter]');
   const sourceFPS=Number(root.dataset.fps)||24;
   let manualPlayer;
   const watchLabel=()=>{
@@ -42,16 +43,25 @@ export function initMercedesPreview(root){
   const paint=(p)=>{
     if(Math.abs(p-lastPaint)<.0002)return;lastPaint=p;
     const smooth=n=>n*n*(3-2*n);
-    const out=smooth(clamp((p-.22)/.18)),incoming=smooth(clamp((p-.57)/.19));
-    intro.style.opacity=String(1-out);intro.style.transform=`translateY(${-out*16}px)`;
-    ending.style.opacity=String(incoming);ending.style.transform=`translateY(${(1-incoming)*16}px)`;
-    ending.style.visibility=incoming?'visible':'hidden';
-    const hidden=String(incoming===0);if(ending.getAttribute('aria-hidden')!==hidden)ending.setAttribute('aria-hidden',hidden);
+    let active=0;
+    bands.forEach((band,index)=>{
+      const enter=index?smooth(clamp((p-band.start)/.01)):1;
+      const leave=index===bands.length-1?1:1-smooth(clamp((p-band.end+.01)/.01));
+      const opacity=still()?1:enter*leave;
+      if(p>=band.start)active=index;
+      if(Math.abs(opacity-band.opacity)<.002)return;
+      band.opacity=opacity;band.el.style.opacity=String(opacity);
+      band.el.style.transform=`translateY(${(1-enter)*12}px)`;
+      band.el.style.visibility=opacity>.001?'visible':'hidden';
+      band.el.inert=opacity<=.001;
+      band.el.setAttribute('aria-hidden',String(opacity<=.001));
+    });
+    const bookingOpacity=still()||booking.contains(document.activeElement)?1:bands[0].opacity;
+    if(booking.style.opacity!==String(bookingOpacity)){
+      booking.style.opacity=String(bookingOpacity);booking.style.visibility=bookingOpacity>.001?'visible':'hidden';booking.inert=bookingOpacity<=.001;
+    }
     progressBar.style.transform=`scaleX(${p})`;root.dataset.progress=p.toFixed(4);
-    const travel=smooth(clamp((p-.12)/.7));
-    picture.style.transform=`translate3d(${13-24*travel}vw,${-1.5*travel}vh,0) scale(${1-.07*travel})`;
-    lights.forEach((light,index)=>light.style.transform=`translate3d(${-travel*(index?70:140)}px,0,0) rotate(${27-14*travel}deg)`);
-    const label=p>.5?'02':'01';if(chapter&&label!==lastChapter){chapter.textContent=label;lastChapter=label;}
+    const label=String(active+1).padStart(2,'0');if(chapter&&label!==lastChapter){chapter.textContent=label;lastChapter=label;}
   };
   const requestSeek=()=>{
     if(!enabled||seekBusy||video.seeking||video.readyState<2||!Number.isFinite(video.duration))return;
@@ -89,14 +99,15 @@ export function initMercedesPreview(root){
     enabled=false;cancelFrame(frame);frame=0;lastTick=0;clearTimeout(seekTimer);clearTimeout(releaseTimer);
     if(presentCallback)video.cancelVideoFrameCallback?.(presentCallback);presentCallback=0;
     seekBusy=false;lastSeekFrame=-1;
-    video.pause();root.dataset.state='static';lastPaint=-1;paint(0);ring.hidden=true;
+    video.pause();root.dataset.state='static';root.dataset.mode='static';
+    picture.querySelector('img').src=root.dataset.static;lastPaint=-1;paint(0);ring.hidden=true;
   };
   const fallback=()=>{reset();root.dataset.state='fallback';};
   const activate=()=>{
     if(dead||!allowed()||!Number.isFinite(video.duration))return;
     // Do not expand a late-loading pin underneath a visitor already in the catalogue.
     if(scrollY>root.getBoundingClientRect().top+scrollY+root.offsetHeight-96)return;
-    enabled=true;root.dataset.state='ready';ring.hidden=true;lastPaint=-1;
+    enabled=true;root.dataset.mode='cinematic';root.dataset.state='ready';ring.hidden=true;lastPaint=-1;
     measure();shown=target;paint(shown);schedule();
   };
   async function load(){
@@ -134,6 +145,7 @@ export function initMercedesPreview(root){
     if(manualPlayer&&!allowed())return;
     stopManual();
     if(!allowed()){controller?.abort();reset();return;}
+    root.dataset.mode='cinematic';picture.querySelector('img').src=root.dataset.poster;lastPaint=-1;paint(0);
     if(document.readyState==='complete')load();
   };
   // Let the decoded image reach the compositor before another seek replaces it.
@@ -151,10 +163,10 @@ export function initMercedesPreview(root){
   document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelFrame(frame);frame=0;lastTick=0;manualPlayer?.pause();}else onScroll();});
   window.addEventListener('pageshow',event=>{if(event.persisted){measure();apply();}});
   window.addEventListener('pagehide',event=>{manualPlayer?.pause();if(event.persisted)return;dead=true;controller?.abort();stopManual();reset();observer.disconnect();if(objectURL)URL.revokeObjectURL(objectURL);});
-  root.querySelector('a[href="#fleet"]').addEventListener('click',event=>{
+  root.querySelectorAll('a[href="#fleet"]').forEach(link=>link.addEventListener('click',event=>{
     const fleet=document.querySelector('#fleet');if(!fleet)return;
     event.preventDefault();history.pushState(null,'','#fleet');window.scrollTo({top:fleet.getBoundingClientRect().top+scrollY-96,behavior:'instant'});
     const heading=fleet.querySelector('h2');if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}
-  });
+  }));
   measure();apply();
 }

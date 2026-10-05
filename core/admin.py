@@ -18,7 +18,7 @@ class TranslationInline(GenericStackedInline):
         js=['admin/editor.js']
         css={'all':['admin/editor.css']}
 class SiteTranslationInline(TranslationInline):
-    fields = ['language', 'published', 'hero_title', 'hero_text', 'address','hours','whatsapp_message','partner_title', 'partner_description', 'partner_whatsapp_message', 'footer_text']
+    fields = ['language', 'published', 'hero_title', 'hero_price_caption', 'hero_steps_caption', 'hero_text', 'address','hours','whatsapp_message','partner_title', 'partner_description', 'partner_whatsapp_message', 'footer_text']
 
 class SEOAdmin(admin.ModelAdmin):
     inlines = [TranslationInline]
@@ -39,7 +39,7 @@ class SEOAdmin(admin.ModelAdmin):
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(admin.ModelAdmin):
     inlines = [SiteTranslationInline]
-    fieldsets = [('Бренд и контакты — RU', {'fields': ('name', 'phone', 'whatsapp','whatsapp_message', 'email', 'address', 'hours', 'logo', 'favicon', 'instagram', 'map_url', 'footer_text')}), ('Первый экран — RU', {'fields': ('hero_title', 'hero_text', 'hero_image', 'hero_car', 'enable_hero_video', 'hero_video_path', 'hero_poster_path', 'hero_mobile_poster_path', 'hero_ending_path')}), ('SEO, аналитика и верификация', {'fields': ('default_seo_title','default_seo_description','robots_text','gtm_id', 'ga4_id', 'metrika_id', 'google_verification', 'yandex_verification','notifications_enabled')}), ('Партнёры — RU', {'fields': ('show_partner_section', 'partner_title', 'partner_description', 'partner_phone', 'partner_whatsapp', 'partner_whatsapp_message')})]
+    fieldsets = [('Бренд и контакты — RU', {'fields': ('name', 'phone', 'whatsapp','whatsapp_message', 'email', 'address', 'hours', 'logo', 'favicon', 'instagram', 'map_url', 'footer_text')}), ('Первый экран — RU', {'fields': ('hero_title', 'hero_price_caption', 'hero_steps_caption', 'hero_text', 'hero_image', 'hero_car', 'enable_hero_video', 'hero_video_path', 'hero_poster_path', 'hero_mobile_poster_path', 'hero_ending_path')}), ('SEO, аналитика и верификация', {'fields': ('default_seo_title','default_seo_description','robots_text','gtm_id', 'ga4_id', 'metrika_id', 'google_verification', 'yandex_verification','notifications_enabled')}), ('Партнёры — RU', {'fields': ('show_partner_section', 'partner_title', 'partner_description', 'partner_phone', 'partner_whatsapp', 'partner_whatsapp_message')})]
     def has_add_permission(self, request): return not SiteSettings.objects.exists() and super().has_add_permission(request)
     def has_delete_permission(self, request, obj=None): return False
 

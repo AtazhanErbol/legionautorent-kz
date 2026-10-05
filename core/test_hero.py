@@ -10,8 +10,8 @@ class HeroSettingsTests(TestCase):
     def test_approved_assets_are_available_in_production(self):
         with override_settings(ENVIRONMENT='production', IS_STAGING=False):
             hero = hero_context(SiteSettings())
-        self.assertIn('mercedes-segment-01', hero['video'])
-        self.assertIn('mercedes-front', hero['poster'])
+        self.assertIn('hero-scrub-', hero['video'])
+        self.assertIn('hero-poster-', hero['poster'])
 
     def test_disabling_video_preserves_complete_poster(self):
         hero = hero_context(SiteSettings(enable_hero_video=False))

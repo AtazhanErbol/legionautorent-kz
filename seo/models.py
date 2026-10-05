@@ -60,6 +60,8 @@ class Translation(models.Model):
     og_description = models.TextField(blank=True)
     hero_title = models.CharField('Финальная подпись Hero (не H1)', max_length=250, blank=True)
     hero_text = models.TextField(blank=True)
+    hero_price_caption = models.CharField('Подпись Hero о цене', max_length=150, blank=True)
+    hero_steps_caption = models.CharField('Три шага Hero', max_length=250, blank=True)
     partner_title = models.CharField(max_length=250, blank=True)
     partner_description = models.TextField(blank=True)
     partner_whatsapp_message = models.TextField(blank=True)

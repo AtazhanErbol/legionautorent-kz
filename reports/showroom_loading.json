@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "delayed-controller-cls-under-001": true,
+    "delayed-controller-animated": true,
+    "failed-controller-complete-static": true,
+    "failed-controller-h1": true,
+    "failed-controller-booking": true,
+    "failed-controller-captions": true
+  },
+  "cases": [
+    {
+      "case": "delayed-controller",
+      "cls": 0
+    }
+  ],
+  "passed": true
+}

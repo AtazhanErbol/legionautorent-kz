@@ -1,0 +1,49 @@
+Using existing test database for alias 'default'...
+
+......AXES: New login failure by {username: "********************", ip_address: "********************", path_info: "/control-legion/login/"}. Created new record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", path_info: "/control-legion/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", path_info: "/control-legion/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", path_info: "/control-legion/login/"}. Updated existing record in the database.
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", path_info: "/control-legion/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", path_info: "/control-legion/login/"} after repeated login failures.
+Too Many Requests: /control-legion/login/
+AXES: Repeated login failure by {username: "********************", ip_address: "********************", path_info: "/control-legion/login/"}. Updated existing record in the database.
+AXES: Locking out {username: "********************", ip_address: "********************", path_info: "/control-legion/login/"} after repeated login failures.
+Too Many Requests: /control-legion/login/
+...Not Found: /img/not-an-original.jpg
+....Bad Request: /booking/
+....Bad Request: /booking/
+..Forbidden (CSRF cookie not set.): /booking/
+.Not Found: /does-not-exist/
+..Not Found: /car/toyota-camry/
+..Not Found: /car/toyota-camry
+.Not Found: /kostanay/
+..Bad Request: /booking/
+....Bad Request: /booking/
+..Bad Request: /booking/
+....Not Found: /investors/
+Not Found: /partners/
+......Bad Request: /booking/
+Bad Request: /booking/
+Bad Request: /booking/
+Bad Request: /booking/
+Bad Request: /booking/
+Too Many Requests: /booking/
+...Not Found: /kostanay
+..Bad Request: /booking/
+...............Not Found: /kz/car/lexus-lx-570-superior
+...Not Found: /does-not-exist/
+......Not Found: /styleguide
+Not Found: /styleguide/
+Not Found: /kk/styleguide
+Not Found: /en/styleguide
+............
+----------------------------------------------------------------------
+Ran 84 tests in 30.293s
+
+OK
+Preserving test database for alias 'default'...
+
+Found 84 test(s).
+Cache table 'legion_cache' already exists.
+System check identified no issues (0 silenced).

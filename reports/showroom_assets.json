@@ -1,0 +1,75 @@
+{
+  "source": "design_refs/hero/hero-source.mp4",
+  "source_sha256": "505155a61fc987ec487e9e3da6ad878a86e92040c58b1865668a9eefddba93a5",
+  "source_bytes": 3809484,
+  "source_duration": 10,
+  "width": 1280,
+  "height": 720,
+  "fps": 24,
+  "frames": 180,
+  "duration": 7.5,
+  "last_frame_time": 7.458333333333333,
+  "crf": 20,
+  "gop": 8,
+  "b_frames": 0,
+  "audio": false,
+  "upscaled": false,
+  "interpolated": false,
+  "paid_generations": 0,
+  "assets": {
+    "video": {
+      "path": "/static/hero/hero-scrub-4836d5f97269.mp4",
+      "bytes": 2826099,
+      "sha256": "4836d5f9726913a79967dbd1f0d9b0cfb05322e84e35d6bedff62b0611b7a14a"
+    },
+    "poster": {
+      "path": "/static/hero/hero-poster-e9b496d7a585.webp",
+      "bytes": 25088,
+      "sha256": "e9b496d7a5859c70cad38717edba5372c370575b39833bcde1507a94c8da852a",
+      "time": 0
+    },
+    "mobile": {
+      "path": "/static/hero/hero-static-27f030789025.webp",
+      "bytes": 60336,
+      "sha256": "27f030789025d0d960fdb97e3d7d120bcc9aa761a48acdb17cdbba140f00a6c3",
+      "time": 3.5
+    },
+    "ending": {
+      "path": "/static/hero/hero-ending-87350d5b2b8d.webp",
+      "bytes": 53338,
+      "sha256": "87350d5b2b8dcf07dbee00b71d924ffb32b9c6d7777c96ac06d0025c873d0df5",
+      "time": 7.458333333333333
+    }
+  },
+  "command": [
+    "D:\\legionautorent.kz\\.local\\video-tools\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+    "-hide_banner",
+    "-loglevel",
+    "error",
+    "-n",
+    "-i",
+    "D:\\legionautorent.kz\\design_refs\\hero\\hero-source.mp4",
+    "-t",
+    "7.5",
+    "-c:v",
+    "libx264",
+    "-crf",
+    "20",
+    "-preset",
+    "slow",
+    "-g",
+    "8",
+    "-keyint_min",
+    "8",
+    "-bf",
+    "0",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart",
+    "-an",
+    "D:\\legionautorent.kz\\review\\showroom-source\\hero-scrub-crf20-g8.mp4"
+  ],
+  "source_has_natural_rest": false,
+  "trim_reason": "Garbled rear lettering/plate becomes prominent in the tail; keep the rear three-quarter frame before that tail."
+}

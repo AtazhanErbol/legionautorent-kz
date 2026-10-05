@@ -34,6 +34,8 @@ class SiteSettings(models.Model):
     whatsapp_message = models.TextField(default='Здравствуйте! Интересует аренда автомобиля в Legion Auto Rent.')
     notifications_enabled = models.BooleanField(default=False)
     hero_title = models.CharField('Финальная подпись', max_length=200, default='Без водителя. Под ваши планы.', help_text='Текст в конце анимации. H1 берётся только из SEO города и здесь не меняется.')
+    hero_price_caption = models.CharField('Подпись о цене', max_length=150, blank=True, help_text='Второй этап видео. Если пусто: от 20 000 ₸ / сутки.')
+    hero_steps_caption = models.CharField('Три шага — короткая строка', max_length=250, blank=True, help_text='Третий этап видео. Если пусто: звонок, доставка по городу, договор за 10 минут.')
     hero_text = models.TextField(default='Для деловых встреч, городских маршрутов и поездок за город. Выберите свой автомобиль — остальное возьмём на себя.')
     hero_car = models.ForeignKey('cars.Car', null=True, blank=True, on_delete=models.SET_NULL, related_name='+')
     instagram = models.URLField(blank=True)

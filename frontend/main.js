@@ -110,7 +110,7 @@ if(filters&&window.fetch){
 }
 
 const mercedesPreview=$('[data-mercedes-preview]');
-if(mercedesPreview)import('./mercedes-preview.js').then(({initMercedesPreview})=>initMercedesPreview(mercedesPreview)).catch(()=>{mercedesPreview.dataset.state='fallback';});
+if(mercedesPreview)import('./mercedes-preview.js').then(({initMercedesPreview})=>initMercedesPreview(mercedesPreview)).catch(()=>{mercedesPreview.dataset.state='fallback';mercedesPreview.dataset.mode='static';});
 // Defer analytics until LCP has had time to paint; retain all editable legacy IDs.
 const analytics=$('[data-analytics]');
 if(analytics){

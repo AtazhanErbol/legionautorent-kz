@@ -1,0 +1,1291 @@
+{
+  "checks": {
+    "1440-single-h1": true,
+    "1440-four-SSR-chapters": true,
+    "1440-000-overflow": true,
+    "1440-000-gap": true,
+    "1440-000-whole-car": true,
+    "1440-000-native-resolution": true,
+    "1440-000-500vh": true,
+    "1440-000-h1-above-headlights": true,
+    "1440-025-overflow": true,
+    "1440-025-gap": true,
+    "1440-025-whole-car": true,
+    "1440-025-native-resolution": true,
+    "1440-025-500vh": true,
+    "1440-050-overflow": true,
+    "1440-050-gap": true,
+    "1440-050-whole-car": true,
+    "1440-050-native-resolution": true,
+    "1440-050-500vh": true,
+    "1440-075-overflow": true,
+    "1440-075-gap": true,
+    "1440-075-whole-car": true,
+    "1440-075-native-resolution": true,
+    "1440-075-500vh": true,
+    "1440-100-overflow": true,
+    "1440-100-gap": true,
+    "1440-100-whole-car": true,
+    "1440-100-native-resolution": true,
+    "1440-100-500vh": true,
+    "1440-100-rest-frame": true,
+    "contrast-0-0.08": true,
+    "contrast-0-0.35": true,
+    "contrast-0-0.65": true,
+    "contrast-0-0.92": true,
+    "contrast-1-0.08": true,
+    "contrast-1-0.35": true,
+    "contrast-1-0.65": true,
+    "contrast-1-0.92": true,
+    "contrast-2-0.08": true,
+    "contrast-2-0.35": true,
+    "contrast-2-0.65": true,
+    "contrast-2-0.92": true,
+    "contrast-3-0.08": true,
+    "contrast-3-0.35": true,
+    "contrast-3-0.65": true,
+    "contrast-3-0.92": true,
+    "flick-120": true,
+    "flick-240": true,
+    "flick-360": true,
+    "motion-55fps": true,
+    "motion-under-50ms": true,
+    "cta-catalog-focus": true,
+    "cta-catalog-position": true,
+    "390-single-h1": true,
+    "390-four-SSR-chapters": true,
+    "390-000-overflow": true,
+    "390-000-gap": true,
+    "390-000-no-video": true,
+    "390-000-static-frame": true,
+    "390-025-overflow": true,
+    "390-025-gap": true,
+    "390-025-no-video": true,
+    "390-025-static-frame": true,
+    "390-050-overflow": true,
+    "390-050-gap": true,
+    "390-050-no-video": true,
+    "390-050-static-frame": true,
+    "390-075-overflow": true,
+    "390-075-gap": true,
+    "390-075-no-video": true,
+    "390-075-static-frame": true,
+    "390-100-overflow": true,
+    "390-100-gap": true,
+    "390-100-no-video": true,
+    "390-100-static-frame": true,
+    "1366-single-h1": true,
+    "1366-four-SSR-chapters": true,
+    "1366-000-overflow": true,
+    "1366-000-gap": true,
+    "1366-000-whole-car": true,
+    "1366-000-native-resolution": true,
+    "1366-000-500vh": true,
+    "1366-000-h1-above-headlights": true,
+    "1366-025-overflow": true,
+    "1366-025-gap": true,
+    "1366-025-whole-car": true,
+    "1366-025-native-resolution": true,
+    "1366-025-500vh": true,
+    "1366-050-overflow": true,
+    "1366-050-gap": true,
+    "1366-050-whole-car": true,
+    "1366-050-native-resolution": true,
+    "1366-050-500vh": true,
+    "1366-075-overflow": true,
+    "1366-075-gap": true,
+    "1366-075-whole-car": true,
+    "1366-075-native-resolution": true,
+    "1366-075-500vh": true,
+    "1366-100-overflow": true,
+    "1366-100-gap": true,
+    "1366-100-whole-car": true,
+    "1366-100-native-resolution": true,
+    "1366-100-500vh": true,
+    "1366-100-rest-frame": true,
+    "1920-single-h1": true,
+    "1920-four-SSR-chapters": true,
+    "1920-000-overflow": true,
+    "1920-000-gap": true,
+    "1920-000-whole-car": true,
+    "1920-000-native-resolution": true,
+    "1920-000-500vh": true,
+    "1920-000-h1-above-headlights": true,
+    "1920-025-overflow": true,
+    "1920-025-gap": true,
+    "1920-025-whole-car": true,
+    "1920-025-native-resolution": true,
+    "1920-025-500vh": true,
+    "1920-050-overflow": true,
+    "1920-050-gap": true,
+    "1920-050-whole-car": true,
+    "1920-050-native-resolution": true,
+    "1920-050-500vh": true,
+    "1920-075-overflow": true,
+    "1920-075-gap": true,
+    "1920-075-whole-car": true,
+    "1920-075-native-resolution": true,
+    "1920-075-500vh": true,
+    "1920-100-overflow": true,
+    "1920-100-gap": true,
+    "1920-100-whole-car": true,
+    "1920-100-native-resolution": true,
+    "1920-100-500vh": true,
+    "1920-100-rest-frame": true,
+    "1024-single-h1": true,
+    "1024-four-SSR-chapters": true,
+    "1024-000-overflow": true,
+    "1024-000-gap": true,
+    "1024-000-whole-car": true,
+    "1024-000-native-resolution": true,
+    "1024-000-500vh": true,
+    "1024-000-h1-above-headlights": true,
+    "1024-025-overflow": true,
+    "1024-025-gap": true,
+    "1024-025-whole-car": true,
+    "1024-025-native-resolution": true,
+    "1024-025-500vh": true,
+    "1024-050-overflow": true,
+    "1024-050-gap": true,
+    "1024-050-whole-car": true,
+    "1024-050-native-resolution": true,
+    "1024-050-500vh": true,
+    "1024-075-overflow": true,
+    "1024-075-gap": true,
+    "1024-075-whole-car": true,
+    "1024-075-native-resolution": true,
+    "1024-075-500vh": true,
+    "1024-100-overflow": true,
+    "1024-100-gap": true,
+    "1024-100-whole-car": true,
+    "1024-100-native-resolution": true,
+    "1024-100-500vh": true,
+    "1024-100-rest-frame": true,
+    "768-single-h1": true,
+    "768-four-SSR-chapters": true,
+    "768-000-overflow": true,
+    "768-000-gap": true,
+    "768-000-no-video": true,
+    "768-000-static-frame": true,
+    "768-025-overflow": true,
+    "768-025-gap": true,
+    "768-025-no-video": true,
+    "768-025-static-frame": true,
+    "768-050-overflow": true,
+    "768-050-gap": true,
+    "768-050-no-video": true,
+    "768-050-static-frame": true,
+    "768-075-overflow": true,
+    "768-075-gap": true,
+    "768-075-no-video": true,
+    "768-075-static-frame": true,
+    "768-100-overflow": true,
+    "768-100-gap": true,
+    "768-100-no-video": true,
+    "768-100-static-frame": true,
+    "320-single-h1": true,
+    "320-four-SSR-chapters": true,
+    "320-000-overflow": true,
+    "320-000-gap": true,
+    "320-000-no-video": true,
+    "320-000-static-frame": true,
+    "320-025-overflow": true,
+    "320-025-gap": true,
+    "320-025-no-video": true,
+    "320-025-static-frame": true,
+    "320-050-overflow": true,
+    "320-050-gap": true,
+    "320-050-no-video": true,
+    "320-050-static-frame": true,
+    "320-075-overflow": true,
+    "320-075-gap": true,
+    "320-075-no-video": true,
+    "320-075-static-frame": true,
+    "320-100-overflow": true,
+    "320-100-gap": true,
+    "320-100-no-video": true,
+    "320-100-static-frame": true,
+    "kk/0-no-overflow": true,
+    "kk/0.35-no-overflow": true,
+    "kk/0.65-no-overflow": true,
+    "kk/0.9-no-overflow": true,
+    "kk/-one-h1": true,
+    "en/0-no-overflow": true,
+    "en/0.35-no-overflow": true,
+    "en/0.65-no-overflow": true,
+    "en/0.9-no-overflow": true,
+    "en/-one-h1": true
+  },
+  "errors": [],
+  "screens": [
+    {
+      "width": 1440,
+      "height": 900,
+      "requested_progress": 0,
+      "scroll": 0,
+      "mode": "cinematic",
+      "progress": "0.0000",
+      "time": 0.000416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3600,
+      "lastScroll": 3600,
+      "car": {
+        "left": 257.91999999999996,
+        "right": 1157.76,
+        "top": 383.03999999999996,
+        "bottom": 711.36
+      },
+      "headlightsTop": 499.32,
+      "h1Bottom": 300.375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "requested_progress": 0.25,
+      "scroll": 900,
+      "mode": "cinematic",
+      "progress": "0.2500",
+      "time": 1.875416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3600,
+      "lastScroll": 3600,
+      "car": {
+        "left": 257.91999999999996,
+        "right": 1157.76,
+        "top": 383.03999999999996,
+        "bottom": 711.36
+      },
+      "headlightsTop": 499.32,
+      "h1Bottom": 300.375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "requested_progress": 0.5,
+      "scroll": 1800,
+      "mode": "cinematic",
+      "progress": "0.4998",
+      "time": 3.750416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3600,
+      "lastScroll": 3600,
+      "car": {
+        "left": 257.91999999999996,
+        "right": 1157.76,
+        "top": 383.03999999999996,
+        "bottom": 711.36
+      },
+      "headlightsTop": 499.32,
+      "h1Bottom": 300.375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "requested_progress": 0.75,
+      "scroll": 2700,
+      "mode": "cinematic",
+      "progress": "0.7500",
+      "time": 5.583749,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3600,
+      "lastScroll": 3600,
+      "car": {
+        "left": 257.91999999999996,
+        "right": 1157.76,
+        "top": 383.03999999999996,
+        "bottom": 711.36
+      },
+      "headlightsTop": 499.32,
+      "h1Bottom": 300.375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "requested_progress": 1,
+      "scroll": 3600,
+      "mode": "cinematic",
+      "progress": "1.0000",
+      "time": 7.458749,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3600,
+      "lastScroll": 3600,
+      "car": {
+        "left": 257.91999999999996,
+        "right": 1157.76,
+        "top": 383.03999999999996,
+        "bottom": 711.36
+      },
+      "headlightsTop": 499.32,
+      "h1Bottom": 300.375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "requested_progress": 0,
+      "scroll": 0,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": 229.0625,
+      "lines": 3,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "requested_progress": 0.25,
+      "scroll": 101,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": 128.0625,
+      "lines": 3,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "requested_progress": 0.5,
+      "scroll": 202,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": 27.0625,
+      "lines": 3,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "requested_progress": 0.75,
+      "scroll": 302,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": -72.9375,
+      "lines": 3,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "requested_progress": 1,
+      "scroll": 403,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": -173.9375,
+      "lines": 3,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "requested_progress": 0,
+      "scroll": 0,
+      "mode": "cinematic",
+      "progress": "0.0000",
+      "time": 0.000416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3072,
+      "lastScroll": 3072,
+      "car": {
+        "left": 309.44944444444445,
+        "right": 1036.8899999999999,
+        "top": 340.36859375,
+        "bottom": 605.78609375
+      },
+      "headlightsTop": 434.370625,
+      "h1Bottom": 278.671875,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "requested_progress": 0.25,
+      "scroll": 768,
+      "mode": "cinematic",
+      "progress": "0.2500",
+      "time": 1.875416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3072,
+      "lastScroll": 3072,
+      "car": {
+        "left": 309.44944444444445,
+        "right": 1036.8899999999999,
+        "top": 340.36859375,
+        "bottom": 605.78609375
+      },
+      "headlightsTop": 434.370625,
+      "h1Bottom": 278.671875,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "requested_progress": 0.5,
+      "scroll": 1536,
+      "mode": "cinematic",
+      "progress": "0.5000",
+      "time": 3.750416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3072,
+      "lastScroll": 3072,
+      "car": {
+        "left": 309.44944444444445,
+        "right": 1036.8899999999999,
+        "top": 340.36859375,
+        "bottom": 605.78609375
+      },
+      "headlightsTop": 434.370625,
+      "h1Bottom": 278.671875,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "requested_progress": 0.75,
+      "scroll": 2304,
+      "mode": "cinematic",
+      "progress": "0.7500",
+      "time": 5.583749,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3072,
+      "lastScroll": 3072,
+      "car": {
+        "left": 309.44944444444445,
+        "right": 1036.8899999999999,
+        "top": 340.36859375,
+        "bottom": 605.78609375
+      },
+      "headlightsTop": 434.370625,
+      "h1Bottom": 278.671875,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "requested_progress": 1,
+      "scroll": 3072,
+      "mode": "cinematic",
+      "progress": "1.0000",
+      "time": 7.458749,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3072,
+      "lastScroll": 3072,
+      "car": {
+        "left": 309.44944444444445,
+        "right": 1036.8899999999999,
+        "top": 340.36859375,
+        "bottom": 605.78609375
+      },
+      "headlightsTop": 434.370625,
+      "h1Bottom": 278.671875,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "requested_progress": 0,
+      "scroll": 0,
+      "mode": "cinematic",
+      "progress": "0.0000",
+      "time": 0.000416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 4320,
+      "lastScroll": 4320,
+      "car": {
+        "left": 473.6,
+        "right": 1420.8,
+        "top": 428.3875,
+        "bottom": 773.9875000000001
+      },
+      "headlightsTop": 550.7874999999999,
+      "h1Bottom": 332.609375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "requested_progress": 0.25,
+      "scroll": 1080,
+      "mode": "cinematic",
+      "progress": "0.2500",
+      "time": 1.875416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 4320,
+      "lastScroll": 4320,
+      "car": {
+        "left": 473.6,
+        "right": 1420.8,
+        "top": 428.3875,
+        "bottom": 773.9875000000001
+      },
+      "headlightsTop": 550.7874999999999,
+      "h1Bottom": 332.609375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "requested_progress": 0.5,
+      "scroll": 2160,
+      "mode": "cinematic",
+      "progress": "0.5000",
+      "time": 3.750416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 4320,
+      "lastScroll": 4320,
+      "car": {
+        "left": 473.6,
+        "right": 1420.8,
+        "top": 428.3875,
+        "bottom": 773.9875000000001
+      },
+      "headlightsTop": 550.7874999999999,
+      "h1Bottom": 332.609375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "requested_progress": 0.75,
+      "scroll": 3240,
+      "mode": "cinematic",
+      "progress": "0.7500",
+      "time": 5.583749,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 4320,
+      "lastScroll": 4320,
+      "car": {
+        "left": 473.6,
+        "right": 1420.8,
+        "top": 428.3875,
+        "bottom": 773.9875000000001
+      },
+      "headlightsTop": 550.7874999999999,
+      "h1Bottom": 332.609375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "requested_progress": 1,
+      "scroll": 4320,
+      "mode": "cinematic",
+      "progress": "1.0000",
+      "time": 7.458749,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 4320,
+      "lastScroll": 4320,
+      "car": {
+        "left": 473.6,
+        "right": 1420.8,
+        "top": 428.3875,
+        "bottom": 773.9875000000001
+      },
+      "headlightsTop": 550.7874999999999,
+      "h1Bottom": 332.609375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "requested_progress": 0,
+      "scroll": 0,
+      "mode": "cinematic",
+      "progress": "0.0000",
+      "time": 0.000416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3072,
+      "lastScroll": 3072,
+      "car": {
+        "left": 138.44944444444442,
+        "right": 865.89,
+        "top": 340.36859375,
+        "bottom": 605.78609375
+      },
+      "headlightsTop": 434.370625,
+      "h1Bottom": 255.390625,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "requested_progress": 0.25,
+      "scroll": 768,
+      "mode": "cinematic",
+      "progress": "0.2500",
+      "time": 1.875416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3072,
+      "lastScroll": 3072,
+      "car": {
+        "left": 138.44944444444442,
+        "right": 865.89,
+        "top": 340.36859375,
+        "bottom": 605.78609375
+      },
+      "headlightsTop": 434.370625,
+      "h1Bottom": 255.390625,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "requested_progress": 0.5,
+      "scroll": 1536,
+      "mode": "cinematic",
+      "progress": "0.5000",
+      "time": 3.750416,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3072,
+      "lastScroll": 3072,
+      "car": {
+        "left": 138.44944444444442,
+        "right": 865.89,
+        "top": 340.36859375,
+        "bottom": 605.78609375
+      },
+      "headlightsTop": 434.370625,
+      "h1Bottom": 255.390625,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "requested_progress": 0.75,
+      "scroll": 2304,
+      "mode": "cinematic",
+      "progress": "0.7500",
+      "time": 5.583749,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3072,
+      "lastScroll": 3072,
+      "car": {
+        "left": 138.44944444444442,
+        "right": 865.89,
+        "top": 340.36859375,
+        "bottom": 605.78609375
+      },
+      "headlightsTop": 434.370625,
+      "h1Bottom": 255.390625,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "requested_progress": 1,
+      "scroll": 3072,
+      "mode": "cinematic",
+      "progress": "1.0000",
+      "time": 7.458749,
+      "videoSize": [
+        1280,
+        720
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 3072,
+      "lastScroll": 3072,
+      "car": {
+        "left": 138.44944444444442,
+        "right": 865.89,
+        "top": 340.36859375,
+        "bottom": 605.78609375
+      },
+      "headlightsTop": 434.370625,
+      "h1Bottom": 255.390625,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-poster-e9b496d7a585.ada0f66bd69a.webp"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "requested_progress": 0,
+      "scroll": 0,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": 228.59375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "requested_progress": 0.25,
+      "scroll": 53,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": 175.59375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "requested_progress": 0.5,
+      "scroll": 106,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": 122.59375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "requested_progress": 0.75,
+      "scroll": 159,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": 69.59375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "requested_progress": 1,
+      "scroll": 212,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": 16.59375,
+      "lines": 2,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "requested_progress": 0,
+      "scroll": 0,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": 215.9375,
+      "lines": 3,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "requested_progress": 0.25,
+      "scroll": 114,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": 101.9375,
+      "lines": 3,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "requested_progress": 0.5,
+      "scroll": 227,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": -11.0625,
+      "lines": 3,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "requested_progress": 0.75,
+      "scroll": 341,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": -125.0625,
+      "lines": 3,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "requested_progress": 1,
+      "scroll": 454,
+      "mode": "static",
+      "progress": "0.0000",
+      "time": 0,
+      "videoSize": [
+        0,
+        0
+      ],
+      "overflow": false,
+      "gap": 0,
+      "span": 0,
+      "lastScroll": 0,
+      "car": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "headlightsTop": 0,
+      "h1Bottom": -238.0625,
+      "lines": 3,
+      "image": "http://127.0.0.1:8002/static/hero/hero-static-27f030789025.ba3e2f756f85.webp"
+    }
+  ],
+  "flicks": [
+    {
+      "step": 120,
+      "fully_readable_samples": [
+        7,
+        8,
+        6,
+        7
+      ]
+    },
+    {
+      "step": 240,
+      "fully_readable_samples": [
+        4,
+        4,
+        3,
+        4
+      ]
+    },
+    {
+      "step": 360,
+      "fully_readable_samples": [
+        3,
+        3,
+        2,
+        3
+      ]
+    }
+  ],
+  "contrast": [
+    {
+      "band": 1,
+      "progress": 0.0176,
+      "ratio": 9.892
+    },
+    {
+      "band": 1,
+      "progress": 0.077,
+      "ratio": 9.459
+    },
+    {
+      "band": 1,
+      "progress": 0.14300000000000002,
+      "ratio": 9.598
+    },
+    {
+      "band": 1,
+      "progress": 0.2024,
+      "ratio": 9.609
+    },
+    {
+      "band": 2,
+      "progress": 0.2548,
+      "ratio": 9.75
+    },
+    {
+      "band": 2,
+      "progress": 0.3385,
+      "ratio": 7.822
+    },
+    {
+      "band": 2,
+      "progress": 0.43150000000000005,
+      "ratio": 13.4
+    },
+    {
+      "band": 2,
+      "progress": 0.5152000000000001,
+      "ratio": 13.21
+    },
+    {
+      "band": 3,
+      "progress": 0.5676,
+      "ratio": 5.595
+    },
+    {
+      "band": 3,
+      "progress": 0.627,
+      "ratio": 5.697
+    },
+    {
+      "band": 3,
+      "progress": 0.6930000000000001,
+      "ratio": 6.014
+    },
+    {
+      "band": 3,
+      "progress": 0.7524000000000001,
+      "ratio": 6.132
+    },
+    {
+      "band": 4,
+      "progress": 0.7976,
+      "ratio": 9.301
+    },
+    {
+      "band": 4,
+      "progress": 0.857,
+      "ratio": 11.372
+    },
+    {
+      "band": 4,
+      "progress": 0.923,
+      "ratio": 9.761
+    },
+    {
+      "band": 4,
+      "progress": 0.9824,
+      "ratio": 8.772
+    }
+  ],
+  "motion": [
+    {
+      "width": 1440,
+      "height": 900,
+      "ui_average_fps": 139.77,
+      "ui_longest_frame_ms": 20.9,
+      "ui_frames_over_50ms": 0,
+      "source_fps": 24,
+      "presented_changes": 332
+    }
+  ],
+  "failed": [],
+  "passed": true
+}

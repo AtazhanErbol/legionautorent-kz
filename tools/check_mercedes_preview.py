@@ -20,10 +20,10 @@ with sync_playwright() as p:
         geometry=page.locator('[data-mercedes-preview]').evaluate('n=>({start:n.getBoundingClientRect().top+scrollY,span:n.offsetHeight-n.firstElementChild.offsetHeight})')
         check(f'{width}_200_noindex',response.status==200 and 'noindex' in response.headers.get('x-robots-tag',''))
         check(f'{width}_one_h1',page.locator('h1').count()==1)
-        check(f'{width}_400vh',abs(geometry['span']-height*3)<2)
+        check(f'{width}_500vh',abs(geometry['span']-height*4)<2)
         video=page.locator('.mercedes-video').evaluate('v=>({w:v.videoWidth,h:v.videoHeight,duration:v.duration,src:v.currentSrc})')
-        check(f'{width}_original_quality_blob',video['w']==1918 and video['h']==1080 and video['src'].startswith('blob:') and page.locator('[data-mercedes-preview]').get_attribute('data-fps')=='24')
-        timing=page.evaluate("()=>({load:__loadedAt,start:performance.getEntriesByType('resource').find(r=>r.name.includes('mercedes-segment-01')&&r.initiatorType==='fetch')?.startTime})")
+        check(f'{width}_native_720p_blob',video['w']==1280 and video['h']==720 and video['src'].startswith('blob:') and page.locator('[data-mercedes-preview]').get_attribute('data-fps')=='24')
+        timing=page.evaluate("()=>({load:__loadedAt,start:performance.getEntriesByType('resource').find(r=>r.name.includes('hero-scrub')&&r.initiatorType==='fetch')?.startTime})")
         check(f'{width}_video_after_load',timing['start']>=timing['load'])
         samples=[]
         for progress in [0,.25,.5,.75,1,.25]:
@@ -54,7 +54,7 @@ with sync_playwright() as p:
     ]:
         context=browser.new_context(viewport={'width':width,'height':height},**options)
         if name=='save-data':context.add_init_script("Object.defineProperty(navigator,'connection',{value:{saveData:true}})")
-        if name=='missing':context.route('**/*mercedes-segment-01*.mp4',lambda route:route.fulfill(status=404,body='Test only'))
+        if name=='missing':context.route('**/*hero-scrub*.mp4',lambda route:route.fulfill(status=404,body='Test only'))
         page=context.new_page();requests=[];page.on('request',lambda r:requests.append(r.url));page.on('pageerror',lambda e:report['errors'].append(str(e)))
         page.goto('http://127.0.0.1:8002/',wait_until='networkidle');page.wait_for_timeout(400)
         check(name+'_static',page.locator('[data-mercedes-preview]').get_attribute('data-state')!='ready')
