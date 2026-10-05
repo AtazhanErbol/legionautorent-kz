@@ -1,6 +1,10 @@
 .venv
 .local
-.env
+# Runtime credentials must never enter the build context, at any depth.
+.env*
+**/.env*
+!.env.example
+!.env.production.example
 node_modules
 media
 staticfiles

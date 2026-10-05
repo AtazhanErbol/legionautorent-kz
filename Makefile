@@ -1,5 +1,5 @@
 PYTHON ?= python
-COMPOSE ?= docker compose --env-file .env.production
+COMPOSE ?= docker compose --env-file .env.production -f docker-compose.yml
 BASE_URL ?= https://legionautorent.kz
 
 .PHONY: up down test seo-test release-check backup

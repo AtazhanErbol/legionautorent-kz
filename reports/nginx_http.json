@@ -2,31 +2,31 @@
   {
     "accept_encoding": "br, gzip",
     "served_encoding": "br",
-    "bytes": 2289,
+    "bytes": 5225,
     "pass": true
   },
   {
     "accept_encoding": "gzip",
     "served_encoding": "gzip",
-    "bytes": 2640,
+    "bytes": 5763,
     "pass": true
   },
   {
     "accept_encoding": "identity",
     "served_encoding": null,
-    "bytes": 6211,
+    "bytes": 16370,
     "pass": true
   },
   {
     "accept_encoding": "br;q=0, gzip;q=0",
     "served_encoding": null,
-    "bytes": 6211,
+    "bytes": 16370,
     "pass": true
   },
   {
     "accept_encoding": "br;q=0, gzip;q=1",
     "served_encoding": "gzip",
-    "bytes": 2640,
+    "bytes": 5763,
     "pass": true
   },
   {

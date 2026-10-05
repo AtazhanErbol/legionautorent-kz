@@ -118,7 +118,7 @@
     },
     {
       "progress": "0.2498",
-      "time": 1.445557,
+      "time": 1.445562,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -130,7 +130,7 @@
     },
     {
       "progress": "0.4998",
-      "time": 2.892684,
+      "time": 2.892732,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -142,7 +142,7 @@
     },
     {
       "progress": "0.7498",
-      "time": 4.335642,
+      "time": 4.341393,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -153,8 +153,8 @@
       "target": 0.75
     },
     {
-      "progress": "1.0000",
-      "time": 5.783559,
+      "progress": "0.9998",
+      "time": 5.789309,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -166,7 +166,7 @@
     },
     {
       "progress": "0.2502",
-      "time": 1.450474,
+      "time": 1.451051,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -190,7 +190,7 @@
     },
     {
       "progress": "0.2498",
-      "time": 1.445564,
+      "time": 1.445557,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -201,8 +201,8 @@
       "target": 0.25
     },
     {
-      "progress": "0.5000",
-      "time": 2.893027,
+      "progress": "0.4998",
+      "time": 2.887734,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -214,7 +214,7 @@
     },
     {
       "progress": "0.7498",
-      "time": 4.335659,
+      "time": 4.335651,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -238,7 +238,7 @@
     },
     {
       "progress": "0.2502",
-      "time": 1.456084,
+      "time": 1.450474,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -262,7 +262,7 @@
     },
     {
       "progress": "0.2498",
-      "time": 1.445562,
+      "time": 1.439809,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -273,8 +273,8 @@
       "target": 0.25
     },
     {
-      "progress": "0.5000",
-      "time": 2.887743,
+      "progress": "0.4998",
+      "time": 2.893481,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -286,7 +286,7 @@
     },
     {
       "progress": "0.7498",
-      "time": 4.340597,
+      "time": 4.335642,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -298,7 +298,7 @@
     },
     {
       "progress": "0.9998",
-      "time": 5.789307,
+      "time": 5.783567,
       "paused": true,
       "seeking": false,
       "overflow": false,
@@ -310,7 +310,7 @@
     },
     {
       "progress": "0.2502",
-      "time": 1.450471,
+      "time": 1.450474,
       "paused": true,
       "seeking": false,
       "overflow": false,

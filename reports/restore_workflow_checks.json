@@ -1,0 +1,42 @@
+{
+  "scope": "Shell control flow with a Docker stub, not a container restore",
+  "checks": [
+    {
+      "case": "corrupt",
+      "exit_code": 1,
+      "docker_stub_calls": 0,
+      "passed": true
+    },
+    {
+      "case": "unsafe",
+      "exit_code": 1,
+      "docker_stub_calls": 0,
+      "passed": true
+    },
+    {
+      "case": "missing_manifest",
+      "exit_code": 1,
+      "docker_stub_calls": 0,
+      "passed": true
+    },
+    {
+      "case": "database_not_empty",
+      "exit_code": 1,
+      "docker_stub_calls": 2,
+      "passed": true
+    },
+    {
+      "case": "media_not_empty",
+      "exit_code": 1,
+      "docker_stub_calls": 3,
+      "passed": true
+    },
+    {
+      "case": "valid",
+      "exit_code": 0,
+      "docker_stub_calls": 7,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

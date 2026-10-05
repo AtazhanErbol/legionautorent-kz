@@ -1,0 +1,12 @@
+{
+  "timestamp_utc": "2026-10-05T06:04:37.881490+00:00",
+  "base_url": "http://127.0.0.1:8003",
+  "mode": "production",
+  "passed": false,
+  "requests": 1383,
+  "pages": 133,
+  "sitemap_urls": 105,
+  "unique_images": 1239,
+  "redirects": []
+}
+CommandError: Prelaunch audit found 53 failures; see reports/prelaunch_report.md
