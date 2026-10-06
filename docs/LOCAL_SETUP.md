@@ -42,6 +42,7 @@ python manage.py runserver 127.0.0.1:8000
 ```sh
 python -m pip install -r requirements-dev.txt
 python tools/prepare_test_media.py
+python manage.py collectstatic --noinput
 python manage.py test --settings=legion.config.testing
 python manage.py makemigrations --check --dry-run
 npm run check:budget
@@ -77,3 +78,5 @@ python manage.py collectstatic --noinput
 ```
 
 Готовые кадры уже включены в репозиторий. При обычном развёртывании FFmpeg не требуется. Старые кадры при следующей ручной замене удаляйте только после резервной копии и проверки нового комплекта.
+
+В CI одноразовая база после сырого импорта получает только ранее утверждённые SEO-исправления из сохранённого manifest. `tools/prepare_ci_editorial.py` имеет отдельный защитный флаг и предназначен исключительно для одноразовой development-базы; при деплое его не запускайте. Рабочая база восстанавливается из приватной резервной копии.

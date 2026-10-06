@@ -1,0 +1,129 @@
+{
+  "head_sha": "84af5dd5bf8f0be4fedab4a3da368c2a64ec04a4",
+  "url": "https://github.com/AtazhanErbol/legionautorent-kz/actions/runs/37454434314",
+  "id": 37454434314,
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 112238452848,
+      "name": "container",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and start the isolated Docker installation",
+          "conclusion": "success"
+        },
+        {
+          "name": "Prepare preserved test data and activate the supplied hero",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify runtime, Nginx and the real HTML hero",
+          "conclusion": "success"
+        },
+        {
+          "name": "Show container diagnostics",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Stop the isolated containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 112238453236,
+      "name": "test",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Initialize containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install -r requirements.txt",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run build && npm run check:budget",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python tools/prepare_test_media.py",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python manage.py collectstatic --noinput",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python manage.py test --settings=legion.config.testing",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python manage.py makemigrations --check --dry-run",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Stop containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

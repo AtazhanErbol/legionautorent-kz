@@ -1,7 +1,7 @@
 {
   "docker_available": false,
-  "docker_build_tested": false,
-  "compose_up_tested": false,
+  "docker_build_tested": true,
+  "compose_up_tested": true,
   "compose_schema": {
     "compose.yaml": "pass",
     "docker-compose.yml": "pass",
@@ -22,5 +22,8 @@
     }
   },
   "dockerfile_static": "three stages, nonroot runtime, healthcheck, lockfiles, build outputs verified",
-  "nginx_native_version": "1.30.5 Windows; paths/upstream/ports adapted for validation"
+  "nginx_native_version": "1.30.5 Windows; paths/upstream/ports adapted for validation",
+  "docker_test_environment": "GitHub Actions Ubuntu, docker-compose.dev.yml",
+  "docker_ci_url": "https://github.com/AtazhanErbol/legionautorent-kz/actions/runs/37454434314",
+  "docker_ci_commit": "84af5dd5bf8f0be4fedab4a3da368c2a64ec04a4"
 }

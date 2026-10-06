@@ -12,5 +12,10 @@
   "http_failure": "Public DNS/HTTPS/www redirects cannot be proven on loopback",
   "docker_local_available": false,
   "real_phones_tested": false,
-  "firefox_launch": "timeout on this Windows computer"
+  "firefox_launch": "timeout on this Windows computer",
+  "tests_github": 104,
+  "docker_ci": "success",
+  "docker_ci_url": "https://github.com/AtazhanErbol/legionautorent-kz/actions/runs/37454434314",
+  "docker_ci_commit": "84af5dd5bf8f0be4fedab4a3da368c2a64ec04a4",
+  "additional_responsive_checks": "320x640, 768x1024, 844x390, kk/en at 390x844"
 }
