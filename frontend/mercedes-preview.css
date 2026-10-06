@@ -71,6 +71,7 @@
   .mercedes-preview[data-mode=cinematic] .mercedes-caption{top:88px}
   .mercedes-preview[data-mode=cinematic] .mercedes-caption:before{opacity:.6}
   .mercedes-preview[data-mode=cinematic] .mercedes-captions h1,.mercedes-preview[data-mode=cinematic] .mercedes-display{font-size:20px;max-width:64%}
+  .mercedes-preview[data-mode=cinematic] .mercedes-caption--end .mercedes-display{font-size:20px;max-width:64%}
   .mercedes-preview[data-mode=cinematic] .mercedes-step-line{font-size:14px;max-width:60%}
   .mercedes-preview[data-mode=cinematic] .mercedes-bottom{bottom:24px}
   .mercedes-preview[data-mode=cinematic] .mercedes-progress{bottom:12px}

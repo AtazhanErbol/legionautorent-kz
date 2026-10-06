@@ -29,6 +29,10 @@ mapping = {'title': 'seo_title', 'description': 'seo_description', 'h1': 'seo_h1
 updated = 0
 with transaction.atomic():
     for path, fields in manifest['pages'].items():
+        # The raw-import acceptance fixture contains only cars and cities.
+        # Other CMS pages come from the separately restored production database.
+        if path not in objects:
+            continue
         obj = objects[path]
         dirty = []
         for field, item in fields.items():
