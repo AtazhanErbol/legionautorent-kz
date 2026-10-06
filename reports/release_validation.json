@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-06",
+  "tests_original": 104,
+  "tests_clean_copy": 104,
+  "legacy_urls": 122,
+  "preserved_200": 95,
+  "expected_404": 27,
+  "http_requests": 1382,
+  "http_pages": 133,
+  "sitemap_urls": 105,
+  "image_urls": 1238,
+  "http_failure": "Public DNS/HTTPS/www redirects cannot be proven on loopback",
+  "docker_local_available": false,
+  "real_phones_tested": false,
+  "firefox_launch": "timeout on this Windows computer"
+}

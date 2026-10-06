@@ -4,6 +4,7 @@ from django.templatetags.static import static
 from urllib.parse import urlsplit
 from core.i18n import localized,get_translation,language_url
 from core.branding import brand_text
+from core.hero import ASSETS
 
 LANGUAGES=('ru','kk','en')
 def faq_languages():
@@ -40,7 +41,7 @@ def page_seo(request,obj=None,title='',description='',h1='',noindex=False,path=N
     legacy=getattr(obj,'legacy_meta',{}).get('open_graph',{}) if obj and lang=='ru' else {}
     image=getattr(obj,'og_image','')
     if not image and obj and obj._meta.model_name=='car' and obj.main_image:image=obj.main_image.display_url
-    image=image or static('img/hero-drive-front.webp')
+    image=image or static(ASSETS['poster'].removeprefix('/static/'))
     if not image.startswith(('https://','http://')):image=settings.SITE_URL+image
     elif urlsplit(image).hostname=='legionautorent.kz':image=settings.SITE_URL+urlsplit(image).path
     og_url=canonical if obj and obj._meta.model_name=='city' else legacy.get('og:url',canonical)

@@ -1,7 +1,4 @@
 -r requirements.lock
 playwright==1.63.0
-polib==1.2.0
-fonttools==4.66.1
-brotli==1.2.0
 PyYAML==6.0.3
 jsonschema==4.26.0

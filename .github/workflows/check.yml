@@ -1,0 +1,74 @@
+name: Check Django and frontend
+on:
+  push:
+    paths-ignore: ['docs/**', 'reports/**', '*.md']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:18-bookworm
+        env:
+          POSTGRES_DB: legion
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: ci-local-only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d legion"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      ENVIRONMENT: development
+      DEBUG: 'false'
+      DATABASE_URL: postgresql://postgres:ci-local-only@127.0.0.1:5432/legion
+      SECRET_KEY: ci-only-no-production-access-change-this-in-your-installation
+      ANALYTICS_ENABLED: 'false'
+      SECURE_SSL_REDIRECT: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: python -m pip install -r requirements.txt
+      - run: npm ci
+      - run: npm run build && npm run check:budget
+      - run: python tools/prepare_test_media.py
+      - run: python manage.py test --settings=legion.config.testing
+      - run: python manage.py makemigrations --check --dry-run
+      - run: python manage.py collectstatic --noinput
+  container:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and start the isolated Docker installation
+        run: docker compose -f docker-compose.dev.yml up --build -d --wait
+      - name: Prepare preserved test data and activate the supplied hero
+        run: |
+          docker compose -f docker-compose.dev.yml exec -T web python tools/prepare_test_media.py
+          docker compose -f docker-compose.dev.yml exec -T web python manage.py import_legacy
+          docker compose -f docker-compose.dev.yml exec -T web python manage.py configure_hero_video
+      - name: Verify runtime, Nginx and the real HTML hero
+        run: |
+          curl --fail --silent http://127.0.0.1:8080/healthz/
+          curl --fail --silent http://127.0.0.1:8080/ > /tmp/legion-home.html
+          grep -q 'hero-frames' /tmp/legion-home.html
+          grep -q 'hero-poster-60fps' /tmp/legion-home.html
+          docker compose -f docker-compose.dev.yml exec -T web python manage.py verify_migration
+      - name: Show container diagnostics
+        if: failure()
+        run: docker compose -f docker-compose.dev.yml logs --tail=100
+      - name: Stop the isolated containers
+        if: always()
+        run: docker compose -f docker-compose.dev.yml down

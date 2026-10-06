@@ -1,8 +1,0 @@
-{
-  "blender": "4.5.14 LTS",
-  "meshes": 61,
-  "triangles_before_export": 86024,
-  "materials": 17,
-  "source": "tools/build_hero_sedan.py",
-  "output": "assets/hero-sedan/legion-sedan.glb"
-}

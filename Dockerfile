@@ -4,6 +4,7 @@ COPY package.json package-lock.json vite.config.js ./
 RUN npm ci --ignore-scripts
 COPY frontend ./frontend
 COPY static/fonts ./static/fonts
+COPY static/hero/grain.webp ./static/hero/grain.webp
 RUN npm run build
 
 FROM python:3.12-slim-bookworm AS python-deps

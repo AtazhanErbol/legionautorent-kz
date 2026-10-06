@@ -1,0 +1,619 @@
+{
+  "browsers": [
+    {
+      "browser": "chromium",
+      "width": 1440,
+      "geometry": {
+        "start": 0,
+        "distance": 3600
+      },
+      "errors": [],
+      "samples": [
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "desktop",
+          "rendered": "false",
+          "progress": "0.0000",
+          "frame": "0",
+          "loadedPacks": "1",
+          "canvas": {
+            "x": 112,
+            "y": 171,
+            "width": 1216,
+            "height": 684,
+            "top": 171,
+            "right": 1328,
+            "bottom": 855,
+            "left": 112
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "desktop",
+          "rendered": "true",
+          "progress": "0.2504",
+          "frame": "149",
+          "loadedPacks": "75",
+          "decoded": "26",
+          "canvas": {
+            "x": 112,
+            "y": 171,
+            "width": 1216,
+            "height": 684,
+            "top": 171,
+            "right": 1328,
+            "bottom": 855,
+            "left": 112
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "desktop",
+          "rendered": "true",
+          "progress": "0.4992",
+          "frame": "297",
+          "loadedPacks": "75",
+          "decoded": "26",
+          "canvas": {
+            "x": 112,
+            "y": 171,
+            "width": 1216,
+            "height": 684,
+            "top": 171,
+            "right": 1328,
+            "bottom": 855,
+            "left": 112
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "desktop",
+          "rendered": "true",
+          "progress": "0.7496",
+          "frame": "446",
+          "loadedPacks": "75",
+          "decoded": "26",
+          "canvas": {
+            "x": 112,
+            "y": 171,
+            "width": 1216,
+            "height": 684,
+            "top": 171,
+            "right": 1328,
+            "bottom": 855,
+            "left": 112
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "desktop",
+          "rendered": "true",
+          "progress": "1.0000",
+          "frame": "595",
+          "loadedPacks": "75",
+          "decoded": "26",
+          "canvas": {
+            "x": 112,
+            "y": 171,
+            "width": 1216,
+            "height": 684,
+            "top": 171,
+            "right": 1328,
+            "bottom": 855,
+            "left": 112
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        }
+      ],
+      "boot": {
+        "packs": [
+          {
+            "start_ms": 382.5,
+            "end_ms": 394.5,
+            "bytes": 118698
+          }
+        ],
+        "poster": true,
+        "mp4_requested": false
+      },
+      "reverse_returns_first_frame": true,
+      "draws_per_second": 86.5,
+      "measurement_note": "Full 9.93s source traversed in 6s; headless refresh/render rate, not a guarantee for real phones.",
+      "draw_interval_p95_ms": 20.3,
+      "rest_at_scroll_y": 3600
+    },
+    {
+      "browser": "chromium",
+      "width": 390,
+      "geometry": {
+        "start": 0,
+        "distance": 3376
+      },
+      "errors": [],
+      "samples": [
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "mobile",
+          "rendered": "false",
+          "progress": "0.0000",
+          "frame": "0",
+          "loadedPacks": "1",
+          "canvas": {
+            "x": 0,
+            "y": 295.390625,
+            "width": 390,
+            "height": 219.375,
+            "top": 295.390625,
+            "right": 390,
+            "bottom": 514.765625,
+            "left": 0
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "mobile",
+          "rendered": "true",
+          "progress": "0.2504",
+          "frame": "149",
+          "loadedPacks": "75",
+          "decoded": "18",
+          "canvas": {
+            "x": 0,
+            "y": 295.390625,
+            "width": 390,
+            "height": 219.375,
+            "top": 295.390625,
+            "right": 390,
+            "bottom": 514.765625,
+            "left": 0
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "mobile",
+          "rendered": "true",
+          "progress": "0.4992",
+          "frame": "297",
+          "loadedPacks": "75",
+          "decoded": "18",
+          "canvas": {
+            "x": 0,
+            "y": 295.390625,
+            "width": 390,
+            "height": 219.375,
+            "top": 295.390625,
+            "right": 390,
+            "bottom": 514.765625,
+            "left": 0
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "mobile",
+          "rendered": "true",
+          "progress": "0.7496",
+          "frame": "446",
+          "loadedPacks": "75",
+          "decoded": "18",
+          "canvas": {
+            "x": 0,
+            "y": 295.390625,
+            "width": 390,
+            "height": 219.375,
+            "top": 295.390625,
+            "right": 390,
+            "bottom": 514.765625,
+            "left": 0
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "mobile",
+          "rendered": "true",
+          "progress": "1.0000",
+          "frame": "595",
+          "loadedPacks": "75",
+          "decoded": "18",
+          "canvas": {
+            "x": 0,
+            "y": 295.390625,
+            "width": 390,
+            "height": 219.375,
+            "top": 295.390625,
+            "right": 390,
+            "bottom": 514.765625,
+            "left": 0
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        }
+      ],
+      "boot": {
+        "packs": [
+          {
+            "start_ms": 185.6000000089407,
+            "end_ms": 195.40000000596046,
+            "bytes": 51072
+          }
+        ],
+        "poster": true,
+        "mp4_requested": false
+      },
+      "reverse_returns_first_frame": true,
+      "draws_per_second": 96.67,
+      "measurement_note": "Full 9.93s source traversed in 6s; headless refresh/render rate, not a guarantee for real phones.",
+      "draw_interval_p95_ms": 14.3,
+      "touch_gesture_progress": "0.1261",
+      "visual_viewport_resize_preserves_pin": true,
+      "rest_at_scroll_y": 3376
+    },
+    {
+      "browser": "webkit",
+      "width": 1440,
+      "geometry": {
+        "start": 0,
+        "distance": 3600
+      },
+      "errors": [],
+      "samples": [
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "desktop",
+          "rendered": "false",
+          "progress": "0.0000",
+          "frame": "0",
+          "loadedPacks": "1",
+          "canvas": {
+            "x": 112,
+            "y": 171,
+            "width": 1216,
+            "height": 684,
+            "top": 171,
+            "right": 1328,
+            "bottom": 855,
+            "left": 112
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "desktop",
+          "rendered": "true",
+          "progress": "0.2504",
+          "frame": "149",
+          "loadedPacks": "75",
+          "decoded": "26",
+          "canvas": {
+            "x": 112,
+            "y": 171,
+            "width": 1216,
+            "height": 684,
+            "top": 171,
+            "right": 1328,
+            "bottom": 855,
+            "left": 112
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "desktop",
+          "rendered": "true",
+          "progress": "0.4992",
+          "frame": "297",
+          "loadedPacks": "75",
+          "decoded": "26",
+          "canvas": {
+            "x": 112,
+            "y": 171,
+            "width": 1216,
+            "height": 684,
+            "top": 171,
+            "right": 1328,
+            "bottom": 855,
+            "left": 112
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "desktop",
+          "rendered": "true",
+          "progress": "0.7496",
+          "frame": "446",
+          "loadedPacks": "75",
+          "decoded": "26",
+          "canvas": {
+            "x": 112,
+            "y": 171,
+            "width": 1216,
+            "height": 684,
+            "top": 171,
+            "right": 1328,
+            "bottom": 855,
+            "left": 112
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "desktop",
+          "rendered": "true",
+          "progress": "1.0000",
+          "frame": "595",
+          "loadedPacks": "75",
+          "decoded": "26",
+          "canvas": {
+            "x": 112,
+            "y": 171,
+            "width": 1216,
+            "height": 684,
+            "top": 171,
+            "right": 1328,
+            "bottom": 855,
+            "left": 112
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        }
+      ],
+      "boot": {
+        "packs": [
+          {
+            "start_ms": 545,
+            "end_ms": 550,
+            "bytes": 118698
+          },
+          {
+            "start_ms": 696,
+            "end_ms": 722,
+            "bytes": 118698
+          }
+        ],
+        "poster": true,
+        "mp4_requested": false
+      },
+      "reverse_returns_first_frame": true,
+      "draws_per_second": 8.83,
+      "measurement_note": "Full 9.93s source traversed in 6s; headless refresh/render rate, not a guarantee for real phones.",
+      "draw_interval_p95_ms": 133,
+      "rest_at_scroll_y": 3600
+    },
+    {
+      "browser": "webkit",
+      "width": 390,
+      "geometry": {
+        "start": 0,
+        "distance": 3376
+      },
+      "errors": [],
+      "samples": [
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "mobile",
+          "rendered": "false",
+          "progress": "0.0000",
+          "frame": "0",
+          "loadedPacks": "1",
+          "canvas": {
+            "x": 0,
+            "y": 295.390625,
+            "width": 390,
+            "height": 219.375,
+            "top": 295.390625,
+            "right": 390,
+            "bottom": 514.765625,
+            "left": 0
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "mobile",
+          "rendered": "true",
+          "progress": "0.2504",
+          "frame": "149",
+          "loadedPacks": "75",
+          "decoded": "18",
+          "canvas": {
+            "x": 0,
+            "y": 295.390625,
+            "width": 390,
+            "height": 219.375,
+            "top": 295.390625,
+            "right": 390,
+            "bottom": 514.765625,
+            "left": 0
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "mobile",
+          "rendered": "true",
+          "progress": "0.4992",
+          "frame": "297",
+          "loadedPacks": "75",
+          "decoded": "18",
+          "canvas": {
+            "x": 0,
+            "y": 295.390625,
+            "width": 390,
+            "height": 219.375,
+            "top": 295.390625,
+            "right": 390,
+            "bottom": 514.765625,
+            "left": 0
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "mobile",
+          "rendered": "true",
+          "progress": "0.7496",
+          "frame": "446",
+          "loadedPacks": "75",
+          "decoded": "18",
+          "canvas": {
+            "x": 0,
+            "y": 295.390625,
+            "width": 390,
+            "height": 219.375,
+            "top": 295.390625,
+            "right": 390,
+            "bottom": 514.765625,
+            "left": 0
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        },
+        {
+          "mercedesPreview": "",
+          "sequence": "true",
+          "state": "ready",
+          "mode": "cinematic",
+          "variant": "mobile",
+          "rendered": "true",
+          "progress": "1.0000",
+          "frame": "595",
+          "loadedPacks": "75",
+          "decoded": "18",
+          "canvas": {
+            "x": 0,
+            "y": 295.390625,
+            "width": 390,
+            "height": 219.375,
+            "top": 295.390625,
+            "right": 390,
+            "bottom": 514.765625,
+            "left": 0
+          },
+          "horizontalOverflow": false,
+          "videoCount": 0
+        }
+      ],
+      "boot": {
+        "packs": [
+          {
+            "start_ms": 455,
+            "end_ms": 460,
+            "bytes": 51072
+          },
+          {
+            "start_ms": 614,
+            "end_ms": 616,
+            "bytes": 51072
+          }
+        ],
+        "poster": true,
+        "mp4_requested": false
+      },
+      "reverse_returns_first_frame": true,
+      "draws_per_second": 32.0,
+      "measurement_note": "Full 9.93s source traversed in 6s; headless refresh/render rate, not a guarantee for real phones.",
+      "draw_interval_p95_ms": 32,
+      "rest_at_scroll_y": 3376
+    }
+  ],
+  "fallbacks": [
+    {
+      "case": "no-js",
+      "passed": true
+    },
+    {
+      "case": "reduced-motion",
+      "passed": true
+    },
+    {
+      "case": "load-failure",
+      "passed": true
+    }
+  ],
+  "unavailable_engines": {
+    "firefox": "BrowserType.launch: Timeout 30000ms exceeded.\nCall log:\n  - <launching> D:\\legionautorent.kz\\.local\\hero-browser-engines\\firefox-1543\\firefox\\firefox.exe -no-remote -headless -profile C:\\Users\\Atazhan\\AppData\\Local\\Temp\\playwright_firefoxdev_profile-t01cPd -juggler-pipe -silent\n  - <launched> pid=10564\n  - [pid=10564][err] *** You are running in headless mode.\n"
+  },
+  "real_phones_tested": false,
+  "poster_can_paint_before_frame_download": true
+}

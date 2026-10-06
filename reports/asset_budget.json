@@ -3,9 +3,10 @@
   "retired_3d_gzip_bytes": 0,
   "gzip_sizes": {
     "main": 6304,
-    "mercedes-preview": 3022,
-    "styleguide": 216
+    "mercedes-preview": 3284,
+    "styleguide": 216,
+    "worker:assets/hero-frame-worker-TI3Loo2j.js": 181
   },
-  "hero_video_controller_gzip_bytes": 3022,
-  "all_runtime_js_gzip_bytes": 9326
+  "hero_video_controller_gzip_bytes": 3284,
+  "all_runtime_js_gzip_bytes": 9769
 }

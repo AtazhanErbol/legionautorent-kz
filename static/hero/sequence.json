@@ -1,0 +1,1090 @@
+{
+  "version": 1,
+  "master": "/static/hero/hero-60fps.mp4",
+  "source_sha256": "3578ea8aed0eeefd99eeed10d222f9634055ab169fc0eae7aaf76dabbc044bb9",
+  "master_sha256": "b141221a772ac33643ede1012d0c4c25ced0f889ec8e03b7ef50a0a99ee211ee",
+  "master_bytes": 12942197,
+  "source_width": 1920,
+  "source_height": 1080,
+  "source_fps": 60.0,
+  "count": 596,
+  "fps": 60.0,
+  "duration": 9.933333333333334,
+  "last_time": 9.916666666666666,
+  "audio": false,
+  "pack_size": 8,
+  "desktop": {
+    "width": 1280,
+    "height": 720,
+    "count": 596,
+    "quality": 82,
+    "packs": [
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-00.pack",
+        "start": 0,
+        "count": 8,
+        "bytes": 118398,
+        "sha256": "2c55ba4102768032758af372ef95cdc540888fc5e6572358f51756fc34fd726b"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-01.pack",
+        "start": 8,
+        "count": 8,
+        "bytes": 133088,
+        "sha256": "6b9b58160af094c064a33a27dd8774026128184548f26cd56fdd9273f35b82a9"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-02.pack",
+        "start": 16,
+        "count": 8,
+        "bytes": 150980,
+        "sha256": "03a3cb3da695994ad1bab3abe987dd9db4a001fa420112da1c6bcd845c7a4e7f"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-03.pack",
+        "start": 24,
+        "count": 8,
+        "bytes": 168010,
+        "sha256": "1ad370d13aec26e598fdf74014cfb4015616b5a776061487f121e05f151c73dd"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-04.pack",
+        "start": 32,
+        "count": 8,
+        "bytes": 180250,
+        "sha256": "86107ada8e3369465f4b9e9feeaead639384d2b1c76c94c09817dbb2742f8369"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-05.pack",
+        "start": 40,
+        "count": 8,
+        "bytes": 195854,
+        "sha256": "824a579dbc0b90f7a80f56a679b01384259bca6c771194c80e4356350b4aa491"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-06.pack",
+        "start": 48,
+        "count": 8,
+        "bytes": 203130,
+        "sha256": "8de0258c9c5183487b29af1175c416a959a2f30ea7f732568a9dca7a15e0c327"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-07.pack",
+        "start": 56,
+        "count": 8,
+        "bytes": 202932,
+        "sha256": "aebf5595d0b4bfd1b7bf716b89aa3a0121ffee4c1b71cb39ee7887d18749ae1f"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-08.pack",
+        "start": 64,
+        "count": 8,
+        "bytes": 201762,
+        "sha256": "7f63409b07b9d6eec97563e2a9f2ffade6738b278c813b925112070361c6352a"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-09.pack",
+        "start": 72,
+        "count": 8,
+        "bytes": 197880,
+        "sha256": "a33b45a749cf1c24be3c2726183c33de249e6ef47f5e4e57d567914abe863005"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-10.pack",
+        "start": 80,
+        "count": 8,
+        "bytes": 197312,
+        "sha256": "0435942cbedfc28414bc67eb853487506099007c7bd37a67387aadffc324f8c1"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-11.pack",
+        "start": 88,
+        "count": 8,
+        "bytes": 191140,
+        "sha256": "22c88a44a7722d1b8dfa729b0122f1e0af4946d1a06de4d5afa8b61acd726a61"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-12.pack",
+        "start": 96,
+        "count": 8,
+        "bytes": 193480,
+        "sha256": "f8069df67f2c858222a04846e03af5d5a60f557130bd1aa11922d448c5cb0abd"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-13.pack",
+        "start": 104,
+        "count": 8,
+        "bytes": 191178,
+        "sha256": "e8f0c8a75a0f0d004903a24988ea09db2657a25387a4dd0362ad21cd3f1b7924"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-14.pack",
+        "start": 112,
+        "count": 8,
+        "bytes": 189680,
+        "sha256": "d76b64ada8634aced2601554cf9da11bc27ecdad848d470e31a74bc3e50eaac7"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-15.pack",
+        "start": 120,
+        "count": 8,
+        "bytes": 193142,
+        "sha256": "962278e096f6c082e4939fa0e539d901d55b4b0f85c08603e7e7e851aa05849f"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-16.pack",
+        "start": 128,
+        "count": 8,
+        "bytes": 195934,
+        "sha256": "a0beadac82bb8301ee6c0a9e703cf33affd9e8ff503f1efc9867102bbb645a93"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-17.pack",
+        "start": 136,
+        "count": 8,
+        "bytes": 199682,
+        "sha256": "fc79c96bfc6f776adca9214d02187607cd586182702e680d02bf1658dda4c289"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-18.pack",
+        "start": 144,
+        "count": 8,
+        "bytes": 201362,
+        "sha256": "749157f4287baa581f04d9c830a25b3176d75e5cc81b02e4ca364941b00fa09b"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-19.pack",
+        "start": 152,
+        "count": 8,
+        "bytes": 204508,
+        "sha256": "d432643fb7849269594ea6a856177cc52dc2f09b0f0a3f32b49d3fc45393dc11"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-20.pack",
+        "start": 160,
+        "count": 8,
+        "bytes": 212692,
+        "sha256": "4f5e248e3e7ab6b18fe6ca77f151f12a32cac2b6aa6db9c24ea6ffa66a6faf7a"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-21.pack",
+        "start": 168,
+        "count": 8,
+        "bytes": 211272,
+        "sha256": "020980edbf5d491f89942350a336013e267dbd84dbe53a4af55dbdc51389c0c6"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-22.pack",
+        "start": 176,
+        "count": 8,
+        "bytes": 213036,
+        "sha256": "46c12ce4736bd5c675ca28fa86545fb51fc41e3183d3a1b78dc0a546e88a0974"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-23.pack",
+        "start": 184,
+        "count": 8,
+        "bytes": 215950,
+        "sha256": "dd1edc1845b9b7fe2074164d5adbcbc1244159ed159ce1081da62ac628814e3c"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-24.pack",
+        "start": 192,
+        "count": 8,
+        "bytes": 213060,
+        "sha256": "e95a31c4c175b11c946fbfbf994a3ace4ec9b67f1f050ec6958b3bc2e68fd654"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-25.pack",
+        "start": 200,
+        "count": 8,
+        "bytes": 210946,
+        "sha256": "f3b04ffc583a7bdd49238d30978b579a5f31629a3174ed2f3ff8d15a6e79226a"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-26.pack",
+        "start": 208,
+        "count": 8,
+        "bytes": 205166,
+        "sha256": "653c99f2dbcc48f0a837d1ec135f5bf753dafb75bb8aae1e690c33fa8253047c"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-27.pack",
+        "start": 216,
+        "count": 8,
+        "bytes": 204034,
+        "sha256": "854033b4b45430e49c66a4751dc637f8c44ce13792fb6cbba0361f792901c7c2"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-28.pack",
+        "start": 224,
+        "count": 8,
+        "bytes": 202686,
+        "sha256": "b1848a799b0feaaecabd619e8e3dbfe5fb30dc13773254285e512c9f104ddc7d"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-29.pack",
+        "start": 232,
+        "count": 8,
+        "bytes": 201700,
+        "sha256": "4502536941ac10f938182ce78a07ca89e71855c930aa8e856a8274e463837887"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-30.pack",
+        "start": 240,
+        "count": 8,
+        "bytes": 200752,
+        "sha256": "56a40e69a6e40573fd85ea6783d3f32adfcacdb2614a92e760cfb50d6648a121"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-31.pack",
+        "start": 248,
+        "count": 8,
+        "bytes": 200256,
+        "sha256": "9890cb618f3f215fa601c8ee5609a30b3aaa8555864f27b089f582b5080bdcc8"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-32.pack",
+        "start": 256,
+        "count": 8,
+        "bytes": 200384,
+        "sha256": "9e395d5e6151cbba27c113e25c108dadf70b87a3d4b5fd19df5333a8ef76d3fb"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-33.pack",
+        "start": 264,
+        "count": 8,
+        "bytes": 200320,
+        "sha256": "0829bfb03549ec0dcc54dc7ec108290310dc7860c4904646163560c10a348d66"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-34.pack",
+        "start": 272,
+        "count": 8,
+        "bytes": 200560,
+        "sha256": "990df30f20c2d8945f7a2ee5f591d0c4a9f5e0a21efab97fca761ef282850e7a"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-35.pack",
+        "start": 280,
+        "count": 8,
+        "bytes": 200084,
+        "sha256": "b1c6fb736e1b952f7fe486e49782fd326a9a04465ce06309dd1d16b463a380e2"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-36.pack",
+        "start": 288,
+        "count": 8,
+        "bytes": 198894,
+        "sha256": "74445293842770e4b48180a88950dd069205e47c9ce868da8cb9f177dbe97414"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-37.pack",
+        "start": 296,
+        "count": 8,
+        "bytes": 198168,
+        "sha256": "2f3d48d3adf93f0ad58c95107d9ae1bf1fb7a778242c5f298830359fb1c9c599"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-38.pack",
+        "start": 304,
+        "count": 8,
+        "bytes": 198176,
+        "sha256": "7cff63629e3596790387e6dbf7ba4a433890d77b016b87aa08532daf6fa52417"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-39.pack",
+        "start": 312,
+        "count": 8,
+        "bytes": 197944,
+        "sha256": "31fedd84d2130b4c5c86770e42403bdc3e49417ac3a4b2c43f96872441bb315e"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-40.pack",
+        "start": 320,
+        "count": 8,
+        "bytes": 196274,
+        "sha256": "cf854f86ac40d561aa00078f858a075f1ea6208deb8291a1b7235a43230d514f"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-41.pack",
+        "start": 328,
+        "count": 8,
+        "bytes": 195360,
+        "sha256": "7d7c83a82f4d23de8964062e871eb07a540a9ab8059911a1b59f658121d1db16"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-42.pack",
+        "start": 336,
+        "count": 8,
+        "bytes": 196052,
+        "sha256": "c3219206581faaf3fbe4054be334568747255c1037db70951d12a3c1fb441cc7"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-43.pack",
+        "start": 344,
+        "count": 8,
+        "bytes": 195406,
+        "sha256": "c66eac1d7f9fae3fb333ba4cbb030ab350ae696c70f05887c5ee1cc373d8f025"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-44.pack",
+        "start": 352,
+        "count": 8,
+        "bytes": 193702,
+        "sha256": "64929c2306cb6b5e290031b2089465dc6108509e954c9c0ae7d9b71662e7313d"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-45.pack",
+        "start": 360,
+        "count": 8,
+        "bytes": 194204,
+        "sha256": "9ab09c76f24cc32f17e4fcc7c437688b646a2eb238448ed585db86ba6c6edde6"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-46.pack",
+        "start": 368,
+        "count": 8,
+        "bytes": 190994,
+        "sha256": "4ce8b54ccc2a14c1c2eb81a1192660d6ab0be2e71c991d209cf9f1336d8558d2"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-47.pack",
+        "start": 376,
+        "count": 8,
+        "bytes": 186098,
+        "sha256": "a887592adf5ac1cc150cb213cf666f0e04d01d50ef410dc83b42037fb0582959"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-48.pack",
+        "start": 384,
+        "count": 8,
+        "bytes": 181542,
+        "sha256": "77e1ff62adb58e6d8c6cb9f948151cff75bb3b2a010dc8d72c0bc234a3408962"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-49.pack",
+        "start": 392,
+        "count": 8,
+        "bytes": 177772,
+        "sha256": "624686567a6399e0054d985af3542a8f8f57a6d4c4ac14e7de2d8b198b35e775"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-50.pack",
+        "start": 400,
+        "count": 8,
+        "bytes": 179198,
+        "sha256": "9ba9ffad8c9061d457fbdfa941366c489b3a587446ac9a1bd3a97aec0c2806e1"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-51.pack",
+        "start": 408,
+        "count": 8,
+        "bytes": 180666,
+        "sha256": "2441bb5a8d6ffde43093a0aacee503d9779a43d8eeac7cd5e5dc8f4554c59cb9"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-52.pack",
+        "start": 416,
+        "count": 8,
+        "bytes": 180550,
+        "sha256": "a02d381b9e6e2a34d47fb283e8870f1831e4586ab93ef8687b173753637dbdc1"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-53.pack",
+        "start": 424,
+        "count": 8,
+        "bytes": 182202,
+        "sha256": "f23d9b6149a2680cd9ac5edc009a6369fb747e5a51385066a922fca06a3fd91b"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-54.pack",
+        "start": 432,
+        "count": 8,
+        "bytes": 179720,
+        "sha256": "af4f8aa0b24804e56344a0a02b6e4ff675a397037d7da7d5117402eb723eafa6"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-55.pack",
+        "start": 440,
+        "count": 8,
+        "bytes": 174470,
+        "sha256": "82d7276a83225160aaf7bccca63c719e78e85def0d1b3efb4e824d3f684ecf4f"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-56.pack",
+        "start": 448,
+        "count": 8,
+        "bytes": 169416,
+        "sha256": "92ae55d3500b76e9ecf4150c9d5e14c4e93cccc8f7060b76b1b0b97910fd4a92"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-57.pack",
+        "start": 456,
+        "count": 8,
+        "bytes": 163192,
+        "sha256": "74519b1e17c8d70b09803b2d59859fdf4ebef2125a2ef512953e12b93daaf1b1"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-58.pack",
+        "start": 464,
+        "count": 8,
+        "bytes": 158138,
+        "sha256": "ac49a4a84891055952990583c6eedcf085833bec25ba74b6a69074a0a8490822"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-59.pack",
+        "start": 472,
+        "count": 8,
+        "bytes": 150942,
+        "sha256": "c47751f6ada85866bd9a2e56ce4dad82a2b5bc72867e308c33f8e8c68d1dd25f"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-60.pack",
+        "start": 480,
+        "count": 8,
+        "bytes": 146508,
+        "sha256": "d48006f8b1e81f20cbaa3c1af57c194f81b7a59ee0f86c3a903560c9f5360e2e"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-61.pack",
+        "start": 488,
+        "count": 8,
+        "bytes": 141518,
+        "sha256": "5db097bd1b08dd58eb45eb5cd43be38d1f764f2a8062a4303e09df2315f628bd"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-62.pack",
+        "start": 496,
+        "count": 8,
+        "bytes": 141054,
+        "sha256": "ca2104640cfda302d4db00aff9bc28bf186829e05cc4090fa4537e84c7cb9fa4"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-63.pack",
+        "start": 504,
+        "count": 8,
+        "bytes": 144232,
+        "sha256": "79a32779af2de359bcc71fd8bc9667d6c00b1f463686e7d29034c7ff09e15718"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-64.pack",
+        "start": 512,
+        "count": 8,
+        "bytes": 149680,
+        "sha256": "738c819a89a18225a86e9f682a918af486936173d097a33ab5bdac29d706f9cf"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-65.pack",
+        "start": 520,
+        "count": 8,
+        "bytes": 152436,
+        "sha256": "186fad11e01b329e270510c9433e01556312d813385fc743cea92267806dcbca"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-66.pack",
+        "start": 528,
+        "count": 8,
+        "bytes": 155470,
+        "sha256": "350956913f1a08dac6ad0cf39321628f1335207bc343fe1ecb81afb44fbef6c7"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-67.pack",
+        "start": 536,
+        "count": 8,
+        "bytes": 159384,
+        "sha256": "e80f46ecc3c58c070607058d051150addbcefae7dc3ebf4e8206d0e395c22a2f"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-68.pack",
+        "start": 544,
+        "count": 8,
+        "bytes": 162036,
+        "sha256": "cb3eb7c1b0a36568745f1486516c62ea5bac2139e2be7922fbe04e51410ca5ae"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-69.pack",
+        "start": 552,
+        "count": 8,
+        "bytes": 164840,
+        "sha256": "a1ee3f113ea131fa9a687539fc39240fe0b6662373684e91dd70a9062c1a0da0"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-70.pack",
+        "start": 560,
+        "count": 8,
+        "bytes": 165570,
+        "sha256": "fc338103c6d14bd7c9b7177a8d3313be3482cd040fc0fc49130ded47e0f0548e"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-71.pack",
+        "start": 568,
+        "count": 8,
+        "bytes": 165876,
+        "sha256": "ecedfd91153d3958efb5fa686e0652ed2b8d3033d3c5bbd552db35273888f654"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-72.pack",
+        "start": 576,
+        "count": 8,
+        "bytes": 167134,
+        "sha256": "b6da5c77ef5c23fe5eae8b14b4e16afaf60b9bff62eb8c777b64b798f093e9d5"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-73.pack",
+        "start": 584,
+        "count": 8,
+        "bytes": 167010,
+        "sha256": "700c397dfa570755acf7b0e6287b666b0fa74bc7910939fd1391d4556eb715ff"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/desktop-74.pack",
+        "start": 592,
+        "count": 4,
+        "bytes": 83886,
+        "sha256": "ff019d671fbd1d3041c191bc89c077128d63cd9bb011e393c9af641edba0bf8a"
+      }
+    ],
+    "bytes": 13688314,
+    "poster": "/static/hero/hero-poster-60fps-desktop.webp",
+    "poster_bytes": 14422
+  },
+  "ending": "/static/hero/hero-ending-60fps.webp",
+  "ending_bytes": 21132,
+  "mobile": {
+    "width": 768,
+    "height": 432,
+    "count": 596,
+    "quality": 78,
+    "packs": [
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-00.pack",
+        "start": 0,
+        "count": 8,
+        "bytes": 50772,
+        "sha256": "d9fe5330a9f38d1c9c25c5e7213188a7772e2c584002693d003d2365a529abd6"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-01.pack",
+        "start": 8,
+        "count": 8,
+        "bytes": 58960,
+        "sha256": "c140b5f651724c132b881020517f9e4dd72be582fb65d0bc4d9bc99a13586fd3"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-02.pack",
+        "start": 16,
+        "count": 8,
+        "bytes": 67576,
+        "sha256": "ae6372183fb807d88ae872d5bb5d89b1ad8fbc8d5d3aa2bda6d02a9ab8257459"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-03.pack",
+        "start": 24,
+        "count": 8,
+        "bytes": 75166,
+        "sha256": "47b4c97cc80c3e1c54c9a1d61261ef4325921c127b2717472abf7d41829ee194"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-04.pack",
+        "start": 32,
+        "count": 8,
+        "bytes": 83604,
+        "sha256": "7c2f85f34ff639517f8a26252301a4c66c3b665a1bae7cdd1ee2ff56b523ab52"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-05.pack",
+        "start": 40,
+        "count": 8,
+        "bytes": 90632,
+        "sha256": "0c17071a3b0830057388e2a99b950d164359a39db9de46c10816726b9b7f69ed"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-06.pack",
+        "start": 48,
+        "count": 8,
+        "bytes": 92652,
+        "sha256": "22d9d926568950881dc995d02013791088a396056d7d73dfc7adebc145ae6231"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-07.pack",
+        "start": 56,
+        "count": 8,
+        "bytes": 93930,
+        "sha256": "c9095d8d75c3da131c67384da89882d4ff44063aa67a8c4159fee2a5168072a2"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-08.pack",
+        "start": 64,
+        "count": 8,
+        "bytes": 92628,
+        "sha256": "de29c6395ef904ca4705e28a091fe247ea3f0cdf41bc9869e450dd079cd2caa4"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-09.pack",
+        "start": 72,
+        "count": 8,
+        "bytes": 92134,
+        "sha256": "4d4b50ea71f788f7f4b504fbd017ba6f768d03b59bc869f1c6d7e486da8620cd"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-10.pack",
+        "start": 80,
+        "count": 8,
+        "bytes": 92268,
+        "sha256": "ed80892e8eb25c942a360377fb0bc68fe78e04d35fef28306f2978cda8a21a70"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-11.pack",
+        "start": 88,
+        "count": 8,
+        "bytes": 89692,
+        "sha256": "90c6035bd50b52deaa9811ca0ba38a2ca3f561d20866a1c457255e83855ab1e5"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-12.pack",
+        "start": 96,
+        "count": 8,
+        "bytes": 90816,
+        "sha256": "324edd0aa797a57254c7bf77b0efd91c7f63685248a44655f9c319f3688feb00"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-13.pack",
+        "start": 104,
+        "count": 8,
+        "bytes": 92944,
+        "sha256": "545a936459a257023b08248f2320b727b33fb479cb9475ead60fe01ad8d6186b"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-14.pack",
+        "start": 112,
+        "count": 8,
+        "bytes": 92154,
+        "sha256": "7e5d2b92775336bca51a1dc24da824decd30e4ce80373a525db5cd0366aab342"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-15.pack",
+        "start": 120,
+        "count": 8,
+        "bytes": 93246,
+        "sha256": "f6106fe65899347d262813806e80c64439efaa2307ce256ad5c986d526e6306f"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-16.pack",
+        "start": 128,
+        "count": 8,
+        "bytes": 93898,
+        "sha256": "bc63bb65267353d1c390089c1ed31de6cdd314addcf21e422419c97ac02b5c23"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-17.pack",
+        "start": 136,
+        "count": 8,
+        "bytes": 95676,
+        "sha256": "59a0a8f40a7ef39e60c40838ae17c5ebc9e40ca5013c7ce33cc4b59731ccb119"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-18.pack",
+        "start": 144,
+        "count": 8,
+        "bytes": 96088,
+        "sha256": "cd303c4402329e02d7fe94079efc54f6fb5dec2f7cc9defde513c388819ad04b"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-19.pack",
+        "start": 152,
+        "count": 8,
+        "bytes": 98142,
+        "sha256": "3c979116e21230d25b02f29a93c26e80f1c7b29ad0232d111309a32b1160cb89"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-20.pack",
+        "start": 160,
+        "count": 8,
+        "bytes": 100726,
+        "sha256": "fcaa32466044fce509f4f318742f2bd5b3c60c917287888884010e18e864671a"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-21.pack",
+        "start": 168,
+        "count": 8,
+        "bytes": 102830,
+        "sha256": "2892bb5e0e3ecfa105df3c365389f79c5e2c970dba69f247bb367a8030bcb688"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-22.pack",
+        "start": 176,
+        "count": 8,
+        "bytes": 103398,
+        "sha256": "49331d5363284e018901c068dc9a42b9c771eb799d83a3d1fa03bd3cc8bded7d"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-23.pack",
+        "start": 184,
+        "count": 8,
+        "bytes": 104274,
+        "sha256": "3f1185ea58beec222a3643d349f6cc6f53cba166e91bd78159a781d7bbb32ef2"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-24.pack",
+        "start": 192,
+        "count": 8,
+        "bytes": 103048,
+        "sha256": "e154591114a30c8a6def3003109db986a723b09d09aefea70ed36d7ef5d3b8ed"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-25.pack",
+        "start": 200,
+        "count": 8,
+        "bytes": 101086,
+        "sha256": "fc7a933d86fcf091e32c82fb4cc4a31d36f20d08c95130950ecf1a92477c70b2"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-26.pack",
+        "start": 208,
+        "count": 8,
+        "bytes": 98732,
+        "sha256": "c3fe47d65fe612c3ea297c2df0403074ebd6152b7a7e494bb73821d7523b2bb7"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-27.pack",
+        "start": 216,
+        "count": 8,
+        "bytes": 98528,
+        "sha256": "cfb92bcb0b0553e29fca9ba815da522212645258723b136a67267685c4c2faeb"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-28.pack",
+        "start": 224,
+        "count": 8,
+        "bytes": 96980,
+        "sha256": "6f3e9d9049a397b4598e9d92474c30eb643e1693060fc301fada61a800ab541a"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-29.pack",
+        "start": 232,
+        "count": 8,
+        "bytes": 96402,
+        "sha256": "5b0568bc32e8cff2c35a385d0f4839e5e18973f8ccbb8815b11b9d99229ff0ae"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-30.pack",
+        "start": 240,
+        "count": 8,
+        "bytes": 96124,
+        "sha256": "b8ca9ad3a157d8a5e3f0450c29f61c1ddfb653437fafa8c0ef138041b3d671de"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-31.pack",
+        "start": 248,
+        "count": 8,
+        "bytes": 95846,
+        "sha256": "a264e0e11bad40a69c2e5ba0dcb045bf5c7ca792f0b08da0ccd434660a59268c"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-32.pack",
+        "start": 256,
+        "count": 8,
+        "bytes": 96164,
+        "sha256": "78bd3b4037659d283759c4b468c0ff38ba30f4aaef014b8f9e61e67548b9f096"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-33.pack",
+        "start": 264,
+        "count": 8,
+        "bytes": 95554,
+        "sha256": "dbfc2c5b21b45bd58f03eebf8e93f8fcbab977d33f385f80e0947d029340feb9"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-34.pack",
+        "start": 272,
+        "count": 8,
+        "bytes": 95530,
+        "sha256": "8a6c336f734e2859efb94546f7007af7075af6cce77a7ddd5e0dece25f0f0b2c"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-35.pack",
+        "start": 280,
+        "count": 8,
+        "bytes": 94772,
+        "sha256": "0a14dec9ee62c64a8296bd7bdbac5b7684435ef4a5c573832242da8b6a145453"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-36.pack",
+        "start": 288,
+        "count": 8,
+        "bytes": 94790,
+        "sha256": "da6c85475aa864379d43bdc0aa968d3b382d5da5e6a35d6bb293d9872b258cad"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-37.pack",
+        "start": 296,
+        "count": 8,
+        "bytes": 93710,
+        "sha256": "d87db3c1dbed3c4f0ed8b66d7dac407f3638121d9091cb1c3f49ae62df7ac50c"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-38.pack",
+        "start": 304,
+        "count": 8,
+        "bytes": 93602,
+        "sha256": "3733a81b184b5d5b8f117bd954ef2f1a43104be61ad6217f8df799a1bba45a2a"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-39.pack",
+        "start": 312,
+        "count": 8,
+        "bytes": 93914,
+        "sha256": "69ec5a8a8884e7ddbfddd63273d70c09ea9819d8e862b3ee748e5b0d01235cf5"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-40.pack",
+        "start": 320,
+        "count": 8,
+        "bytes": 93644,
+        "sha256": "35550009a7b915c457208dbef35aa639cddc9393ef0d73d4de31ed36b2a18271"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-41.pack",
+        "start": 328,
+        "count": 8,
+        "bytes": 93460,
+        "sha256": "5ed39b88a471b0180a26e0149aff7e610f7a28cb16249c21b0d5c159ede6ae26"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-42.pack",
+        "start": 336,
+        "count": 8,
+        "bytes": 93646,
+        "sha256": "aee8cb823b7d4c53b08e53fd78bae5f41dc3870df8ea3cdc56c0c0cce680b302"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-43.pack",
+        "start": 344,
+        "count": 8,
+        "bytes": 93752,
+        "sha256": "55eac768a2c7fd757bfd89ff12893e1ecc0d48fdfd791d0f237bca8645e86d39"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-44.pack",
+        "start": 352,
+        "count": 8,
+        "bytes": 92504,
+        "sha256": "6c2e17aa194e694a7469bd7f456722e5c92808022275058123abbe1d559ef2a0"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-45.pack",
+        "start": 360,
+        "count": 8,
+        "bytes": 92024,
+        "sha256": "3755a6d1ac4e50ecef89d75340444d1c80a1249caeac28b0f3167d86da177f04"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-46.pack",
+        "start": 368,
+        "count": 8,
+        "bytes": 90812,
+        "sha256": "7070b6af85350a97ea1bca20efa3bb009580e9e11837e2407f3050979d4f029e"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-47.pack",
+        "start": 376,
+        "count": 8,
+        "bytes": 88172,
+        "sha256": "32496e520c532754729695eaf7bf9367c21b53fbba6526b1b35742fc362f76ff"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-48.pack",
+        "start": 384,
+        "count": 8,
+        "bytes": 85184,
+        "sha256": "d89ebd7f11b57661eb78cff944e0122244415179605581bcb1a0a7eb86d8b862"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-49.pack",
+        "start": 392,
+        "count": 8,
+        "bytes": 82784,
+        "sha256": "9904f98f2b3aea2c50fe65c173d6c498eefbf28d90e4207282b7fd35dc8b5dbe"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-50.pack",
+        "start": 400,
+        "count": 8,
+        "bytes": 84346,
+        "sha256": "f461f802fa4025bebb1f11037fc4ae985ce6d4817116d8348cb12e8669191f70"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-51.pack",
+        "start": 408,
+        "count": 8,
+        "bytes": 85688,
+        "sha256": "5da3d8711b395bb36ac09a58a45710962ef827249c86e217345f2ca1eaa2f901"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-52.pack",
+        "start": 416,
+        "count": 8,
+        "bytes": 86274,
+        "sha256": "7bcadf5f09347cb223212a9143b4f00cbc6b0028cf5d287474c815c696ac4c22"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-53.pack",
+        "start": 424,
+        "count": 8,
+        "bytes": 85074,
+        "sha256": "db2717f1f6d300d4af8aea28169e40a7076c73a7b2a7a737893e9a0f76836a6e"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-54.pack",
+        "start": 432,
+        "count": 8,
+        "bytes": 84264,
+        "sha256": "84ad4c788b060623573c44b764adbb8785bcb9c71f64b6842a7d9fe37dcc471d"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-55.pack",
+        "start": 440,
+        "count": 8,
+        "bytes": 81812,
+        "sha256": "24dd0cbaf18833b04173cfb3fb43e73425e8d59626a0bd96f0616aac4a72669b"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-56.pack",
+        "start": 448,
+        "count": 8,
+        "bytes": 79738,
+        "sha256": "a09c286c2f52ddfacc3a0b45e318c81b277be69e0c072b4578d3cf25b1b0712c"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-57.pack",
+        "start": 456,
+        "count": 8,
+        "bytes": 77478,
+        "sha256": "86fddc838ecd8594e14eb772c45eb66d81b170af86f10796112824be3f3feeff"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-58.pack",
+        "start": 464,
+        "count": 8,
+        "bytes": 74638,
+        "sha256": "7a9455361c92ebb1c36c26fcb937b0de968c2b8666af759ab173f1dd715033a9"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-59.pack",
+        "start": 472,
+        "count": 8,
+        "bytes": 71938,
+        "sha256": "c012fecced8102d5071cef4ace79cf34302364ed95bbfba36efc79dbbe492524"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-60.pack",
+        "start": 480,
+        "count": 8,
+        "bytes": 69554,
+        "sha256": "1034262931d515de3d0d08669d65bb6a9b046e41c416c807a19607d0a9e08674"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-61.pack",
+        "start": 488,
+        "count": 8,
+        "bytes": 67180,
+        "sha256": "bdf580a49680a81c37993a0b78ba3c58f92aa83a1158b39713a4519a15824518"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-62.pack",
+        "start": 496,
+        "count": 8,
+        "bytes": 67306,
+        "sha256": "4939aed139720b300e88b1e50642666cdf7a35b84a3b4a4d6a1861d8cf71bf3b"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-63.pack",
+        "start": 504,
+        "count": 8,
+        "bytes": 69268,
+        "sha256": "da7df7ab7462b95f81e6de16dd72a50df92a86ad6d7d932b420fb39bc66a5ee8"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-64.pack",
+        "start": 512,
+        "count": 8,
+        "bytes": 72490,
+        "sha256": "f2287beabbb410f366d4a886d17990a848319aaea9976bf5ea1994d8507d6165"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-65.pack",
+        "start": 520,
+        "count": 8,
+        "bytes": 73680,
+        "sha256": "b5c6dca060d72a3fa5e01108ba97e181e05705404062be14494e0a18b4cbddc5"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-66.pack",
+        "start": 528,
+        "count": 8,
+        "bytes": 75130,
+        "sha256": "f37a1a9be4f333508ce8e4db23c699e4efe0224a24d9be31d22860fdc524a460"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-67.pack",
+        "start": 536,
+        "count": 8,
+        "bytes": 76606,
+        "sha256": "ddbe75e9c6293239595fb70ac958159aa173a7a8044d4af9b0c90b21cb181300"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-68.pack",
+        "start": 544,
+        "count": 8,
+        "bytes": 77872,
+        "sha256": "8a13f0f4994d28cf2ae1218415a08ea965c61de0477b254e4ad75426d87d78d7"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-69.pack",
+        "start": 552,
+        "count": 8,
+        "bytes": 79264,
+        "sha256": "18e8e8739c87be050163b0b8ec0d4fcb2e52025c0dcd91db308f0dcfd31be794"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-70.pack",
+        "start": 560,
+        "count": 8,
+        "bytes": 79826,
+        "sha256": "7e595ce912bbc11a4978633f13f33060caf699a6f8d6d0165a21f0afbd2d61e4"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-71.pack",
+        "start": 568,
+        "count": 8,
+        "bytes": 79528,
+        "sha256": "8573c27541bb172bf6bc99a1de72b2891216a6393787e4e60d958e5ef27fe5e1"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-72.pack",
+        "start": 576,
+        "count": 8,
+        "bytes": 79938,
+        "sha256": "c74758fe399fd411c0e89f79a70a8c815532994ad2be6a74083f5fdabd32b202"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-73.pack",
+        "start": 584,
+        "count": 8,
+        "bytes": 79938,
+        "sha256": "f8049c807a58da560951e1668cecc4d0147cc78579fe44d469809acf0227d545"
+      },
+      {
+        "url": "/static/hero/frames-b141221a772a/mobile-74.pack",
+        "start": 592,
+        "count": 4,
+        "bytes": 39980,
+        "sha256": "560cf811dc30e07b28d1a6849426e00c3eb6b7b7a1df30b2eaddcc04f71ea619"
+      }
+    ],
+    "bytes": 6493780,
+    "poster": "/static/hero/hero-poster-60fps-mobile.webp",
+    "poster_bytes": 6016
+  }
+}

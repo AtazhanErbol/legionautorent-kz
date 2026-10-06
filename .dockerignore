@@ -15,17 +15,4 @@ __pycache__
 .git
 static/build
 design_refs
-tools/write_rebuild_*.py
-
-# Preserved local research and retired renderers do not ship.
-review
-assets
-static/models
-static/vendor
-static/video
-static/img/hero-*
-!static/img/hero-drive-front.webp
-frontend/hero.js
-frontend/hero-film.js
-frontend/hero-video.js
-frontend/hero-story.css
+reports/*.log

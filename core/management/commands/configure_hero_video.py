@@ -7,14 +7,15 @@ from core.models import SiteSettings
 from core.hero import ASSETS
 
 class Command(BaseCommand):
-    help='Enable the owner-supplied showroom film; preserve catalogue, SEO and previous assets.'
+    help='Enable the supplied 60 fps canvas sequence; preserve catalogue and SEO.'
     def handle(self,*args,**options):
         paths={'hero_video_path':ASSETS['video'],'hero_poster_path':ASSETS['poster'],
                'hero_mobile_poster_path':ASSETS['mobile'],'hero_ending_path':ASSETS['ending']}
         for path in paths.values():
             if not (settings.BASE_DIR/path.lstrip('/')).is_file():raise CommandError('Missing hero asset: '+path)
         site=SiteSettings.get_solo()
-        values={**paths,'enable_hero_video':True,'enable_hero_3d':False,'hero_placeholder':False}
+        values={**paths,'hero_mobile_video_path':'','hero_video_fps':60,
+                'enable_hero_video':True,'enable_hero_3d':False,'hero_placeholder':False}
         for field,value in values.items():setattr(site,field,value)
         site.save();cache.clear()
         self.stdout.write(json.dumps(values))
