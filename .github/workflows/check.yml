@@ -44,9 +44,9 @@ jobs:
       - run: npm ci
       - run: npm run build && npm run check:budget
       - run: python tools/prepare_test_media.py
+      - run: python manage.py collectstatic --noinput
       - run: python manage.py test --settings=legion.config.testing
       - run: python manage.py makemigrations --check --dry-run
-      - run: python manage.py collectstatic --noinput
   container:
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -58,6 +58,7 @@ jobs:
         run: |
           docker compose -f docker-compose.dev.yml exec -T web python tools/prepare_test_media.py
           docker compose -f docker-compose.dev.yml exec -T web python manage.py import_legacy
+          docker compose -f docker-compose.dev.yml exec -T -e LEGION_CI_FIXTURE=1 web python tools/prepare_ci_editorial.py
           docker compose -f docker-compose.dev.yml exec -T web python manage.py configure_hero_video
       - name: Verify runtime, Nginx and the real HTML hero
         run: |
